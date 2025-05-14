@@ -1,0 +1,337 @@
+@import "tailwindcss";
+@import "./styles/fonts.css";
+@import "animate.css";
+
+@theme {
+  /* Theme Fonts */
+  --font-fredoka: "Fredoka", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+:root {
+  /* Custom Colors */
+  --primary-color: #02bbfe;
+  --primary-color-hover: #1bc2ff;
+  --primary-color-light: #dbf1ff;
+  --secondary-color: #ffffff;
+  --secondary-color-hover: #e6e6e6;
+  --background-gradient: radial-gradient(circle, #1c9cf9 0, #0956ac 100%);
+  --background-secondary-color: #ebeff6;
+  --close-button-color: #abbfc7;
+  --theme-green-color: #05ff00;
+  --theme-dark-blue: #112d70;
+  --background-gradient-cyan: linear-gradient(to top, #277dff 0, #00ffe0 100%);
+  --theme-gradient-blue: #277dff;
+  --theme-gradient-cyan: #00ffe0;
+  --dark-gray: #313644;
+  --black-gray: #3a343a;
+
+  /* Custom Shadows */
+  --drop-shadow: drop-shadow(0px 5px 0px rgba(0, 0, 2, 0.4));
+  --title-drop-shadow: drop-shadow(0px 0.25rem 0px rgba(0, 0, 2, 0.3));
+  --card-button-shadow: 0px 10px 0px -1px #d5dbea, 0px 13px 0px -1px #000000;
+  --lock-card-shadow: 0px 4px 0px -1px #000000;
+
+  /* Custom Fonts */
+  --primary-font: "Fredoka", sans-serif;
+  --secondary-font: "Poppins", sans-serif;
+}
+
+body {
+  overscroll-behavior: none !important;
+  font-family: var(--primary-font);
+}
+
+button,
+a,
+select {
+  cursor: pointer;
+  font-family: var(--primary-font);
+}
+
+.background-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background: var(--background-gradient);
+}
+
+.background-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/bg-stars.png");
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.gray-filter {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(7261%)
+    hue-rotate(187deg) brightness(75%) contrast(81%);
+}
+
+.gray-color {
+  color: #acabb4;
+}
+
+select.dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E')
+    no-repeat right 1rem center;
+  background-size: 1em;
+  padding-right: 2.5em;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  font-family: var(--primary-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+}
+
+p,
+label {
+  font-family: var(--secondary-font);
+}
+
+.truncate-3line {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate-4line {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fancy-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.drop-shadow {
+  filter: var(--drop-shadow);
+}
+
+.title-drop-shadow {
+  filter: var(--title-drop-shadow);
+}
+
+/*
+  Fancy scrollbar to entire project
+*/
+
+::-webkit-scrollbar {
+  width: 6px; /* Adjust scrollbar width */
+  height: 8px; /* Adjust scrollbar height for horizontal scrollbars */
+}
+
+/* Scrollbar Track (Background) */
+::-webkit-scrollbar-track {
+  background: transparent; /* Dark background for a sleek look */
+  border-radius: 100px; /* Rounded edges */
+}
+
+/* Scrollbar Thumb (Movable part) */
+::-webkit-scrollbar-thumb {
+  background: #052a51; /* Gradient effect */
+  border-radius: 100px; /* Rounded edges */
+  transition: background 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Scrollbar Thumb on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #052a51;
+}
+
+/* Scrollbar Corner (Between vertical and horizontal scrollbar) */
+::-webkit-scrollbar-corner {
+  background: #1e1e2f;
+}
+
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+fancy scrollbar to entire project
+*/
+
+.title-shadow {
+  text-shadow:
+    rgb(0, 0, 0) 3px 0px 0px,
+    rgb(0, 0, 0) 2.83487px 0.981584px 0px,
+    rgb(0, 0, 0) 2.35766px 1.85511px 0px,
+    rgb(0, 0, 0) 1.62091px 2.52441px 0px,
+    rgb(0, 0, 0) 0.705713px 2.91581px 0px,
+    rgb(0, 0, 0) -0.287171px 2.98622px 0px,
+    rgb(0, 0, 0) -1.24844px 2.72789px 0px,
+    rgb(0, 0, 0) -2.07227px 2.16926px 0px,
+    rgb(0, 0, 0) -2.66798px 1.37182px 0px,
+    rgb(0, 0, 0) -2.96998px 0.42336px 0px,
+    rgb(0, 0, 0) -2.94502px -0.571704px 0px,
+    rgb(0, 0, 0) -2.59586px -1.50383px 0px,
+    rgb(0, 0, 0) -1.96093px -2.27041px 0px,
+    rgb(0, 0, 0) -1.11013px -2.78704px 0px,
+    rgb(0, 0, 0) -0.137119px -2.99686px 0px,
+    rgb(0, 0, 0) 0.850987px -2.87677px 0px,
+    rgb(0, 0, 0) 1.74541px -2.43999px 0px,
+    rgb(0, 0, 0) 2.44769px -1.73459px 0px,
+    rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+}
+
+.card-button-shadow {
+  box-shadow: var(--card-button-shadow);
+}
+.lock-card-shadow {
+  box-shadow: var(--lock-card-shadow);
+}
+
+.clip-hexagon {
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+}
+
+.choose-avatar-modal .overflow-y-auto.flex-1.p-6 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* banner text for sitarey */
+.banner_text p {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 26px;
+}
+.banner_text strong {
+  font-weight: 600;
+}
+.banner_text p:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+/* Payment Bundle CSS */
+.bundle-card {
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 16px;
+  background-color: #ffffff;
+  transition: all 0.3s ease; /* Changed to 'all' to include scale transition */
+  text-align: center;
+  margin: 4px; /* Add slight margin to prevent jump on scale */
+  transform: scale(1); /* Default scale */
+  min-width: 234px;
+}
+
+.bundle-card:hover {
+  border: 2px solid #02bbfe;
+  background-color: #f0f8ff;
+  transition: all 0.3s ease; /* Smooth transition for styling changes */
+}
+.bundle-card-inner {
+  min-height: 320px;
+  border-radius: 14px;
+  margin-bottom: 11px;
+  padding: 15px;
+  padding-bottom: 0;
+}
+.games_badge {
+  position: absolute;
+  font-size: 12px;
+  width: fit-content;
+  top: 4px;
+  right: 32px;
+  border-radius: 30px;
+  padding: 2px 8px;
+  font-weight: 500;
+  transform: rotate(-7deg);
+}
+.bundle-description {
+  color: #838383;
+  font-size: 12px;
+  margin-top: 22px;
+  width: 100%;
+}
+.bundle-discount {
+  top: -15px;
+  border-radius: 16px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.selected-card {
+  border: 2px solid #02bbfe;
+  background-color: #f0f8ff;
+}
+
+.bonzoui__winner__ribbon {
+  font-family: "Fredoka";
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 29px;
+  text-align: center;
+  position: absolute;
+  top: 8px;
+  z-index: 1;
+  color: #fff;
+}
+
+.bonzoui__winner__ribbon span {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  /* top: 6px; */
+}
+
+.bonzoui__winner__ribbon.win2x {
+  top: 0px;
+}
+
+.bonzoui__single__result__ribbon__sp {
+  font-size: 19px;
+}
+.pb-title-shadow {
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black,
+    0px -1.4px 1px black,
+    0px -1.4px 1px black,
+    0px -1.4px 1px black,
+    0px -1.4px 1px black,
+    0px -1.4px 1px black,
+    0px -1.4px 1px black,
+    0px 2px 1px black,
+    0px 2px 1px black,
+    0px 2px 1px black,
+    0px 2px 1px black,
+    0px 2px 1px black,
+    0px 2px 1px black;
+}
+
+.bonzoui__draw__ribbon__text {
+  top: 45% !important;
+}
+.bonzoui__hint__bulb {
+  width: 52px;
+  height: 52px;
+  margin-left: -18px;
+  position: absolute;
+  left: 0;
+  object-fit: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("data:image/png;base64,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");
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="%sveltekit.assets%/manifest.json" />
+    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <!-- <link
+      rel="icon"
+      type="image/png"
+      href="%sveltekit.assets%/images/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="%sveltekit.assets%/images/favicon-16x16.png"
+      sizes="16x16"
+    /> -->
+    <link rel="icon" type="image/png" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="16x16" />
+    %sveltekit.head%
+  </head>
+  <body
+    data-sveltekit-preload-data="hover"
+    style="background: var(--background-gradient)"
+  >
+    <div style="display: contents">%sveltekit.body%</div>
+    <div
+      id="fullloader"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-white"
+    >
+      <div
+        class="w-16 h-16 border-4 border-[var(--primary-color)] border-t-transparent rounded-full animate-spin"
+      ></div>
+    </div>
+  </body>
+</html>

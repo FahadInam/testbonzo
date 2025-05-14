@@ -1,0 +1,302 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("/fonts/icomoon.woff2?7lb00s") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.i-eye_disable:before {
+  content: "\e900";
+}
+.i-eye_enable:before {
+  content: "\e901";
+}
+.i-arrow_left_filled:before {
+  content: "\e902";
+}
+.i-arrow_right_filled:before {
+  content: "\e903";
+}
+.i-play_button_invert:before {
+  content: "\e904";
+}
+.i-search2:before {
+  content: "\e905";
+}
+.i-cert:before {
+  content: "\e906";
+}
+.i-lesson:before {
+  content: "\e907";
+}
+.i-email:before {
+  content: "\e908";
+}
+.i-top:before {
+  content: "\e909";
+}
+.i-rules:before {
+  content: "\e90a";
+}
+.i-share:before {
+  content: "\e90b";
+}
+.i-thumbsup:before {
+  content: "\e90c";
+}
+.i-remove-friend:before {
+  content: "\e90d";
+}
+.i-vs:before {
+  content: "\e90e";
+}
+.i-search:before {
+  content: "\e90f";
+}
+.i-reward-history:before {
+  content: "\e910";
+}
+.i-play_button_invert1:before {
+  content: "\e911";
+}
+.i-rewards:before {
+  content: "\e912";
+}
+.i-leaderboard:before {
+  content: "\e913";
+}
+.i-home:before {
+  content: "\e914";
+}
+.i-games:before {
+  content: "\e915";
+}
+.i-friends:before {
+  content: "\e916";
+}
+.i-right:before {
+  content: "\e917";
+}
+.i-left:before {
+  content: "\e918";
+}
+.i-bottom:before {
+  content: "\e919";
+}
+.i-facebook:before {
+  content: "\e91a";
+}
+.i-enter:before {
+  content: "\e91b";
+}
+.i-google:before {
+  content: "\e91c";
+}
+.i-update:before {
+  content: "\e91d";
+}
+.i-tick:before {
+  content: "\e91e";
+}
+.i-flag-success:before {
+  content: "\e91f";
+}
+.i-user1:before {
+  content: "\e920";
+}
+.i-invite:before {
+  content: "\e921";
+}
+.i-box:before {
+  content: "\e922";
+}
+.i-user:before {
+  content: "\e923";
+}
+.i-key:before {
+  content: "\e924";
+}
+.i-logout:before {
+  content: "\e925";
+}
+.i-cross:before {
+  content: "\e926";
+}
+.i-grade:before {
+  content: "\e927";
+}
+.i-stats:before {
+  content: "\e928";
+}
+.i-avatar:before {
+  content: "\e929";
+}
+.i-reject:before {
+  content: "\e92a";
+}
+.i-alert:before {
+  content: "\e92b";
+}
+.i-sadcircle:before {
+  content: "\e92c";
+}
+.i-error:before {
+  content: "\e92d";
+}
+.i-migration:before {
+  content: "\e92e";
+}
+.i-opponent-friend:before {
+  content: "\e92f";
+}
+.i-singleplayer:before {
+  content: "\e930";
+}
+.i-subject:before {
+  content: "\e931";
+}
+.i-multi-player:before {
+  content: "\e932";
+}
+.i-opponent:before {
+  content: "\e933";
+}
+.i-send:before {
+  content: "\e934";
+}
+.i-timeout:before {
+  content: "\e935";
+}
+.i-resign:before {
+  content: "\e936";
+}
+.i-recommended:before {
+  content: "\e937";
+}
+.i-image-upload:before {
+  content: "\e938";
+}
+.i-waiting:before {
+  content: "\e939";
+}
+.i-lvl:before {
+  content: "\e93a";
+}
+.i-landscape:before {
+  content: "\e93b";
+}
+.i-twitter:before {
+  content: "\e93c";
+}
+.i-linkedIn:before {
+  content: "\e93d";
+}
+.i-link:before {
+  content: "\e93e";
+}
+.i-notification_bell:before {
+  content: "\e93f";
+}
+.i-code:before {
+  content: "\e940";
+}
+.i-plus:before {
+  content: "\e941";
+}
+.i-school:before {
+  content: "\e942";
+}
+.i-ticket-perforated:before {
+  content: "\e943";
+}
+.i-printer:before {
+  content: "\e944";
+}
+.i-phone:before {
+  content: "\e945";
+}
+.i-credit-card:before {
+  content: "\e946";
+}
+.i-bag-heart:before {
+  content: "\e947";
+}
+.i-calendar2-event-1:before {
+  content: "\e948";
+}
+.i-support_chat:before {
+  content: "\e949";
+}
+.i-easypaisa:before {
+  content: "\e94a";
+}
+.i-question-square:before {
+  content: "\e94b";
+}
+.i-Change-Grades:before {
+  content: "\e94c";
+}
+.i-My-Purchases:before {
+  content: "\e94d";
+}
+.i-Rewards:before {
+  content: "\e94e";
+}
+.i-Sign-out:before {
+  content: "\e94f";
+}
+.i-Stats:before {
+  content: "\e950";
+}
+.i-Support:before {
+  content: "\e951";
+}
+.i-Update-Profile:before {
+  content: "\e952";
+}
+.i-FAQs:before {
+  content: "\e953";
+}
+.i-Rules:before {
+  content: "\e954";
+}
+.i-fullscreen:before {
+  content: "\e955";
+}
+.i-whatsapp:before {
+  content: "\e956";
+}
+.i-phone-receiver:before {
+  content: "\e957";
+}
+.i-instagram:before {
+  content: "\e958";
+}
+.i-youtube:before {
+  content: "\e959";
+}
+.i-streak:before {
+  content: "\e95a";
+}
+.i-certificate:before {
+  content: "\e95b";
+}
+.i-badges:before {
+  content: "\e95c";
+}
