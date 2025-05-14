@@ -10,9 +10,9 @@
   export let certificateTitle = "";
   export let organizationName = "";
   export let primaryColor = "#4CAF50"; // Green by default
-  export let downloadLabel = "Download Certificate";
-  export let downloadLabelMobile = "Download";
-  export let downloadUrl = "#";
+  // export let downloadLabel = "Download Certificate";
+  // export let downloadLabelMobile = "Download";
+  // export let downloadUrl = "#";
   export let certificate_json = "";
   export let isDisabled = false;
   export let disableClick = () => {};

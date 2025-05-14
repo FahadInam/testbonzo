@@ -120,7 +120,7 @@
         label={$t("start")}
         size="medium"
         type={Mode === 0 ? "3d-primary" : "3d-secondary"}
-        customClass="w-[160px] text-lg md:text-[22px]"
+        customClass="w-[170px] text-lg md:text-[22px]"
         onClick={() => {
           StartAction(Mode);
         }}

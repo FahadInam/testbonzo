@@ -68,7 +68,7 @@
         label={$t("close")}
         size="small"
         type="3d-primary"
-        customClass="w-[160px] text-lg md:text-[22px]"
+        customClass="w-[170px] text-lg md:text-[22px]"
         onClick={() => {
           onButtonClick("cancel");
         }}
@@ -78,7 +78,7 @@
           label={$t("download")}
           size="small"
           type="3d-secondary"
-          customClass="w-[160px] text-lg md:text-[22px]"
+          customClass="w-[170px] text-lg md:text-[22px]"
           onClick={() => {
             onButtonClick("download");
           }}

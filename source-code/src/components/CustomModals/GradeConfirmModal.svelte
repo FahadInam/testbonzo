@@ -51,13 +51,13 @@
           label={$t("change")}
           size="small"
           type="3d-primary"
-          customClass="w-[160px] text-lg md:text-[22px]"
+          customClass="w-[170px] text-lg md:text-[22px]"
           onClick={handleConfirm}
         />
         <Button
           size="small"
           type="3d-secondary"
-          customClass="w-[160px] text-lg md:text-[22px]"
+          customClass="w-[170px] text-lg md:text-[22px]"
           label={$t("cancel")}
           onClick={handleCancel}
         />

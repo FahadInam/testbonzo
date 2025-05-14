@@ -57,7 +57,7 @@
           label={buttonText}
           size="small"
           type="3d-primary"
-          customClass="w-[300px]"
+          customClass="w-[170px] text-lg md:text-[22px]"
           onClick={handleConfirm}
         />
       </div>
