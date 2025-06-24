@@ -1,5 +1,4 @@
 <script>
-  import { get } from "svelte/store";
   import { competitionStore } from "../../stores/competition.store";
   import { IMAGES } from "$lib/assets/images/images.constants";
 
@@ -17,6 +16,9 @@
 
   let selectedValue = "";
 
+  // Always keep selectedValue in sync with the store's current_grade
+  $: selectedValue = $competitionStore.current_grade || "";
+
   /**
    * @param {Event & { currentTarget: EventTarget & HTMLSelectElement }} event
    */
@@ -32,7 +34,6 @@
       onSelect(selectedValue);
     }
   }
-  selectedValue = get(competitionStore).current_grade ?? "";
 </script>
 
 <div

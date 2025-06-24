@@ -31,7 +31,7 @@
   let certificate_IframeSrc = "";
   let iframeData = {};
 
-  $: console.log(certificate_json, "organizationName");
+  // $: console.log(certificate_json, "organizationName");
   async function CertificateData(username, showToast) {
     iframeData = JSON.stringify({
       cData: JSON.stringify(certificate_data),
@@ -49,9 +49,7 @@
   function handleDownload() {
     const certificateDataResult = getCertificateData(certificate_json, 1);
     certificate_data =
-      certificateDataResult && Object.keys(certificateDataResult).length > 0
-        ? certificateDataResult
-        : [];
+      certificateDataResult && Object.keys(certificateDataResult).length > 0 ? certificateDataResult : [];
     certificate_path = certificate_data?.file_name || "gclc";
     CertificateData();
   }
@@ -80,16 +78,12 @@
   role="button"
   tabindex="0"
   on:click={handleClick}
-  on:keydown={(event) =>
-    (event.key === "Enter" || event.key === " ") && handleDownload()}
+  on:keydown={(event) => (event.key === "Enter" || event.key === " ") && handleDownload()}
   class={`w-full ${isDisabled ? "opacity-60" : "hover:bg-gray-100"} cursor-pointer rounded-[20px] border border-gray-200 bg-white overflow-hidden px-4 pt-4 pb-6 relative mb-6`}
 >
   <div class="flex flex-col sm:flex-row gap-4">
     <!-- Badge section -->
-    <div
-      class="shrink-0 absolute left-0 -top-0.5 rotate-[343deg]"
-      style="--badge-color: {primaryColor}"
-    >
+    <div class="shrink-0 absolute left-0 -top-0.5 rotate-[343deg]" style="--badge-color: {primaryColor}">
       <div
         class="w-9 h-15 md:w-12 md:h-18 relative"
         style="background-color: var(--badge-color); clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%);"
@@ -105,18 +99,14 @@
 
     <div class="flex flex-col sm:flex-row w-full justify-between gap-2">
       <!-- Text content -->
-      <div class="pl-9 sm:pl-12 truncate pr-0 md:pr-2">
-        <h2
-          class="text-base md:text-lg font-semibold text-gray-800 mb-1 truncate"
-        >
+      <div class="pl-9 sm:pl-12 pr-0 md:pr-2">
+        <h2 class="text-base md:text-lg font-semibold text-gray-800 mb-1 truncate">
           {certificateTitle}
         </h2>
         <div class="borde flex items-center gap-x-4 gap-y-2 flex-wrap">
-          <p class="text-xs text-gray-600 truncate">{organizationName}</p>
-          <p class="text-xs text-gray-600 truncate">
-            <span
-              class="w-1.5 h-1.5 mr-1 -translate-y-[.5px] bg-gray-500 rounded-full inline-block"
-            ></span>
+          <p class="text-xs text-gray-600">{organizationName}</p>
+          <p class="text-xs text-gray-600">
+            <span class="w-1.5 h-1.5 mr-1 -translate-y-[.5px] bg-gray-500 rounded-full inline-block"></span>
             Grade {grade}
           </p>
         </div>
@@ -134,7 +124,9 @@
         </a>
       </div> -->
       {#if isDisabled}
-        <Image src={IMAGES.CERT_LOCK_ICON} className="w-12 h-12" />
+        <div class="absolute top-1 right-1 sm:top-1.5 sm:right-1.5 md:relative">
+          <Image src={IMAGES.CERT_LOCK_ICON} className="w-9 h-9 md:w-11 md:h-11 lg:w-12 lg:h-12" />
+        </div>
       {/if}
     </div>
   </div>

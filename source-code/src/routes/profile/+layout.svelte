@@ -5,15 +5,20 @@
   import { appbarStore } from "../../stores/appbar.store";
   import { getText } from "../../stores/language.store";
   import { userStore } from "../../stores/user.store";
-  import { loggedInUserAppBarData } from "../../data-actions/appbar/appbar.da";
+  import {
+    adminAppBarData,
+    loggedInUserAppBarData,
+  } from "../../data-actions/appbar/appbar.da";
   import { afterNavigate } from "$app/navigation";
   import { setBackUrl } from "../../stores/navigation.store";
+  import { page } from "$app/stores";
 
   /**
    * @type {{ label: string; link: string; clickCB: () => void; icon: string | null; }[]}
    */
 
   let dropdownItems = [];
+  $: currentPath = $page.url.pathname;
 
   setTimeout(async () => {
     appbarStore.set({
@@ -32,7 +37,19 @@
   }, 50);
 
   const onProfileLayoutLoad = async () => {
-    dropdownItems = loggedInUserAppBarData;
+    if ($userStore.active_role == "principal") {
+      // dropdownItems = adminAppBarData;
+      dropdownItems = adminAppBarData.filter((item) => !item.hidden);
+    } else {
+      if (currentPath === "/profile") {
+        dropdownItems = loggedInUserAppBarData.filter(
+          (item) => !("hidden" in item) || !item.hidden,
+        );
+      } else if (currentPath === "/profile/edit") {
+        dropdownItems = loggedInUserAppBarData;
+      }
+    }
+    //dropdownItems = loggedInUserAppBarData;
   };
 
   onMount(async () => {
@@ -42,6 +59,7 @@
   afterNavigate(({ from }) => {
     const previousURL = from?.url?.pathname ?? "/competitions";
     setBackUrl(previousURL);
+    onProfileLayoutLoad();
   });
 </script>
 
@@ -62,7 +80,7 @@
         {dropdownItems}
       />
       <div
-        class="w-[100%] lg:w-[100%] rounded-2xl overflow-y-auto z-1 mb-8 lg:mb-0 p-4 md:p-6 mx-auto"
+        class="w-[100%] lg:w-[100%] rounded-2xl overflow-y-auto z-1 mb-8 lg:mb-0 p-2 md:p-4 mx-auto"
       >
         <div class="w-[100%] mx-auto">
           <slot />

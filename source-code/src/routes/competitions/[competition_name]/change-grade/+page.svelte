@@ -18,6 +18,7 @@
   import GradeConfirmModal from "../../../../components/CustomModals/GradeConfirmModal.svelte";
   import { showError } from "../../../../stores/toast.store";
   import { gradesStore } from "../../../../stores/grades.store";
+  import { updateStoreVariable } from "$lib/utils";
 
   let cGrades = [{ value: "", label: $t("select_grade") }];
   let showConfirm = false;
@@ -38,6 +39,11 @@
       current_grade: response.data.current_grade,
     });
     transferStore.set(allGrades);
+    updateStoreVariable(
+      competitionStore,
+      "current_grade",
+      response.data.current_grade,
+    );
 
     cGrades = [...cGrades, ...grades];
   }

@@ -22,7 +22,7 @@
   import { competitionsLayoutLogic } from "../../../data-actions/layouts/competitions.layout.logic";
 
   let data = $page.state;
-  console.log(data, "data *************");
+  // console.log(data, "data *************");
   /**
    * @type { any[]}
    */
@@ -51,16 +51,12 @@
 
     const { data } = (await getOpponentsToChallenge()) || {};
     if (data) {
-      ({
-        recommendations: FriendsRecommendations,
-        already_invited: alreadyInvited,
-        users: OpponentUsers,
-      } = data);
+      ({ recommendations: FriendsRecommendations, already_invited: alreadyInvited, users: OpponentUsers } = data);
     }
     currentUser = get(userStore);
     gameData = get(gameDataStore);
-    console.log(currentUser, "currentUser *************");
-    console.log(gameData, "gameData *************");
+    // console.log(currentUser, "currentUser *************");
+    // console.log(gameData, "gameData *************");
     isLoading = false;
   });
 
@@ -70,19 +66,18 @@
    */
 
   async function StartChallengeCallback(Opponent, playMode) {
-    if (playMode === 1 && !Object.keys(Opponent).length)
-      return showWarning("Please Select Opponent.");
+    if (playMode === 1 && !Object.keys(Opponent).length) return showWarning("Please Select Opponent.");
     if (playMode === 0) console.log("Single Player");
 
     const response = await StartChallenge(gameData, Opponent, playMode);
     const subject = get(gameDataStore);
-    console.log(
-      response,
-      Opponent,
-      playMode,
-      subject,
-      "response *************",
-    );
+    // console.log(
+    //   response,
+    //   Opponent,
+    //   playMode,
+    //   subject,
+    //   "response *************",
+    // );
 
     if (response.error_code === 0) {
       updateGameData({
@@ -113,7 +108,7 @@
       //     };
       // });
       const data = get(gameDataStore);
-      console.log(data, "data here");
+      // console.log(data, "data here");
       goto("/challenge/vsscreen");
     }
   }
@@ -123,7 +118,7 @@
     const playMode = 1;
     const res = await getCompetitionRecommendation();
     const matchingItem = res.data.find((item) => item.subject === subject);
-    console.log(matchingItem, data, Opponent, "subject *************");
+    // console.log(matchingItem, data, Opponent, "subject *************");
     const response = await StartChallenge(matchingItem, Opponent, playMode);
     if (response.error_code === 0) {
       updateGameData({
@@ -152,7 +147,7 @@
       //     };
       // });
       const data = get(gameDataStore);
-      console.log(data, "data here");
+      // console.log(data, "data here");
       goto("/challenge/vsscreen");
     }
   };
@@ -163,7 +158,7 @@
 </svelte:head>
 
 <!-- Responsive Container -->
-<div class="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-10">
+<div class="flex justify-center w-full">
   <div class="w-full max-w-screen-xl space-y-6">
     <!--heading section-->
     <div class="w-full mb-8">
@@ -181,18 +176,12 @@
           <div
             class="flex items-center justify-center max-w-xl w-full bg-transparent rounded-lg p-8 mx-auto text-center space-y-10"
           >
-            <OptionPicker
-              title={$t("select_subject")}
-              options={data.subject}
-              onSelect={handleSelect}
-            />
+            <OptionPicker title={$t("select_subject")} options={data.subject} onSelect={handleSelect} />
           </div>
         </h1>
       </div>
     {:else}
-      <div
-        class="flex flex-wrap justify-center w-full gap-9 px-4 sm:px-6 md:px-8 lg:px-10"
-      >
+      <div class="flex flex-wrap justify-center w-full gap-9 px-4 sm:px-6 md:px-8 lg:px-6">
         <!-- Single Player Option - Always render but show loading state when needed -->
         <OpponentSelection
           data={isLoading ? [] : [currentUser]}
@@ -206,11 +195,7 @@
         <!-- Challenge Mode Option - Always render for non-guest users but with appropriate state -->
         {#if !isGuest}
           <OpponentSelection
-            data={isLoading
-              ? []
-              : FriendsRecommendations.length > 0
-                ? FriendsRecommendations
-                : alreadyInvited}
+            data={isLoading ? [] : FriendsRecommendations.length > 0 ? FriendsRecommendations : alreadyInvited}
             title={"challenge_mode"}
             icon={IMAGES.MULTIPLAYER_PLAYER_ICON}
             Mode={1}

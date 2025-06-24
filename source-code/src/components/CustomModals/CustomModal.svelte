@@ -88,7 +88,7 @@
           label={$t("play")}
           size="small"
           type="3d-secondary"
-          customClass="w-[130px]"
+          customClass="w-[160px] text-lg md:text-[22px]"
           onClick={() => {
             onButtonClick("play");
           }}

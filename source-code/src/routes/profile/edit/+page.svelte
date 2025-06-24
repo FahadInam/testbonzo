@@ -4,18 +4,22 @@
   import DataCard from "../../../components/DataCard/DataCard.svelte";
   import {
     getProfileData,
-    userProfileFields,
+    getUserProfileFields,
   } from "../../../data-actions/profile/profile.da";
   import ProfileEditView from "../../../views/ProfileEditView/ProfileEditView.svelte";
   import ProfileSkeleton from "../../../components/Skeleton/EditProfileSkeleton.svelte";
   import { sideBarAndAppBarSettings } from "$lib/utils";
   import { getText, t } from "../../../stores/language.store";
   import EditProfileSkeleton from "../../../components/Skeleton/EditProfileSkeleton.svelte";
+  import { userStore } from "../../../stores/user.store";
 
-  let userProfileForm = { ...userProfileFields };
+  let userProfileForm = {};
   let isLoading = true;
   let profile_picture = "";
 
+  async function loadFields() {
+    userProfileForm = await getUserProfileFields();
+  }
   // Fetches user profile and initializes form data
   async function fetchUserProfile() {
     const userData = await getProfileData();
@@ -69,20 +73,29 @@
 
   // fetch user profile data on component mount
   onMount(async () => {
+    await loadFields();
     await fetchUserProfile();
   });
 
   onMount(async () => {
-    sideBarAndAppBarSettings(false, "profile", "/profile");
+    if ($userStore.active_role == "principal") {
+      sideBarAndAppBarSettings(false, "competitions", "/admin/competitions");
+    } else {
+      sideBarAndAppBarSettings(false, "profile", "/profile");
+    }
   });
 
   // Reset sidebar and appbar when navigating away
   onDestroy(() => {
-    sideBarAndAppBarSettings(true, "back", "/competitions");
+    if ($userStore.active_role == "principal") {
+      return;
+    } else {
+      sideBarAndAppBarSettings(true, "back", "/competitions");
+    }
   });
 </script>
 
-<div class="w-full max-w-[940px] m-auto">
+<div class="w-full max-w-[940px] m-auto px-4">
   {#if isLoading}
     <div class="w-full">
       <EditProfileSkeleton />

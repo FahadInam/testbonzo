@@ -4,6 +4,7 @@
   import SubscriptionCard from "../../../components/Card/SubscriptionCard.svelte";
   import { IMAGES } from "$lib/assets/images/images.constants";
   import {
+    checkMultiplayerStatus,
     determineWinner,
     formatGameData,
     getResultTitleText,
@@ -20,8 +21,10 @@
   import { metaStore } from "../../../stores/meta.store";
   import { authModalStore } from "../../../stores/auth.modal.store";
   import AuthenticationPopupView from "../../../views/AuthenticationPopupView/AuthenticationPopupView.svelte";
+  import ResultAnimation from "../../../components/Animation/ResultAnimation.svelte";
+  import { page } from "$app/stores";
 
-  $: isMultiplayer = $resultStore?.opponent?.opponent_id != null;
+  $: isMultiplayer = checkMultiplayerStatus($resultStore, $userStore);
   let resultTitleText = "";
   let competitionUrl;
   let hidePopup = true;
@@ -31,14 +34,79 @@
   const { playerWon, opponentWon, isDraw } = determineWinner($resultStore);
   $: console.log($resultStore, "determineWinner");
 
-  onMount(async () => {
-    authModalStore.set({ visible: false, page: "" });
-    resultTitleText = await getResultTitleText(isMultiplayer);
+  // === ADDED SOUND PLAYBACK LOGIC ===
+  let isSoundPlaying = false;
+  let isSoundLoaded = false;
+
+  // Animation control variables
+  let hideAnimation = false;
+  let isAnimationComplete = false;
+  let showResultContent = false; // Control when to show the main result content
+
+  // If the user comes from the home page (by clicking the "Recently Played" box), then coinAnimation should be set to false.
+  let coinAnimation = $page.state;
+  $: {
+    if (coinAnimation && coinAnimation.coinAnimation === false) {
+      isSoundPlaying = false; // Reset sound playback if coinAnimation is false
+      hideAnimation = true; // Hide animation if coinAnimation is false
+    } else {
+      coinAnimation = true;
+    }
+  }
+
+  $: playerScore = $resultStore?.player?.points ?? 0;
+
+  function checkForScore() {
+    return $resultStore?.player?.points > 0;
+  }
+
+  // Handle when animation completes
+  function handleAnimationComplete() {
+    isAnimationComplete = true;
+    hideAnimation = true;
+    // Show result content after animation
+    setTimeout(() => {
+      showResultContent = true;
+    }, 800);
+  }
+
+  onMount(() => {
+    console.log("SCORE==========>", $resultStore);
+    console.log("checkForScore-->", checkForScore());
+
+    // Show result content immediately if no score/animation
+    if (!checkForScore()) {
+      showResultContent = true;
+    }
+
+    const timeoutId = setTimeout(() => {
+      const audio = new Audio("/sound/result_audio.mp3");
+      audio.load();
+
+      const handleCanPlayThrough = () => {
+        if (!hideAnimation && !isAnimationComplete) {
+          if (checkForScore() && !isSoundPlaying) {
+            audio.play();
+            isSoundPlaying = true;
+          }
+        }
+        isSoundLoaded = true;
+      };
+
+      audio.addEventListener("canplaythrough", handleCanPlayThrough, {
+        once: true,
+      });
+
+      return () => {
+        audio.removeEventListener("canplaythrough", handleCanPlayThrough);
+      };
+    }, 500);
+
+    return () => clearTimeout(timeoutId);
   });
 
-  // Use the formatter function
-  $: console.log($resultStore, "1gameDataStore");
-  let gameData = formatGameData($resultStore.player, $resultStore.opponent);
+  // Your existing reactive data & statements
+  $: gameData = formatGameData($resultStore.player, $resultStore.opponent);
 
   // Optional: Update gameData when props change
   $: if ($resultStore.player || $resultStore.opponent) {
@@ -47,10 +115,17 @@
 
   $: hasPassed = parseFloat($resultStore?.player?.accuracy) >= 0.5;
   $: console.log(resultTitleText, hasPassed, gameData, "gameData123");
+
+  onMount(async () => {
+    authModalStore.set({ visible: false, page: "" });
+    resultTitleText = await getResultTitleText(isMultiplayer);
+  });
 </script>
 
+<!-- Main result content - only show after animation completes or if no animation -->
 <div
-  class="flex flex-col items-center justify-center w-full max-w-4xl mx-auto my-4 px-2"
+  class="flex flex-col items-center justify-center w-full max-w-4xl mx-auto my-4 px-2 relative z-4 result-content"
+  class:fade-in={isAnimationComplete}
 >
   <SubscriptionCard
     icon={!isMultiplayer ? IMAGES.SINGLE_PLAYER_IMAGE : null}
@@ -69,19 +144,9 @@
         {/if}
 
         {#if isDraw && isMultiplayer}
-          <div
-            class="bonzoui__winner__ribbon mt-2"
-            style="position: relative; left: 0px; right: 0px; top: 0px;"
-          >
-            <img
-              src={IMAGES.RIBBON_DRAW}
-              alt="Draw"
-              class="w-[130px] md:w-[170px]"
-            />
-            <span
-              class="bonzoui__draw__ribbon__text"
-              style="position: absolute; left: 0; right: 0;"
-            >
+          <div class="bonzoui__winner__ribbon mt-2" style="position: relative; left: 0px; right: 0px; top: 0px;">
+            <img src={IMAGES.RIBBON_DRAW} alt="Draw" class="w-[130px] md:w-[170px]" />
+            <span class="bonzoui__draw__ribbon__text" style="position: absolute; left: 0; right: 0;">
               {$t("draw")}
             </span>
           </div>
@@ -89,14 +154,10 @@
 
         <!-- Winner ribbon section -->
         {#if !isMultiplayer}
-          <div
-            class="bonzoui__winner__ribbon"
-            style="position: relative !important;"
-          >
+          <div class="bonzoui__winner__ribbon" style="position: relative !important;">
             <img
-              src={hasPassed
-                ? IMAGES.RIBBON_WINNER_CONGRATS
-                : IMAGES.RIBBON_WINNER_LOSE}
+              alt="ribbon"
+              src={hasPassed ? IMAGES.RIBBON_WINNER_CONGRATS : IMAGES.RIBBON_WINNER_LOSE}
               class="w-[210px] md:w-[240px]"
             />
             <div
@@ -106,7 +167,7 @@
             </div>
           </div>
 
-          {#if !hasPassed}
+          {#if !hasPassed && !$userStore?.is_guest_mode}
             <div
               class="bg-[#000000CC] w-full relative rounded-[19px] mb-[44px] p-[12px] text-white flex mt-[49px] max-w-[290px] md:max-w-[320px] flex-col items-center justify-center"
             >
@@ -117,19 +178,11 @@
                 {$t("note")}
               </div>
 
-              <div
-                class="flex flex-col items-center justify-center text-sm md:text-base"
-              >
+              <div class="flex flex-col items-center justify-center text-sm md:text-base">
                 {$t("achieve")}{" "}
-                <div
-                  class="font-bold text-[16px] md:text-[18px] text-[#ffe500]"
-                >
+                <div class="font-bold text-[16px] md:text-[18px] text-[#ffe500]">
                   <span class="text-[28px] md:text-[32px]"> 50% </span>{" "}
-                  <span
-                    style="font-family: 'Poppins', sans-serif; font-weight: 400;"
-                  >
-                    {$t("or_more_result_box")}</span
-                  >
+                  <span style="font-family: 'Poppins', sans-serif; font-weight: 400;"> {$t("or_more_result_box")}</span>
                 </div>
                 {" "}
                 {$t("to_unlock_result_box")}
@@ -137,13 +190,8 @@
             </div>
           {:else if !$userStore?.is_guest_mode}
             <div class="w-full mt-10 flex items-center justify-center">
-              <img
-                class="w-[120px] md:w-[160px] h-auto object-contain"
-                src={IMAGES.MORE_COINS}
-                alt="Winner"
-              />
-              <span
-                class="text-white text-[36px] md:text-[54px] font-bold title-shadow"
+              <img class="w-[120px] md:w-[160px] h-auto object-contain" src={IMAGES.MORE_COINS} alt="Winner" />
+              <span class="text-white text-[36px] md:text-[54px] font-bold title-shadow"
                 >+ {gameData?.playerPoints}</span
               >
             </div>
@@ -154,7 +202,7 @@
               <div class="font-bold text-[20px] md:text-[24px] text-[#ffc200]">
                 {$t("sign_up_now")}
               </div>
-              <div class="text-[16px] md:text-[18px] text-center font-semibold">
+              <div class="text-[16px] md:text-[18px] text-center font-semibold font-poppins">
                 {$t("save_progress_unlock_rewards")}
               </div>
             </div>
@@ -202,16 +250,9 @@
                 ? 'left: 15%; top: 40%;'
                 : 'right: 0; left: 54%; top: 40%;'} transform: translateY(-50%);"
             >
-              <img
-                class="w-[120px] md:w-[160px] h-auto object-contain"
-                src={IMAGES.MORE_COINS}
-                alt="Winner"
-              />
-              <span
-                class="text-white w-[120px] text-center text-[18px] md:text-[24px] font-bold title-shadow"
-                >+ {playerWon
-                  ? gameData?.playerPoints
-                  : gameData?.opponentPoints}</span
+              <img class="w-[120px] md:w-[160px] h-auto object-contain" src={IMAGES.MORE_COINS} alt="Winner" />
+              <span class="text-white w-[120px] text-center text-[18px] md:text-[24px] font-bold title-shadow"
+                >+ {playerWon ? gameData?.playerPoints : gameData?.opponentPoints}</span
               >
             </div>
           {/if}
@@ -221,21 +262,17 @@
               v={gameData?.score}
               {...isMultiplayer && gameData?.opponentScore
                 ? { v2: gameData.opponentScore }
-                : {}}
+                : isMultiplayer && { v2: "-" }}
             />
             <EachStatMeter
               l="Accuracy"
               v={gameData?.accuracy}
-              {...isMultiplayer && gameData?.opponentAccuracy
-                ? { v2: gameData.opponentAccuracy }
-                : {}}
+              {...isMultiplayer && gameData?.opponentAccuracy ? { v2: gameData.opponentAccuracy } : {}}
             />
             <EachStatMeter
               l="Time taken"
               v={gameData?.timeTaken}
-              {...isMultiplayer && gameData?.opponentTimeTaken
-                ? { v2: gameData.opponentTimeTaken }
-                : {}}
+              {...isMultiplayer && gameData?.opponentTimeTaken ? { v2: gameData.opponentTimeTaken } : {}}
             />
           </div>
         </div>
@@ -247,7 +284,7 @@
           label={$t("continue")}
           size="large"
           type="3d-secondary"
-          customClass="w-[200px] md:w-[250px]"
+          customClass="w-[160px] text-lg md:text-[22px]"
           onClick={() => {
             goto(`/competitions/${$competitionStore?.url}/home`);
           }}
@@ -257,7 +294,7 @@
           label={$t("signup")}
           size="large"
           type="3d-secondary"
-          customClass="w-[200px] md:w-[250px]"
+          customClass="w-[160px] text-lg md:text-[22px]"
           onClick={() => {
             authModalStore.set({ visible: true, page: "user-selection" });
           }}
@@ -266,6 +303,11 @@
     </div>
   </SubscriptionCard>
 </div>
+
+<!-- Result animation - show only when score > 0 and animation not hidden -->
+{#if playerScore > 0 && !hideAnimation}
+  <ResultAnimation scoreToShow={playerScore} onComplete={handleAnimationComplete} />
+{/if}
 
 {#if hidePopup}
   <AuthenticationPopupView />
@@ -284,12 +326,25 @@
     z-index: 0;
   }
 
-  /* Add responsive styles */
-  @media (max-width: 768px) {
-    /* .bonzoui__winner__ribbon img {
-            max-width: 140px;
-        } */
+  .result-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+  }
 
+  .result-content.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* If no animation, show content immediately */
+  .result-content:not(.fade-in) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+
+  @media (max-width: 768px) {
     .bonzoui__single__result__ribbon__sp {
       font-size: 14px;
     }
@@ -298,10 +353,4 @@
       font-size: 14px;
     }
   }
-
-  /* @media (max-width: 480px) {
-        .bonzoui__winner__ribbon img {
-            max-width: 120px;
-        }
-    } */
 </style>

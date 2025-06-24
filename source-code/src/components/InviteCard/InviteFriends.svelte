@@ -18,7 +18,7 @@
 
   const user_id = get(userStore)?.user_id;
   const user_enc_id = encodeDecode("enc", `${user_id}`);
-  console.log("this is user id", user_id, user_enc_id);
+  // console.log("this is user id", user_id, user_enc_id);
 
   const ShareLinkUrl = `account/sign-up?friends_id=${user_enc_id}`;
 

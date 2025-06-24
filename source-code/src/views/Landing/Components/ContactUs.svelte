@@ -1,5 +1,5 @@
 <script>
-  import { useInView } from "$lib/utils";
+  import { getInstanceText, useInView } from "$lib/utils";
   import { t } from "../../../stores/language.store";
   const contactInfo = [
     {
@@ -35,13 +35,13 @@
       class="text-3xl md:text-5xl font-semibold text-blue-900 text-center max-w-lg md:max-w-2xl mx-auto leading-snug"
       use:useInView={{ animationClass: "animate__fadeIn" }}
     >
-      {$t("contact_us_main_title")}
+      {getInstanceText($t, "contact_us_main_title")}
     </h2>
     <p
       class="mt-4 text-gray-600 text-lg md:text-[22px] max-w-full md:max-w-3xl mx-auto text-center leading-snug"
       use:useInView={{ animationClass: "animate__fadeIn" }}
     >
-      {$t("contact_us_main_description")}
+      {getInstanceText($t, "contact_us_main_description")}
     </p>
   </div>
 

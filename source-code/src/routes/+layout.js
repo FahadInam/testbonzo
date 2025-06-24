@@ -7,9 +7,7 @@ export const load = async (event) => {
   await initializeLanguage("en", event); // Wait for language to load
 
   // Dynamically import the function after language is set, otherwise, a race condition occurs
-  const { updateInstanceConfig, updateLocalConfig } = await import(
-    "../data-actions/instance/instance.da"
-  );
+  const { updateInstanceConfig, updateLocalConfig } = await import("../data-actions/instance/instance.da");
 
   // Call the function
   updateInstanceConfig();

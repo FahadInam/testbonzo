@@ -10,14 +10,11 @@ import { appbarStore } from "../stores/appbar.store";
 import { setBackUrl } from "../stores/navigation.store";
 import { getText } from "../stores/language.store";
 import { gradesStore } from "../stores/grades.store";
-import {
-  isGCLC,
-  isPocketGames,
-  isQuotient,
-  isShupavu,
-} from "../data-actions/system/system..da";
+import { isGCLC, isPocketGames, isQuotient, isSGG, isShupavu } from "../data-actions/system/system..da";
 import { goto } from "$app/navigation";
 import { INSTANCES_ID } from "./constants/config.constants";
+import { systemSettingsStore } from "../stores/systemsettings.store";
+import { redirect } from "@sveltejs/kit";
 
 /**
  * Remaps keys in a JSON object based on a replacers mapping.
@@ -125,8 +122,7 @@ export async function waitForGradeData() {
   return await awaitStoreKey(gradesStore, "current_grade");
 }
 
-export const getRandomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
+export const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const RemoveDuplicates = (myArr, prop) => {
   return myArr.filter((obj, pos, arr) => {
@@ -171,10 +167,7 @@ export function abbreviateNumber(num, digits = 1) {
 
   const unit = units.find((u) => num >= u.value) || units[units.length - 1];
 
-  return (
-    (num / unit.value).toFixed(digits).replace(/\.0+$|(\.\d*[1-9])0+$/, "$1") +
-    unit.symbol
-  );
+  return (num / unit.value).toFixed(digits).replace(/\.0+$|(\.\d*[1-9])0+$/, "$1") + unit.symbol;
 }
 
 export const sideBarAndAppBarSettings = async (
@@ -186,14 +179,16 @@ export const sideBarAndAppBarSettings = async (
 
   // Pre-fetch translated backLabel
   const translatedBackLabel = await getText(backLabel);
+  const backLabelText = await getText("back");
 
+  const isPrincipal = get(userStore).active_role === "principal";
   // Update appbar state after sidebar update
   setTimeout(() => {
     appbarStore.set({
       visible: true,
-      backLabel: translatedBackLabel,
+      backLabel: isPrincipal ? backLabelText : translatedBackLabel,
       isLogoVisible: false,
-      isCoinVisible: true,
+      isCoinVisible: isPrincipal ? false : true,
       isBackButtonVisible: true,
       isProfileVisible: true,
     });
@@ -213,33 +208,34 @@ export const formatText = (message, jsonString) => {
   const boldEmail = `<b>${email}</b>`;
   const boldContentTitle = `<b>${contentTitle}</b>`;
 
-  const formattedMessage = message
-    .replace(email, boldEmail)
-    .replace(contentTitle, boldContentTitle);
+  const formattedMessage = message.replace(email, boldEmail).replace(contentTitle, boldContentTitle);
   console.log(formattedMessage, "formattedMessage");
   return formattedMessage;
 };
 
 export const getSortedAvatars = (avatarFiles, isPocketGames) => {
   let avatars = Object.keys(avatarFiles)
-    .filter((key) => !key.includes("a66.png") && !key.includes("a67.png")) // Exclude a66.png and a67.png
+    .filter((key) => !key.includes("a66.png") && !key.includes("a67.png")) // Exclude specific avatars
     .sort((a, b) => {
       const numA = parseInt(a.match(/a(\d+)\.png/)[1], 10);
       const numB = parseInt(b.match(/a(\d+)\.png/)[1], 10);
       return numA - numB;
     })
-    .map((key) => avatarFiles[key].default);
+    .map((key) => key); // Just use the URL string directly
 
-  // If isPocketGames is true, limit avatars to the first 14 (a1 to a14)
+  // Limit to first 14 avatars if isPocketGames is true
   if (isPocketGames) {
     avatars = avatars.slice(0, 14);
   }
 
-  return avatars; // If isPocketGames is false, return all avatars
+  return avatars;
 };
 
 export const extractAvatarNumber = (avatarLink) => {
-  const match = avatarLink.match(/a(\d+)\.png$/);
+  // Extract the filename from the URL
+  const filename = avatarLink.split("/").pop(); // e.g., "a41.DXZ5qRWm.png"
+  // Match 'a' followed by digits at the start of the filename
+  const match = filename.match(/^a(\d+)/);
   return match ? match[1] : null;
 };
 
@@ -300,28 +296,31 @@ export const encodeDecode = (type, value) => {
   return changedValue;
 };
 
-export function getInstanceText(texts, id, current_instance_id) {
-  let text_id = id;
-  if (current_instance_id === INSTANCES_ID.BONZO_ID) {
-    text_id = `${text_id}`;
-  } else if (current_instance_id === INSTANCES_ID.GLOBAL_CLIMATE_LITERACY_ID) {
-    text_id = `gg_${text_id}`;
-  } else if (current_instance_id === INSTANCES_ID.SHUPAVU_ID) {
-    text_id = `sh_${text_id}`;
-  } else if (current_instance_id === INSTANCES_ID.POCKET_GAMES_ID) {
-    text_id = `pg_${text_id}`;
-  } else if (current_instance_id === INSTANCES_ID.QUOTIENT_ID) {
-    text_id = `qg_${text_id}`;
+function resolveTextId(id) {
+  const instanceId = get(systemSettingsStore)?.instance_id;
+  const prefixMap = {
+    [INSTANCES_ID.GLOBAL_CLIMATE_LITERACY_ID]: "gg_",
+    [INSTANCES_ID.SHUPAVU_ID]: "sh_",
+    [INSTANCES_ID.POCKET_GAMES_ID]: "pg_",
+    [INSTANCES_ID.QUOTIENT_ID]: "qg_",
+  };
+  return prefixMap[instanceId] ? prefixMap[instanceId] + id : id;
+}
+
+export function getInstanceText(textFn, id) {
+  if (!textFn || typeof textFn !== "function") return undefined;
+
+  const textId = resolveTextId(id);
+  return textFn(textId) || textFn(id);
+}
+
+export async function getInstanceTextAsync(id) {
+  const textId = resolveTextId(id);
+
+  let result = await getText(textId);
+  if (!result) {
+    result = await getText(id);
   }
-
-  let result = texts(`${text_id}`);
-
-  // Fallback: Check the base text ID if the prefixed ID doesn't exist
-  if (result === undefined) {
-    // console.log(`Text with key "${text_id}" not found. Falling back to base ID "${id}".`);
-    result = texts(`${id}`);
-  }
-
   return result;
 }
 
@@ -352,8 +351,10 @@ export function LandingPageNavigation() {
   else if (isGCLC) {
     const targetDomain = "https://globalclimateliteracy.org/";
     const targetDomain2 = "https://www.globalclimateliteracy.org/";
-    if (currentUrl === targetDomain || currentUrl === targetDomain2) {
-      window.location.href = `${targetDomain}program/glc`;
+    const targetDomain3 = "https://kpbonzodev.netlify.app";
+    // TODO: change local when going live
+    if (currentUrl === targetDomain || currentUrl === targetDomain2 || location.origin === targetDomain3) {
+      throw redirect(302, `${location.origin}/program/glc`);
     }
   }
 
@@ -365,6 +366,14 @@ export function LandingPageNavigation() {
       window.location.href = "https://quotient.games/";
     }
   }
+
+  // SGG Logic
+  else if (isSGG) {
+    const targetDomain = "https://games.greenguardians.com/";
+    if (window.location.href === targetDomain) {
+      window.location.href = "https://singapore.greenguardians.com/competitions";
+    }
+  }
 }
 
 /**
@@ -374,4 +383,16 @@ export function LandingPageNavigation() {
 export function IsGuestMode() {
   const userData = get(userStore);
   return !!userData.is_guest_mode;
+}
+
+/**
+ * @returns {boolean} true if screen width is less than 1024px
+ */
+export function isMobile() {
+  // Check if we're in a browser environment (important for SSR)
+  if (typeof window === "undefined") {
+    return false; // Default to desktop for server-side rendering
+  }
+
+  return window.innerWidth < 1024;
 }

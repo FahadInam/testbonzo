@@ -4,7 +4,10 @@
   import Button from "../../components/Button/Button.svelte";
   import SideBar from "../../components/SideBar/SideBar.svelte";
   import StickyBanner from "../../components/StickyBanner/StickyBanner.svelte";
-  import { getNavBarItems } from "../../data-actions/competitions/competitions.da";
+  import {
+    getNavBarItems,
+    loadGrades,
+  } from "../../data-actions/competitions/competitions.da";
   import { appbarStore } from "../../stores/appbar.store";
   import { authModalStore } from "../../stores/auth.modal.store";
   import { t } from "../../stores/language.store";
@@ -22,6 +25,9 @@
   import { competitionStore } from "../../stores/competition.store";
   import { paymentStore } from "../../stores/payment.store";
   import { afterNavigate, goto } from "$app/navigation";
+  import { get } from "svelte/store";
+  import { transferStore } from "../../stores/transfer.store";
+    import { guestStore } from "../../stores/guest.store";
 
   /**
    * @type {({ icon: string; label: any; link: string; isRequired: boolean; } | { icon: string; label: any; link: string; isRequired?: undefined; })[]}
@@ -36,6 +42,7 @@
   let showBanner = false;
   const onCompetitionLayoutLoad = async () => {
     sideBarNavItems = await getNavBarItems();
+    const grades = get(transferStore);
     //code for handling dropdown items in app bar
     if ($userStore.is_guest_mode) {
       dropdownItems = guestUserAppBarData;
@@ -43,8 +50,11 @@
       if (window && window.location.pathname == "/competitions") {
         dropdownItems = loggedInUserAppBarData;
       } else {
+        if (!Array.isArray(grades) || !grades.length) {
+          await loadGrades();
+        }
         // @ts-ignore
-        dropdownItems = loggedInUserCompAppBarData;
+        dropdownItems = await loggedInUserCompAppBarData();
       }
     }
   };
@@ -65,6 +75,7 @@
     setTimeout(() => {
       hidePopup = false;
     }, 60);
+    
   });
 </script>
 

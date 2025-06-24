@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 
 const initialState = {
-  points: 0,
+  points: null,
   guest_mode: false,
 };
 

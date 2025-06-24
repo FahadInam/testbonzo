@@ -7,15 +7,18 @@
   import DataCard from "../../../../../components/DataCard/DataCard.svelte";
   import {
     getProfileData,
-    userProfileFields,
+    getUserProfileFields,
   } from "../../../../../data-actions/profile/profile.da";
   import ProfileEditView from "../../../../../views/ProfileEditView/ProfileEditView.svelte";
   import EditProfileSkeleton from "../../../../../components/Skeleton/EditProfileSkeleton.svelte";
 
-  let userProfileForm = { ...userProfileFields };
+  let userProfileForm = {};
   let isLoading = true;
   let profile_picture = "";
 
+  async function loadFields() {
+    userProfileForm = await getUserProfileFields();
+  }
   // Fetches user profile and initializes form data
   async function fetchUserProfile() {
     const userData = await getProfileData();
@@ -69,6 +72,7 @@
 
   // fetch user profile data on component mount
   onMount(async () => {
+    await loadFields();
     await fetchUserProfile();
   });
 
@@ -82,7 +86,7 @@
   });
 </script>
 
-<div class="w-full max-w-[940px] m-auto">
+<div class="w-full max-w-[940px] m-auto px-4">
   {#if isLoading}
     <div class="w-full">
       <EditProfileSkeleton />

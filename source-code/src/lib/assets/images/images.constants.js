@@ -171,6 +171,8 @@ import cert_lock_icon from "$lib/assets/images/bonzoui/cert_lock_icon.png";
 import certificate_lock from "$lib/assets/images/tabicons/certificate_lock.png";
 import confetti_icon from "$lib/assets/images/tabicons/confetti.png";
 import single_player_image from "$lib/assets/images/tabicons/playersingle.svg";
+import sgg_web_logo from "$lib/assets/images/home_images/sgg/sgg-logo.png";
+import sgg_mobile_logo from "$lib/assets/images/home_images/sgg/sgg-mobile-logo.png";
 
 export const IMAGES = {
   WARNING: warning,
@@ -312,6 +314,10 @@ export const IMAGES = {
   GCLC_WEB_LOGO: gclc_web_logo,
   GCLC_MOBILE_LOGO: gclc_mobile_logo,
   GCLC_WEB_LIGHT_LOGO: gclc_web_light_logo,
+
+  // sgg images
+  SGG_WEB_LOGO: sgg_web_logo,
+  SGG_MOBILE_LOGO: sgg_mobile_logo,
 
   // shupavu images
   SHUPAVU_WEB_LOGO: shupavu_web_logo,

@@ -8,7 +8,7 @@ import { instanceStore } from "../../stores/instance.store";
 import { getText } from "../../stores/language.store";
 import { TIMEZONE_ENUM as TimeZoneList } from "$lib/constants/timezone.constants";
 import { isShupavu } from "../system/system..da";
-import { isNormalUser, isSafaricomUser } from "$lib/constants/user.constants";
+import { isNormalUser, isSafaricomUser, USER_TYPE } from "$lib/constants/user.constants";
 import { SUBSCRIPTION_BUNDLES } from "$lib/constants/payment.constants";
 import { competitionStore } from "../../stores/competition.store";
 
@@ -49,10 +49,7 @@ export const paymentDataFields = {
 
 export const GetSubscriptionDetails = async () => {
   const user = get(userStore);
-  const id =
-    user.active_role === "principal"
-      ? user.school_id
-      : get(paymentStore).competition_id;
+  const id = user.active_role === "principal" ? user.school_id : get(paymentStore).competition_id;
   const apiEndpoint =
     user.active_role === "principal"
       ? API_DEFINITIONS.PRINCIPAL_PAYMENT_SUBSCRIPTIONS
@@ -96,11 +93,7 @@ export function processPaymentData(urlParams) {
 export function calculateExpiryDate(daysOrDate) {
   console.log(daysOrDate, "daysOrDate");
   let baseDate;
-  if (
-    typeof daysOrDate === "string" &&
-    daysOrDate.trim() !== "" &&
-    !isNaN(Date.parse(daysOrDate))
-  ) {
+  if (typeof daysOrDate === "string" && daysOrDate.trim() !== "" && !isNaN(Date.parse(daysOrDate))) {
     // Handle valid date string
     baseDate = new Date(daysOrDate);
     baseDate.setDate(baseDate.getDate() + 1); // Default to adding 1 day
@@ -143,10 +136,7 @@ export function getUserData(subscriptionData) {
     duration_in_days: subscriptionData[0].duration_in_days,
     amount: subscriptionData[0].amount,
     authToken: userData.auth_token,
-    system_id:
-      userData.active_role === "principal"
-        ? +userData.school_id
-        : compData?.competition_id,
+    system_id: userData.active_role === "principal" ? +userData.school_id : compData?.competition_id,
     user_id: userData.user_id,
     username: userData.username,
     email: userData.email,
@@ -215,9 +205,7 @@ export function isPaymentSuccessful(paymentData) {
   if (!paymentData) {
     return;
   }
-  return isShupavu
-    ? paymentData.response_status === "000"
-    : paymentData.transactionStatus === 2;
+  return isShupavu ? paymentData.response_status === "000" : paymentData.transactionStatus === 2;
 }
 
 /**
@@ -235,17 +223,13 @@ export function getPaymentTitle(isSuccessful, t) {
  * @returns {string} The appropriate description text
  */
 export function getPaymentDescription(isSuccessful, t) {
-  if (!isSuccessful && isShupavu && isSafaricomUser) {
+  if (!isSuccessful && isShupavu && isSafaricomUser()) {
     return getErrorDescription(t);
   }
   if (isShupavu) {
-    return isSuccessful
-      ? t("shupavu_success_description")
-      : t("shupavu_failed_description");
+    return isSuccessful ? t("shupavu_success_description") : t("shupavu_failed_description");
   } else {
-    return isSuccessful
-      ? t("payment_success_description")
-      : t("payment_failed_description");
+    return isSuccessful ? t("payment_success_description") : t("payment_failed_description");
   }
 }
 
@@ -257,23 +241,19 @@ export function getPaymentDescription(isSuccessful, t) {
  * @returns {Array} Filtered array of bundles
  */
 export function filterBundlesByUserType(bundles) {
-  console.log(bundles, "bundles");
   // If the user is a Safaricom user, only show daily bundle
-  if (isSafaricomUser) {
-    return bundles?.filter(
-      (bundle) => bundle.subscription_guid === SUBSCRIPTION_BUNDLES.DAILY,
-    );
+  if (isSafaricomUser()) {
+    return bundles?.filter((bundle) => bundle.subscription_guid === SUBSCRIPTION_BUNDLES.DAILY);
   }
 
   // If the user is a normal user, show monthly and weekly packages only
-  if (isNormalUser) {
+  if (isNormalUser()) {
     return bundles?.filter(
       (bundle) =>
         bundle.subscription_guid === SUBSCRIPTION_BUNDLES.WEEKLY ||
         bundle.subscription_guid === SUBSCRIPTION_BUNDLES.MONTHLY,
     );
   }
-
   // Default: return all bundles
   return bundles;
 }

@@ -8,7 +8,7 @@
   import PageHeading from "../../../components/PageHeading/PageHeading.svelte";
   import { goto } from "$app/navigation";
   import InviteCard from "../../../components/InviteCard/InviteCard.svelte";
-  import { getItemByProperty, remapKeys } from "$lib/utils";
+  import { getInstanceText, getItemByProperty, remapKeys } from "$lib/utils";
   import { restoreScrollPosition } from "$lib/scroll.handler";
   import { getCompetitions } from "../../../data-actions/competitions/competitions.da";
   import CompetitionCardsContainer from "../../../components/CompetitionCards/CompetitionCardsContainer.svelte";
@@ -22,13 +22,12 @@
   import { userStore } from "../../../stores/user.store";
   import { sidebarStore } from "../../../stores/sidebar.store";
   import { metaStore } from "../../../stores/meta.store";
+  import { isGCLC } from "../../../data-actions/system/system..da";
 
   // let instance;
   let unsubscribe;
   const instance = get(instanceStore);
-  let banner_text = instance.banner_text
-    ? JSON.parse(instance.banner_text)
-    : null;
+  let banner_text = instance.banner_text ? JSON.parse(instance.banner_text) : null;
   const user = get(userStore);
   let text = "";
 
@@ -103,11 +102,7 @@
     }
   });
 
-  $: text = getTextForRole(
-    user?.active_role,
-    isPaidUser ? 1 : 0,
-    banner_text?.banner_text,
-  ).text;
+  $: text = getTextForRole(user?.active_role, isPaidUser ? 1 : 0, banner_text?.banner_text).text;
 
   const continueToPay = () => {
     goto("/payment");
@@ -122,11 +117,7 @@
 <div class="container mx-auto px-4 md:px-6 lg:px-8 mb-8">
   {#if isPaidUser}
     <div class="w-full mb-8">
-      <PageHeading
-        icon={IMAGES.COMPETITION_IMG}
-        title={"competitions"}
-        imageClass="w-9 h-11 sm:w-13 sm:h-11"
-      />
+      <PageHeading icon={IMAGES.COMPETITION_IMG} title={"competitions"} imageClass="w-9 h-11 sm:w-13 sm:h-11" />
     </div>
     {#if text}
       <div class="flex flex-col items-center mb-8">
@@ -141,11 +132,7 @@
       <CompetitionCardsContainer
         {competitions}
         onItemClick={(id) => {
-          const compItem = getItemByProperty(
-            id,
-            competitionsData,
-            "competition_id",
-          );
+          const compItem = getItemByProperty(id, competitionsData, "competition_id");
           competitionStore.set(compItem);
 
           goto("competitions/" + compItem.url + "/overview");
@@ -166,11 +153,7 @@
           {$t("pay_message")}
         </div>
         <div class="pt-2">
-          <Button
-            label={$t("continue_pay")}
-            width="full"
-            onClick={continueToPay}
-          />
+          <Button label={$t("continue_pay")} width="full" onClick={continueToPay} />
         </div>
       </div>
 
@@ -180,13 +163,15 @@
         <div class="relative w-full" style="padding-top: 56.25%;">
           <iframe
             class="absolute top-0 left-0 w-full h-full"
-            src="https://player.vimeo.com/video/1018288891?"
-            title={$t("bonzo_overview")}
+            src={isGCLC
+              ? "https://player.vimeo.com/video/1018226363?h=fb809ecf76"
+              : "https://player.vimeo.com/video/1018288891?"}
+            title={getInstanceText($t, "bonzo_overview")}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>
-        <div class="font-bold text-2xl">
-          {$t("bonzo_overview")}
+        <div class="font-semibold md:text-2xl text-xl text-gray-900">
+          {getInstanceText($t, "bonzo_overview")}
         </div>
       </div>
     </div>

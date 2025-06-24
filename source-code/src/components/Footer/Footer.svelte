@@ -1,9 +1,11 @@
 <script>
   import { goto } from "$app/navigation";
   import { IMAGES } from "$lib/assets/images/images.constants";
+  import { get } from "svelte/store";
+  import { systemSettingsStore } from "../../stores/systemsettings.store";
   import Button from "../Button/Button.svelte";
   import Image from "../Image/Image.svelte";
-
+  const config = get(systemSettingsStore);
   const socialMediaLinks = [
     {
       name: "Facebook",
@@ -39,8 +41,8 @@
 
   const navLinks = [
     { name: "Home", action: () => goto("/") },
-    { name: "Features", action: () => console.log("Features") },
-    { name: "Sign up", action: () => goto("/account/signup") },
+    // { name: "Features", action: () => console.log("Features") },
+    { name: "Sign up", action: () => goto(config?.principal_enabled ? "/account/signup" : "/account/user/signup") },
     { name: "Privacy Policy", action: () => goto("/privacy-policy") },
   ];
 
@@ -51,26 +53,16 @@
   <div class="px-4 mt-10 lg:px-20 space-y-16 relative">
     <div class="flex flex-wrap items-center justify-between">
       <div class="w-full lg:w-1/4 flex justify-center lg:justify-start">
-        <Image
-          src={IMAGES.BONZO_TAGLINE_WHITE_LOGO}
-          alt="Bonzo Logo"
-          className="w-52 lg:w-40"
-        />
+        <Image src={IMAGES.BONZO_TAGLINE_WHITE_LOGO} alt="Bonzo Logo" className="w-52 lg:w-40" />
       </div>
 
-      <div
-        class="w-full lg:w-2/4 flex flex-wrap justify-center lg:justify-center gap-4 mt-6 lg:mt-0"
-      >
+      <div class="w-full lg:w-2/4 flex flex-wrap justify-center lg:justify-center gap:4 md:gap-8 mt-6 lg:mt-0">
         {#each navLinks as link, index}
-          <button class="hover:underline" on:click={link.action}
-            >{link.name}</button
-          >
+          <button class="hover:underline" on:click={link.action}>{link.name}</button>
         {/each}
       </div>
 
-      <div
-        class="w-full lg:w-1/4 flex justify-center lg:justify-end mt-6 lg:mt-0 items-center"
-      >
+      <div class="w-full lg:w-1/4 flex justify-center lg:justify-end mt-6 lg:mt-0 items-center">
         {#each socialMediaLinks as link}
           <a
             href={link.url}
@@ -87,11 +79,7 @@
     <div class="border-t border-white mt-6 pt-4">
       <p class="text-center text-base">
         ©{currentYear}
-        <a
-          href="http://www.knowledgeplatform.com/"
-          class="text-yellow-400 hover:text-yellow-500"
-          target="_blank"
-        >
+        <a href="http://www.knowledgeplatform.com/" class="text-yellow-400 hover:text-yellow-500" target="_blank">
           Knowledge Platform.</a
         >
         All rights reserved.

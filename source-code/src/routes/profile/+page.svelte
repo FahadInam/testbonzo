@@ -151,7 +151,7 @@
     ? completions
     : completions.slice(0, 3);
 
-  $: console.log(displayedAchievements, "displayedAchievements");
+  // $: console.log(displayedAchievements, "displayedAchievements");
   // Toggle functions
   function toggleAchievements() {
     showAllAchievements = !showAllAchievements;
@@ -297,7 +297,8 @@
                     {#if displayedAchievements.length === 0}
                       <div class="pb-3">
                         <NoDataFound
-                          backgroundColor="bg-gray-100"
+                          backgroundColor="bg-white"
+                          customClass="shadow-none"
                           textColor="text-black"
                           noDataMsg="At present, no certificates of achievement are available."
                         />
@@ -359,7 +360,8 @@
                     {#if displayedCompletions.length === 0}
                       <div class="pb-3">
                         <NoDataFound
-                          backgroundColor="bg-gray-100"
+                          backgroundColor="bg-white"
+                          customClass="shadow-none"
                           textColor="text-black"
                           noDataMsg="At present, no certificates of completion are available."
                         />

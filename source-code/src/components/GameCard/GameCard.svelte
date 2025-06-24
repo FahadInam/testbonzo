@@ -1,6 +1,6 @@
 <script>
   import { getGameContentType, getRandomSubjectImage } from "./GameCard";
-  export let completion = "0/10";
+  export let completion = null;
 
   /**
    * @type {object}
@@ -56,7 +56,7 @@
 
   <div class="flex justify-between items-end px-2.5">
     <div
-      class="bonzo-bg-green font-medium text-white mt-2 rounded-full w-13 h-7 sm:w-12 md:w-14 flex items-center justify-center"
+      class={`${completion ? 'bonzo-bg-green' : ''} font-medium text-white mt-2 rounded-full w-13 h-7 sm:w-12 md:w-14 flex items-center justify-center`}
     >
       {completion}
     </div>

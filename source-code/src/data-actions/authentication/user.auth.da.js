@@ -29,49 +29,60 @@ import { guestStore } from "../../stores/guest.store";
 import { competitionStore } from "../../stores/competition.store";
 import { gradesStore } from "../../stores/grades.store";
 import { setGradePoints } from "../challenge/challenge.da";
+import { systemSettingsStore } from "../../stores/systemsettings.store";
+import { USER_TYPE } from "$lib/constants/user.constants";
 
 /*
  *
  * DATA
  *
  */
-export const userLoginForm = {
-  ...(isShupavu ? shupavuLoginFields : loginFields),
-  handleSubmit: async (/** @type {any} */ formData) => {
-    await loginUser(formData.email, formData.password, formData.phone_number);
-  },
-  ...(isShupavu
-    ? {}
-    : {
-        alternativeButtons: [
-          {
-            label: await getText("c_coach"),
-            type: "secondary-outlined-inverted",
-            image: "/images/coach-icon.png",
-            onClick: () => openCoachApp(),
-          },
-          {
-            label: await getText("c_google"),
-            type: "secondary-outlined-inverted",
-            image: "/images/google-icon.png",
-            /** @param {string} role */
-            onClick: (role) => handleGoogleLogin(role),
-          },
-        ],
-      }),
-  footer: {
-    text: await getText("no_account"),
-    button: {
-      label: await getText("signup"),
-      type: "secondary-outlined-inverted",
-      link: "/account/user/signup",
+export const getUserLoginForm = async () => {
+  const config = get(systemSettingsStore);
+
+  return {
+    ...(isShupavu ? shupavuLoginFields : loginFields),
+    handleSubmit: async (/** @type {any} */ formData) => {
+      await loginUser(formData.email, formData.password, formData.phone_number);
     },
-  },
-  forgotPassword: {
-    label: await getText("forgot_password"),
-    link: "/account/forgot-password",
-  },
-  role: "login",
+    ...(isShupavu
+      ? {}
+      : {
+          alternativeButtons: [
+            ...(config?.lms_login_enabled
+              ? [
+                  {
+                    label: await getText("c_coach"),
+                    type: "secondary-outlined-inverted",
+                    image: "/images/coach-icon.png",
+                    onClick: () => openCoachApp(),
+                  },
+                ]
+              : []),
+            {
+              label: await getText("c_google"),
+              type: "secondary-outlined-inverted",
+              image: "/images/google-icon.png",
+              /** @param {string} role */
+              onClick: (role) => handleGoogleLogin(role),
+            },
+          ],
+        }),
+    footer: {
+      text: await getText("no_account"),
+      button: {
+        label: await getText("signup"),
+        type: "secondary-outlined-inverted",
+        //link: "/account/user/signup",
+        link: config?.principal_enabled ? "/account/signup" : "/account/user/signup",
+      },
+    },
+    forgotPassword: {
+      label: await getText("forgot_password"),
+      link: "/account/forgot-password",
+    },
+    role: "login",
+  };
 };
 
 const getSignUpFields = () => {
@@ -84,43 +95,51 @@ const getSignUpFields = () => {
   return signUpFields;
 };
 
-export const userSignUpForm = {
-  ...getSignUpFields(),
-  handleSubmit: async (/** @type {any} */ formData) => {
-    await signUpUserUsingFormData(formData);
-  },
-  ...(isShupavu
-    ? {}
-    : {
-        alternativeButtons: [
-          {
-            label: await getText("c_coach"),
-            type: "secondary-outlined-inverted",
-            image: "/images/coach-icon.png",
-            onClick: () => openCoachApp(),
-          },
-          {
-            label: await getText("c_google"),
-            type: "secondary-outlined-inverted",
-            image: "/images/google-icon.png",
-            /** @param {string} role */
-            onClick: (role) => handleGoogleLogin(role),
-          },
-        ],
-      }),
-  footer: {
-    text: await getText("already_account"),
-    button: {
-      label: await getText("login"),
-      type: "secondary-outlined-inverted",
-      link: "/account/user/login",
+export const getUserSignUpForm = async () => {
+  const config = get(systemSettingsStore);
+
+  return {
+    ...getSignUpFields(),
+    handleSubmit: async (/** @type {any} */ formData) => {
+      await signUpUserUsingFormData(formData);
     },
-  },
-  role: "learner",
+    ...(isShupavu
+      ? {}
+      : {
+          alternativeButtons: [
+            ...(config?.lms_login_enabled
+              ? [
+                  {
+                    label: await getText("c_coach"),
+                    type: "secondary-outlined-inverted",
+                    image: "/images/coach-icon.png",
+                    onClick: () => openCoachApp(),
+                  },
+                ]
+              : []),
+            {
+              label: await getText("c_google"),
+              type: "secondary-outlined-inverted",
+              image: "/images/google-icon.png",
+              /** @param {string} role */
+              onClick: (role) => handleGoogleLogin(role),
+            },
+          ],
+        }),
+    footer: {
+      text: await getText("already_account"),
+      button: {
+        label: await getText("login"),
+        type: "secondary-outlined-inverted",
+        link: "/account/user/login",
+      },
+    },
+    role: "learner",
+  };
 };
 
-export const userSignUpFormPopup = {
-  ...userSignUpForm,
+export const userSignUpFormPopup = async () => ({
+  ...(await getUserSignUpForm()),
   footer: {
     text: await getText("already_account"),
     button: {
@@ -131,10 +150,10 @@ export const userSignUpFormPopup = {
       },
     },
   },
-};
+});
 
-export const userLoginFormPopup = {
-  ...userLoginForm,
+export const userLoginFormPopup = async () => ({
+  ...(await getUserLoginForm()),
   footer: {
     text: await getText("no_account"),
     button: {
@@ -145,7 +164,7 @@ export const userLoginFormPopup = {
       },
     },
   },
-};
+});
 
 export const forgotPasswordForm = {
   ...forgotPasswordFields,
@@ -182,21 +201,19 @@ export const resetPasswordForm = {
 /**
  * @param {Record<string, any>} formData
  */
-export async function signUpUserUsingFormData(
-  formData,
-  userRole = "learner",
-  otpSuccess = false,
-) {
+export async function signUpUserUsingFormData(formData, userRole = "learner", otpSuccess = false) {
+  const config = get(systemSettingsStore);
+  const domain = window.location.hostname;
+  const userType = isShupavu && domain.includes(config?.safaricom_domain) ? USER_TYPE.Safaricom : undefined;
+
   const signUpData = remapKeys(
     {
       ...formData,
       name: "",
-      profile_picture: (isPocketGames
-        ? getRandomGenericAvatar().id
-        : getRandomAvatar()
-      ).toString(),
-      role: userRole,
+      profile_picture: (isPocketGames ? getRandomGenericAvatar().id : getRandomAvatar()).toString(),
+      role: config?.principal_enabled ? userRole : "learner",
       ...(isShupavu && !otpSuccess && { otp_type: 1 }),
+      ...(userType && { user_type: userType }),
     },
 
     { email: isGCLC ? "email" : "username", turnstileToken: "t_token" },

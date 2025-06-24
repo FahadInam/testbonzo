@@ -6,14 +6,15 @@
   import { NOTIFICATION_TYPE } from "$lib/constants/notification.constants";
   import Image from "../Image/Image.svelte";
   import { IMAGES } from "$lib/assets/images/images.constants";
+    import { invitationAccepted } from "../../data-actions/challenge/challenge.da";
   export let notification;
   
   
   // Handle notification actions
-  function handleReject() {
-    event.preventDefault();
-    console.log("handleReject");
-    // TODO: Reject challenge
+  async function handleReject(notification) {
+     const parsedJson = JSON.parse(notification.json_data);
+    event.stopPropagation();
+    await invitationAccepted(parsedJson, 0);
   }
   
   function handleAccept() {
@@ -21,6 +22,7 @@
   }
 
     function handleClick(data) {
+      console.log(data, "data");
       handleNotificationAction(data);
     // deleteUserNotification(notification.notification_id); 
   }
@@ -70,7 +72,7 @@
         size="small"
         type="3d-primary"
         customClass=" !py-1.5 w-[108px] !text-base"
-        onClick={handleReject}
+        onClick={() => handleReject(notification)}
 
       />
       <Button

@@ -145,7 +145,7 @@ export async function handleInvitationAccept(data) {
       },
       link: parsedJson.link,
     });
-    await invitationAccepted(parsedJson);
+    await invitationAccepted(parsedJson, 1);
     goto("/challenge/vsscreen");
   }
   // const { opponent, playMode, matchData, subjectData } = parsedJson;

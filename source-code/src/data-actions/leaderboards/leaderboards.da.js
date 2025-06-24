@@ -10,7 +10,7 @@ export async function getTopCandidates(currentUser, users) {
     );
     // Get the top 3 users
     let topUsers = sortedUsers.slice(0, 3);
-    console.log(topUsers, "topUsers");
+    // console.log(topUsers, "topUsers");
 
     // If currentUser is null, return top 3 without further checks
     if (!currentUser) {

@@ -46,7 +46,7 @@ export function filterCertificates(apiResponse) {
         json: certificate.achievement_json,
       };
     });
-  console.log(completions, achievements, "completionscompletions");
+  // console.log(completions, achievements, "completionscompletions");
   return { completions, achievements };
 }
 

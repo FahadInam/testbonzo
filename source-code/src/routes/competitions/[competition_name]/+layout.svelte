@@ -43,7 +43,7 @@
     }));
   };
   onMount(async () => {
-    data = await getLearnerPaymentStatus();
+    // data = await getLearnerPaymentStatus();
   });
 </script>
 

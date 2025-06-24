@@ -4,7 +4,7 @@
   import Image from "../../../components/Image/Image.svelte";
   let activeTab = "personalised";
   import { getText, t } from "../../../stores/language.store";
-  import { useInView } from "$lib/utils";
+  import { getInstanceText, useInView } from "$lib/utils";
 
   function setActiveTab(tab) {
     activeTab = tab;
@@ -70,13 +70,13 @@
       class="text-3xl md:text-5xl font-semibold text-blue-900 text-center max-w-lg md:max-w-[400px] mx-auto leading-snug"
       use:useInView={{ animationClass: "animate__fadeIn" }}
     >
-      {$t("enhance_learning_main_title")}
+      {getInstanceText($t, "enhance_learning_main_title")}
     </h2>
     <p
       class="mt-4 text-gray-600 text-lg md:text-[22px] max-w-full md:max-w-4xl mx-auto text-center leading-snug"
       use:useInView={{ animationClass: "animate__fadeIn" }}
     >
-      {$t("enhance_learning_main_description")}
+      {getInstanceText($t, "enhance_learning_main_description")}
     </p>
   </div>
 

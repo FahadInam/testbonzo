@@ -1,7 +1,8 @@
 <script>
-  import { useInView } from "$lib/utils";
+  import { getInstanceText, useInView } from "$lib/utils";
   import Carousel from "../../../components/Carousel/Carousel.svelte";
   import DemoCompetitionCards from "../../../components/DemoCompetitionCards/DemoCompetitionCards.svelte";
+  import NoDataFound from "../../../components/NoDataFound/NoDataFound.svelte";
   import { t } from "../../../stores/language.store";
 
   /**
@@ -37,20 +38,31 @@
       class="text-3xl md:text-5xl font-semibold text-blue-900 text-center max-w-lg md:max-w-2xl mx-auto leading-snug"
       use:useInView={{ animationClass: "animate__fadeIn" }}
     >
-      {$t("demo_competitions_title")}
+      {getInstanceText($t, "demo_competitions_title")}
     </h2>
   </div>
 
   <!-- competitions slider-->
   <div class="px-0 mt-10 lg:px-2 space-y-16">
-    <Carousel settings={carouselSettings}>
-      {#each competitions as competition}
-        <div
-          class="mx-3 w-full flex-[0_0_calc(100%/1)] md:flex-[0_0_calc(100%/3)] px-5 md:px-0"
-        >
-          <DemoCompetitionCards {competition} onItemClick={handleClick} />
-        </div>
-      {/each}
-    </Carousel>
+    {#if competitions.length > 0}
+      <Carousel settings={carouselSettings}>
+        {#each competitions as competition}
+          <div
+            class="mx-3 w-full flex-[0_0_calc(100%/1)] md:flex-[0_0_calc(100%/3)] px-5 md:px-0"
+          >
+            <DemoCompetitionCards {competition} onItemClick={handleClick} />
+          </div>
+        {/each}
+      </Carousel>
+    {:else}
+      <div class="text-center">
+        <NoDataFound
+          noDataMsg="No competitions found"
+          backgroundColor="bg-white"
+          textColor="text-gray-600"
+          customClass="shadow-none"
+        />
+      </div>
+    {/if}
   </div>
 </div>

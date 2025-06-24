@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import AppBar from "../../components/AppBar/AppBar.svelte";
-  import { loggedInUserAppBarData } from "../../data-actions/appbar/appbar.da";
+  import { adminAppBarData, loggedInUserAppBarData } from "../../data-actions/appbar/appbar.da";
   import { appbarStore } from "../../stores/appbar.store";
   import { getText } from "../../stores/language.store";
   import { setBackUrl } from "../../stores/navigation.store";
@@ -31,22 +31,29 @@
   let sideBarNavItems;
 
   const onCompetitionLayoutLoad = async () => {
-    dropdownItems = loggedInUserAppBarData;
+    if ($userStore.active_role == "principal") {
+      dropdownItems = adminAppBarData;
+    } else {
+      dropdownItems = loggedInUserAppBarData;
+    }
+    //dropdownItems = adminAppBarData;
   };
 
   onMount(async () => {
     await onCompetitionLayoutLoad();
-  });
-  if ($userStore.active_role == "principal") {
+    if ($userStore.active_role == "principal") {
     setBackUrl("/admin/competitions/");
   } else {
+    console.log($paymentStore.url, "$paymentStore.url")
     setBackUrl("/competitions/" + $paymentStore.url + "/home");
   }
+  });
+ 
 </script>
 
 <div class="flex flex-col h-screen">
-  <div class="flex flex-1 overflow-hidden">
-    <div class="flex flex-col flex-1">
+  <div class="flex flex-1 overflow-hidden w-full">
+    <div class="flex flex-col flex-1 w-full">
       <AppBar
         backLabel={$appbarStore.backLabel}
         isBackButtonVisible={$appbarStore.isBackButtonVisible}
@@ -58,7 +65,7 @@
         {dropdownItems}
       />
       <div
-        class="bg-white w-[95%] lg:w-[80%] rounded-2xl overflow-y-auto z-1 mb-8 lg:mb-0 p-6 mx-auto"
+        class="bg-white w-[95%] lg:w-[80%] rounded-2xl overflow-y-auto z-1 mb-8 lg:mb-0 sm:p-6 mx-auto scrollbar-hide"
       >
         <div class="w-[91%] mx-auto">
           <slot />

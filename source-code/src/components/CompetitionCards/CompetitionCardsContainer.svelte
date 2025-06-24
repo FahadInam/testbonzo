@@ -10,6 +10,7 @@
   import { get } from "svelte/store";
   import { getTextForRole } from "../../data-actions/banner/banner.text.da";
   import BannerText from "./BannerText.svelte";
+  import NoDataFound from "../NoDataFound/NoDataFound.svelte";
   const instance = get(instanceStore);
   const banner_text = JSON.parse(instance.banner_text);
   const user = get(userStore);
@@ -50,7 +51,6 @@
       ? competitions
       : competitions.filter((comp) => comp.enrolled === 1);
   $: isGuestMode = $userStore?.is_guest_mode;
-
 </script>
 
 <!--heading section-->
@@ -80,7 +80,13 @@
   {#if !isGuestMode && !isPrincipal && text}
     <BannerText {text} />
   {/if}
-  {#each filteredCompetitions as competition}
-    <CompetitionCard {competition} onItemClick={handleClick} />
-  {/each}
+  {#if filteredCompetitions.length > 0}
+    {#each filteredCompetitions as competition}
+      <CompetitionCard {competition} onItemClick={handleClick} />
+    {/each}
+  {:else}
+    <div class="md:max-w-[2000px] md:w-[640px] lg:w-[912px]">
+      <NoDataFound noDataMsg="No competitions found" />
+    </div>
+  {/if}
 </div>

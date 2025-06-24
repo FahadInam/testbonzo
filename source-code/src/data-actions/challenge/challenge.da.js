@@ -1,4 +1,4 @@
-import { abbreviateNumber, waitForCompetitionGradeData } from "$lib/utils";
+import { waitForCompetitionGradeData } from "$lib/utils";
 import { get } from "svelte/store";
 import { competitionStore } from "../../stores/competition.store";
 import { gameDataStore } from "../../stores/gamedata.store";
@@ -8,11 +8,7 @@ import { userStore } from "../../stores/user.store";
 import { getText } from "../../stores/language.store";
 import { IMAGES } from "$lib/assets/images/images.constants";
 import { goto } from "$app/navigation";
-import {
-  resultStore,
-  updateOpponentData,
-  updatePlayerData,
-} from "../../stores/result.store";
+import { resultStore, updateOpponentData, updatePlayerData } from "../../stores/result.store";
 import { showSuccess } from "../../stores/toast.store";
 import { userActivityStore } from "../../stores/useractivity.store";
 import { metaStore } from "../../stores/meta.store";
@@ -24,11 +20,7 @@ export async function getOpponentsToChallenge() {
   const id = get(competitionStore).competition_id;
   const subject = get(gameDataStore).subject;
 
-  return await request(
-    API_DEFINITIONS.CHALLENGE_FRIENDS,
-    { competition_id: id, grade: grade, subject: subject },
-    {},
-  );
+  return await request(API_DEFINITIONS.CHALLENGE_FRIENDS, { competition_id: id, grade: grade, subject: subject }, {});
 }
 
 export const GameMode = Object.freeze({
@@ -99,18 +91,13 @@ export async function PlayChallenge(subjectData) {
 export async function ResignChallenge(subjectData, resultData) {
   console.log(subjectData, resultData, "subjectData");
   // await waitForCompetitionGradeData();
-  const grade = get(metaStore).current_grade;
+  // const grade = get(metaStore).current_grade;
+  const grade = await waitForCompetitionGradeData();
   const id = get(metaStore).id;
   const url = get(metaStore).url;
   const { summary_id, content_id, match_id } = subjectData;
 
-  const {
-    question_data,
-    total_questions,
-    total_correct,
-    total_attempted,
-    total_time_spent,
-  } = resultData;
+  const { question_data, total_questions, total_correct, total_attempted, total_time_spent } = resultData;
   const response = await request(
     API_DEFINITIONS.CHALLENGE_SAVE,
     {
@@ -150,16 +137,11 @@ export async function ResignChallenge(subjectData, resultData) {
  */
 export async function SaveChallenge(subjectData, resultData) {
   await waitForCompetitionGradeData();
-  const grade = get(metaStore).current_grade;
+  // const grade = get(metaStore).current_grade;
+  const grade = await waitForCompetitionGradeData();
   const id = get(metaStore).id;
   const { summary_id, content_id, match_id } = subjectData;
-  const {
-    question_data,
-    total_questions,
-    total_correct,
-    total_attempted,
-    total_time_spent,
-  } = resultData;
+  const { question_data, total_questions, total_correct, total_attempted, total_time_spent } = resultData;
 
   const response = await request(
     API_DEFINITIONS.CHALLENGE_SAVE,
@@ -199,7 +181,9 @@ export async function SaveChallenge(subjectData, resultData) {
  */
 const handleChallengeResponse = (responseData) => {
   const points_earned = get(userActivityStore)?.total_coins_earned;
-  const total_points_earned = +points_earned + responseData?.points_earned;
+
+  const total_points_earned = points_earned + Number(responseData?.points_earned);
+  console.log(responseData, points_earned, total_points_earned, "responseData");
 
   updatePlayerData({
     score: responseData?.my_score,
@@ -216,15 +200,10 @@ const handleChallengeResponse = (responseData) => {
     timeTaken: responseData?.opponent_time_spent,
   });
 
-  console.log(
-    total_points_earned,
-    points_earned,
-    responseData?.points_earned,
-    "points_earned",
-  );
+  console.log(total_points_earned, points_earned, responseData?.points_earned, "points_earned");
 
   userActivityStore.set({
-    total_coins_earned: abbreviateNumber(total_points_earned, 2),
+    total_coins_earned: total_points_earned,
   });
 
   goto("/challenge/result");
@@ -284,10 +263,7 @@ export const WinCalculator = async (matchData, is_mcd) => {
 
   const minAccuracyMet = my_accuracy * 100 >= min_completion_percentage;
   const merge1 = is_mcd ? skill : subject;
-  const opponentDisplayName = UsernameResolver(
-    opponent_name,
-    opponent_username,
-  );
+  const opponentDisplayName = UsernameResolver(opponent_name, opponent_username);
 
   if (result.single) {
     result.title = await getText("single_player");
@@ -364,14 +340,7 @@ export const CHALLENGE_GLOBAL = {
   NOT_FOUND: "NOT_FOUND",
 };
 
-export function updateGameData({
-  opponent,
-  playMode,
-  matchData,
-  subjectData,
-  matchingItem = {},
-  link,
-}) {
+export function updateGameData({ opponent, playMode, matchData, subjectData, matchingItem = {}, link }) {
   console.log(matchingItem, "matchingItem");
   gameDataStore.update((currentData) => {
     return {
@@ -391,7 +360,7 @@ export function updateGameData({
   });
 }
 
-export async function invitationAccepted(data) {
+export async function invitationAccepted(data, status) {
   const { row_id, match_id } = data;
   const competition_id = get(competitionStore).competition_id;
 
@@ -399,15 +368,16 @@ export async function invitationAccepted(data) {
     competition_id,
     row_id,
     match_id,
-    status: 1,
+    status: status,
   });
 }
 
 export async function setGradePoints(data) {
   const { competition_id, grade, points } = data;
+  const pointsToSend = points > 200 ? 200 : points;
   const response = await request(API_DEFINITIONS.SET_GRADE_POINTS, {
     competition_id,
     grade,
-    points,
+    points: pointsToSend,
   });
 }

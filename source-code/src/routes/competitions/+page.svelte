@@ -13,26 +13,17 @@
   import { t } from "../../stores/language.store";
   import { sidebarStore } from "../../stores/sidebar.store";
   import { afterNavigate, goto } from "$app/navigation";
-  import {
-    clearBackUrlIfPathMatches,
-    setBackUrl,
-    storeBackUrlOnNavigationTo,
-  } from "../../stores/navigation.store";
+  import { clearBackUrlIfPathMatches, setBackUrl, storeBackUrlOnNavigationTo } from "../../stores/navigation.store";
   import { browser } from "$app/environment";
   import { appbarStore } from "../../stores/appbar.store";
-  import {
-    addVoucherCode,
-    getCompetitions,
-  } from "../../data-actions/competitions/competitions.da";
-  import {
-    clearScrollPosition,
-    restoreScrollPosition,
-    manageScrollOnNavigation,
-  } from "$lib/scroll.handler";
+  import { addVoucherCode, getCompetitions } from "../../data-actions/competitions/competitions.da";
+  import { clearScrollPosition, restoreScrollPosition, manageScrollOnNavigation } from "$lib/scroll.handler";
   import { competitionStore } from "../../stores/competition.store";
   import VoucherModal from "../../components/CustomModals/VoucherModal.svelte";
   import { systemSettingsStore } from "../../stores/systemsettings.store";
   import { metaStore } from "../../stores/meta.store";
+  import { transferStore } from "../../stores/transfer.store";
+    import { guestStore } from "../../stores/guest.store";
   //get all competitions and show them
 
   /**
@@ -81,7 +72,13 @@
       is_premium: null,
     });
 
+    transferStore.set({});
     fetchCompetitions();
+
+    guestStore.update((state) => ({
+      ...state,
+      points: null,
+    }));
   });
 
   setBackUrl("/");
@@ -138,12 +135,8 @@
     <CompetitionCardsContainer
       {competitions}
       onItemClick={(id) => {
-        console.log("first competition id", id);
-        const compItem = getItemByProperty(
-          id,
-          competitionsData,
-          "competition_id",
-        );
+        // console.log("first competition id", id);
+        const compItem = getItemByProperty(id, competitionsData, "competition_id");
         competitionStore.set(compItem);
         metaStore.update((value) => ({
           ...value,
@@ -162,13 +155,13 @@
     <p class="text-center text-white">{$t("no_competitions")}</p>
   {/if}
 
-  {#if showModal}
-    <VoucherModal
-      bind:showModal
-      onSuccess={fetchCompetitions}
-      onSubmit={addVoucherCode}
-      title={$t("add_voucher_code")}
-      instructionText={$t("voucher_instruction")}
-    />
-  {/if}
+  <!-- {#if showModal} -->
+  <VoucherModal
+    bind:showModal
+    onSuccess={fetchCompetitions}
+    onSubmit={addVoucherCode}
+    title={$t("add_voucher_code")}
+    instructionText={$t("voucher_instruction")}
+  />
+  <!-- {/if} -->
 </div>

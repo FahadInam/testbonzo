@@ -32,6 +32,11 @@
   }
 
   /**
+   * @type {HTMLInputElement}
+   */
+  let inputRef;
+  $: if (showModal && inputRef) inputRef.focus();
+  /**
    * @param {KeyboardEvent} event
    */
   function handleKeyDown(event) {
@@ -44,9 +49,7 @@
 <Modal bind:open={showModal} onClick={closeModal}>
   <!--custom modal header-->
   <span slot="header">
-    <div
-      class="bg-blue-400 px-4 py-3 flex justify-center items-center rounded-t-lg gap-2"
-    >
+    <div class="bg-[var(--accent)] px-4 py-3 flex justify-center items-center rounded-t-lg gap-2">
       <Image src={IMAGES.ADD_CODE_IMG} alt="" className="w-9 h-9 min-w-9" />
       <span class="text-white font-semibold text-xl ms-2">{title}</span>
     </div>
@@ -65,15 +68,11 @@
           placeholder="Enter voucher code..."
           bind:value={voucherCode}
           on:keydown={handleKeyDown}
+          bind:this={inputRef}
           class="w-full border border-gray-300 rounded-lg p-2 py-4 pr-20 text-gray-700 focus:outline-none focus:ring-0"
         />
         <div class="absolute right-1 top-1/2 transform -translate-y-1/2">
-          <Button
-            label="Join"
-            type="primary"
-            customClass="w-[100px]"
-            onClick={() => handleSubmit()}
-          />
+          <Button label="Join" type="primary" customClass="w-[100px]" onClick={() => handleSubmit()} />
         </div>
       </div>
     </div>

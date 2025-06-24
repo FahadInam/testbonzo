@@ -13,7 +13,7 @@
   export let onCancel = () => {};
   export let cancelText;
   export let successText;
-  $: console.log("here Here");
+  // $: console.log("here Here");
   function handleConfirm() {
     showModal = false;
     onConfirm();

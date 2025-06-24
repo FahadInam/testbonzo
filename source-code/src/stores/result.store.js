@@ -6,6 +6,7 @@ const initialState = {
     name: "Player",
     avatar: null,
     score: "0",
+    points: 0,
     accuracy: "0%",
     timeTaken: "0s",
   },

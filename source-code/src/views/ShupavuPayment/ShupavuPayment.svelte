@@ -32,7 +32,7 @@
               back_url: `${baseUrl}/payment`,
               email: data.email,
             }
-            if(isSafaricomUser){
+            if(isSafaricomUser()){
                 await processSafaricomPayment(dto)
             } else{
                 await processDpoPayment(dto)
@@ -40,7 +40,7 @@
 
           };
           $: filteredBundle = filterBundlesByUserType(bundles);
-           $: formFields = isSafaricomUser
+           $: formFields = isSafaricomUser()
   ? paymentDataFields.fields.filter(field => field.name !== 'email')
   : paymentDataFields.fields;
 

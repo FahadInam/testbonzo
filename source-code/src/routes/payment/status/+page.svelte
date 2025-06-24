@@ -25,6 +25,7 @@
   import PaymentFooter from "../../../components/Footer/PaymentFooter.svelte";
   import TransactionReceipt from "../../../components/TransactionReceipt/TransactionReceipt.svelte";
   import PaymentLoader from "../../../components/Loader/PaymentLoader.svelte";
+    import { userStore } from "../../../stores/user.store";
   // Initialize state
   let paymentData = {
     transactionStatus: null,
@@ -87,7 +88,7 @@
         visible: true,
         backLabel: "",
         isLogoVisible: true,
-        isCoinVisible: true,
+        isCoinVisible: false,
         isBackButtonVisible: false,
         isVoucherButtonVisible: false,
         isVoucherModalVisible: false,
@@ -125,15 +126,21 @@
 
   // Navigate to competitions page
   const goToCompetitions = async () => {
-    const competitions = await getCompetitions();
     if (successful) {
+    const competitions = await getCompetitions();
+      if($userStore.active_role == "principal") {
+        goto("/admin/competitions");
+      } else {
       const compItem = getItemByProperty(
         $paymentStore.competition_id,
         competitions.data.competitions,
         "competition_id",
       );
       competitionStore.set(compItem);
-      goto("/competitions/" + compItem.url + "/home");
+      if (compItem?.url) {
+        goto("/competitions/" + compItem.url + "/home");
+      }
+    }
     } else {
       goto("/payment");
     }

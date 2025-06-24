@@ -7,13 +7,17 @@
     loggedInUserAppBarData,
     loggedInUserCompAppBarData,
   } from "../../data-actions/appbar/appbar.da";
-  import { getNavBarItems } from "../../data-actions/competitions/competitions.da";
+  import {
+    getNavBarItems,
+    loadGrades,
+  } from "../../data-actions/competitions/competitions.da";
   import { appbarStore } from "../../stores/appbar.store";
   import { getText } from "../../stores/language.store";
   import { onLayoutPathMount, setBackUrl } from "../../stores/navigation.store";
   import { userStore } from "../../stores/user.store";
   import { userActivityStore } from "../../stores/useractivity.store";
   import { competitionStore } from "../../stores/competition.store";
+  import { transferStore } from "../../stores/transfer.store";
 
   setTimeout(async () => {
     appbarStore.set({
@@ -43,6 +47,7 @@
 
   const onCompetitionLayoutLoad = async () => {
     sideBarNavItems = await getNavBarItems();
+    const grades = get(transferStore);
     //code for handling dropdown items in app bar
     if ($userStore.is_guest_mode) {
       dropdownItems = guestUserAppBarData;
@@ -50,8 +55,11 @@
       if (window && window.location.pathname == "/challenge") {
         dropdownItems = loggedInUserAppBarData;
       } else {
+        if (!Array.isArray(grades) || !grades.length) {
+          await loadGrades();
+        }
         // @ts-ignore
-        dropdownItems = loggedInUserCompAppBarData;
+        dropdownItems = await loggedInUserCompAppBarData();
       }
     }
   };

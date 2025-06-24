@@ -138,11 +138,14 @@
     <!--heading section (with dropdown)-->
     <div class="w-full relative">
       <div
-        class="flex flex-col md:flex-row md:justify-between md:items-center w-full gap-4"
+        class="flex flex-col xl:flex-row xl:justify-between items-center w-full gap-4"
       >
         <!-- Centered Title & Image Wrapper -->
-        <div class="flex items-center gap-3 justify-center md:justify-start">
+        <div
+          class="flex items-center gap-3 xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2"
+        >
           <PageHeading
+            customClass="xl:mr-10"
             icon={IMAGES.LEADERBOARD_ICON}
             title={"players"}
             imageClass="w-9 h-11 sm:w-13 sm:h-11"
@@ -150,28 +153,33 @@
         </div>
 
         <!-- Dropdown Positioned Responsively -->
-        <div class="flex flex-row gap-4 justify-center md:justify-end">
-          {#if gradeOptions.length > 0}
+        <div class="w-full xl:w-auto flex justify-center xl:ml-auto">
+          <div class="flex flex-row gap-4 justify-center md:justify-end">
+            {#if gradeOptions.length > 0}
+              <SelectBox
+                width="100%"
+                customClass="w-20 min-w-[140px] md:min-w-[185px]"
+                options={gradeOptions}
+                onSelect={async (data) => {
+                  selectedGrade = data;
+                  fetchLeaderboard();
+                }}
+              />
+            {/if}
             <SelectBox
-              customClass="w-36"
-              options={gradeOptions}
+              width="100%"
+              customClass="w-20 min-w-[140px] md:min-w-[185px]"
+              options={LeaderboardFilters}
               onSelect={async (data) => {
-                selectedGrade = data;
+                time_type = parseInt(data, 10);
                 fetchLeaderboard();
               }}
             />
-          {/if}
-          <SelectBox
-            customClass="w-36"
-            options={LeaderboardFilters}
-            onSelect={async (data) => {
-              time_type = parseInt(data, 10);
-              fetchLeaderboard();
-            }}
-          />
+          </div>
         </div>
       </div>
     </div>
+
     <div class="flex justify-center items-center">
       <TabSwitch
         tabs={[$t("individual"), $t("schools")]}

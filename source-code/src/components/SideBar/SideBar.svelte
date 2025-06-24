@@ -19,25 +19,25 @@
 <div class="w-auto z-10">
   <!-- Bottom navigation bar on small screens -->
   <nav
-    class="fixed flex md:hidden bottom-0 left-0 w-full bg-gray-50 pt-2 justify-center gap-10"
+    class="fixed flex md:hidden bottom-0 left-0 w-full bg-gray-50 pt-2 justify-center gap-0 md:gap-10"
   >
     {#each navItems as item}
       <button
         on:click={() => {
           gotoURL(item.link);
         }}
-        class="flex flex-col items-center p-2 w-22 text-gray-900 rounded-t-2xl hover:bg-gray-100 {page.url.pathname.indexOf(
+        class="flex flex-col items-center p-2 w-22  rounded-t-2xl hover:bg-gray-100 {page.url.pathname.indexOf(
           item.link.split('/')[1],
         ) > -1
-          ? 'active'
-          : ''}"
+          ? 'active text-yellow-400'
+          : 'text-gray-400'}"
       >
         <div
           class="w-5 h-5 mb-1 object-contain lg:me-3 mb-1 lg:mb-0 gray-filter"
         >
           <Image src={item.icon} />
         </div>
-        <span class="text-xs">{item.label}</span>
+        <span class="text-xs font-medium ">{item.label}</span>
       </button>
     {/each}
   </nav>

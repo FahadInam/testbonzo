@@ -57,14 +57,15 @@
 
   // when we click on cancel, go to profile page
   function handleCancel() {
-    goto("/profile");
+    // goto("/profile");
+    history.back();
   }
 
   // Function to toggle avatar modal
   function openAvatarModal() {
     // Set selectedAvatar to the current profile_picture when opening the modal
     selectedAvatar = profile_picture
-      ? `/src/lib/assets/images/profiles/a${profile_picture}.png`
+      ? `/images/profiles/a${profile_picture}.png`
       : "";
     showAvatarModal = !showAvatarModal;
   }
@@ -78,14 +79,27 @@
     showAvatarModal = false;
     if (action === "save" && selectedAvatar) {
       profile_picture = extractAvatarNumber(selectedAvatar);
+      console.log("profile_picture", profile_picture);
       formData.profile_picture = profile_picture;
     }
   }
 
   // Dynamically import avatars from SvelteKit assets folder
-  const avatarFiles = import.meta.glob("$lib/assets/images/profiles/*.png", {
-    eager: true,
-  });
+  // const avatarFiles = import.meta.glob("$lib/assets/images/profiles/*.png", {
+  //   eager: true,
+  // });
+
+  /**
+   * @type {Record<string, string>}
+   * A mapping from avatar image path to file name.
+   */
+  const avatarFiles = {};
+  const totalAvatars = 67; // Adjust as needed
+
+  for (let i = 1; i <= totalAvatars; i++) {
+    const fileName = `a${i}.png`;
+    avatarFiles[`/images/profiles/${fileName}`] = fileName;
+  }
 
   // Get sorted avatars, limiting to the first 14 if isPocketGames is true, otherwise returning all.
   let avatars = getSortedAvatars(avatarFiles, isPocketGames);
@@ -99,7 +113,7 @@
 </script>
 
 <div>
-  <div class="flex justify-center items-center py-4">
+  <div class="flex justify-center items-center py-2">
     <!-- <Avatar t={IMAGES.CHOOSE_AVATAR_ICON} ml={1} mr={1} s={96} u={96} /> -->
     <div
       role="button"
@@ -109,11 +123,11 @@
       tabindex="0"
       class="relative cursor-pointer"
     >
-      <Avatar t={profile_picture} s={110} u={110} ml="auto" mr="auto" />
+      <Avatar t={profile_picture} s={100} u={100} ml="auto" mr="auto" />
 
       <!--Avatar modal button-->
       <button
-        class="absolute bottom-0 right-0 bg-blue-900 hover:bg-blue-800 border-4 border-white rounded-full p-1.5 cursor-pointer"
+        class="absolute -bottom-1 -right-1 bg-blue-900 hover:bg-blue-800 border-4 border-white rounded-full p-1.5 cursor-pointer"
         aria-label="Edit avatar"
       >
         <svg

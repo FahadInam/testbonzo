@@ -1,13 +1,15 @@
 <script>
   import { IMAGES } from "$lib/assets/images/images.constants";
 
+  // Props
   export let noDataMsg = "";
   export let backgroundColor = "bg-black/30";
   export let textColor = "text-white";
+  export let customClass = "shadow-lg"; // Default shadow class, can be modified dynamically
 </script>
 
 <div class="w-full flex justify-center items-center">
-  <div class={`w-full p-6 rounded-2xl shadow-lg ${backgroundColor}`}>
+  <div class={`w-full p-6 rounded-2xl ${customClass} ${backgroundColor}`}>
     <div class="flex justify-center mb-4">
       <img
         src={noDataMsg === "ALL_GAMES_PLAYED"

@@ -149,85 +149,98 @@
   ];
 </script>
 
-<div class="w-full space-y-6 px-4 sm:px-6 md:px-8 lg:px-10">
-  <div class="w-full relative mb-8">
-    <div
-      class="flex flex-col md:flex-row md:justify-between md:items-center w-full gap-6"
-    >
-      <div class="flex items-center gap-3 justify-center md:justify-start">
-        <PageHeading
-          icon={IMAGES.LEADERBOARD_ICON}
-          title={"players"}
-          imageClass="w-9 h-11 sm:w-13 sm:h-11"
-        />
-      </div>
-
-      <div class="flex flex-row gap-4 justify-center md:justify-end">
-        {#if gradeOptions.length > 0}
-          <SelectBox
-            customClass="w-36 min-w-[140px]"
-            options={gradeOptions}
-            selectedValue={selectedGrade}
-            onSelect={async (data) => {
-              selectedGrade = data;
-              updateSubjectsForGrade(data);
-              await loadDashboardData(data, selectedSubject);
-            }}
-          />
-        {/if}
-
-        {#if subjectOptions.length > 0}
-          <SelectBox
-            customClass="w-36 min-w-[140px]"
-            options={subjectOptions}
-            selectedValue={selectedSubject}
-            onSelect={async (data) => {
-              selectedSubject = data;
-              updateGradeForSubject(data);
-              await loadDashboardData(selectedGrade, data);
-            }}
-          />
-        {/if}
-      </div>
-    </div>
-  </div>
-
-  <!-- Skeleton loader when loading -->
-  <OverviewSkeletonLoader {isLoading} />
-
-  <!-- Actual content when not loading -->
-  {#if !isLoading && competitionSummary}
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {#each reportItems as item (item.title)}
+<!-- Responsive Container -->
+<div class="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-10">
+  <div class="w-full max-w-screen-lg space-y-6">
+    <!--heading section (with dropdown)-->
+    <div class="w-full relative">
+      <div
+        class="flex flex-col xl:flex-row xl:justify-between items-center w-full gap-4"
+      >
+        <!-- Centered Title & Image Wrapper -->
         <div
-          class="sm:col-span-1 sm:place-self-auto col-span-1 place-self-center max-w-sm w-full"
+          class="flex items-center gap-3 xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2"
         >
-          <GameStatsCard
-            number={item.number}
-            title={item.title}
-            icon={item.icon}
+          <PageHeading
+            customClass="xl:mr-10"
+            icon={IMAGES.LEADERBOARD_ICON}
+            title={"overview"}
+            imageClass="w-9 h-10 sm:w-13 sm:h-11"
           />
         </div>
-      {/each}
+
+        <!-- Dropdown Positioned Responsively -->
+        <div class="w-full xl:w-auto flex justify-center xl:ml-auto">
+          <div class="flex flex-row gap-2 justify-center md:justify-end">
+            {#if gradeOptions.length > 0}
+              <SelectBox
+                width="100%"
+                customClass="w-20 min-w-[140px] md:min-w-[185px]"
+                options={gradeOptions}
+                selectedValue={selectedGrade}
+                onSelect={async (data) => {
+                  selectedGrade = data;
+                  updateSubjectsForGrade(data);
+                  await loadDashboardData(data, selectedSubject);
+                }}
+              />
+            {/if}
+
+            {#if subjectOptions.length > 0}
+              <SelectBox
+                width="100%"
+                customClass="w-20 min-w-[140px] md:min-w-[185px]"
+                options={subjectOptions}
+                selectedValue={selectedSubject}
+                onSelect={async (data) => {
+                  selectedSubject = data;
+                  updateGradeForSubject(data);
+                  await loadDashboardData(selectedGrade, data);
+                }}
+              />
+            {/if}
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-      <LearnerPerformanceCard
-        performers={topPerformers}
-        title="Top Performers"
-      />
-      <LearnerPerformanceCard
-        performers={strugglingLearners}
-        title="Struggling Performers"
-      />
-    </div>
-    <div class="flex flex-col gap-8 my-8">
-      <ProgressCard title="Competition Progress" data={lessonReport} />
-      <ProgressCard title="Games Progress" data={gamesReport} {columns} />
-    </div>
-  {:else if !isLoading}
-    <div class="p-6 text-center">
-      <p class="text-gray-600">No competition data available.</p>
-    </div>
-  {/if}
+    <!-- Skeleton loader when loading -->
+    <OverviewSkeletonLoader {isLoading} />
+
+    <!-- Actual content when not loading -->
+    {#if !isLoading && competitionSummary}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {#each reportItems as item (item.title)}
+          <div
+            class="sm:col-span-1 sm:place-self-auto col-span-1 place-self-center max-w-sm w-full"
+          >
+            <GameStatsCard
+              number={item.number}
+              title={item.title}
+              icon={item.icon}
+            />
+          </div>
+        {/each}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <LearnerPerformanceCard
+          performers={topPerformers}
+          title="Top Performers"
+        />
+        <LearnerPerformanceCard
+          performers={strugglingLearners}
+          title="Struggling Performers"
+        />
+      </div>
+      <div class="flex flex-col gap-8 my-8">
+        <ProgressCard title="Competition Progress" data={lessonReport} />
+        <ProgressCard title="Games Progress" data={gamesReport} {columns} />
+      </div>
+    {:else if !isLoading}
+      <div class="p-6 text-center">
+        <p class="text-gray-600">No competition data available.</p>
+      </div>
+    {/if}
+  </div>
 </div>

@@ -4,7 +4,7 @@
   import Button from '../Button/Button.svelte';
   
   export let paymentData;
-  const competitionUrl = PUBLIC_COMPETITION_URL;
+  const competitionUrl =  window.location.origin;
   const formattedCompetitionUrl = competitionUrl?.startsWith('http')
     ? competitionUrl
     : `https://${competitionUrl}`;

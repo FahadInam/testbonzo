@@ -1,10 +1,25 @@
 <script>
+  import { onMount } from 'svelte';
+
   export let url;
   export let title = "Embedded Content";
   export let additionalClasses = "";
+
+  onMount(() => {
+    function handleMessage(event) {
+      if (event.data && event.data.redirect_href) {
+        window.location.href = event.data.redirect_href;
+      }
+    }
+    window.addEventListener('message', handleMessage);
+    
+    return () => {
+      window.removeEventListener('message', handleMessage);
+    };
+  });
 </script>
 
-<!-- iframe  -->
+<!-- iframe -->
 <div class="w-full h-full overflow-hidden bg-white {additionalClasses}">
   <iframe
     {title}

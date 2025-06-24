@@ -11,6 +11,6 @@
 </div>
 
 <!-- Full page iframe container -->
-<div class="flex flex-col h-screen pt-[84px]">
+<div class="flex flex-col h-screen pt-[81px]">
   <FullPageIframe {url} title="Knowledge Platform" />
 </div>

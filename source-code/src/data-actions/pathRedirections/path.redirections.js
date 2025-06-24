@@ -58,7 +58,7 @@ export function checkPathRedirection(path, instanceId = null) {
   const isAuthenticated = (user.user_id && !user.is_guest_mode) || false;
   const userRole = user.active_role || "guest"; // Default to 'guest' if role is undefined
 
-  console.log("isAuthenticated", isAuthenticated, "userRole", userRole);
+  // console.log("isAuthenticated", isAuthenticated, "userRole", userRole);
 
   for (const rule of routeRedirects) {
     if (matchesRule(path, rule.paths)) {

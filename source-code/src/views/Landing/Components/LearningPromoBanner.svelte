@@ -14,7 +14,7 @@
     {
       label: $t("schedule_demo"),
       type: "secondary",
-      link: "/account/signup",
+      link: "/contactus",
       width: "w-[280px]",
     },
   ];

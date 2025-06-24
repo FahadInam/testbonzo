@@ -2,6 +2,20 @@ import { browser } from "$app/environment";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 
+if (browser) {
+  const style = document.createElement("style");
+  style.textContent = `
+    .notyf__toast {
+      min-width: 300px !important;
+      max-width: 500px !important;
+    },
+    .notyf__ripple {
+      min-width: 300px !important;
+      max-width: 500px !important;
+    }`;
+  document.head.appendChild(style);
+}
+
 /**
  * @type {Notyf}
  */

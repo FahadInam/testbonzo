@@ -7,6 +7,6 @@ export const USER_TYPE = {
   Safaricom: 2,
 };
 
-export const isNormalUser = get(userStore)?.user_type === USER_TYPE.Normal;
+export const isNormalUser = () => get(userStore)?.user_type === USER_TYPE.Normal;
 export const isMCDUser = get(userStore)?.user_type === USER_TYPE.MCD;
-export const isSafaricomUser = get(userStore)?.user_type == USER_TYPE.Safaricom;
+export const isSafaricomUser = () => get(userStore)?.user_type === USER_TYPE.Safaricom;

@@ -1,21 +1,37 @@
 <script>
+    import { onMount } from "svelte";
   import { gotoURL } from "../../stores/navigation.store";
+    import { isMobile } from "$lib/utils";
 
   export let label = "";
   export let arrowType = "back";
   export let link = "";
   export let customClass = "";
+  let mobile = false;
+
+  onMount(() => {
+    mobile = isMobile();
+    
+    const handleResize = () => {
+      mobile = isMobile();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
 </script>
 
 <div>
   <button
     class="{customClass || ''} font-semibold items-center text-lg flex"
     on:click={() => {
-      console.log("ArrowButton clicked", link);
       gotoURL(link);
     }}
   >
-    <span> 
+    <span>
       {#if arrowType == "back"}
         <svg
           class=""
@@ -35,7 +51,7 @@
         </svg>
       {/if}
     </span>
-    {#if label && label.length > 0}
+    {#if label && label.length > 0 && !mobile}
       <span class="text-xl">{label}</span>
     {/if}
   </button>

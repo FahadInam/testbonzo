@@ -10,133 +10,141 @@ import { isGCLC, isPocketGames, isShupavu } from "../system/system..da";
 import { systemSettingsStore } from "../../stores/systemsettings.store";
 import { userStore } from "../../stores/user.store";
 
-/**
- * @type {never[]}
- */
-const cityList = get(systemSettingsStore)?.city_list || [];
-
-export const userProfileFields = {
-  title: "",
-  fields: [
-    ...(!isShupavu
-      ? [
-          {
-            name: "email",
-            type: "email",
-            label: await getText("email"),
-            placeholder: await getText("enter_your_email"),
-            required: true,
-            readonly: true,
-            layout: "half",
-            value: "",
-          },
-        ]
-      : []),
-    {
-      name: "name",
-      type: "text",
-      label: await getText("name"),
-      placeholder: await getText("enter_your_name"),
-      required: true,
-      layout: "half",
-      value: "",
+export async function getUserProfileFields() {
+  /**
+   * @type {never[]}
+   */
+  const cityList = get(systemSettingsStore)?.city_list || [];
+  return {
+    title: "",
+    fields: [
+      ...(!isShupavu
+        ? [
+            {
+              name: "email",
+              type: "email",
+              label: await getText("email"),
+              placeholder: await getText("enter_your_email"),
+              required: true,
+              readonly: true,
+              layout: "half",
+              value: "",
+            },
+          ]
+        : []),
+      {
+        name: "name",
+        type: "text",
+        label: await getText("name"),
+        placeholder: await getText("enter_your_name"),
+        required: true,
+        layout: "half",
+        value: "",
+      },
+      {
+        name: "contact_number",
+        type: "number",
+        label: await getText("contact_number"),
+        placeholder: await getText("enter_contact_number"),
+        required: true,
+        layout: "half",
+        value: "",
+        readonly: isShupavu,
+      },
+      {
+        name: "date_of_birth",
+        type: "date",
+        label: await getText("date_of_birth"),
+        placeholder: await getText("enter_your_dob"),
+        required: false,
+        layout: "half",
+        value: "",
+      },
+      ...(isGCLC
+        ? [
+            {
+              name: "country",
+              type: "select",
+              label: await getText("country_territory"),
+              placeholder: await getText("select_country"),
+              required: false,
+              layout: "half",
+              options: [{ value: "", label: "Select Country" }, ...CountryListGCLC],
+              value: "",
+            },
+            {
+              name: "city",
+              label: await getText("city"),
+              type: "text",
+              placeholder: await getText("enter_your_city"),
+              required: true,
+              layout: "half",
+              value: "",
+            },
+          ]
+        : [
+            {
+              name: "city",
+              type: "select",
+              label: await getText("city"),
+              placeholder: await getText("enter_your_city"),
+              required: true,
+              layout: "half",
+              options: [{ value: "", label: "Select City" }, ...cityList],
+              value: "",
+            },
+          ]),
+      ...(!isPocketGames
+        ? [
+            {
+              name: "school_name",
+              type: "text",
+              label: await getText("school"),
+              placeholder: await getText("enter_school_name"),
+              required: false,
+              readonly: true,
+              layout: "half",
+              value: "",
+            },
+          ]
+        : []),
+      ...(isShupavu
+        ? [
+            {
+              name: "timezone",
+              type: "select",
+              label: await getText("time_zone"),
+              placeholder: await getText("select_your_timezone"),
+              required: false,
+              layout: "half",
+              options: TimeZoneList,
+              value: "",
+            },
+          ]
+        : []),
+    ],
+    buttons: [
+      {
+        label: await getText("cancel"),
+        type: "",
+        action: "cancel",
+        layout: "3d-primary",
+        customClass: "w-full sm:w-[160px] text-lg md:text-[22px]",
+      },
+      {
+        label: await getText("save"),
+        type: "submit",
+        action: "",
+        layout: "3d-secondary",
+        customClass: "w-full sm:w-[160px] text-lg md:text-[22px]",
+      },
+    ],
+    enableTurnstile: false,
+    handleSubmit: (/** @type {any} */ formData) => {
+      saveProfileData(formData);
     },
-    {
-      name: "contact_number",
-      type: "number",
-      label: await getText("contact_number"),
-      placeholder: await getText("enter_contact_number"),
-      required: true,
-      layout: "half",
-      value: "",
-      readonly: isShupavu,
-    },
-    {
-      name: "date_of_birth",
-      type: "date",
-      label: await getText("date_of_birth"),
-      placeholder: await getText("enter_your_dob"),
-      required: false,
-      layout: "half",
-      value: "",
-    },
-    {
-      name: "city",
-      type: "select",
-      label: await getText("city"),
-      placeholder: await getText("enter_your_city"),
-      required: true,
-      layout: "half",
-      options: [{ value: "", label: "Select City" }, ...cityList],
-      value: "",
-    },
-    ...(isGCLC
-      ? [
-          {
-            name: "country",
-            type: "select",
-            label: await getText("country_territory"),
-            placeholder: await getText("select_country"),
-            required: false,
-            layout: "half",
-            options: [
-              { value: "", label: "Select Country" },
-              ...CountryListGCLC,
-            ],
-            value: "",
-          },
-        ]
-      : []),
-    ...(!isPocketGames
-      ? [
-          {
-            name: "school_name",
-            type: "text",
-            label: await getText("school"),
-            placeholder: await getText("enter_school_name"),
-            required: false,
-            readonly: true,
-            layout: "half",
-            value: "",
-          },
-        ]
-      : []),
-    ...(isShupavu
-      ? [
-          {
-            name: "timezone",
-            type: "select",
-            label: await getText("time_zone"),
-            placeholder: await getText("select_your_timezone"),
-            required: false,
-            layout: "half",
-            options: TimeZoneList,
-            value: "",
-          },
-        ]
-      : []),
-  ],
-  buttons: [
-    {
-      label: await getText("cancel"),
-      type: "",
-      action: "cancel",
-      layout: "3d-primary",
-      customClass: "w-full md:w-auto md:min-w-[240px]",
-    },
-    {
-      label: await getText("save"),
-      type: "submit",
-      action: "",
-      layout: "3d-secondary",
-      customClass: "w-full md:w-auto md:min-w-[240px]",
-    },
-  ],
-  enableTurnstile: false,
-  handleSubmit: (/** @type {any} */ formData) => {
-    saveProfileData(formData);
-  },
-};
+  };
+}
 
 // get profile data
 export async function getProfileData() {

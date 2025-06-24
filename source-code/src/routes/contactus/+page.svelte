@@ -9,9 +9,7 @@
   console.log("config-->", config);
 
   // Find the Contact Us item in the landing_navigation array
-  const contactItem = config.landing_navigation?.find(
-    (item) => item.name === "Contact Us" || item.id === "CONTACT_US",
-  );
+  const contactItem = config.landing_navigation?.find((item) => item.name === "Contact Us" || item.id === "CONTACT_US");
   // Get the URL from its ref property, or fall back to default
   let url = contactItem?.ref;
 
@@ -24,6 +22,6 @@
 </div>
 
 <!-- Full page iframe container -->
-<div class="flex flex-col h-screen pt-[84px]">
+<div class="flex flex-col h-screen pt-[81px]">
   <FullPageIframe {url} title="Knowledge Platform" />
 </div>

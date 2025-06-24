@@ -6,7 +6,6 @@
   export let backButtonLabel = "";
   export let backButtonLink = "";
   export let showBackButton = true;
-
 </script>
 
 <div
@@ -15,28 +14,28 @@
 >
   <BackgroundImage />
   <!-- Back Button for Larger Screens -->
-   {#if showBackButton}
-  <ArrowButton
-    label={backButtonLabel}
-    arrowType="back"
-    link={backButtonLink}
-    customClass="hidden md:flex text-white hover:text-gray-300 fixed top-4 left-4"
-  />
-  {/if}
-  <!-- Popup Content -->
-  <div
-    class="bg-[#fbfbfb] w-full max-w-[600px] md:max-h-[90%] md:h-auto rounded-2xl shadow-lg overflow-y-auto relative"
-    style="margin: 20px 0;"
-  >
-    <!-- Back Button for Smaller Screens -->
-   {#if showBackButton}
+  {#if showBackButton}
     <ArrowButton
       label={backButtonLabel}
       arrowType="back"
       link={backButtonLink}
-      customClass="flex md:hidden text-gray-600 hover:text-gray-800 absolute top-10 left-2"
+      customClass="hidden md:flex text-white hover:text-gray-300 fixed top-4 left-4"
     />
   {/if}
+  <!-- Popup Content -->
+  <div
+    class="bg-[#fbfbfb] w-full max-w-[600px] md:max-h-[90%] md:h-auto rounded-2xl shadow-lg overflow-y-auto relative"
+    style="margin: 15px 0;"
+  >
+    <!-- Back Button for Smaller Screens -->
+    {#if showBackButton}
+      <ArrowButton
+        label={backButtonLabel}
+        arrowType="back"
+        link={backButtonLink}
+        customClass="flex md:hidden text-gray-600 hover:text-gray-800 absolute top-10 left-2"
+      />
+    {/if}
     <div class="p-10">
       <div in:fly={{ x: -200, duration: 500 }}>
         <slot name="body" />

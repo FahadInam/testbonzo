@@ -18,6 +18,10 @@ import { showError } from "../../stores/toast.store";
 import { refreshUserToken } from "../authentication/user.auth.da";
 import { instanceStore } from "../../stores/instance.store";
 import { isGCLC, isShupavu } from "../system/system..da";
+import { gradesStore } from "../../stores/grades.store";
+import { transferStore } from "../../stores/transfer.store";
+import { metaStore } from "../../stores/meta.store";
+import { systemSettingsStore } from "../../stores/systemsettings.store";
 
 // @ts-ignore
 export async function getNavBarItems() {
@@ -32,7 +36,7 @@ export async function getNavBarItems() {
       link: "{competitionHome}/home",
       isRequired: true,
     },
-    ...(get(competitionStore)?.is_games_page == 1
+    ...(get(competitionStore)?.is_games_page == 1 && showFriends
       ? [
           {
             icon: IMAGES.SIDE_NAV_MY_GAMES,
@@ -77,10 +81,7 @@ export async function getNavBarItems() {
 export async function getCompetitions() {
   await waitForUserData();
   const { active_role } = get(userStore);
-  const apiUrl =
-    active_role === "principal"
-      ? API_DEFINITIONS.INSTITUTION_COMPETITIONS
-      : API_DEFINITIONS.COMPETITIONS;
+  const apiUrl = active_role === "principal" ? API_DEFINITIONS.INSTITUTION_COMPETITIONS : API_DEFINITIONS.COMPETITIONS;
   const response = await request(apiUrl, {});
 
   await updateUserTimezoneIfNeeded(response);
@@ -95,22 +96,13 @@ async function updateUserTimezoneIfNeeded(response) {
   const { active_role, is_guest_mode, timezone } = get(userStore);
   const is_principal = active_role === "principal";
 
-  const shouldUpdateTimezone =
-    response.error_code === 0 &&
-    !is_principal &&
-    !is_guest_mode &&
-    isShupavu &&
-    !timezone;
+  const shouldUpdateTimezone = response.error_code === 0 && !is_principal && !is_guest_mode && isShupavu && !timezone;
 
   if (!shouldUpdateTimezone) return;
 
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  const tzResponse = await request(
-    API_DEFINITIONS.UPDATE_TIMEZONE,
-    { timezone: userTimezone },
-    {},
-  );
+  const tzResponse = await request(API_DEFINITIONS.UPDATE_TIMEZONE, { timezone: userTimezone }, {});
 
   if (tzResponse.error_code === 0) {
     updateStoreVariable(userStore, "timezone", userTimezone);
@@ -135,11 +127,18 @@ export async function getDemoCompetitions() {
 export async function getCompetitionDetails() {
   await awaitStoreKey(competitionStore, "competition_id");
   const id = get(competitionStore).competition_id;
-  return await request(
-    API_DEFINITIONS.COMPETITION_DETAILS,
-    { competition_id: id },
-    {},
-  );
+  return await request(API_DEFINITIONS.COMPETITION_DETAILS, { competition_id: id }, {});
+}
+
+export async function loadGrades() {
+  const details = await getCompetitionDetails();
+  const allGrades = mapGrades(details.data.grades);
+  gradesStore.set({
+    grades: details.data.grades,
+    current_grade: details.data.current_grade,
+  });
+  transferStore.set(allGrades);
+  updateStoreVariable(competitionStore, "current_grade", details.data.current_grade);
 }
 
 /**
@@ -159,20 +158,10 @@ export function mapGrades(input) {
         sort_order: item.sort_order,
       });
     }
-    if (
-      acc.some(
-        (/** @type {{ sort_order: null; }} */ items) =>
-          items.sort_order !== null,
-      )
-    ) {
+    if (acc.some((/** @type {{ sort_order: null; }} */ items) => items.sort_order !== null)) {
       acc = acc.sort(
-        (
-          /** @type {{ sort_order: number | null; }} */ a,
-          /** @type {{ sort_order: number | null; }} */ b,
-        ) =>
-          a.sort_order !== null && b.sort_order !== null
-            ? a.sort_order - b.sort_order
-            : 0,
+        (/** @type {{ sort_order: number | null; }} */ a, /** @type {{ sort_order: number | null; }} */ b) =>
+          a.sort_order !== null && b.sort_order !== null ? a.sort_order - b.sort_order : 0,
       );
     }
     return acc;
@@ -215,6 +204,7 @@ export async function setCompetitionGrade(grade) {
     });
 
     updateStoreVariable(competitionStore, "current_grade", grade);
+    updateStoreVariable(metaStore, "current_grade", grade);
   }
 
   console.log(get(competitionStore));
@@ -226,11 +216,7 @@ export async function getCompetitionRecommendation() {
   const grade = get(competitionStore).current_grade;
   const id = get(competitionStore).competition_id;
 
-  return await request(
-    API_DEFINITIONS.LESSON_RECOMMENDATION,
-    { competition_id: id, grade: grade },
-    {},
-  );
+  return await request(API_DEFINITIONS.LESSON_RECOMMENDATION, { competition_id: id, grade: grade }, {});
 }
 
 export async function getCompetitionActivities() {
@@ -238,11 +224,7 @@ export async function getCompetitionActivities() {
   const grade = get(competitionStore).current_grade;
   const id = get(competitionStore).competition_id;
 
-  return await request(
-    API_DEFINITIONS.COMPETITION_ACTIVITIES,
-    { competition_id: id, grade: grade },
-    {},
-  );
+  return await request(API_DEFINITIONS.COMPETITION_ACTIVITIES, { competition_id: id, grade: grade }, {});
 }
 
 /**
@@ -269,11 +251,7 @@ export async function getCompetitionFriends(subject) {
   const grade = get(competitionStore).current_grade;
   const id = get(competitionStore).competition_id;
 
-  return await request(
-    API_DEFINITIONS.FRIENDS,
-    { competition_id: id, grade: grade, subject: subject },
-    {},
-  );
+  return await request(API_DEFINITIONS.FRIENDS, { competition_id: id, grade: grade, subject: subject }, {});
 }
 
 /**
@@ -284,11 +262,7 @@ export async function searchFriends(username) {
   const grade = get(competitionStore).current_grade;
   const id = get(competitionStore).competition_id;
 
-  return await request(
-    API_DEFINITIONS.SEARCH_FRIENDS,
-    { competition_id: id, grade: grade, username: username },
-    {},
-  );
+  return await request(API_DEFINITIONS.SEARCH_FRIENDS, { competition_id: id, grade: grade, username: username }, {});
 }
 
 export async function getUserLessons() {
@@ -296,11 +270,7 @@ export async function getUserLessons() {
   const grade = get(competitionStore).current_grade;
   const id = get(competitionStore).competition_id;
 
-  return await request(
-    API_DEFINITIONS.USER_LESSONS,
-    { competition_id: id, grade: grade },
-    {},
-  );
+  return await request(API_DEFINITIONS.USER_LESSONS, { competition_id: id, grade: grade }, {});
 }
 
 /**
@@ -309,20 +279,15 @@ export async function getUserLessons() {
  * @param {number} competition_id
  */
 
-export async function addVoucherCode(
-  voucherCode,
-  onVoucherSuccess,
-  competition_id,
-) {
+export async function addVoucherCode(voucherCode, onVoucherSuccess, competition_id) {
   if (!(await CodeVerification(voucherCode))) return;
+  const config = get(systemSettingsStore);
 
-  let apiUrl = isGCLC
-    ? API_DEFINITIONS.ADD_GCLC_VOUCHER
-    : API_DEFINITIONS.ADD_VOUCHER;
+  let apiUrl = config?.comp_banner_locked ? API_DEFINITIONS.ADD_GCLC_VOUCHER : API_DEFINITIONS.ADD_VOUCHER;
 
   let dto = {
     secret_code: voucherCode,
-    ...(isGCLC && { competition_id }),
+    ...(config?.comp_banner_locked && { competition_id }),
   };
 
   let response = await request(apiUrl, dto);
@@ -371,11 +336,7 @@ export async function getMyGames() {
   const grade = get(competitionStore).current_grade;
   const id = get(competitionStore).competition_id;
 
-  return await request(
-    API_DEFINITIONS.MY_GAMES,
-    { competition_id: id, grade: grade, page: 1 },
-    {},
-  );
+  return await request(API_DEFINITIONS.MY_GAMES, { competition_id: id, grade: grade, page: 1 }, {});
 }
 
 /**
@@ -392,14 +353,10 @@ export async function extractSubjects() {
   }
 
   // Filter grades based on current grade
-  const filteredGrades = apiResponse.data.grades.filter(
-    (grade) => grade.grade === currentGrade,
-  );
+  const filteredGrades = apiResponse.data.grades.filter((grade) => grade.grade === currentGrade);
 
   // Extract unique subject names from filtered grades
-  const uniqueSubjects = [
-    ...new Set(filteredGrades.map((grade) => grade.subject)),
-  ];
+  const uniqueSubjects = [...new Set(filteredGrades.map((grade) => grade.subject))];
 
   // Format the subjects for dropdown
   let title = [{ value: "", label: "Select Subject" }];

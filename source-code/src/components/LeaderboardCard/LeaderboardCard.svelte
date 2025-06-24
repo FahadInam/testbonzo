@@ -10,12 +10,9 @@
   export let size = "medium"; // 'small' | 'medium' | 'large'
   export let isLoading = false;
   export let name = "";
-
 </script>
 
-<div
-  class={`relative flex flex-col items-center ${size === "large" ? "scale-125" : ""}`}
->
+<div class={`relative flex flex-col items-center ${size === "large" ? "scale-125" : ""}`}>
   {#if isLoading}
     <!-- Preloader -->
     <div class="animate-pulse flex flex-col items-center">
@@ -37,18 +34,14 @@
     </div>
   {:else}
     <!-- Background glow -->
-    <div
-      class="absolute w-32 h-32 bg-blue-500 rounded-full blur-2xl opacity-50"
-    ></div>
+    <div class="absolute w-32 h-32 bg-blue-500 rounded-full blur-2xl opacity-50"></div>
 
     <!-- Profile Avatar (Make sure this is above the background) -->
     <div class="relative z-10">
-    <Avatar t={profile_picture || IMAGES.SCHOOL_AVATAR} s={100} u={100} ml="auto" mr="auto" />
+      <Avatar t={profile_picture || IMAGES.SCHOOL_AVATAR} s={100} u={100} ml="auto" mr="auto" />
       <!-- Container for First Place Background -->
       {#if rank === 1}
-        <div
-          class="absolute inset-0 flex justify-center items-center w-[350px] -left-32 -z-1 -top-20"
-        >
+        <div class="absolute inset-0 flex justify-center items-center w-[350px] -left-32 -z-1 -top-20">
           <Image src={IMAGES.RAYS_ICON} className="w-full" />
         </div>
       {/if}
@@ -78,9 +71,7 @@
 
     <!-- Username -->
     <div class="w-[150px]">
-      <p
-        class="pt-4 text-white text-md font-semibold truncate overflow-hidden text-lg font-poppins"
-      >
+      <p class="pt-4 text-white text-md font-semibold truncate overflow-hidden text-lg font-poppins">
         {username || name}
       </p>
     </div>

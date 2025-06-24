@@ -37,9 +37,7 @@
   // Focus trapping logic
   let focusableElements;
   function trapFocus() {
-    focusableElements = dialog.querySelectorAll(
-      ' input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
+    focusableElements = dialog.querySelectorAll(' input, select, textarea, [tabindex]:not([tabindex="-1"])');
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
 
@@ -85,15 +83,10 @@
     >
       <button
         on:click={closeModal}
-        class="absolute top-[10px] right-3 p-2 rounded-full text-white hover:text-black hover:bg-gray-200 focus:outline-none"
+        class="absolute top-[10px] z-[1] right-3 p-2 rounded-full text-gray-900 bg-gray-100 hover:text-black hover:bg-gray-200 focus:outline-none"
         aria-label="Close"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          class="w-6 h-6"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
           <path
             fill-rule="evenodd"
             d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"

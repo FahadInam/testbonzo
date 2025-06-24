@@ -1,14 +1,17 @@
 import { IMAGES } from "$lib/assets/images/images.constants";
-import { CityList, CityList_England } from "./city.constants";
+import { CityList, CityList_England, CityList_KE } from "./city.constants";
 
 export const configurations = {
   "bonzo.knowledgeplatform.com": "bonzo",
   "1on1quiz.com": "1on1quiz",
   "globalclimateliteracy.org": "globalclimateliteracy",
+  "games.greenguardians.com": "singaporegreenguardians",
   "healthx.knowledgeplatform.com": "healthx",
-  "shupavugames.com": "shupavugames",
+  "app.shupavugames.com": "shupavugames",
+  "learningapp.shupavugames.com": "learningshupavugames",
   "pocketgames.21c.digital": "pocketgames",
   "quotient.games": "quotientgames",
+  "kpbonzodev.netlify.app": "shupavugames",
   localhost: "localhost",
 };
 
@@ -29,6 +32,7 @@ export const INSTANCES_ID = {
   "1on1Quiz": 6,
   POCKET_GAMES_ID: 50001,
   QUOTIENT_ID: 10,
+  SGG_ID: 11,
 };
 
 export const instanceConfig = {
@@ -37,6 +41,10 @@ export const instanceConfig = {
     title: "bonzo",
     landing_page_url: "/main",
     is_mobile_otp: false,
+    principal_enabled: true,
+    lms_login_enabled: true,
+    comp_banner_locked: false,
+    safaricom_domain: null,
     account_back_url: "/",
     navigate_to_public_route: false,
     page_title: "Bonzo",
@@ -94,10 +102,8 @@ export const instanceConfig = {
         "32x32": "/images/bonzo/favicon-32x32.png",
         "16x16": "/images/bonzo/favicon-16x16.png",
       },
-      twitter_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
-      fb_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
+      twitter_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
+      fb_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
     },
   },
   "1on1quiz": {
@@ -105,6 +111,10 @@ export const instanceConfig = {
     title: "1on1quiz",
     landing_page_url: "/main",
     is_mobile_otp: false,
+    principal_enabled: true,
+    lms_login_enabled: true,
+    comp_banner_locked: false,
+    safaricom_domain: null,
     account_back_url: "/",
     navigate_to_public_route: false,
     page_title: "1on1 Quiz",
@@ -160,10 +170,8 @@ export const instanceConfig = {
         "32x32": "/images/bonzo/favicon-32x32.png",
         "16x16": "/images/bonzo/favicon-16x16.png",
       },
-      twitter_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
-      fb_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
+      twitter_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
+      fb_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
     },
   },
   globalclimateliteracy: {
@@ -171,6 +179,10 @@ export const instanceConfig = {
     title: "GCLC",
     landing_page_url: "/program/glc",
     is_mobile_otp: false,
+    principal_enabled: true,
+    lms_login_enabled: true,
+    comp_banner_locked: true,
+    safaricom_domain: null,
     account_back_url: "/",
     navigate_to_public_route: false,
     page_title: "Global Climate Literacy Competitions",
@@ -191,8 +203,8 @@ export const instanceConfig = {
       {
         name: "Home",
         index: 0,
-        ref: null,
         pathname: ["/program/glc"],
+        ref: "https://knowledgeplatform.com.pk/gclc/?embedded",
         allowedGG: 1,
       },
       {
@@ -228,8 +240,47 @@ export const instanceConfig = {
         "32x32": "/images/gclc/favicon-32x32.png",
         "16x16": "/images/gclc/favicon-16x16.png",
       },
-      twitter_image_url:
-        "https://globalclimateliteracy.org/images/gclc/twitter-img.jpg",
+      twitter_image_url: "https://globalclimateliteracy.org/images/gclc/twitter-img.jpg",
+      fb_image_url: "https://globalclimateliteracy.org/images/gclc/fb-img.jpg",
+    },
+  },
+  singaporegreenguardians: {
+    instance_id: 11,
+    title: "Singapore Green Guardians",
+    landing_page_url: "/program/glc",
+    is_mobile_otp: false,
+    principal_enabled: false,
+    lms_login_enabled: false,
+    comp_banner_locked: true,
+    safaricom_domain: null,
+    account_back_url: "https://singapore.greenguardians.com/competitions",
+    navigate_to_public_route: true,
+    page_title: "Singapore Green Guardians",
+    domain_name: "games.greenguardians.com",
+    share_url: "https://games.greenguardians.com/",
+    city_list: CityList,
+    banner_text: false,
+    is_voucher_allowed: false,
+    text_object: "",
+    logo: {
+      web_dark: IMAGES.SGG_WEB_LOGO,
+      web_light: IMAGES.SGG_WEB_LOGO,
+      mobile_light: IMAGES.SGG_MOBILE_LOGO,
+      mobile_dark: IMAGES.SGG_MOBILE_LOGO,
+    },
+    images: {
+      coin_icon: IMAGES.COIN_IMAGE,
+    },
+    landing_navigation: [],
+    meta_settings: {
+      title: "Singapore Green Guardians Competitions",
+      meta_description:
+        "Welcome to Singapore Green Guardians Competitions, an initiative that inspires students worldwide to build climate literacy and drive action through games and competitions!",
+      fav_icons: {
+        "32x32": "/images/sgg/favicon-32x32.png",
+        "16x16": "/images/sgg/favicon-16x16.png",
+      },
+      twitter_image_url: "https://globalclimateliteracy.org/images/gclc/twitter-img.jpg",
       fb_image_url: "https://globalclimateliteracy.org/images/gclc/fb-img.jpg",
     },
   },
@@ -238,6 +289,10 @@ export const instanceConfig = {
     title: "healthX",
     landing_page_url: "/main",
     is_mobile_otp: false,
+    principal_enabled: true,
+    lms_login_enabled: true,
+    comp_banner_locked: false,
+    safaricom_domain: null,
     account_back_url: "/",
     navigate_to_public_route: false,
     page_title: "HealthX",
@@ -280,10 +335,8 @@ export const instanceConfig = {
         "32x32": "/images/healthx/favicon-32x32.png",
         "16x16": "/images/healthx/favicon-16x16.png",
       },
-      twitter_image_url:
-        "https://healthx.knowledgeplatform.com/images/healthx/twitter-img.jpg",
-      fb_image_url:
-        "https://healthx.knowledgeplatform.com/images/healthx/fb-img.jpg",
+      twitter_image_url: "https://healthx.knowledgeplatform.com/images/healthx/twitter-img.jpg",
+      fb_image_url: "https://healthx.knowledgeplatform.com/images/healthx/fb-img.jpg",
     },
   },
   shupavugames: {
@@ -291,11 +344,15 @@ export const instanceConfig = {
     title: "Shupavu",
     landing_page_url: "/program/glc",
     is_mobile_otp: true,
+    principal_enabled: false,
+    lms_login_enabled: false,
+    comp_banner_locked: false,
+    safaricom_domain: "app.shupavugames.com",
     account_back_url: "https://shupavugames.com/",
     navigate_to_public_route: true,
     page_title: "Shupavu",
     share_url: "https://app.shupavugames.com/",
-    city_list: CityList_England,
+    city_list: CityList_KE,
     banner_text: false,
     is_voucher_allowed: false,
     text_object: "",
@@ -308,23 +365,7 @@ export const instanceConfig = {
     images: {
       coin_icon: IMAGES.COIN_IMAGE,
     },
-    landing_navigation: [
-      {
-        name: "Home",
-        index: 0,
-        ref: null,
-        pathname: ["/", "/program/glc"],
-        allowedGG: 1,
-      },
-      {
-        name: "Contact us",
-        index: 2,
-        pathname: "/contactus",
-        ref: "https://knowledgeplatform.com.pk/contact/?embedded",
-        id: "CONTACT_US",
-        allowedGG: 1,
-      },
-    ],
+    landing_navigation: [],
     meta_settings: {
       title: "Shupavu Games",
       meta_description:
@@ -333,8 +374,47 @@ export const instanceConfig = {
         "32x32": "/images/shupavu/favicon-32x32.png",
         "16x16": "/images/shupavu/favicon-16x16.png",
       },
-      twitter_image_url:
-        "https://app.shupavugames.com/images/shupavu/twitter-img.jpg",
+      twitter_image_url: "https://app.shupavugames.com/images/shupavu/twitter-img.jpg",
+      fb_image_url: "https://app.shupavugames.com/images/shupavu/fb-img.jpg",
+    },
+  },
+  learningshupavugames: {
+    instance_id: 8,
+    title: "Shupavu",
+    landing_page_url: "/program/glc",
+    is_mobile_otp: true,
+    principal_enabled: false,
+    lms_login_enabled: false,
+    comp_banner_locked: false,
+    safaricom_domain: null,
+    account_back_url: "https://learning.shupavugames.com/",
+    navigate_to_public_route: true,
+    page_title: "Shupavu",
+    domain_name: "learningapp.shupavugames.com",
+    share_url: "https://learningapp.shupavugames.com/",
+    city_list: CityList_KE,
+    banner_text: false,
+    is_voucher_allowed: false,
+    text_object: "",
+    logo: {
+      web_dark: IMAGES.SHUPAVU_WEB_LOGO,
+      web_light: IMAGES.SHUPAVU_WEB_LOGO,
+      mobile_light: IMAGES.SHUPAVU_MOBILE_LOGO,
+      mobile_dark: IMAGES.SHUPAVU_MOBILE_LOGO,
+    },
+    images: {
+      coin_icon: IMAGES.COIN_IMAGE,
+    },
+    landing_navigation: [],
+    meta_settings: {
+      title: "Shupavu Games",
+      meta_description:
+        "Up for a challenge? Head over to bonzo.com where you learn, engage, and challenge friends with fun games!",
+      fav_icons: {
+        "32x32": "/images/shupavu/favicon-32x32.png",
+        "16x16": "/images/shupavu/favicon-16x16.png",
+      },
+      twitter_image_url: "https://app.shupavugames.com/images/shupavu/twitter-img.jpg",
       fb_image_url: "https://app.shupavugames.com/images/shupavu/fb-img.jpg",
     },
   },
@@ -343,6 +423,10 @@ export const instanceConfig = {
     title: "Pocket Games",
     landing_page_url: "/main",
     is_mobile_otp: false,
+    principal_enabled: false,
+    lms_login_enabled: false,
+    comp_banner_locked: false,
+    safaricom_domain: null,
     account_back_url: "https://www.21c.digital/pocketgames/",
     navigate_to_public_route: true,
     page_title: "Pocket Games",
@@ -385,10 +469,8 @@ export const instanceConfig = {
         "32x32": "/images/pocket-games/favicon-32x32.svg",
         "16x16": "/images/pocket-games/favicon-16x16.svg",
       },
-      twitter_image_url:
-        "https://pocketgames.21c.digital/images/pocket-games/twitter-img.jpg",
-      fb_image_url:
-        "https://pocketgames.21c.digital/images/pocket-games/fb-img.jpg",
+      twitter_image_url: "https://pocketgames.21c.digital/images/pocket-games/twitter-img.jpg",
+      fb_image_url: "https://pocketgames.21c.digital/images/pocket-games/fb-img.jpg",
     },
   },
   quotientgames: {
@@ -396,14 +478,17 @@ export const instanceConfig = {
     title: "Quotient",
     landing_page_url: "/program/glc",
     is_mobile_otp: false,
+    principal_enabled: false,
+    lms_login_enabled: false,
+    comp_banner_locked: false,
+    safaricom_domain: null,
     account_back_url: "https://quotient.games/",
     navigate_to_public_route: true,
     page_title: "Quotient",
     domain_name: "app.quotient.games",
-    safaricom_domain: null,
     share_url: "https://app.quotient.games/",
     city_list: CityList,
-    banner_text: false,
+    banner_text: true,
     text_object: "",
     logo: {
       web_dark: IMAGES.QUOTIENT_WEB_LOGO,
@@ -439,10 +524,8 @@ export const instanceConfig = {
         "32x32": "/images/quotient-games/favicon-32x32.svg",
         "16x16": "/images/quotient-games/favicon-16x16.svg",
       },
-      twitter_image_url:
-        "https://app.shupavugames.com/images/quotient-games/twitter-img.jpg",
-      fb_image_url:
-        "https://app.shupavugames.com/images/quotient-games/fb-img.jpg",
+      twitter_image_url: "https://app.shupavugames.com/images/quotient-games/twitter-img.jpg",
+      fb_image_url: "https://app.shupavugames.com/images/quotient-games/fb-img.jpg",
     },
   },
   sprint2: {
@@ -450,6 +533,10 @@ export const instanceConfig = {
     title: "bonzo",
     landing_page_url: "/main",
     is_mobile_otp: false,
+    principal_enabled: true,
+    lms_login_enabled: true,
+    comp_banner_locked: false,
+    safaricom_domain: null,
     account_back_url: "/",
     navigate_to_public_route: false,
     page_title: "Bonzo",
@@ -508,10 +595,8 @@ export const instanceConfig = {
         "32x32": "/images/bonzo/favicon-32x32.png",
         "16x16": "/images/bonzo/favicon-16x16.png",
       },
-      twitter_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
-      fb_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
+      twitter_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
+      fb_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
     },
   },
   qa: {
@@ -519,6 +604,10 @@ export const instanceConfig = {
     title: "bonzo",
     landing_page_url: "/main",
     is_mobile_otp: false,
+    principal_enabled: true,
+    lms_login_enabled: true,
+    comp_banner_locked: false,
+    safaricom_domain: null,
     account_back_url: "/",
     navigate_to_public_route: false,
     page_title: "Bonzo",
@@ -577,10 +666,8 @@ export const instanceConfig = {
         "32x32": "/images/bonzo/favicon-32x32.png",
         "16x16": "/images/bonzo/favicon-16x16.png",
       },
-      twitter_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
-      fb_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
+      twitter_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
+      fb_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
     },
   },
   localhost: {
@@ -588,6 +675,10 @@ export const instanceConfig = {
     title: "bonzo",
     landing_page_url: "/main",
     is_mobile_otp: false,
+    principal_enabled: true,
+    lms_login_enabled: true,
+    comp_banner_locked: false,
+    safaricom_domain: null,
     account_back_url: "/",
     navigate_to_public_route: false,
     page_title: "Bonzo",
@@ -645,10 +736,8 @@ export const instanceConfig = {
         "32x32": "/images/bonzo/favicon-32x32.png",
         "16x16": "/images/bonzo/favicon-16x16.png",
       },
-      twitter_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
-      fb_image_url:
-        "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
+      twitter_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/twitter-img.jpg",
+      fb_image_url: "https://bonzo.knowledgeplatform.com/images/bonzo/fb-img.jpg",
     },
   },
 };

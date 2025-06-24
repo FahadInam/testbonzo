@@ -15,7 +15,11 @@
   import IconsSlider from "../views/Landing/Components/IconsSlider.svelte";
   import DemoCompetitions from "../views/Landing/Components/DemoCompetitions.svelte";
   import { getDemoCompetitions } from "../data-actions/competitions/competitions.da";
-  import { LandingPageNavigation, remapKeys } from "$lib/utils";
+  import {
+    getInstanceText,
+    LandingPageNavigation,
+    remapKeys,
+  } from "$lib/utils";
   import BackToTop from "../components/BackToTop/BackToTop.svelte";
   import { systemSettingsStore } from "../stores/systemsettings.store";
   import { get } from "svelte/store";
@@ -66,10 +70,10 @@
   const config_store = get(systemSettingsStore);
   console.log("config_store ==>", config_store);
 
-  onMount(() => {
-    // landing page navigation call
-    LandingPageNavigation();
-  });
+  // onMount(() => {
+  //   // landing page navigation call
+  //   // LandingPageNavigation();
+  // });
 </script>
 
 <svelte:head>
@@ -89,8 +93,8 @@
   <!-- Hero section -->
   <div class="flex-1 mt-[84px]">
     <Jumbotron
-      title={$t("home_main_title")}
-      description={$t("home_main_description")}
+      title={getInstanceText($t, "home_main_title")}
+      description={getInstanceText($t, "home_main_description")}
       buttons={mainSectionButtons}
     />
   </div>

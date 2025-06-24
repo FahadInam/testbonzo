@@ -3,14 +3,9 @@
   import Button from "../../components/Button/Button.svelte";
   import Form from "../../components/Form/Form.svelte";
   import PopupScreen from "../../components/PopupScreen/PopupScreen.svelte";
-  import { navigationStore } from "../../stores/navigation.store";
   import Modal from "../../components/Modal/Modal.svelte";
   import InfoCardButton from "../../components/InfoCardButton/InfoCardButton.svelte";
-  import {
-    getFormViewLogo,
-    isGlobalClimateLiteracy,
-    isShupavu,
-  } from "../../data-actions/system/system..da";
+  import { getFormViewLogo, isGlobalClimateLiteracy, isShupavu } from "../../data-actions/system/system..da";
   import Image from "../../components/Image/Image.svelte";
   import { systemSettingsStore } from "../../stores/systemsettings.store";
 
@@ -83,18 +78,14 @@
 <!-- backButtonLink={$navigationStore.back_url} -->
 <svelte:component
   this={component}
-  backButtonLabel="Back"
+  backButtonLabel="Home"
   backButtonLink={back_url}
   bind:open={isModalVisible}
   {showBackButton}
 >
   <div slot="body">
     <div class="text-left">
-      <Image
-        src={logo}
-        alt="Instance Logo"
-        className={`${logoClass} mx-auto mb-4`}
-      />
+      <Image src={logo} alt="Instance Logo" className={`${logoClass} mx-auto mb-4`} />
       {#if cards.length == 0}
         <h3 class="text-2xl font-medium text-gray-800 mt-5 pt-2">
           {form.title}
@@ -123,16 +114,8 @@
         />
 
         {#if form.alternativeButtons && form.alternativeButtons.length > 0}
-          <div
-            class="text-center my-4 text-gray-500 font-poppins text-sm font-semibold"
-          >
-            or
-          </div>
-          <div
-            class="flex {form.alternativeButtons.length === 1
-              ? 'flex-col'
-              : 'gap-4 flex-wrap'}"
-          >
+          <div class="text-center my-4 text-gray-500 font-poppins text-sm font-semibold">or</div>
+          <div class="flex {form.alternativeButtons.length === 1 ? 'flex-col' : 'gap-4 flex-wrap'}">
             {#each form.alternativeButtons as button}
               <Button
                 label={button.label}

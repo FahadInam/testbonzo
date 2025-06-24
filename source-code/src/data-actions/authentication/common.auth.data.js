@@ -1,4 +1,4 @@
-import { getText } from "../../stores/language.store";
+import { getText, t } from "../../stores/language.store";
 import { PUBLIC_LMS_URL, PUBLIC_TURNSTILE_KEY } from "$env/static/public";
 import { authModalStore } from "../../stores/auth.modal.store";
 import { goto } from "$app/navigation";
@@ -11,10 +11,11 @@ import { instanceStore } from "../../stores/instance.store";
 import { get } from "svelte/store";
 import { PUBLIC_GOOGLE_ACCOUNT_OAUTH_URL } from "$env/static/public";
 import { openIframe } from "../../stores/iframeStore";
-import { waitForInstance } from "$lib/utils";
+import { getInstanceText, getInstanceTextAsync, waitForInstance } from "$lib/utils";
 import { getRandomAvatar } from "$lib/avatar";
 import { otpStore } from "../../stores/otp.store";
 import { resetGuestStore } from "../../stores/guest.store";
+import { systemSettingsStore } from "../../stores/systemsettings.store";
 
 export const signUpFields = {
   title: await getText("get_started"),
@@ -95,7 +96,7 @@ export const loginFields = {
   turnstileSiteKey: "site-key",
 };
 
-export const userSelectionCards = [
+export const userSelectionCards = async () => [
   {
     image: "/images/learner-icon.svg",
     title: await getText("a_learner"),
@@ -104,13 +105,13 @@ export const userSelectionCards = [
   },
   {
     image: "/images/institute-icon.svg",
-    title: await getText("an_institute"),
-    description: await getText("empower"),
+    title: await getInstanceTextAsync("an_institute"),
+    description: await getInstanceTextAsync("empower"),
     link: "/account/institution/signup",
   },
 ];
 
-export const userSelectionCardsPopup = [
+export const userSelectionCardsPopup = async () => [
   {
     image: "/images/learner-icon.svg",
     title: await getText("a_learner"),
@@ -121,8 +122,8 @@ export const userSelectionCardsPopup = [
   },
   {
     image: "/images/institute-icon.svg",
-    title: await getText("an_institute"),
-    description: await getText("empower"),
+    title: await getInstanceTextAsync("an_institute"),
+    description: await getInstanceTextAsync("empower"),
     onClick: () => {
       authModalStore.set({ visible: true, page: "institution-signup" });
     },
@@ -255,7 +256,7 @@ export const shupavuLoginFields = {
 };
 
 export const shupavuSignupFields = {
-  title: await getText("welcome"),
+  title: await getText("enter_phone_number_continue"),
   fields: [
     {
       name: "phone_number",
@@ -379,15 +380,10 @@ export function handleGoogleLogin(role) {
  * @param {Function} callback
  * @param {string} role
  */
-export const handleSocialLogin = async (
-  data,
-  accessToken,
-  type,
-  callback = () => {},
-  role,
-) => {
+export const handleSocialLogin = async (data, accessToken, type, callback = () => {}, role) => {
   const instance_id = get(instanceStore).instance_id;
-  const userRole = role;
+  const config = get(systemSettingsStore);
+  const userRole = config?.principal_enabled ? role : "learner";
 
   const requestData = {
     action_type: userRole,
@@ -407,9 +403,7 @@ export const handleSocialLogin = async (
     let navigateTo = "/competitions";
 
     if (response.data[0].active_role === "principal") {
-      navigateTo = response.data[0].profile_completion_step
-        ? "/admin/competitions"
-        : "/account/institution/details";
+      navigateTo = response.data[0].profile_completion_step ? "/admin/competitions" : "/account/institution/details";
     }
     await goto(navigateTo);
     if (typeof callback === "function") {
@@ -442,13 +436,7 @@ export async function fetchGoogleUserInfo(hash) {
         headers: { Authorization: `Bearer ${accessToken}` },
       },
     );
-    const res = await handleSocialLogin(
-      response,
-      accessToken,
-      3,
-      undefined,
-      role,
-    );
+    const res = await handleSocialLogin(response, accessToken, 3, undefined, role);
 
     if (returnUrl) {
       goto(returnUrl);
@@ -470,6 +458,8 @@ export function openCoachApp() {
 
 export const handleAccountVerification = async (data) => {
   const urlParams = new URLSearchParams(window.location.search);
+  const config = get(systemSettingsStore);
+
   const changeCode = urlParams.get("change_code") || "";
   const userRole = urlParams.get("role") || "";
   const index = urlParams.get("index") || "";
@@ -479,15 +469,11 @@ export const handleAccountVerification = async (data) => {
     profile_picture: getRandomAvatar().toString(),
     password: data?.password,
     t_token: data?.turnstileToken,
-    role: userRole,
+    role: config?.principal_enabled ? userRole : "learner",
     index: index,
   };
 
-  const response = await request(
-    API_DEFINITIONS.EMAIL_SIGNUP_VERIFICATION,
-    requestData,
-    {},
-  );
+  const response = await request(API_DEFINITIONS.EMAIL_SIGNUP_VERIFICATION, requestData, {});
   if (response.error_code == 0) {
     const { loginUser } = await import("./user.auth.da");
     await loginUser(response?.data?.email, data?.password);

@@ -45,14 +45,14 @@
         label={$t("cancel")}
         size="small"
         type="3d-primary"
-        customClass="w-[150px]"
+        customClass="w-[160px] text-lg md:text-[22px]"
         onClick={() => onButtonClick("cancel")}
       />
       <Button
         label={$t("save")}
         size="small"
         type="3d-secondary"
-        customClass="w-[150px]"
+        customClass="w-[160px] text-lg md:text-[22px]"
         onClick={() => onButtonClick("save")}
       />
     </div>

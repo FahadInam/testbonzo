@@ -1,51 +1,65 @@
 <script>
-  import { onMount } from 'svelte';
-  import { createEventDispatcher } from 'svelte';
-  
+  import { onMount } from "svelte";
+  import { createEventDispatcher } from "svelte";
+
   // Props
   export let start = false;
   export let callback;
-  
+
   // State
   let count = 3;
   let timer;
   let isCounting = false;
   let isAnimating = false;
- 
+  let showZero = false;
+
   const dispatch = createEventDispatcher();
-  
+
   // Watch for changes to `start`
   $: {
     if (start && !isCounting) {
       startCountdown();
     }
   }
-  
+
   function startCountdown() {
     isCounting = true;
     count = 3;
-    isAnimating = true;
-   
+    showZero = false;
+    triggerAnimation();
+
     // Dispatch mount event when countdown starts
-    dispatch('mount');
-    
+    dispatch("mount");
+
     timer = setInterval(() => {
       count--;
-      
-      // Trigger new animation on each count change
-      isAnimating = false;
-      setTimeout(() => {
-        isAnimating = true;
-      }, 10);
-      
+
       if (count === 0) {
+        // Show 0 for final count
+        showZero = true;
+        triggerAnimation();
+
+        // End countdown after showing 0
+        setTimeout(() => {
+          isCounting = false;
+          showZero = false;
+          if (callback) callback();
+        }, 1000);
+
         clearInterval(timer);
-        isCounting = false;
-        if (callback) callback();
+      } else {
+        triggerAnimation();
       }
     }, 1000);
   }
-  
+
+  function triggerAnimation() {
+    isAnimating = false;
+    setTimeout(() => {
+      isAnimating = true;
+    }, 50);
+  }
+
   // Clean up on unmount
   onMount(() => {
     return () => {
@@ -55,25 +69,24 @@
 </script>
 
 <div class="timer">
-  {#if start && count > 0}
+  {#if start && (count > 0 || showZero)}
     <span class="count {isAnimating ? 'animated' : ''}">
-      {count}
+      {showZero ? 0 : count}
     </span>
   {/if}
 </div>
 
 <style>
   .timer {
-    font-family: 'Fredoka', sans-serif;
-    text-align: center;
+    font-family: "Fredoka", sans-serif;
+    display: inline-block;
     position: relative;
-    width: 70px;
-    height: 70px;
-    max-height: 70px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    margin-left: 8px;
   }
-  
+
   .count {
     position: absolute;
     top: 50%;
@@ -81,30 +94,44 @@
     transform: translate(-50%, -50%);
     color: white;
     font-weight: 700;
-    font-size: 56px;
-    transform-origin: calc(50% - 4px) calc(50% + 4px);
-    text-shadow: -2px 0px 1px rgba(0, 0, 0, 1), 
-                 2px 0px 1px rgba(0, 0, 0, 1), 
-                 2px -2px 1px rgba(0, 0, 0, 1), 
-                 -2px -2px 1px rgba(0, 0, 0, 1), 
-                 -2px 4px 1px rgba(0, 0, 0, 1), 
-                 2px 4px 1px rgba(0, 0, 0, 1);
+    font-size: 48px;
+    line-height: 1;
+    text-shadow:
+      -3px 0px 2px rgba(0, 0, 0, 1),
+      3px 0px 2px rgba(0, 0, 0, 1),
+      3px -3px 2px rgba(0, 0, 0, 1),
+      -3px -3px 2px rgba(0, 0, 0, 1),
+      -3px 6px 2px rgba(0, 0, 0, 1),
+      3px 6px 2px rgba(0, 0, 0, 1);
     z-index: 1;
+    white-space: nowrap;
   }
-  
-  @keyframes zoomInCountdown {
+
+  @keyframes zoomOutCountdown {
     0% {
       transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
     }
-    50% {
-      transform: translate(-50%, -50%) scale(1.2);
+    20% {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 1;
+    }
+    40% {
+      transform: translate(-50%, -50%) scale(3);
+    }
+    60% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    80% {
+      transform: translate(-50%, -50%) scale(1);
     }
     100% {
       transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
     }
   }
-  
+
   .animated {
-    animation: zoomInCountdown 1s ease-in-out;
+    animation: zoomOutCountdown 1s ease-out forwards;
   }
 </style>

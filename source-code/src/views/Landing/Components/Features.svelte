@@ -1,6 +1,6 @@
 <script>
   import { IMAGES } from "$lib/assets/images/images.constants";
-  import { useInView } from "$lib/utils";
+  import { getInstanceText, useInView } from "$lib/utils";
   import Button from "../../../components/Button/Button.svelte";
   import Image from "../../../components/Image/Image.svelte";
   import { getText, t } from "../../../stores/language.store";
@@ -15,7 +15,7 @@
     {
       label: "Request a Demo",
       type: "secondary-outlined-inverted",
-      link: "/account/signup",
+      link: "/contactus",
       width: "w-[180px]",
     },
   ];
@@ -69,7 +69,7 @@
       class="text-3xl md:text-5xl font-semibold text-blue-900 text-center max-w-lg md:max-w-2xl mx-auto leading-snug"
       use:useInView={{ animationClass: "animate__fadeIn" }}
     >
-      {$t("feature_main_title")}
+      {getInstanceText($t, "feature_main_title")}
     </h2>
     <p
       class="mt-4 text-gray-600 text-lg md:text-[22px] max-w-full md:max-w-6xl mx-auto text-center leading-snug"

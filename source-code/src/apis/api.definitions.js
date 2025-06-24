@@ -23,13 +23,7 @@ export const API_DEFINITIONS = {
   SIGNUP_USER: {
     method: "POST",
     endpoint: "signup",
-    requiredParams: [
-      "username",
-      "password",
-      "profile_picture",
-      "role",
-      "t_token",
-    ],
+    requiredParams: ["username", "password", "profile_picture", "role", "t_token"],
     cache: false,
     secure: false,
     loader: true,
@@ -89,13 +83,7 @@ export const API_DEFINITIONS = {
   SETTINGS_UPDATE: {
     method: "POST",
     endpoint: "user/settings/update",
-    requiredParams: [
-      "competition_id",
-      "grade",
-      "school_id",
-      "friend_id",
-      "points",
-    ],
+    requiredParams: ["competition_id", "grade", "school_id", "friend_id", "points"],
     cache: false,
     secure: true,
     loader: false,
@@ -222,6 +210,9 @@ export const API_DEFINITIONS = {
     cache: false,
     secure: true,
     loader: false,
+    errorCodes: {
+      "-2": await getText("invitation_already_sent"),
+    },
   },
   CHALLENGE_PLAY: {
     method: "POST",

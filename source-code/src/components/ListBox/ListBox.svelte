@@ -104,10 +104,10 @@
 
             <div class="ml-auto flex items-center gap-2">
               {#if game.dualAction}
-                <button class="" on:click|stopPropagation={() => handleAction(game, title)}>
+                <button class="" on:click|stopPropagation={() => handleAction(game, "reject")}>
                   <Image src={game.badgeIcon} className={game.badgeClass} />
                 </button>
-                <button class="" on:click|stopPropagation={() => handleAction(game, title)}>
+                <button class="" on:click|stopPropagation={() => handleAction(game, "accept")}>
                   <Image src={game.badgeIcon2} className={game.badgeClass} />
                 </button>
               {:else}

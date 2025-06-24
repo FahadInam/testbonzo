@@ -2,26 +2,26 @@
   GameFrame.svelte - Game container with custom bubble timer and iframe
 -->
 <script>
-  import { createEventDispatcher, onMount } from 'svelte';
-  import { userStore } from '../../../stores/user.store';
-  import { gameDataStore } from '../../../stores/gamedata.store';
-  import GameLoader from '../../../components/Loader/GameLoader.svelte';
-  import TimerBox from '../../../components/Timer/TimerBox.svelte';
-  import ConfirmationModal from '../../../components/CustomModals/ConfirmationModal.svelte';
+  import { createEventDispatcher, onMount } from "svelte";
+  import { userStore } from "../../../stores/user.store";
+  import { gameDataStore } from "../../../stores/gamedata.store";
+  import GameLoader from "../../../components/Loader/GameLoader.svelte";
+  import TimerBox from "../../../components/Timer/TimerBox.svelte";
+  import ConfirmationModal from "../../../components/CustomModals/ConfirmationModal.svelte";
   import { t } from "../../../stores/language.store";
-  import { PointsCalc, ResignChallenge, SaveChallenge } from '../../../data-actions/challenge/challenge.da';
-  import { resultStore, updatePlayerData, updateOpponentData } from '../../../stores/result.store';
-    import { AccuracyCalc } from '../../../data-actions/challenge/result.da';
-    import { goto } from '$app/navigation';
-    import { get } from 'svelte/store';
-    import { userActivityStore } from '../../../stores/useractivity.store';
-    import { abbreviateNumber } from '$lib/utils';
-    import { guestStore } from '../../../stores/guest.store';
-  
+  import { PointsCalc, ResignChallenge, SaveChallenge } from "../../../data-actions/challenge/challenge.da";
+  import { resultStore, updatePlayerData, updateOpponentData } from "../../../stores/result.store";
+  import { AccuracyCalc } from "../../../data-actions/challenge/result.da";
+  import { goto } from "$app/navigation";
+  import { get } from "svelte/store";
+  import { userActivityStore } from "../../../stores/useractivity.store";
+  import { abbreviateNumber } from "$lib/utils";
+  import { guestStore } from "../../../stores/guest.store";
+
   // Props
   export let userData;
   export let gameData;
- 
+
   // Component state
   let iframeRef;
   let isLoading = true;
@@ -32,10 +32,10 @@
   let percent = 0;
   let showResignModal = false;
   let isFullscreen = false;
-  
+
   // Create event dispatcher
   const dispatch = createEventDispatcher();
- 
+
   // Calculate launch URL
   $: launchUrl = `${$gameDataStore.link}&user_id=${$userStore.user_id}&isPlayBonzo=1`;
 
@@ -51,33 +51,33 @@
     timeInSec: 0,
     singleQuestionTime: 0,
     mistakes: 0,
-    score: 0
+    score: 0,
   };
-  
+
   /**
    * Saves answer data after a question is submitted
    */
   function saveAnswer(item) {
     const tempA = [...gameTrackingData.answer];
-    
+
     // Calculate time taken for this question
-    const timeTaken = gameTrackingData.singleQuestionTime 
+    const timeTaken = gameTrackingData.singleQuestionTime
       ? (Date.now() - gameTrackingData.singleQuestionTime) / 1000
       : (Date.now() - gameStartTime) / 1000;
-    
+
     // Create answer object and push to array
     tempA.push({
       index: item.index,
       is_correct: item.correct,
-      time_take: timeTaken
+      time_take: timeTaken,
     });
-    
+
     // Update tracking data
     const totalCorrect = item.correct ? gameTrackingData.totalCorrect + 1 : gameTrackingData.totalCorrect;
     const totalContinuousCorrect = item.correct ? gameTrackingData.totalContinuousCorrect + 1 : 0;
     const totalContinuousWrong = item.correct ? 0 : gameTrackingData.totalContinuousWrong + 1;
     const totalAttempted = item.attempted || tempA.length;
-    
+
     // Update the game tracking data
     gameTrackingData = {
       ...gameTrackingData,
@@ -87,14 +87,14 @@
       totalContinuousWrong,
       totalAttempted,
       singleQuestionTime: Date.now(),
-      mistakes: typeof item.mistakes === 'undefined' ? gameTrackingData.mistakes : item.mistakes,
+      mistakes: typeof item.mistakes === "undefined" ? gameTrackingData.mistakes : item.mistakes,
       score: totalCorrect * 100,
     };
-    
+
     // Dispatch an event with the updated game data
-    dispatch('gameDataUpdate', gameTrackingData);
+    dispatch("gameDataUpdate", gameTrackingData);
   }
-  
+
   /**
    * Calculates final result of the game
    */
@@ -121,13 +121,12 @@
       avatar: $userStore.profile_picture,
       total_correct: finalResult?.total_correct,
     });
-    
+
     updateOpponentData({
       playerName: $gameDataStore?.opponent?.name,
       avatar: $gameDataStore?.opponent?.profile_picture,
-      opponent_id: $gameDataStore?.opponent?.user_id
+      opponent_id: $gameDataStore?.opponent?.user_id,
     });
-    
   }
 
   /**
@@ -136,24 +135,33 @@
   function handleGameComplete() {
     const finalResult = calculateResult();
     submitPlayerData(finalResult);
-    if(!$userStore?.is_guest_mode){
+    if (!$userStore?.is_guest_mode) {
       SaveChallenge($gameDataStore.subjectData, finalResult);
     } else {
-      const pointsGained = PointsCalc(finalResult.total_correct, finalResult.total_attempted, finalResult.total_questions, $gameDataStore.subjectData.base_points);
+      const pointsGained = PointsCalc(
+        finalResult.total_correct,
+        finalResult.total_attempted,
+        finalResult.total_questions,
+        $gameDataStore.subjectData.base_points,
+      );
       const points_earned = get(userActivityStore)?.total_coins_earned;
       const total_points_earned = +points_earned + pointsGained;
-      console.log(pointsGained,total_points_earned,finalResult, $userActivityStore, $gameDataStore, "pointsGained");
+      console.log(pointsGained, total_points_earned, finalResult, $userActivityStore, $gameDataStore, "pointsGained");
 
       userActivityStore.set({
-        total_coins_earned: abbreviateNumber(total_points_earned, 2),
+        total_coins_earned: total_points_earned,
       });
+
+      updatePlayerData({
+        points: pointsGained,
+      });
+
       guestStore.update((state) => ({
         ...state,
-        points: total_points_earned,
+        points: total_points_earned + $guestStore.points,
       }));
       goto("/challenge/result");
     }
-
   }
 
   /**
@@ -161,95 +169,105 @@
    */
   function handleMessage(event) {
     try {
-      const { message, data } = JSON.parse(event.data);
-      
+      // Check if event.data is already an object or needs parsing
+      let messageData;
+      if (typeof event.data === "string") {
+        messageData = JSON.parse(event.data);
+      } else {
+        messageData = event.data;
+      }
+
+      const { message, data } = messageData;
+
       // Handle different message types
       switch (message) {
-        case 'LOADING':
+        case "LOADING":
           percent = data;
           break;
-          
-        case 'START':
+
+        case "START":
           gameStarted = true;
           gameTrackingData.totalQuestions = data;
           playTimer = true;
           gameStartTime = Date.now();
           gameTrackingData.singleQuestionTime = Date.now();
-          
+          percent = 100;
           if (iframeRef) {
-            iframeRef.style.display = 'block';
+            iframeRef.style.display = "block";
           }
-          
-          dispatch('gameEvent', { type: 'START', data });
+
+          dispatch("gameEvent", { type: "START", data });
           break;
-          
-        case 'SUBMIT_QUESTION':
+
+        case "SUBMIT_QUESTION":
           saveAnswer({
             index: data.index,
             correct: data.correct,
             attempted: data.attempted,
-            mistakes: data.mistakes
+            mistakes: data.mistakes,
           });
-          
-          dispatch('gameEvent', { type: 'SUBMIT_QUESTION', data: gameTrackingData });
+
+          dispatch("gameEvent", { type: "SUBMIT_QUESTION", data: gameTrackingData });
           break;
-          
-        case 'STOP':
+
+        case "STOP":
           handleGameComplete();
           break;
-          
-        case 'RESIGN':
+
+        case "RESIGN":
           showResignModal = true;
           break;
-          
-        case 'gameError':
+
+        case "gameError":
           playTimer = false;
           if (iframeRef) {
-            iframeRef.style.display = 'none';
+            iframeRef.style.display = "none";
           }
-          dispatch('gameEvent', { type: 'gameError', data });
+          dispatch("gameEvent", { type: "gameError", data });
           break;
-          
-        case 'PAUSE':
+
+        case "PAUSE":
           timerPause = true;
-          dispatch('gameEvent', { type: 'PAUSE', data });
+          dispatch("gameEvent", { type: "PAUSE", data });
           break;
-          
-        case 'RESUME':
+
+        case "RESUME":
           timerPause = false;
-          dispatch('gameEvent', { type: 'RESUME', data });
+          dispatch("gameEvent", { type: "RESUME", data });
           break;
-          
+
         default:
-          dispatch('gameEvent', { type: message, data });
+          dispatch("gameEvent", { type: message, data });
           break;
       }
     } catch (error) {
-      console.error('Error processing message:', error);
+      console.error("Error processing message:", error);
+      console.error("Event data type:", typeof event.data);
+      console.error("Event data:", event.data);
     }
   }
-  
+
   /**
    * Handles timer completion
    */
   function handleTimerUpdate(event) {
     const { status, data } = event.detail;
-      console.log(status, "status");
-    if (status === 'completed') {
+    console.log(status, "status");
+    if (status === "completed") {
       // gameTrackingData.timeInSec = timeLimit;
       // const finalResult = calculateResult();
       handleGameComplete();
       // dispatch('gameEvent', { type: 'timerCompleted', data: finalResult });
     }
   }
-  
+
   /**
    * Handles fullscreen changes
    */
   function handleScreen(event) {
     const { value, orientation } = event.detail;
     isFullscreen = value;
-    dispatch('screenChange', { fullscreen: value, orientation });
+    dispatch("screenChange", { fullscreen: value, orientation });
   }
 
   /**
@@ -261,7 +279,7 @@
         gameTrackingData.timeInSec = Math.floor((Date.now() - gameStartTime) / 1000);
       }
     }, 1000);
-    
+
     return timerId;
   }
 
@@ -270,8 +288,20 @@
    */
   function initiateResign() {
     const finalResult = calculateResult();
-    submitPlayerData(finalResult);
-    ResignChallenge($gameDataStore.subjectData, finalResult);
+    if (!$userStore?.is_guest_mode) {
+      submitPlayerData(finalResult);
+      ResignChallenge($gameDataStore.subjectData, finalResult);
+    } else {
+      updatePlayerData({
+        score: null,
+        playerName: $userStore.name,
+        accuracy: 0,
+        timeTaken: null,
+        avatar: $userStore.profile_picture,
+        total_correct: finalResult?.total_correct,
+      });
+      goto("/challenge/result");
+    }
   }
 
   /**
@@ -285,23 +315,23 @@
 
   onMount(() => {
     // Add message event listener
-    window.addEventListener('message', handleMessage);
-    
+    window.addEventListener("message", handleMessage);
+
     // Get time limit from game data if available
     if ($gameDataStore?.time_limit) {
       timeLimit = $gameDataStore.time_limit;
     }
-    
+
     // Start tracking time
     const timerId = startTimeTracking();
-    
+
     return () => {
-      window.removeEventListener('message', handleMessage);
+      window.removeEventListener("message", handleMessage);
       clearInterval(timerId);
     };
   });
 
- $: console.log($gameDataStore, "gameDataStore");
+  $: console.log($gameDataStore, "gameDataStore");
 </script>
 
 <div class="game-container">
@@ -309,8 +339,8 @@
     <div class="loader-container" class:fade-out={!isLoading}>
       <GameLoader userData={$userStore} gameData={$gameDataStore} bind:percent callback={startGame} />
     </div>
-  
-  <!-- Timer Box component -->
+
+    <!-- Timer Box component -->
   {:else}
     <div class="timer-overlay">
       <TimerBox
@@ -324,7 +354,7 @@
       />
     </div>
   {/if}
-  
+
   <!-- Game iframe -->
   <iframe
     bind:this={iframeRef}
@@ -366,7 +396,7 @@
     z-index: 100;
     overflow: hidden;
   }
-  
+
   .loader-container {
     position: absolute;
     top: 0;
@@ -401,23 +431,23 @@
   .fade-in {
     opacity: 1;
   }
-  
+
   .timer-overlay {
     position: fixed;
-    top: 24px;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: 1000;
     pointer-events: none;
     padding: 0 16px;
   }
-  
+
   .timer-overlay :global(.timer-box) {
     pointer-events: auto;
     max-width: 100%;
     margin: 0 auto;
   }
-  
+
   .modal-container {
     position: fixed;
     top: 0;
@@ -431,7 +461,7 @@
     pointer-events: none;
     padding: 16px;
   }
-  
+
   .pointer-events-auto {
     pointer-events: auto;
   }

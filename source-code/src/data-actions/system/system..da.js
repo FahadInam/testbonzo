@@ -52,6 +52,7 @@ export function currentInstance() {
     isBonzo: instanceKey === "bonzo",
     is1on1Quiz: instanceKey === "1on1quiz",
     isGlobalClimateLiteracy: instanceKey === "globalclimateliteracy",
+    isSingaporeGreenGuardians: instanceKey === "singaporegreenguardians",
     isHealthx: instanceKey === "healthx",
     isShupavuGames: instanceKey === "shupavugames",
     isPocketGames: instanceKey === "pocketgames",
@@ -64,9 +65,9 @@ export const isShupavu = currentInstance()?.isShupavuGames;
 export const isBonzo = currentInstance()?.isBonzo;
 export const isGCLC = currentInstance()?.isGlobalClimateLiteracy;
 
-export const isGlobalClimateLiteracy =
-  currentInstance()?.isGlobalClimateLiteracy;
+export const isGlobalClimateLiteracy = currentInstance()?.isGlobalClimateLiteracy;
 export const isPocketGames = currentInstance()?.isPocketGames;
 
 export const isQuotient = currentInstance()?.isQuotient;
 export const isHealthx = currentInstance()?.isHealthx;
+export const isSGG = currentInstance()?.isSingaporeGreenGuardians;

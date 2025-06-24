@@ -84,7 +84,7 @@
 
   const validatePhone = (phone) => {
     const shupavuRegex = /^\+254\d{9}$/;
-    const normalRegex = /^\d{10}$/;
+    const normalRegex = /^(?:\+92|0)3\d{9}$/;
     const regex = isShupavu ? shupavuRegex : normalRegex;
     return regex.test(phone);
   };
@@ -96,7 +96,6 @@
   // Validate a single field
   const validateField = (field) => {
     const { name, value, type, required } = field;
-
     if (required && !value) {
       errors[name] = $t("field_required");
       return false;
@@ -187,9 +186,7 @@
       if (validateForm()) {
         // Check if password and confirmPassword match
         const passwordField = fields.find((field) => field.type === "password");
-        const confirmPasswordField = fields.find(
-          (field) => field.name === "confirmPassword",
-        );
+        const confirmPasswordField = fields.find((field) => field.name === "confirmPassword");
 
         if (
           passwordField &&
@@ -204,9 +201,7 @@
         const hashedFormData = { ...formData };
         // const passwordField = fields.find((field) => field.type === "password");
         if (passwordField) {
-          hashedFormData[passwordField.name] = sha256(
-            formData[passwordField.name],
-          ).toString();
+          hashedFormData[passwordField.name] = sha256(formData[passwordField.name]).toString();
         }
         handleSubmit({ ...hashedFormData, turnstileToken }); // Call the submit callback
         resetTurnstile();
@@ -228,21 +223,15 @@
   }
 </script>
 
-<form
-  on:submit|preventDefault={() => handleButtonClick({ type: "submit" })}
-  class="space-y-4"
->
+<form on:submit|preventDefault={() => handleButtonClick({ type: "submit" })} class="space-y-4">
   {#each fields as field, index}
     {#if field.layout === "half"}
       {#if index === 0 || fields[index - 1].layout !== "half" || index % 2 === 0}
         <!-- Open a new flex container -->
-        <div class="flex space-x-4">
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
           <!-- Render the first field in the row -->
-          <div class="flex-1">
-            <label
-              for={field.name}
-              class="block text-base font-semibold text-gray-700"
-            >
+          <div class="w-full md:flex-1">
+            <label for={field.name} class="block text-base font-semibold text-gray-700">
               {field.label}
             </label>
 
@@ -252,18 +241,18 @@
                 name={field.name}
                 bind:value={formData[field.name]}
                 on:change={(e) => handleInput(e, field)}
-                class="mt-1 block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+                class="mt-1 dropdown focus:ring block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
                 required={field.required}
               >
                 {#each field.options as option}
-                  <option
-                    value={option.value}
-                    selected={option.value === formData[field.name]}
-                  >
+                  <option value={option.value} selected={option.value === formData[field.name]}>
                     {option.label}
                   </option>
                 {/each}
               </select>
+              <!-- {#if submitted && errors[field.name]}
+                <p class="error text-start">{errors[field.name]}</p>
+              {/if} -->
             {:else}
               <input
                 type={field.type}
@@ -285,11 +274,8 @@
 
           <!-- Render the second field in the row if it exists -->
           {#if index + 1 < fields.length && fields[index + 1].layout === "half"}
-            <div class="flex-1">
-              <label
-                for={fields[index + 1].name}
-                class="block text-base font-semibold text-gray-700"
-              >
+            <div class="w-full md:flex-1">
+              <label for={fields[index + 1].name} class="block text-base font-semibold text-gray-700">
                 {fields[index + 1].label}
               </label>
               {#if fields[index + 1].type === "select"}
@@ -298,18 +284,18 @@
                   name={fields[index + 1].name}
                   bind:value={formData[fields[index + 1].name]}
                   on:change={(e) => handleInput(e, fields[index + 1])}
-                  class="mt-1 block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+                  class="mt-1 dropdown focus:ring block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
                   required={fields[index + 1].required}
                 >
                   {#each fields[index + 1].options as option}
-                    <option
-                      value={option.value}
-                      selected={option.value === formData[field.name]}
-                    >
+                    <option value={option.value} selected={option.value === formData[field.name]}>
                       {option.label}
                     </option>
                   {/each}
                 </select>
+                {#if submitted && errors[fields[index + 1].name]}
+                  <p class="error text-start">{errors[fields[index + 1].name]}</p>
+                {/if}
               {:else}
                 <input
                   type={fields[index + 1].type}
@@ -343,10 +329,7 @@
     {:else}
       <!-- Render full-width fields -->
       <div>
-        <label
-          for={field.name}
-          class="block text-base font-semibold text-gray-700"
-        >
+        <label for={field.name} class="block text-base font-semibold text-gray-700">
           {field.label}
         </label>
         <div class="relative">
@@ -356,18 +339,18 @@
               name={field.name}
               bind:value={formData[field.name]}
               on:change={(e) => handleInput(e, field)}
-              class="mt-1 block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+              class="mt-1 block dropdown focus:ring w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
               required={field.required}
             >
               {#each field.options as option}
-                <option
-                  value={option.value}
-                  selected={option.value === formData[field.name]}
-                >
+                <option value={option.value} selected={option.value === formData[field.name]}>
                   {option.label}
                 </option>
               {/each}
             </select>
+            {#if submitted && errors[field.name]}
+              <p class="error text-start">{errors[field.name]}</p>
+            {/if}
           {:else if field.type === "tel"}
             <div class="relative">
               <span
@@ -379,22 +362,19 @@
                 type="tel"
                 id={field.name}
                 name={field.name}
-                value={formData[field.name]
-                  ? formData[field.name].replace(field.prefix, "").trim()
-                  : ""}
+                value={formData[field.name] ? formData[field.name].replace(field.prefix, "").trim() : ""}
                 on:input={(e) => handleInput(e, field)}
                 class="block w-full p-3 pl-[calc(0.7rem*4+theme(spacing.3))] border-[1px] border-[#DEDEDE] rounded-md focus:outline-none focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] font-poppins placeholder:text-[#AEAEAE] bg-white"
                 placeholder={field.placeholder}
                 required={field.required}
               />
             </div>
+            {#if submitted && errors[field.name]}
+              <p class="error text-start">{errors[field.name]}</p>
+            {/if}
           {:else}
             <input
-              type={field.type === "password"
-                ? showPasswords[field.name]
-                  ? "text"
-                  : "password"
-                : field.type}
+              type={field.type === "password" ? (showPasswords[field.name] ? "text" : "password") : field.type}
               id={field.name}
               name={field.name}
               bind:value={formData[field.name]}
@@ -406,23 +386,30 @@
               use:onEnter={(e) => handleButtonClick({ type: "submit" })}
             />
 
-            <!-- Forgot Password Link -->
-            {#if forgotPassword && field.type === "password"}
-              <div class="text-right mt-2">
-                <a
-                  href={forgotPassword.link}
-                  class=" text-gray-900 font-medium text-sm hover:underline hover:text-gray-600"
-                >
-                  {forgotPassword.label}
-                </a>
+            <div class="w-full">
+              <div>
+                {#if submitted && errors[field.name]}
+                  <p class="error text-start">{errors[field.name]}</p>
+                {/if}
               </div>
-            {/if}
+              <!-- Forgot Password Link -->
+              {#if forgotPassword && field.type === "password"}
+                <div class=" mt-2 flex justify-end">
+                  <a
+                    href={forgotPassword.link}
+                    class=" text-gray-900 font-medium text-sm hover:underline hover:text-gray-600"
+                  >
+                    {forgotPassword.label}
+                  </a>
+                </div>
+              {/if}
+            </div>
           {/if}
           {#if field.type === "password"}
             <button
               type="button"
               on:click={() => togglePasswordVisibility(field.name)}
-              class="absolute right-0 pr-3 flex items-center text-sm leading-5 top-[10px]"
+              class="absolute right-0 pr-3 flex items-center text-sm leading-5 top-[12.7px]"
             >
               {#if showPasswords[field.name]}
                 <!-- Eye icon for visible password -->
@@ -466,9 +453,9 @@
             </button>
           {/if}
         </div>
-        {#if submitted && errors[field.name]}
+        <!-- {#if submitted && errors[field.name]}
           <p class="error">{errors[field.name]}</p>
-        {/if}
+        {/if} -->
       </div>
     {/if}
   {/each}

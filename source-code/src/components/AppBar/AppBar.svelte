@@ -10,17 +10,14 @@
   import { appbarStore } from "../../stores/appbar.store";
   import NotificationBell from "../Notifications/NotificationBell.svelte";
   import { logoutUser } from "../../data-actions/authentication/common.auth.data";
-  import {
-    getSystemLightLogo,
-    isGlobalClimateLiteracy,
-    isShupavu,
-  } from "../../data-actions/system/system..da";
+  import { getSystemLightLogo, isGlobalClimateLiteracy, isShupavu } from "../../data-actions/system/system..da";
   import ConfirmationModal from "../CustomModals/ConfirmationModal.svelte";
   import { userStore } from "../../stores/user.store";
   import InviteFriends from "../InviteCard/InviteFriends.svelte";
   import { afterNavigate } from "$app/navigation";
   import { competitionStore } from "../../stores/competition.store";
-  import { IsGuestMode } from "$lib/utils";
+  import { abbreviateNumber, IsGuestMode } from "$lib/utils";
+  import { guestStore } from "../../stores/guest.store";
 
   export let coinCount = 0;
   export let isLogoVisible = false;
@@ -30,7 +27,7 @@
   export let isProfileVisible = false;
   export let isVoucherButtonVisible = false;
   let isShareButtonVisible = false;
-
+  let isGuestMode = false;
   /**
    * @type {string | null}
    */
@@ -43,9 +40,7 @@
 
   let profileSrc;
   $: profileSrc =
-    profilePicture && profilePicture.length < 5
-      ? `/images/profiles/${profilePicture}.png`
-      : profilePicture;
+    profilePicture && profilePicture.length < 5 ? `/images/profiles/${profilePicture}.png` : profilePicture;
 
   function openModal() {
     appbarStore.update((state) => ({ ...state, isVoucherModalVisible: true }));
@@ -60,11 +55,11 @@
   // --- new sign-out confirmation state ----
   let showSignoutConfirm = false;
   let showShareModal = false;
-  // grab the literal “Sign out” label to match against
+  // grab the literal "Sign out" label to match against
   const SIGNOUT_LABEL = $t("signout");
 
   /**
-   * user clicked a menu item → if it’s “Sign out” we show modal, else just fire clickCB
+   * user clicked a menu item → if it's "Sign out" we show modal, else just fire clickCB
    * @param {{ label: any; clickCB: () => void; }} item
    */
   function handleMenuClick(item) {
@@ -123,30 +118,24 @@
   });
 
   // get isGuestMode value from isGuestMode function
-  $: isGuestMode = IsGuestMode();
+  $: isGuestMode = $userStore ? IsGuestMode() : false;
+  $: if (isGuestMode) {
+    coinCount = $guestStore.points;
+  }
 </script>
 
-<div
-  class="flex items-center justify-between p-4 bg-transparent z-5 px-4 md:px-6"
->
+<div class="flex items-center justify-between p-4 bg-transparent z-5 px-4 md:px-6">
   <!-- Left-aligned content -->
   <div class="flex items-center space-x-2">
     {#if isBackButtonVisible}
       <!-- Back button (SVG icon) -->
-      <ArrowButton
-        arrowType="back"
-        link={$navigationStore.back_url}
-        customClass="text-white"
-        label={backLabel}
-      />
+      <ArrowButton arrowType="back" link={$navigationStore.back_url} customClass="text-white" label={backLabel} />
     {/if}
 
     {#if isLogoVisible}
       <!-- Logo -->
       <button
-        class="flex items-center space-x-2 {!isBackButtonVisible
-          ? 'cursor-default'
-          : ''}"
+        class="flex items-center space-x-2 {!isBackButtonVisible ? 'cursor-default' : ''}"
         on:click={() => {
           if (!isBackButtonVisible) return;
           goBack();
@@ -177,30 +166,16 @@
         on:keydown={(e) => e.key === "Enter" && openShareModal()}
         aria-label={$t("share")}
       >
-        <div
-          class="p-3 bg-white/20 rounded-full flex justify-center items-center"
-        >
-          <img
-            src="/images/share.svg"
-            alt="Share"
-            class="w-[26px] h-[26px] brightness-0 invert"
-          />
+        <div class="p-3 bg-white/20 rounded-full flex justify-center items-center">
+          <img src="/images/share.svg" alt="Share" class="w-[26px] h-[26px] brightness-0 invert" />
         </div>
       </button>
     {/if}
     {#if isCoinVisible}
       <!-- Coin icon and count -->
-      <div
-        class="flex space-x-2 bg-[#00000099] relative rounded-full w-30 h-10 items-center"
-      >
-        <img
-          src="/images/coin.svg"
-          alt="Coin"
-          class="flex absolute w-12 left-0"
-        />
-        <span class="text-white font-lg text-right w-full px-3 font-bold"
-          >{coinCount}</span
-        >
+      <div class="flex space-x-2 bg-[#00000099] relative rounded-full w-30 h-10 items-center coin-counter">
+        <img src="/images/coin.svg" alt="Coin" class="flex absolute w-12 left-0" />
+        <span class="text-white font-lg text-right w-full px-3 font-bold">{abbreviateNumber(coinCount, 2)}</span>
       </div>
     {/if}
 
@@ -220,13 +195,7 @@
       <DropDownMenu items={processedDropdown}>
         <div class="h-12 w-12 rounded-full cursor-pointer">
           <!-- <img src={profilePicture} alt="Profile" /> -->
-          <Avatar
-            t={$userStore.profile_picture}
-            s={50}
-            u={50}
-            ml="auto"
-            mr="auto"
-          />
+          <Avatar t={$userStore.profile_picture} s={50} u={50} ml="auto" mr="auto" />
         </div>
       </DropDownMenu>
     {/if}

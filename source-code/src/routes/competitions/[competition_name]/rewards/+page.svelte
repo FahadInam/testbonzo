@@ -105,7 +105,7 @@
 
   function ModalAction(action) {
     if (action === "play") {
-      goto("/competitions");
+      goto("home");
     } else if (action === "download") {
       certIframeOpened = true;
       CertificateData(user_name, false);

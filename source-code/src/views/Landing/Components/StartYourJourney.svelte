@@ -1,5 +1,5 @@
 <script>
-  import { useInView } from "$lib/utils";
+  import { getInstanceText, useInView } from "$lib/utils";
   import { t } from "../../../stores/language.store";
 
   let openIndex = 0; // First accordion is open by default
@@ -81,7 +81,7 @@
       class="text-3xl md:text-5xl font-semibold text-blue-900 text-center max-w-lg md:max-w-full mx-auto leading-snug"
       use:useInView={{ animationClass: "animate__fadeIn" }}
     >
-      {$t("your_journey_main_title")}
+      {getInstanceText($t, "your_journey_main_title")}
     </h2>
   </div>
 

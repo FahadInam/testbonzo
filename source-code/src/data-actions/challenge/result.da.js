@@ -2,6 +2,7 @@ import { IMAGES } from "$lib/assets/images/images.constants";
 import { get } from "svelte/store";
 import { userStore } from "../../stores/user.store";
 import { getText } from "../../stores/language.store";
+import { IsSinglePlayerMatch } from "./challenge.da";
 /**
  * @param {Object} player - Player data with properties like name, score, accuracy, timeTaken
  * @param {Object} opponent - Opponent data with properties like name, score
@@ -81,4 +82,16 @@ export function determineWinner(resultStore) {
     opponentWon: opponentScore > playerScore,
     isDraw: playerScore === opponentScore,
   };
+}
+
+// Function to check if user is in guest mode and determine multiplayer status
+export function checkMultiplayerStatus(result, user) {
+  // If user is in guest mode, return false
+  if (user?.is_guest_mode) {
+    return false;
+  } else if (IsSinglePlayerMatch(result?.opponent?.opponent_id)) {
+    return false;
+  } else {
+    return result?.opponent?.opponent_id != null;
+  }
 }
