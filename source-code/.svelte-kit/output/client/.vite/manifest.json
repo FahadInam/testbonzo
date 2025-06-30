@@ -1,0 +1,4231 @@
+{
+  ".svelte-kit/generated/client-optimized/app.js": {
+    "file": "_app/immutable/entry/app.CA9zj551.js",
+    "name": "entry/app",
+    "src": ".svelte-kit/generated/client-optimized/app.js",
+    "isEntry": true,
+    "imports": [
+      "_CmsKOCeN.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_BDr9Qe-U.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_t8zBqOd3.js",
+      "_Dtj4eyj4.js",
+      "_CzvvLib5.js",
+      "_DjNUT-oc.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/generated/client-optimized/nodes/0.js",
+      ".svelte-kit/generated/client-optimized/nodes/1.js",
+      ".svelte-kit/generated/client-optimized/nodes/2.js",
+      ".svelte-kit/generated/client-optimized/nodes/3.js",
+      ".svelte-kit/generated/client-optimized/nodes/4.js",
+      ".svelte-kit/generated/client-optimized/nodes/5.js",
+      ".svelte-kit/generated/client-optimized/nodes/6.js",
+      ".svelte-kit/generated/client-optimized/nodes/7.js",
+      ".svelte-kit/generated/client-optimized/nodes/8.js",
+      ".svelte-kit/generated/client-optimized/nodes/9.js",
+      ".svelte-kit/generated/client-optimized/nodes/10.js",
+      ".svelte-kit/generated/client-optimized/nodes/11.js",
+      ".svelte-kit/generated/client-optimized/nodes/12.js",
+      ".svelte-kit/generated/client-optimized/nodes/13.js",
+      ".svelte-kit/generated/client-optimized/nodes/14.js",
+      ".svelte-kit/generated/client-optimized/nodes/15.js",
+      ".svelte-kit/generated/client-optimized/nodes/16.js",
+      ".svelte-kit/generated/client-optimized/nodes/17.js",
+      ".svelte-kit/generated/client-optimized/nodes/18.js",
+      ".svelte-kit/generated/client-optimized/nodes/19.js",
+      ".svelte-kit/generated/client-optimized/nodes/20.js",
+      ".svelte-kit/generated/client-optimized/nodes/21.js",
+      ".svelte-kit/generated/client-optimized/nodes/22.js",
+      ".svelte-kit/generated/client-optimized/nodes/23.js",
+      ".svelte-kit/generated/client-optimized/nodes/24.js",
+      ".svelte-kit/generated/client-optimized/nodes/25.js",
+      ".svelte-kit/generated/client-optimized/nodes/26.js",
+      ".svelte-kit/generated/client-optimized/nodes/27.js",
+      ".svelte-kit/generated/client-optimized/nodes/28.js",
+      ".svelte-kit/generated/client-optimized/nodes/29.js",
+      ".svelte-kit/generated/client-optimized/nodes/30.js",
+      ".svelte-kit/generated/client-optimized/nodes/31.js",
+      ".svelte-kit/generated/client-optimized/nodes/32.js",
+      ".svelte-kit/generated/client-optimized/nodes/33.js",
+      ".svelte-kit/generated/client-optimized/nodes/34.js",
+      ".svelte-kit/generated/client-optimized/nodes/35.js",
+      ".svelte-kit/generated/client-optimized/nodes/36.js",
+      ".svelte-kit/generated/client-optimized/nodes/37.js",
+      ".svelte-kit/generated/client-optimized/nodes/38.js",
+      ".svelte-kit/generated/client-optimized/nodes/39.js",
+      ".svelte-kit/generated/client-optimized/nodes/40.js",
+      ".svelte-kit/generated/client-optimized/nodes/41.js",
+      ".svelte-kit/generated/client-optimized/nodes/42.js",
+      ".svelte-kit/generated/client-optimized/nodes/43.js",
+      ".svelte-kit/generated/client-optimized/nodes/44.js",
+      ".svelte-kit/generated/client-optimized/nodes/45.js",
+      ".svelte-kit/generated/client-optimized/nodes/46.js",
+      ".svelte-kit/generated/client-optimized/nodes/47.js",
+      ".svelte-kit/generated/client-optimized/nodes/48.js",
+      ".svelte-kit/generated/client-optimized/nodes/49.js",
+      ".svelte-kit/generated/client-optimized/nodes/50.js",
+      ".svelte-kit/generated/client-optimized/nodes/51.js",
+      ".svelte-kit/generated/client-optimized/nodes/52.js",
+      ".svelte-kit/generated/client-optimized/nodes/53.js",
+      ".svelte-kit/generated/client-optimized/nodes/54.js",
+      ".svelte-kit/generated/client-optimized/nodes/55.js",
+      ".svelte-kit/generated/client-optimized/nodes/56.js",
+      ".svelte-kit/generated/client-optimized/nodes/57.js",
+      ".svelte-kit/generated/client-optimized/nodes/58.js",
+      ".svelte-kit/generated/client-optimized/nodes/59.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/0.js": {
+    "file": "_app/immutable/nodes/0.4Zo40VU_.js",
+    "name": "nodes/0",
+    "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_CmsKOCeN.js",
+      "_Bvbqq-zN.js",
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_MyGX-iGX.js",
+      "_t8zBqOd3.js",
+      "_CvLKQSYC.js",
+      "_BoEBYeq-.js",
+      "_DjNUT-oc.js",
+      "_E8PaDAPB.js",
+      "_C_S5TygX.js",
+      "_Bg1yBDra.js"
+    ],
+    "dynamicImports": [
+      "src/data-actions/instance/instance.da.js",
+      "src/components/Toast/Toast.svelte",
+      "src/components/RetryBox/RetryBox.svelte",
+      "src/components/Loader/Loader.svelte",
+      "src/views/LmsAuthentication/LmsAuthentication.svelte"
+    ],
+    "css": [
+      "_app/immutable/assets/0.CRUsmx4y.css"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/1.js": {
+    "file": "_app/immutable/nodes/1.Dpyp1P0q.js",
+    "name": "nodes/1",
+    "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/10.js": {
+    "file": "_app/immutable/nodes/10.DkoloHL9.js",
+    "name": "nodes/10",
+    "src": ".svelte-kit/generated/client-optimized/nodes/10.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "_DjNUT-oc.js",
+      "_gqa3uC-f.js",
+      "_jZj24OFn.js",
+      "_DWJ43-ZD.js",
+      "_Bvbqq-zN.js",
+      "_BSXIVVLY.js",
+      "_BoEBYeq-.js",
+      "_CROUG2YM.js",
+      "_Do5AT5O5.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/11.js": {
+    "file": "_app/immutable/nodes/11.cGeAivj9.js",
+    "name": "nodes/11",
+    "src": ".svelte-kit/generated/client-optimized/nodes/11.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_DWJ43-ZD.js",
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "_DjNUT-oc.js",
+      "_DPui9idN.js",
+      "_Dui37nOO.js",
+      "_Dtj4eyj4.js",
+      "_BErKQ2SA.js",
+      "_DG82DZTX.js",
+      "_Bvbqq-zN.js",
+      "_D-4yn-ZE.js",
+      "_CQjx5DEQ.js",
+      "__Vcui5w2.js",
+      "_CZWMLGp1.js",
+      "_Cio8JTVh.js",
+      "_C-3V0pWC.js",
+      "_Bt5JDIEY.js",
+      "_C_S5TygX.js",
+      "_BoEBYeq-.js",
+      "_CJxW89IG.js",
+      "_CbiYp799.js",
+      "__nOA3xL7.js",
+      "_DeT2Bmte.js",
+      "_Cf2TjtaF.js",
+      "_-HKzD6gI.js"
+    ],
+    "css": [
+      "_app/immutable/assets/11.D0BkdGkF.css"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/12.js": {
+    "file": "_app/immutable/nodes/12.Bskr2owc.js",
+    "name": "nodes/12",
+    "src": ".svelte-kit/generated/client-optimized/nodes/12.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_BoEBYeq-.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/13.js": {
+    "file": "_app/immutable/nodes/13.B51vaRhL.js",
+    "name": "nodes/13",
+    "src": ".svelte-kit/generated/client-optimized/nodes/13.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "src/data-actions/authentication/user.auth.da.js",
+      "_C0-ROwNx.js",
+      "_CR2liGHp.js",
+      "_Djyhf4cp.js",
+      "_Bvbqq-zN.js",
+      "_ClXJh1T-.js",
+      "_CpvBVgdC.js",
+      "_Dtj4eyj4.js",
+      "_CJxW89IG.js",
+      "_BErKQ2SA.js",
+      "_CZWMLGp1.js",
+      "_Do5AT5O5.js",
+      "_DjNUT-oc.js",
+      "_DWJ43-ZD.js",
+      "_jZj24OFn.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/14.js": {
+    "file": "_app/immutable/nodes/14.DUwxmmAp.js",
+    "name": "nodes/14",
+    "src": ".svelte-kit/generated/client-optimized/nodes/14.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_CLbkU8BL.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_t8zBqOd3.js",
+      "_Dtj4eyj4.js",
+      "_DJyY-Ao_.js",
+      "_B08xAkVk.js",
+      "_B6jBUJ6q.js",
+      "_CROUG2YM.js",
+      "_NeQtxiIO.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/15.js": {
+    "file": "_app/immutable/nodes/15.DgTZ1_bN.js",
+    "name": "nodes/15",
+    "src": ".svelte-kit/generated/client-optimized/nodes/15.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_CLbkU8BL.js",
+      "_C0-ROwNx.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/16.js": {
+    "file": "_app/immutable/nodes/16.Do5YLexn.js",
+    "name": "nodes/16",
+    "src": ".svelte-kit/generated/client-optimized/nodes/16.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_CLbkU8BL.js",
+      "_C0-ROwNx.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/17.js": {
+    "file": "_app/immutable/nodes/17.CJg8b65p.js",
+    "name": "nodes/17",
+    "src": ".svelte-kit/generated/client-optimized/nodes/17.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_CROUG2YM.js",
+      "_DjNUT-oc.js",
+      "_RG-z8tzU.js",
+      "_C0-ROwNx.js",
+      "_Bvbqq-zN.js",
+      "_Do5AT5O5.js",
+      "_DWJ43-ZD.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/18.js": {
+    "file": "_app/immutable/nodes/18.qSs8MC-l.js",
+    "name": "nodes/18",
+    "src": ".svelte-kit/generated/client-optimized/nodes/18.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_C0-ROwNx.js",
+      "src/data-actions/authentication/user.auth.da.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/19.js": {
+    "file": "_app/immutable/nodes/19.BjpQEU4g.js",
+    "name": "nodes/19",
+    "src": ".svelte-kit/generated/client-optimized/nodes/19.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "src/data-actions/authentication/user.auth.da.js",
+      "_C0-ROwNx.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/2.js": {
+    "file": "_app/immutable/nodes/2.CAVxS2Hq.js",
+    "name": "nodes/2",
+    "src": ".svelte-kit/generated/client-optimized/nodes/2.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_MyGX-iGX.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_gqa3uC-f.js",
+      "_DWJ43-ZD.js",
+      "_CROUG2YM.js",
+      "_Bvbqq-zN.js",
+      "_BSXIVVLY.js",
+      "_Q_rB2KR5.js",
+      "_D6ovqnLS.js",
+      "_tHHj_MSY.js",
+      "_Cf2TjtaF.js",
+      "_BfCXIyDL.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/20.js": {
+    "file": "_app/immutable/nodes/20.C6wAui_x.js",
+    "name": "nodes/20",
+    "src": ".svelte-kit/generated/client-optimized/nodes/20.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_t8zBqOd3.js",
+      "_Dui37nOO.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "_BErKQ2SA.js",
+      "_B6jBUJ6q.js",
+      "_Do5AT5O5.js",
+      "_B08xAkVk.js",
+      "_CR2liGHp.js",
+      "src/data-actions/authentication/user.auth.da.js",
+      "_Bvbqq-zN.js",
+      "_BoEBYeq-.js",
+      "_CROUG2YM.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/21.js": {
+    "file": "_app/immutable/nodes/21.0G1maMM0.js",
+    "name": "nodes/21",
+    "src": ".svelte-kit/generated/client-optimized/nodes/21.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "_CROUG2YM.js",
+      "_BErKQ2SA.js",
+      "_DjNUT-oc.js",
+      "_Bvbqq-zN.js",
+      "_DxGJWrS1.js",
+      "_CJxW89IG.js",
+      "_BoEBYeq-.js",
+      "_B08xAkVk.js",
+      "src/data-actions/authentication/user.auth.da.js",
+      "_C0-ROwNx.js",
+      "_RG-z8tzU.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/22.js": {
+    "file": "_app/immutable/nodes/22.CQM_oC6J.js",
+    "name": "nodes/22",
+    "src": ".svelte-kit/generated/client-optimized/nodes/22.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_DxGJWrS1.js",
+      "_C_S5TygX.js",
+      "_CuKIkSf6.js",
+      "_Bvbqq-zN.js",
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_DWJ43-ZD.js",
+      "_DcAP65h3.js",
+      "_CR2liGHp.js",
+      "_Djyhf4cp.js",
+      "_BErKQ2SA.js",
+      "_Br0AyJpI.js",
+      "_BoEBYeq-.js",
+      "_Cio8JTVh.js",
+      "_Dtj4eyj4.js",
+      "_ClXJh1T-.js",
+      "_CY6V76w3.js",
+      "_Cf2TjtaF.js",
+      "__Vcui5w2.js",
+      "_D6ovqnLS.js",
+      "_CJxW89IG.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/23.js": {
+    "file": "_app/immutable/nodes/23.CB9F0Nfl.js",
+    "name": "nodes/23",
+    "src": ".svelte-kit/generated/client-optimized/nodes/23.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "__Vcui5w2.js",
+      "_DWJ43-ZD.js",
+      "_CpvBVgdC.js",
+      "_Dui37nOO.js",
+      "_Dtj4eyj4.js",
+      "_CQjx5DEQ.js",
+      "_DrO32kRC.js",
+      "_Br0AyJpI.js",
+      "_DBObbdNy.js",
+      "_DS_dmsjO.js",
+      "_Cf2TjtaF.js",
+      "_CROUG2YM.js",
+      "_BoEBYeq-.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/24.js": {
+    "file": "_app/immutable/nodes/24.CqH2gUrC.js",
+    "name": "nodes/24",
+    "src": ".svelte-kit/generated/client-optimized/nodes/24.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_Bvbqq-zN.js",
+      "_Cf2TjtaF.js",
+      "_IK8gWlPt.js",
+      "_DBObbdNy.js",
+      "__Vcui5w2.js",
+      "_Br0AyJpI.js",
+      "_DS_dmsjO.js",
+      "_C3lS0y46.js",
+      "_DWJ43-ZD.js",
+      "_BoEBYeq-.js",
+      "_CROUG2YM.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/25.js": {
+    "file": "_app/immutable/nodes/25.CUqDWIO4.js",
+    "name": "nodes/25",
+    "src": ".svelte-kit/generated/client-optimized/nodes/25.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_RG-z8tzU.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/26.js": {
+    "file": "_app/immutable/nodes/26.DBkeyuHC.js",
+    "name": "nodes/26",
+    "src": ".svelte-kit/generated/client-optimized/nodes/26.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CvLKQSYC.js",
+      "_BoEBYeq-.js",
+      "_Bg1yBDra.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/27.js": {
+    "file": "_app/immutable/nodes/27.BA5iQMvn.js",
+    "name": "nodes/27",
+    "src": ".svelte-kit/generated/client-optimized/nodes/27.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_CzvvLib5.js",
+      "_Dtj4eyj4.js",
+      "_CH285WnD.js",
+      "__Vcui5w2.js",
+      "_BoEBYeq-.js",
+      "_ClXJh1T-.js",
+      "_Bvbqq-zN.js",
+      "_DxGJWrS1.js",
+      "_CbiYp799.js",
+      "_CJxW89IG.js",
+      "_Bz4n4I_X.js",
+      "_Djyhf4cp.js",
+      "_Q_rB2KR5.js",
+      "_CuKIkSf6.js"
+    ],
+    "css": [
+      "_app/immutable/assets/27.BhLez9Ux.css"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/28.js": {
+    "file": "_app/immutable/nodes/28.HID3LxzV.js",
+    "name": "nodes/28",
+    "src": ".svelte-kit/generated/client-optimized/nodes/28.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_DxGJWrS1.js",
+      "_C_S5TygX.js",
+      "_DqqvuqO8.js",
+      "_CuKIkSf6.js",
+      "_Bvbqq-zN.js",
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_BPoee8nT.js",
+      "__Vcui5w2.js",
+      "_BOfNRF_K.js",
+      "_BErKQ2SA.js",
+      "_D7NkiQyh.js",
+      "_BoEBYeq-.js",
+      "_Bz4n4I_X.js",
+      "_DWJ43-ZD.js",
+      "_DrO32kRC.js",
+      "_RG-z8tzU.js",
+      "_6EA1Kz0r.js",
+      "_Cio8JTVh.js",
+      "_Do5AT5O5.js"
+    ],
+    "css": [
+      "_app/immutable/assets/28.CKM_2yCw.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/sunrays.m2kjJ8Dx.png",
+      "_app/immutable/assets/stack1.C9eVAYBG.png",
+      "_app/immutable/assets/stack1-pg.C94_rBxp.png",
+      "_app/immutable/assets/coin.BaRO8b4k.png"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/29.js": {
+    "file": "_app/immutable/nodes/29.CPBNT2Yk.js",
+    "name": "nodes/29",
+    "src": ".svelte-kit/generated/client-optimized/nodes/29.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "__Vcui5w2.js",
+      "_DqqvuqO8.js",
+      "_Br0AyJpI.js",
+      "_Bvbqq-zN.js",
+      "_C_S5TygX.js",
+      "_ClXJh1T-.js",
+      "_DPui9idN.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_Dtj4eyj4.js",
+      "_DrO32kRC.js",
+      "_CZWMLGp1.js",
+      "_BErKQ2SA.js",
+      "_DWJ43-ZD.js",
+      "_BoEBYeq-.js",
+      "_Bz4n4I_X.js",
+      "_Do5AT5O5.js",
+      "_Cf2TjtaF.js",
+      "_DXRGGiDY.js",
+      "_CuKIkSf6.js",
+      "_BfCXIyDL.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/3.js": {
+    "file": "_app/immutable/nodes/3._vcmZcX5.js",
+    "name": "nodes/3",
+    "src": ".svelte-kit/generated/client-optimized/nodes/3.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_CvLKQSYC.js",
+      "_D6ovqnLS.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/30.js": {
+    "file": "_app/immutable/nodes/30.BBaReUPZ.js",
+    "name": "nodes/30",
+    "src": ".svelte-kit/generated/client-optimized/nodes/30.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_CzvvLib5.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_Bvbqq-zN.js",
+      "_Bz4n4I_X.js",
+      "_CpvBVgdC.js",
+      "__Vcui5w2.js",
+      "_DrO32kRC.js",
+      "_Cio8JTVh.js",
+      "_DWJ43-ZD.js",
+      "_EsZdy3dr.js",
+      "_DqqvuqO8.js",
+      "_BOfNRF_K.js",
+      "_BoEBYeq-.js",
+      "_C_S5TygX.js",
+      "_Q_rB2KR5.js",
+      "_DxGJWrS1.js",
+      "_CbiYp799.js",
+      "_CJxW89IG.js",
+      "_CkIfqAOp.js"
+    ],
+    "css": [
+      "_app/immutable/assets/30.4tmqVKFy.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/start_challenge.B-lbAoXm.mp3",
+      "_app/immutable/assets/drumroll.DMT6Sqnq.mp3",
+      "_app/immutable/assets/countdown.Cbs6QFWp.mp3",
+      "_app/immutable/assets/timer_close_bg.DJWagRZe.png",
+      "_app/immutable/assets/timer_open_bg.C_Nu5W-A.png"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/31.js": {
+    "file": "_app/immutable/nodes/31.C377J1uA.js",
+    "name": "nodes/31",
+    "src": ".svelte-kit/generated/client-optimized/nodes/31.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_Bvbqq-zN.js",
+      "_DWJ43-ZD.js",
+      "_Djyhf4cp.js",
+      "_ClXJh1T-.js",
+      "_CkIfqAOp.js",
+      "_CY6V76w3.js",
+      "_jZj24OFn.js",
+      "_D6ovqnLS.js",
+      "_BoEBYeq-.js",
+      "_CROUG2YM.js",
+      "_Cf2TjtaF.js",
+      "_CJxW89IG.js",
+      "_CuKIkSf6.js",
+      "_-67--UVX.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/32.js": {
+    "file": "_app/immutable/nodes/32.g9bX6htH.js",
+    "name": "nodes/32",
+    "src": ".svelte-kit/generated/client-optimized/nodes/32.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CvLKQSYC.js",
+      "_BoEBYeq-.js",
+      "_Bg1yBDra.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/33.js": {
+    "file": "_app/immutable/nodes/33.191Zzido.js",
+    "name": "nodes/33",
+    "src": ".svelte-kit/generated/client-optimized/nodes/33.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_jZj24OFn.js",
+      "_Bvbqq-zN.js",
+      "_DcAP65h3.js",
+      "_-67--UVX.js",
+      "_C_S5TygX.js",
+      "_BoEBYeq-.js",
+      "_Cf2TjtaF.js",
+      "_BVikIGkG.js",
+      "_DWJ43-ZD.js",
+      "_CJxW89IG.js",
+      "_ClXJh1T-.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/34.js": {
+    "file": "_app/immutable/nodes/34.BkTYBXyj.js",
+    "name": "nodes/34",
+    "src": ".svelte-kit/generated/client-optimized/nodes/34.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_Bvbqq-zN.js",
+      "_Cf2TjtaF.js",
+      "_Cio8JTVh.js",
+      "_Dui37nOO.js",
+      "_D8KE6gRb.js",
+      "_Dtj4eyj4.js",
+      "_CtjIkREP.js",
+      "__Vcui5w2.js",
+      "_Br0AyJpI.js",
+      "_DeT2Bmte.js",
+      "_BprvYnHi.js",
+      "_BoEBYeq-.js",
+      "_D7NkiQyh.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/35.js": {
+    "file": "_app/immutable/nodes/35.Dz6E9Igi.js",
+    "name": "nodes/35",
+    "src": ".svelte-kit/generated/client-optimized/nodes/35.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_DaCULuOx.js",
+      "_Bt5JDIEY.js",
+      "_Bvbqq-zN.js",
+      "_DWJ43-ZD.js",
+      "_Cf2TjtaF.js",
+      "_DsRXg6dD.js",
+      "_CtjIkREP.js",
+      "__Vcui5w2.js",
+      "_Q_rB2KR5.js",
+      "_Bz4n4I_X.js",
+      "_DYX4XAFh.js",
+      "_CuKIkSf6.js",
+      "_mMuMWm2p.js",
+      "_BprvYnHi.js",
+      "_DqqvuqO8.js",
+      "_BoEBYeq-.js",
+      "_BOfNRF_K.js",
+      "_CkIfqAOp.js",
+      "_ClXJh1T-.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/36.js": {
+    "file": "_app/immutable/nodes/36.CsyQ-piu.js",
+    "name": "nodes/36",
+    "src": ".svelte-kit/generated/client-optimized/nodes/36.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_Bvbqq-zN.js",
+      "_Cf2TjtaF.js",
+      "_IK8gWlPt.js",
+      "_DBObbdNy.js",
+      "__Vcui5w2.js",
+      "_Br0AyJpI.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/37.js": {
+    "file": "_app/immutable/nodes/37.DNY_5b_p.js",
+    "name": "nodes/37",
+    "src": ".svelte-kit/generated/client-optimized/nodes/37.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_Bvbqq-zN.js",
+      "_Br0AyJpI.js",
+      "_Cf2TjtaF.js",
+      "_DjNUT-oc.js",
+      "_DWJ43-ZD.js",
+      "_CtjIkREP.js",
+      "__Vcui5w2.js",
+      "_BoEBYeq-.js",
+      "_Bg1yBDra.js",
+      "_CXqcBc75.js",
+      "_sqJV_oxN.js",
+      "_DpwOLBsT.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/38.js": {
+    "file": "_app/immutable/nodes/38.B9RAev3Q.js",
+    "name": "nodes/38",
+    "src": ".svelte-kit/generated/client-optimized/nodes/38.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_Br0AyJpI.js",
+      "__Vcui5w2.js",
+      "_Bvbqq-zN.js",
+      "_Dl0udVKr.js",
+      "_CXqcBc75.js",
+      "_C_S5TygX.js",
+      "_DWJ43-ZD.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/39.js": {
+    "file": "_app/immutable/nodes/39.CkcE_unl.js",
+    "name": "nodes/39",
+    "src": ".svelte-kit/generated/client-optimized/nodes/39.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_CvLKQSYC.js",
+      "__Vcui5w2.js",
+      "_DjNUT-oc.js",
+      "_Br0AyJpI.js",
+      "_Bvbqq-zN.js",
+      "_Cf2TjtaF.js",
+      "_Dl0udVKr.js",
+      "_DWJ43-ZD.js",
+      "_DeT2Bmte.js",
+      "_mMuMWm2p.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/4.js": {
+    "file": "_app/immutable/nodes/4.CtLhdoeS.js",
+    "name": "nodes/4",
+    "src": ".svelte-kit/generated/client-optimized/nodes/4.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/40.js": {
+    "file": "_app/immutable/nodes/40.CAI18qnH.js",
+    "name": "nodes/40",
+    "src": ".svelte-kit/generated/client-optimized/nodes/40.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_BPoee8nT.js",
+      "_CKiDdCmz.js",
+      "_Ke5tWbsT.js",
+      "_BErKQ2SA.js",
+      "_Bvbqq-zN.js",
+      "__Vcui5w2.js",
+      "_ClXJh1T-.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/41.js": {
+    "file": "_app/immutable/nodes/41.Dn49Jhsn.js",
+    "name": "nodes/41",
+    "src": ".svelte-kit/generated/client-optimized/nodes/41.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Cio8JTVh.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_C_S5TygX.js",
+      "_BoEBYeq-.js",
+      "_Bvbqq-zN.js",
+      "__Vcui5w2.js",
+      "_Br0AyJpI.js",
+      "_EgB6FDdp.js",
+      "_DrO32kRC.js",
+      "_yZ7lWqQn.js",
+      "_BErKQ2SA.js",
+      "_DeT2Bmte.js",
+      "_DhzMH-1T.js",
+      "_CbiYp799.js",
+      "_DWJ43-ZD.js"
+    ],
+    "css": [
+      "_app/immutable/assets/GradeConfirmModal.BZjlKESM.css"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/42.js": {
+    "file": "_app/immutable/nodes/42.Blb2UvVL.js",
+    "name": "nodes/42",
+    "src": ".svelte-kit/generated/client-optimized/nodes/42.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "__Vcui5w2.js",
+      "_DjNUT-oc.js",
+      "_DWJ43-ZD.js",
+      "_Bvbqq-zN.js",
+      "_EgB6FDdp.js",
+      "_DhzMH-1T.js",
+      "_Co6oUhD1.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/43.js": {
+    "file": "_app/immutable/nodes/43.CsZnFeZ9.js",
+    "name": "nodes/43",
+    "src": ".svelte-kit/generated/client-optimized/nodes/43.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "_DjNUT-oc.js",
+      "_DWJ43-ZD.js",
+      "_Bvbqq-zN.js",
+      "_CuKIkSf6.js",
+      "_BoEBYeq-.js",
+      "_CbiYp799.js",
+      "_BErKQ2SA.js",
+      "__Vcui5w2.js",
+      "_DYX4XAFh.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_Dtj4eyj4.js",
+      "_D7NkiQyh.js",
+      "_CZWMLGp1.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/44.js": {
+    "file": "_app/immutable/nodes/44.B4XNHnW7.js",
+    "name": "nodes/44",
+    "src": ".svelte-kit/generated/client-optimized/nodes/44.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_Bvbqq-zN.js",
+      "_Br0AyJpI.js",
+      "_DjNUT-oc.js",
+      "_D_xCQIDs.js",
+      "_Dtj4eyj4.js",
+      "__Vcui5w2.js",
+      "_BErKQ2SA.js",
+      "_CZWMLGp1.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_D8KE6gRb.js",
+      "_NeQtxiIO.js",
+      "_DBObbdNy.js",
+      "_DPui9idN.js",
+      "_DeT2Bmte.js",
+      "_BoEBYeq-.js",
+      "_ClXJh1T-.js",
+      "_C_S5TygX.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/45.js": {
+    "file": "_app/immutable/nodes/45.B-zy8pS6.js",
+    "name": "nodes/45",
+    "src": ".svelte-kit/generated/client-optimized/nodes/45.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_C-3V0pWC.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "__Vcui5w2.js",
+      "_EgB6FDdp.js",
+      "_Bvbqq-zN.js",
+      "_DWJ43-ZD.js",
+      "_D6ovqnLS.js",
+      "_BErKQ2SA.js",
+      "_BoEBYeq-.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/46.js": {
+    "file": "_app/immutable/nodes/46.VbzVa8Wv.js",
+    "name": "nodes/46",
+    "src": ".svelte-kit/generated/client-optimized/nodes/46.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_Bvbqq-zN.js",
+      "_Dui37nOO.js",
+      "_Dtj4eyj4.js",
+      "__Vcui5w2.js",
+      "_BoEBYeq-.js",
+      "_CbiYp799.js",
+      "_CR2liGHp.js",
+      "_DWJ43-ZD.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_CH285WnD.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/47.js": {
+    "file": "_app/immutable/nodes/47.CoU8Rzwh.js",
+    "name": "nodes/47",
+    "src": ".svelte-kit/generated/client-optimized/nodes/47.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_C_S5TygX.js",
+      "_D81jimsq.js",
+      "_DG82DZTX.js",
+      "_CJxW89IG.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/48.js": {
+    "file": "_app/immutable/nodes/48.CgKOZNob.js",
+    "name": "nodes/48",
+    "src": ".svelte-kit/generated/client-optimized/nodes/48.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_D81jimsq.js",
+      "_DG82DZTX.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/49.js": {
+    "file": "_app/immutable/nodes/49.DO3LQddN.js",
+    "name": "nodes/49",
+    "src": ".svelte-kit/generated/client-optimized/nodes/49.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_D81jimsq.js",
+      "_DG82DZTX.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/5.js": {
+    "file": "_app/immutable/nodes/5.DKO9ieXP.js",
+    "name": "nodes/5",
+    "src": ".svelte-kit/generated/client-optimized/nodes/5.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "_C_S5TygX.js",
+      "_gqa3uC-f.js",
+      "_jZj24OFn.js",
+      "_BSXIVVLY.js",
+      "_Cf2TjtaF.js",
+      "_DWJ43-ZD.js",
+      "_Bvbqq-zN.js",
+      "_CROUG2YM.js",
+      "_Q_rB2KR5.js",
+      "_-67--UVX.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/50.js": {
+    "file": "_app/immutable/nodes/50.BvqQDZzS.js",
+    "name": "nodes/50",
+    "src": ".svelte-kit/generated/client-optimized/nodes/50.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_B08xAkVk.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/51.js": {
+    "file": "_app/immutable/nodes/51.BDr5Blcr.js",
+    "name": "nodes/51",
+    "src": ".svelte-kit/generated/client-optimized/nodes/51.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Cio8JTVh.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_DPui9idN.js",
+      "_Dui37nOO.js",
+      "_Dtj4eyj4.js",
+      "_GHjBkfal.js",
+      "_Ke5tWbsT.js",
+      "_Bvbqq-zN.js",
+      "_CR2liGHp.js",
+      "_Cj1nadwp.js",
+      "_BoEBYeq-.js",
+      "_CJxW89IG.js",
+      "_BwH_vxp2.js",
+      "__Vcui5w2.js",
+      "_B08xAkVk.js"
+    ],
+    "css": [
+      "_app/immutable/assets/51.CedevshO.css"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/52.js": {
+    "file": "_app/immutable/nodes/52.DRsUhqdY.js",
+    "name": "nodes/52",
+    "src": ".svelte-kit/generated/client-optimized/nodes/52.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Cio8JTVh.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_GHjBkfal.js",
+      "_Ke5tWbsT.js",
+      "_Bvbqq-zN.js",
+      "_CROUG2YM.js"
+    ],
+    "css": [
+      "_app/immutable/assets/52.tn0RQdqM.css"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/53.js": {
+    "file": "_app/immutable/nodes/53.B5GLbmgl.js",
+    "name": "nodes/53",
+    "src": ".svelte-kit/generated/client-optimized/nodes/53.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_Cio8JTVh.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_DWJ43-ZD.js",
+      "_Bvbqq-zN.js",
+      "_Ke5tWbsT.js",
+      "__Vcui5w2.js",
+      "_BoEBYeq-.js",
+      "_Cj1nadwp.js",
+      "_Cf2TjtaF.js",
+      "_CJxW89IG.js",
+      "_GHjBkfal.js",
+      "_CKiDdCmz.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/54.js": {
+    "file": "_app/immutable/nodes/54.TZPgRT-a.js",
+    "name": "nodes/54",
+    "src": ".svelte-kit/generated/client-optimized/nodes/54.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_BoEBYeq-.js",
+      "__Vcui5w2.js",
+      "_-HKzD6gI.js",
+      "_CZWMLGp1.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/55.js": {
+    "file": "_app/immutable/nodes/55.D-89vJBR.js",
+    "name": "nodes/55",
+    "src": ".svelte-kit/generated/client-optimized/nodes/55.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Cio8JTVh.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_Bvbqq-zN.js",
+      "__Vcui5w2.js",
+      "_Br0AyJpI.js",
+      "_C_S5TygX.js",
+      "_EgB6FDdp.js",
+      "_DrO32kRC.js",
+      "_yZ7lWqQn.js",
+      "_BErKQ2SA.js",
+      "_BoEBYeq-.js",
+      "_DWJ43-ZD.js",
+      "_DeT2Bmte.js",
+      "_DhzMH-1T.js",
+      "_Dui37nOO.js",
+      "_Dtj4eyj4.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/56.js": {
+    "file": "_app/immutable/nodes/56.BxqeCSzq.js",
+    "name": "nodes/56",
+    "src": ".svelte-kit/generated/client-optimized/nodes/56.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "__Vcui5w2.js",
+      "_DjNUT-oc.js",
+      "_EgB6FDdp.js",
+      "_DhzMH-1T.js",
+      "_Co6oUhD1.js",
+      "_DWJ43-ZD.js",
+      "_Bvbqq-zN.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/57.js": {
+    "file": "_app/immutable/nodes/57.C4bFi7F_.js",
+    "name": "nodes/57",
+    "src": ".svelte-kit/generated/client-optimized/nodes/57.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_D81jimsq.js",
+      "_DG82DZTX.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/58.js": {
+    "file": "_app/immutable/nodes/58.D6X2qdZ1.js",
+    "name": "nodes/58",
+    "src": ".svelte-kit/generated/client-optimized/nodes/58.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_D81jimsq.js",
+      "_DG82DZTX.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/59.js": {
+    "file": "_app/immutable/nodes/59.COG19RLQ.js",
+    "name": "nodes/59",
+    "src": ".svelte-kit/generated/client-optimized/nodes/59.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_jZj24OFn.js",
+      "_Bvbqq-zN.js",
+      "_DcAP65h3.js",
+      "_-67--UVX.js",
+      "_C_S5TygX.js",
+      "_BoEBYeq-.js",
+      "_Cf2TjtaF.js",
+      "_BVikIGkG.js",
+      "_DWJ43-ZD.js",
+      "_CJxW89IG.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/6.js": {
+    "file": "_app/immutable/nodes/6.COwrWJSH.js",
+    "name": "nodes/6",
+    "src": ".svelte-kit/generated/client-optimized/nodes/6.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_gqa3uC-f.js",
+      "_jZj24OFn.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/7.js": {
+    "file": "_app/immutable/nodes/7.Bhshl_Gk.js",
+    "name": "nodes/7",
+    "src": ".svelte-kit/generated/client-optimized/nodes/7.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_gqa3uC-f.js",
+      "_BErKQ2SA.js",
+      "_tHHj_MSY.js",
+      "_Cf2TjtaF.js",
+      "_DWJ43-ZD.js",
+      "_RG-z8tzU.js",
+      "_Bvbqq-zN.js",
+      "_CROUG2YM.js",
+      "_D6ovqnLS.js",
+      "_6EA1Kz0r.js",
+      "_BSXIVVLY.js",
+      "_BfCXIyDL.js",
+      "_Q_rB2KR5.js",
+      "_Cj1nadwp.js",
+      "_BoEBYeq-.js",
+      "_C_S5TygX.js",
+      "_-67--UVX.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/8.js": {
+    "file": "_app/immutable/nodes/8.DsqJf-VS.js",
+    "name": "nodes/8",
+    "src": ".svelte-kit/generated/client-optimized/nodes/8.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_CR2liGHp.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_DWJ43-ZD.js",
+      "_Cj1nadwp.js",
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "_jZj24OFn.js",
+      "_Bvbqq-zN.js",
+      "_CROUG2YM.js",
+      "_D6ovqnLS.js",
+      "_DjNUT-oc.js",
+      "_DxGJWrS1.js",
+      "_CJxW89IG.js",
+      "_BoEBYeq-.js",
+      "_C-3V0pWC.js",
+      "_Dtj4eyj4.js",
+      "__Vcui5w2.js",
+      "_BErKQ2SA.js",
+      "_CZWMLGp1.js",
+      "_NeQtxiIO.js"
+    ],
+    "css": [
+      "_app/immutable/assets/8.mW-FCGVD.css"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/9.js": {
+    "file": "_app/immutable/nodes/9.B1wokkvR.js",
+    "name": "nodes/9",
+    "src": ".svelte-kit/generated/client-optimized/nodes/9.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "_DjNUT-oc.js",
+      "_gqa3uC-f.js",
+      "_BSXIVVLY.js",
+      "_DWJ43-ZD.js",
+      "_Bvbqq-zN.js",
+      "_CROUG2YM.js",
+      "_Cj1nadwp.js"
+    ]
+  },
+  "_-67--UVX.js": {
+    "file": "_app/immutable/chunks/-67--UVX.js",
+    "name": "transfer.store",
+    "imports": [
+      "_C_S5TygX.js"
+    ]
+  },
+  "_-HKzD6gI.js": {
+    "file": "_app/immutable/chunks/-HKzD6gI.js",
+    "name": "BackToTop",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js"
+    ]
+  },
+  "_69_IOA4Y.js": {
+    "file": "_app/immutable/chunks/69_IOA4Y.js",
+    "name": "legacy",
+    "imports": [
+      "_DIeogL5L.js"
+    ]
+  },
+  "_6EA1Kz0r.js": {
+    "file": "_app/immutable/chunks/6EA1Kz0r.js",
+    "name": "AuthenticationPopupView",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_DJyY-Ao_.js",
+      "_DjNUT-oc.js",
+      "_RG-z8tzU.js",
+      "_CLbkU8BL.js",
+      "src/data-actions/authentication/user.auth.da.js",
+      "_C0-ROwNx.js",
+      "_Bvbqq-zN.js",
+      "_DWJ43-ZD.js",
+      "_CJxW89IG.js",
+      "_C_S5TygX.js"
+    ]
+  },
+  "_AppBar.B162EPc3.css": {
+    "file": "_app/immutable/assets/AppBar.B162EPc3.css",
+    "src": "_AppBar.B162EPc3.css"
+  },
+  "_B08xAkVk.js": {
+    "file": "_app/immutable/chunks/B08xAkVk.js",
+    "name": "Form",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_D-4yn-ZE.js",
+      "_Dui37nOO.js",
+      "_Cio8JTVh.js",
+      "_D8KE6gRb.js",
+      "_DXRGGiDY.js",
+      "_CdEA5IGF.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_BErKQ2SA.js",
+      "_DWJ43-ZD.js",
+      "_DxGJWrS1.js",
+      "_Bvbqq-zN.js",
+      "_CJxW89IG.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "_B6jBUJ6q.js": {
+    "file": "_app/immutable/chunks/B6jBUJ6q.js",
+    "name": "PopupScreen",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_MyGX-iGX.js",
+      "_DqW7fJoK.js",
+      "_Dtj4eyj4.js",
+      "_Da3Dx6pr.js",
+      "_jZj24OFn.js"
+    ]
+  },
+  "_BDr9Qe-U.js": {
+    "file": "_app/immutable/chunks/BDr9Qe-U.js",
+    "name": "disclose-version"
+  },
+  "_BErKQ2SA.js": {
+    "file": "_app/immutable/chunks/BErKQ2SA.js",
+    "name": "Button",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_CROUG2YM.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button.4cFhq8PD.css"
+    ]
+  },
+  "_BLmlSwtE.js": {
+    "file": "_app/immutable/chunks/BLmlSwtE.js",
+    "name": "notifications.da",
+    "imports": [
+      "_C_S5TygX.js",
+      "_DWJ43-ZD.js",
+      "_CR2liGHp.js",
+      "_Djyhf4cp.js",
+      "_DqqvuqO8.js",
+      "_BoEBYeq-.js"
+    ]
+  },
+  "_BOfNRF_K.js": {
+    "file": "_app/immutable/chunks/BOfNRF_K.js",
+    "name": "result.da",
+    "imports": [
+      "__Vcui5w2.js",
+      "_C_S5TygX.js",
+      "_Bvbqq-zN.js",
+      "_DqqvuqO8.js"
+    ]
+  },
+  "_BPoee8nT.js": {
+    "file": "_app/immutable/chunks/BPoee8nT.js",
+    "name": "SubscriptionCard",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Dtj4eyj4.js"
+    ]
+  },
+  "_BSXIVVLY.js": {
+    "file": "_app/immutable/chunks/BSXIVVLY.js",
+    "name": "appbar.da",
+    "imports": [
+      "_RG-z8tzU.js",
+      "_Bvbqq-zN.js",
+      "_DWJ43-ZD.js",
+      "_C_S5TygX.js",
+      "_Cj1nadwp.js",
+      "_CuKIkSf6.js",
+      "_-67--UVX.js"
+    ]
+  },
+  "_BVikIGkG.js": {
+    "file": "_app/immutable/chunks/BVikIGkG.js",
+    "name": "GradeConfirmModal",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_Cio8JTVh.js",
+      "_DXRGGiDY.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DWJ43-ZD.js",
+      "__Vcui5w2.js",
+      "_CQjx5DEQ.js",
+      "_C_S5TygX.js",
+      "_BErKQ2SA.js",
+      "_CZWMLGp1.js",
+      "_NeQtxiIO.js",
+      "_Bvbqq-zN.js"
+    ],
+    "css": [
+      "_app/immutable/assets/52.tn0RQdqM.css",
+      "_app/immutable/assets/GradeConfirmModal.BZjlKESM.css"
+    ]
+  },
+  "_BWmI7Kwv.js": {
+    "file": "_app/immutable/chunks/BWmI7Kwv.js",
+    "name": "runtime",
+    "imports": [
+      "_DIeogL5L.js"
+    ]
+  },
+  "_Bbd1q31I.js": {
+    "file": "_app/immutable/chunks/Bbd1q31I.js",
+    "name": "country.constant"
+  },
+  "_BfCXIyDL.js": {
+    "file": "_app/immutable/chunks/BfCXIyDL.js",
+    "name": "competitions.layout.logic",
+    "imports": [
+      "_C_S5TygX.js",
+      "_Bvbqq-zN.js",
+      "_CR2liGHp.js",
+      "_DWJ43-ZD.js",
+      "_Djyhf4cp.js",
+      "_ClXJh1T-.js",
+      "_CkIfqAOp.js",
+      "_Cf2TjtaF.js",
+      "_BoEBYeq-.js",
+      "_-67--UVX.js"
+    ]
+  },
+  "_Bg1yBDra.js": {
+    "file": "_app/immutable/chunks/Bg1yBDra.js",
+    "name": "index",
+    "imports": [
+      "_CbiYp799.js"
+    ]
+  },
+  "_BoEBYeq-.js": {
+    "file": "_app/immutable/chunks/BoEBYeq-.js",
+    "name": "entry",
+    "imports": [
+      "_DjNUT-oc.js",
+      "_C_S5TygX.js",
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_BprvYnHi.js": {
+    "file": "_app/immutable/chunks/BprvYnHi.js",
+    "name": "ListBoxSkeleton",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DPui9idN.js",
+      "_Dtj4eyj4.js"
+    ]
+  },
+  "_Br0AyJpI.js": {
+    "file": "_app/immutable/chunks/Br0AyJpI.js",
+    "name": "PageHeading",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DJyY-Ao_.js",
+      "_CZWMLGp1.js",
+      "_Bvbqq-zN.js"
+    ]
+  },
+  "_Bt5JDIEY.js": {
+    "file": "_app/immutable/chunks/Bt5JDIEY.js",
+    "name": "Carousel",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_MyGX-iGX.js",
+      "_D-4yn-ZE.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Carousel.CJG2uct-.css"
+    ]
+  },
+  "_Button.4cFhq8PD.css": {
+    "file": "_app/immutable/assets/Button.4cFhq8PD.css",
+    "src": "_Button.4cFhq8PD.css"
+  },
+  "_Bvbqq-zN.js": {
+    "file": "_app/immutable/chunks/Bvbqq-zN.js",
+    "name": "user.store",
+    "imports": [
+      "_C_S5TygX.js"
+    ]
+  },
+  "_BwH_vxp2.js": {
+    "file": "_app/immutable/chunks/BwH_vxp2.js",
+    "name": "user.constants",
+    "imports": [
+      "_C_S5TygX.js",
+      "_Bvbqq-zN.js"
+    ]
+  },
+  "_Bz4n4I_X.js": {
+    "file": "_app/immutable/chunks/Bz4n4I_X.js",
+    "name": "gamedata.store",
+    "imports": [
+      "_Bvbqq-zN.js"
+    ]
+  },
+  "_C-3V0pWC.js": {
+    "file": "_app/immutable/chunks/C-3V0pWC.js",
+    "name": "html",
+    "imports": [
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js"
+    ]
+  },
+  "_C0-ROwNx.js": {
+    "file": "_app/immutable/chunks/C0-ROwNx.js",
+    "name": "AuthenticationView",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_t8zBqOd3.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_C_S5TygX.js",
+      "_BErKQ2SA.js",
+      "_B08xAkVk.js",
+      "_B6jBUJ6q.js",
+      "_NeQtxiIO.js",
+      "_Dui37nOO.js",
+      "_Cio8JTVh.js",
+      "_CROUG2YM.js",
+      "_CJxW89IG.js",
+      "_CZWMLGp1.js"
+    ]
+  },
+  "_C3lS0y46.js": {
+    "file": "_app/immutable/chunks/C3lS0y46.js",
+    "name": "TabSwitch",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Cio8JTVh.js",
+      "_CQjx5DEQ.js",
+      "_Dtj4eyj4.js"
+    ],
+    "css": [
+      "_app/immutable/assets/TabSwitch.UMdf7hNE.css"
+    ]
+  },
+  "_CH285WnD.js": {
+    "file": "_app/immutable/chunks/CH285WnD.js",
+    "name": "numbers.formate"
+  },
+  "_CJxW89IG.js": {
+    "file": "_app/immutable/chunks/CJxW89IG.js",
+    "name": "system..da",
+    "imports": [
+      "_C_S5TygX.js",
+      "__Vcui5w2.js"
+    ]
+  },
+  "_CKiDdCmz.js": {
+    "file": "_app/immutable/chunks/CKiDdCmz.js",
+    "name": "TransactionReceipt",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_BLmlSwtE.js",
+      "_Ke5tWbsT.js",
+      "_Bvbqq-zN.js",
+      "_CJxW89IG.js"
+    ]
+  },
+  "_CLbkU8BL.js": {
+    "file": "_app/immutable/chunks/CLbkU8BL.js",
+    "name": "institution.auth.da",
+    "imports": [
+      "_CR2liGHp.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_RG-z8tzU.js",
+      "_Bvbqq-zN.js",
+      "src/data-actions/authentication/user.auth.da.js",
+      "_DWJ43-ZD.js",
+      "_BoEBYeq-.js",
+      "_CJxW89IG.js",
+      "_Bbd1q31I.js"
+    ]
+  },
+  "_CQjx5DEQ.js": {
+    "file": "_app/immutable/chunks/CQjx5DEQ.js",
+    "name": "class",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_CR2liGHp.js": {
+    "file": "_app/immutable/chunks/CR2liGHp.js",
+    "name": "api.service",
+    "imports": [
+      "_C_S5TygX.js",
+      "_Bvbqq-zN.js",
+      "_DWJ43-ZD.js",
+      "_E8PaDAPB.js"
+    ]
+  },
+  "_CROUG2YM.js": {
+    "file": "_app/immutable/chunks/CROUG2YM.js",
+    "name": "navigation.store",
+    "imports": [
+      "_BoEBYeq-.js",
+      "_C_S5TygX.js",
+      "_Bg1yBDra.js"
+    ]
+  },
+  "_CXqcBc75.js": {
+    "file": "_app/immutable/chunks/CXqcBc75.js",
+    "name": "lesson.store",
+    "imports": [
+      "_C_S5TygX.js"
+    ]
+  },
+  "_CY6V76w3.js": {
+    "file": "_app/immutable/chunks/CY6V76w3.js",
+    "name": "SkeletonCompetitionCards",
+    "imports": [
+      "_BoEBYeq-.js",
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "__Vcui5w2.js",
+      "_Br0AyJpI.js",
+      "_CpvBVgdC.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_C_S5TygX.js",
+      "_Cf2TjtaF.js",
+      "_CJxW89IG.js",
+      "_Bvbqq-zN.js",
+      "_BErKQ2SA.js",
+      "__nOA3xL7.js",
+      "_Cio8JTVh.js",
+      "_D8KE6gRb.js",
+      "_CzvvLib5.js",
+      "_CZWMLGp1.js",
+      "_NeQtxiIO.js",
+      "_DsRXg6dD.js",
+      "_C3lS0y46.js",
+      "_DWJ43-ZD.js",
+      "_C-3V0pWC.js",
+      "_DeT2Bmte.js"
+    ]
+  },
+  "_CZWMLGp1.js": {
+    "file": "_app/immutable/chunks/CZWMLGp1.js",
+    "name": "Image",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Dtj4eyj4.js"
+    ]
+  },
+  "_C_S5TygX.js": {
+    "file": "_app/immutable/chunks/C_S5TygX.js",
+    "name": "index",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_Carousel.CJG2uct-.css": {
+    "file": "_app/immutable/assets/Carousel.CJG2uct-.css",
+    "src": "_Carousel.CJG2uct-.css"
+  },
+  "_CbiYp799.js": {
+    "file": "_app/immutable/chunks/CbiYp799.js",
+    "name": "client",
+    "imports": [
+      "_BoEBYeq-.js"
+    ]
+  },
+  "_CdEA5IGF.js": {
+    "file": "_app/immutable/chunks/CdEA5IGF.js",
+    "name": "event-modifiers"
+  },
+  "_Cf2TjtaF.js": {
+    "file": "_app/immutable/chunks/Cf2TjtaF.js",
+    "name": "competitions.da",
+    "imports": [
+      "_CR2liGHp.js",
+      "_DWJ43-ZD.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_Bvbqq-zN.js",
+      "_BoEBYeq-.js",
+      "__Vcui5w2.js",
+      "_ClXJh1T-.js",
+      "src/data-actions/authentication/user.auth.da.js",
+      "_CJxW89IG.js",
+      "_-67--UVX.js",
+      "_CuKIkSf6.js"
+    ]
+  },
+  "_Cio8JTVh.js": {
+    "file": "_app/immutable/chunks/Cio8JTVh.js",
+    "name": "events",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_Cj1nadwp.js": {
+    "file": "_app/immutable/chunks/Cj1nadwp.js",
+    "name": "payment.store",
+    "imports": [
+      "_Bvbqq-zN.js"
+    ]
+  },
+  "_CkIfqAOp.js": {
+    "file": "_app/immutable/chunks/CkIfqAOp.js",
+    "name": "guest.store",
+    "imports": [
+      "_C_S5TygX.js"
+    ]
+  },
+  "_ClXJh1T-.js": {
+    "file": "_app/immutable/chunks/ClXJh1T-.js",
+    "name": "toast.store",
+    "css": [
+      "_app/immutable/assets/toast.KOmfmGu7.css"
+    ]
+  },
+  "_CmsKOCeN.js": {
+    "file": "_app/immutable/chunks/CmsKOCeN.js",
+    "name": "preload-helper"
+  },
+  "_Co6oUhD1.js": {
+    "file": "_app/immutable/chunks/Co6oUhD1.js",
+    "name": "EditProfileSkeleton",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_cR8EBM7j.js",
+      "_DPui9idN.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DJyY-Ao_.js",
+      "_B08xAkVk.js",
+      "_DrO32kRC.js",
+      "__Vcui5w2.js",
+      "_BoEBYeq-.js",
+      "_CpvBVgdC.js",
+      "_MyGX-iGX.js",
+      "_Bvbqq-zN.js",
+      "_BErKQ2SA.js",
+      "_CZWMLGp1.js",
+      "_NeQtxiIO.js",
+      "_DWJ43-ZD.js",
+      "_CQjx5DEQ.js",
+      "_CJxW89IG.js"
+    ]
+  },
+  "_CpvBVgdC.js": {
+    "file": "_app/immutable/chunks/CpvBVgdC.js",
+    "name": "render",
+    "imports": [
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_cR8EBM7j.js"
+    ]
+  },
+  "_CtjIkREP.js": {
+    "file": "_app/immutable/chunks/CtjIkREP.js",
+    "name": "Listings",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Cio8JTVh.js",
+      "_CQjx5DEQ.js",
+      "_CdEA5IGF.js",
+      "_DrO32kRC.js",
+      "_Bvbqq-zN.js",
+      "_CZWMLGp1.js",
+      "__Vcui5w2.js",
+      "_DqqvuqO8.js",
+      "_BOfNRF_K.js"
+    ]
+  },
+  "_CuKIkSf6.js": {
+    "file": "_app/immutable/chunks/CuKIkSf6.js",
+    "name": "meta.store",
+    "imports": [
+      "_C_S5TygX.js"
+    ]
+  },
+  "_CvLKQSYC.js": {
+    "file": "_app/immutable/chunks/CvLKQSYC.js",
+    "name": "lifecycle",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_CzvvLib5.js": {
+    "file": "_app/immutable/chunks/CzvvLib5.js",
+    "name": "this",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_D-4yn-ZE.js": {
+    "file": "_app/immutable/chunks/D-4yn-ZE.js",
+    "name": "actions",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_D6ovqnLS.js": {
+    "file": "_app/immutable/chunks/D6ovqnLS.js",
+    "name": "sidebar.store",
+    "imports": [
+      "_C_S5TygX.js"
+    ]
+  },
+  "_D7NkiQyh.js": {
+    "file": "_app/immutable/chunks/D7NkiQyh.js",
+    "name": "avatar",
+    "imports": [
+      "_DWJ43-ZD.js"
+    ],
+    "assets": [
+      "_app/immutable/assets/a15.BLlzNQqK.png",
+      "_app/immutable/assets/a16.DE7sve9_.png",
+      "_app/immutable/assets/a17.cxeX9Vpp.png",
+      "_app/immutable/assets/a18.ERdYEYBi.png",
+      "_app/immutable/assets/a19.DG3L8nd4.png",
+      "_app/immutable/assets/a20.CWhAvI_x.png",
+      "_app/immutable/assets/a21.BaUsT2yc.png",
+      "_app/immutable/assets/a22.BaBB2Cb5.png",
+      "_app/immutable/assets/a23.B9_xNaWp.png",
+      "_app/immutable/assets/a24.CsxjxlTV.png",
+      "_app/immutable/assets/a25.B6R6pSi-.png",
+      "_app/immutable/assets/a26.7K9XOkbd.png",
+      "_app/immutable/assets/a27.di5RvDlf.png",
+      "_app/immutable/assets/a28.Cai8Sgc5.png",
+      "_app/immutable/assets/a29.Cxpl4pBs.png",
+      "_app/immutable/assets/a30.CSxkBavu.png",
+      "_app/immutable/assets/a31.DsXNS_bC.png",
+      "_app/immutable/assets/a32.CdbHq7O-.png",
+      "_app/immutable/assets/a33.Cvtx_jaO.png",
+      "_app/immutable/assets/a34.KUL2AdBF.png",
+      "_app/immutable/assets/a35.gFqOCSGZ.png",
+      "_app/immutable/assets/a36.DtLyRyE3.png",
+      "_app/immutable/assets/a37.8e-bHiwv.png",
+      "_app/immutable/assets/a38.6rk9Murh.png",
+      "_app/immutable/assets/a39.TvgLxRO7.png",
+      "_app/immutable/assets/a40.h_vKUL7j.png",
+      "_app/immutable/assets/a41.DXZ5qRWm.png",
+      "_app/immutable/assets/a42.6QMcaMnF.png",
+      "_app/immutable/assets/a43.CszkcydC.png",
+      "_app/immutable/assets/a44.DlglqPUk.png",
+      "_app/immutable/assets/a45.Cc-2DY5A.png",
+      "_app/immutable/assets/a46.3LHLHRYP.png",
+      "_app/immutable/assets/a47.CMyIUQ8-.png",
+      "_app/immutable/assets/a48.DrO3KmWl.png",
+      "_app/immutable/assets/a49.kzzNNrIi.png",
+      "_app/immutable/assets/a50.DDm4KwC7.png",
+      "_app/immutable/assets/a51.D6hqt3YQ.png",
+      "_app/immutable/assets/a52.JNy01BBR.png",
+      "_app/immutable/assets/a53.tKrwA6FC.png",
+      "_app/immutable/assets/a54.pRWJnrA1.png",
+      "_app/immutable/assets/a55.CK_Lm3Ek.png",
+      "_app/immutable/assets/a56.DUH7qS3E.png",
+      "_app/immutable/assets/a57.CDqw8cgx.png",
+      "_app/immutable/assets/a58.5FKbzyP1.png",
+      "_app/immutable/assets/a59.BjxlSIOa.png",
+      "_app/immutable/assets/a60.B--x-ghC.png",
+      "_app/immutable/assets/a61.D9U4Gaj_.png",
+      "_app/immutable/assets/a62.GQBWTYaw.png",
+      "_app/immutable/assets/a63.ICOVHFX1.png",
+      "_app/immutable/assets/a64.BdBsphi-.png",
+      "_app/immutable/assets/a65.DF5Tl1D7.png",
+      "_app/immutable/assets/a67.CsD1LPnD.png"
+    ]
+  },
+  "_D81jimsq.js": {
+    "file": "_app/immutable/chunks/D81jimsq.js",
+    "name": "FullPageIframe",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js"
+    ]
+  },
+  "_D8KE6gRb.js": {
+    "file": "_app/immutable/chunks/D8KE6gRb.js",
+    "name": "input",
+    "imports": [
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js"
+    ]
+  },
+  "_DBObbdNy.js": {
+    "file": "_app/immutable/chunks/DBObbdNy.js",
+    "name": "SelectBox",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_CzvvLib5.js",
+      "_CdEA5IGF.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js"
+    ],
+    "css": [
+      "_app/immutable/assets/SelectBox.C4I-LW8r.css"
+    ]
+  },
+  "_DG82DZTX.js": {
+    "file": "_app/immutable/chunks/DG82DZTX.js",
+    "name": "NavBar",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_C_S5TygX.js",
+      "_BErKQ2SA.js",
+      "_Bg1yBDra.js",
+      "_CJxW89IG.js",
+      "_BoEBYeq-.js"
+    ]
+  },
+  "_DIeogL5L.js": {
+    "file": "_app/immutable/chunks/DIeogL5L.js",
+    "name": "index"
+  },
+  "_DJyY-Ao_.js": {
+    "file": "_app/immutable/chunks/DJyY-Ao_.js",
+    "name": "store",
+    "imports": [
+      "_BWmI7Kwv.js",
+      "_C_S5TygX.js"
+    ]
+  },
+  "_DPui9idN.js": {
+    "file": "_app/immutable/chunks/DPui9idN.js",
+    "name": "each",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_DS_dmsjO.js": {
+    "file": "_app/immutable/chunks/DS_dmsjO.js",
+    "name": "admin.competition.da",
+    "imports": [
+      "_CR2liGHp.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_DWJ43-ZD.js",
+      "__Vcui5w2.js"
+    ]
+  },
+  "_DWJ43-ZD.js": {
+    "file": "_app/immutable/chunks/DWJ43-ZD.js",
+    "name": "utils",
+    "imports": [
+      "_C_S5TygX.js",
+      "_Bvbqq-zN.js",
+      "_DxGJWrS1.js",
+      "_D6ovqnLS.js",
+      "_CROUG2YM.js",
+      "_CJxW89IG.js",
+      "_BoEBYeq-.js"
+    ]
+  },
+  "_DXRGGiDY.js": {
+    "file": "_app/immutable/chunks/DXRGGiDY.js",
+    "name": "select",
+    "imports": [
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_Dtj4eyj4.js"
+    ]
+  },
+  "_DYX4XAFh.js": {
+    "file": "_app/immutable/chunks/DYX4XAFh.js",
+    "name": "navigation.service",
+    "imports": [
+      "_BoEBYeq-.js"
+    ]
+  },
+  "_D_xCQIDs.js": {
+    "file": "_app/immutable/chunks/D_xCQIDs.js",
+    "name": "DownloadCertificateIframe",
+    "imports": [
+      "__Vcui5w2.js",
+      "_DWJ43-ZD.js",
+      "_C_S5TygX.js",
+      "_Bvbqq-zN.js",
+      "_Djyhf4cp.js",
+      "_CR2liGHp.js",
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_Dui37nOO.js",
+      "_CzvvLib5.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_BErKQ2SA.js"
+    ]
+  },
+  "_Da3Dx6pr.js": {
+    "file": "_app/immutable/chunks/Da3Dx6pr.js",
+    "name": "ArrowButton",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Cio8JTVh.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_CROUG2YM.js",
+      "_DWJ43-ZD.js"
+    ]
+  },
+  "_DaCULuOx.js": {
+    "file": "_app/immutable/chunks/DaCULuOx.js",
+    "name": "GameCard",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js"
+    ],
+    "css": [
+      "_app/immutable/assets/GameCard.CVnY9sfe.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/sorting.Cef1rhoz.png",
+      "_app/immutable/assets/link.CEPGAntH.png",
+      "_app/immutable/assets/factor_monsters.l213NjDn.png",
+      "_app/immutable/assets/financial_fib.CmPsMloe.png",
+      "_app/immutable/assets/kampong.wsxanTnR.png",
+      "_app/immutable/assets/matching.CSUPKMrL.png",
+      "_app/immutable/assets/number_battle.CW7j1d-k.png",
+      "_app/immutable/assets/ruby_spidey.DtbcPulW.png",
+      "_app/immutable/assets/sets_challenge.CDdDp_R2.png",
+      "_app/immutable/assets/sheep_run.vK3A0okd.png",
+      "_app/immutable/assets/sumo_mochi.CDuX_Lqy.png",
+      "_app/immutable/assets/science_sub_1.D394cxTc.png",
+      "_app/immutable/assets/science_sub_2.Be1M8-J0.png",
+      "_app/immutable/assets/science_sub_3.B0GjDxNS.png",
+      "_app/immutable/assets/science_sub_4.DIvqSIFl.png",
+      "_app/immutable/assets/science_sub_5.rXX7YICf.png",
+      "_app/immutable/assets/science_sub_6.Cxi2dT9u.png",
+      "_app/immutable/assets/physics_sub_1.Hm_md6W9.png",
+      "_app/immutable/assets/physics_sub_2.D_ryAuwh.png",
+      "_app/immutable/assets/physics_sub_3.Dln78FY8.png",
+      "_app/immutable/assets/physics_sub_4.U0eBJWKa.png",
+      "_app/immutable/assets/physics_sub_5.LF0lDjUW.png",
+      "_app/immutable/assets/math_sub_2.B2MZALCj.png",
+      "_app/immutable/assets/math_sub_3.Eic8vPYn.png",
+      "_app/immutable/assets/math_sub_4.BtX2_em7.png",
+      "_app/immutable/assets/math_sub_5.DR3Hncsx.png",
+      "_app/immutable/assets/math_sub_6.BLqpZ5Ow.png",
+      "_app/immutable/assets/english_sub_1.CGBROLdQ.png",
+      "_app/immutable/assets/english_sub_2.CSk0Uual.png",
+      "_app/immutable/assets/english_sub_3.DVQh4CL1.png",
+      "_app/immutable/assets/english_sub_4.ByA3im4H.png",
+      "_app/immutable/assets/english_sub_5.CkI2gax4.png",
+      "_app/immutable/assets/english_sub_6.CRb3LvlX.png",
+      "_app/immutable/assets/chemistry_sub_1.CotYUrU5.png",
+      "_app/immutable/assets/chemistry_sub_2.Bb4pkWyv.png",
+      "_app/immutable/assets/chemistry_sub_3.B7pdvRiG.png",
+      "_app/immutable/assets/chemistry_sub_4.HYJv8CTA.png",
+      "_app/immutable/assets/chemistry_sub_5.D-jla_DK.png",
+      "_app/immutable/assets/chemistry_sub_6.CEU3VKXO.png",
+      "_app/immutable/assets/biology_sub_1.CTLualCK.png",
+      "_app/immutable/assets/biology_sub_2.DoANx3R3.png",
+      "_app/immutable/assets/biology_sub_3.BH8zuwbC.png",
+      "_app/immutable/assets/biology_sub_4.CJfhEVy3.png",
+      "_app/immutable/assets/biology_sub_5.Bma6T2AR.png",
+      "_app/immutable/assets/biology_sub_6.D4AVt_IN.png",
+      "_app/immutable/assets/data_science_sub_1.EqipjaBs.png",
+      "_app/immutable/assets/data_science_sub_2.K-nZdOag.png",
+      "_app/immutable/assets/data_science_sub_3.BAHay3Qp.png",
+      "_app/immutable/assets/data_science_sub_4.BUO1x9Zc.png",
+      "_app/immutable/assets/environmental_literacy_sub_1.BfVuNUPA.png",
+      "_app/immutable/assets/environmental_literacy_sub_5.CKalAN8F.png",
+      "_app/immutable/assets/financial_literacy_sub_1.xreVwFH4.png",
+      "_app/immutable/assets/financial_literacy_sub_2.DvEJAZAY.png",
+      "_app/immutable/assets/financial_literacy_sub_3.CNdzTByD.png",
+      "_app/immutable/assets/financial_literacy_sub_4.DIfPnJJF.png",
+      "_app/immutable/assets/financial_literacy_sub_5.BlPY4Dth.png",
+      "_app/immutable/assets/financial_literacy_sub_6.XhOhgHW3.png",
+      "_app/immutable/assets/problem_solving_sub_1.xSbvhB5A.png",
+      "_app/immutable/assets/problem_solving_sub_2.Bt4UipZE.png",
+      "_app/immutable/assets/problem_solving_sub_4.ByY1Rktc.png",
+      "_app/immutable/assets/problem_solving_sub_5.CHr-avWx.png",
+      "_app/immutable/assets/urdu_sub_1.5BpQi8RP.png",
+      "_app/immutable/assets/urdu_sub_2.BgreTTNk.png",
+      "_app/immutable/assets/urdu_sub_3.b21ubLsN.png",
+      "_app/immutable/assets/urdu_sub_4.DN0OxAxv.png",
+      "_app/immutable/assets/urdu_sub_5.BlLjjOBh.png",
+      "_app/immutable/assets/urdu_sub_6.DNCz_eP5.png",
+      "_app/immutable/assets/health_and_wellness_sub_1.CQyLsJ3u.png",
+      "_app/immutable/assets/health_and_wellness_sub_2.CGvuZ5pS.png",
+      "_app/immutable/assets/health_and_wellness_sub_3.TbgQg9C3.png",
+      "_app/immutable/assets/health_and_wellness_sub_4.BhzMF4Pr.png",
+      "_app/immutable/assets/computer_science_sub_1.CT_kBnQh.png",
+      "_app/immutable/assets/computer_science_sub_2.DZWE0np1.png",
+      "_app/immutable/assets/computer_science_sub_3.C6XsD_nz.png",
+      "_app/immutable/assets/computer_science_sub_4.CS44gcy_.png",
+      "_app/immutable/assets/computer_science_sub_6.uzyJ8A1n.png"
+    ]
+  },
+  "_DcAP65h3.js": {
+    "file": "_app/immutable/chunks/DcAP65h3.js",
+    "name": "title.store",
+    "imports": [
+      "_C_S5TygX.js"
+    ]
+  },
+  "_DeT2Bmte.js": {
+    "file": "_app/immutable/chunks/DeT2Bmte.js",
+    "name": "NoDataFound",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "__Vcui5w2.js"
+    ]
+  },
+  "_DhzMH-1T.js": {
+    "file": "_app/immutable/chunks/DhzMH-1T.js",
+    "name": "profile.da",
+    "imports": [
+      "_BoEBYeq-.js",
+      "_CR2liGHp.js",
+      "_Bbd1q31I.js",
+      "_vNnwmH_S.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_Bvbqq-zN.js",
+      "_ClXJh1T-.js",
+      "_CJxW89IG.js"
+    ]
+  },
+  "_DjNUT-oc.js": {
+    "file": "_app/immutable/chunks/DjNUT-oc.js",
+    "name": "index-client",
+    "imports": [
+      "_BWmI7Kwv.js",
+      "_DIeogL5L.js"
+    ]
+  },
+  "_Djyhf4cp.js": {
+    "file": "_app/immutable/chunks/Djyhf4cp.js",
+    "name": "api.definitions",
+    "imports": [
+      "_Bvbqq-zN.js"
+    ]
+  },
+  "_Dl0udVKr.js": {
+    "file": "_app/immutable/chunks/Dl0udVKr.js",
+    "name": "lessonListing",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DYX4XAFh.js",
+      "_sqJV_oxN.js",
+      "_Bz4n4I_X.js",
+      "_DaCULuOx.js"
+    ]
+  },
+  "_Do5AT5O5.js": {
+    "file": "_app/immutable/chunks/Do5AT5O5.js",
+    "name": "stores",
+    "imports": [
+      "_BoEBYeq-.js"
+    ]
+  },
+  "_DpwOLBsT.js": {
+    "file": "_app/immutable/chunks/DpwOLBsT.js",
+    "name": "ListingSkeleton",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DPui9idN.js",
+      "_Dtj4eyj4.js"
+    ]
+  },
+  "_DqW7fJoK.js": {
+    "file": "_app/immutable/chunks/DqW7fJoK.js",
+    "name": "index",
+    "imports": [
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_Cio8JTVh.js"
+    ]
+  },
+  "_DqqvuqO8.js": {
+    "file": "_app/immutable/chunks/DqqvuqO8.js",
+    "name": "challenge.da",
+    "imports": [
+      "_DWJ43-ZD.js",
+      "_C_S5TygX.js",
+      "_Bz4n4I_X.js",
+      "_Djyhf4cp.js",
+      "_CR2liGHp.js",
+      "_Bvbqq-zN.js",
+      "_BoEBYeq-.js",
+      "_ClXJh1T-.js",
+      "_Q_rB2KR5.js",
+      "_CuKIkSf6.js"
+    ]
+  },
+  "_DrO32kRC.js": {
+    "file": "_app/immutable/chunks/DrO32kRC.js",
+    "name": "Avatar",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_D7NkiQyh.js"
+    ]
+  },
+  "_DsRXg6dD.js": {
+    "file": "_app/immutable/chunks/DsRXg6dD.js",
+    "name": "Progressbar",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Dtj4eyj4.js"
+    ]
+  },
+  "_Dtj4eyj4.js": {
+    "file": "_app/immutable/chunks/Dtj4eyj4.js",
+    "name": "props",
+    "imports": [
+      "_BWmI7Kwv.js",
+      "_DJyY-Ao_.js",
+      "_DIeogL5L.js"
+    ]
+  },
+  "_Dui37nOO.js": {
+    "file": "_app/immutable/chunks/Dui37nOO.js",
+    "name": "attributes",
+    "imports": [
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js"
+    ]
+  },
+  "_DxGJWrS1.js": {
+    "file": "_app/immutable/chunks/DxGJWrS1.js",
+    "name": "index",
+    "imports": [
+      "_BoEBYeq-.js"
+    ]
+  },
+  "_E8PaDAPB.js": {
+    "file": "_app/immutable/chunks/E8PaDAPB.js",
+    "name": "firstload.store",
+    "imports": [
+      "_C_S5TygX.js"
+    ]
+  },
+  "_EgB6FDdp.js": {
+    "file": "_app/immutable/chunks/EgB6FDdp.js",
+    "name": "DataCard",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "__Vcui5w2.js",
+      "_CZWMLGp1.js"
+    ]
+  },
+  "_EsZdy3dr.js": {
+    "file": "_app/immutable/chunks/EsZdy3dr.js",
+    "name": "ConfirmationModal",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "__Vcui5w2.js",
+      "_BErKQ2SA.js",
+      "_CZWMLGp1.js",
+      "_NeQtxiIO.js",
+      "_Bvbqq-zN.js"
+    ],
+    "css": [
+      "_app/immutable/assets/GradeConfirmModal.BZjlKESM.css"
+    ]
+  },
+  "_Form.DuozghpI.css": {
+    "file": "_app/immutable/assets/Form.DuozghpI.css",
+    "src": "_Form.DuozghpI.css"
+  },
+  "_GHjBkfal.js": {
+    "file": "_app/immutable/chunks/GHjBkfal.js",
+    "name": "Stepper",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_CJxW89IG.js"
+    ]
+  },
+  "_GameCard.CVnY9sfe.css": {
+    "file": "_app/immutable/assets/GameCard.CVnY9sfe.css",
+    "src": "_GameCard.CVnY9sfe.css"
+  },
+  "_GradeConfirmModal.BZjlKESM.css": {
+    "file": "_app/immutable/assets/GradeConfirmModal.BZjlKESM.css",
+    "src": "_GradeConfirmModal.BZjlKESM.css"
+  },
+  "_IK8gWlPt.js": {
+    "file": "_app/immutable/chunks/IK8gWlPt.js",
+    "name": "leaderboards.da",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DrO32kRC.js",
+      "_CZWMLGp1.js",
+      "__Vcui5w2.js"
+    ]
+  },
+  "_Ke5tWbsT.js": {
+    "file": "_app/immutable/chunks/Ke5tWbsT.js",
+    "name": "payment.da",
+    "imports": [
+      "_CR2liGHp.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_DWJ43-ZD.js",
+      "_Cj1nadwp.js",
+      "_Bvbqq-zN.js",
+      "_vNnwmH_S.js",
+      "_CJxW89IG.js",
+      "_BwH_vxp2.js",
+      "__Vcui5w2.js"
+    ]
+  },
+  "_MyGX-iGX.js": {
+    "file": "_app/immutable/chunks/MyGX-iGX.js",
+    "name": "slot",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_NeQtxiIO.js": {
+    "file": "_app/immutable/chunks/NeQtxiIO.js",
+    "name": "Modal",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_MyGX-iGX.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_DqW7fJoK.js",
+      "_CzvvLib5.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js"
+    ]
+  },
+  "_Q_rB2KR5.js": {
+    "file": "_app/immutable/chunks/Q_rB2KR5.js",
+    "name": "useractivity.store",
+    "imports": [
+      "_Bvbqq-zN.js"
+    ]
+  },
+  "_RG-z8tzU.js": {
+    "file": "_app/immutable/chunks/RG-z8tzU.js",
+    "name": "common.auth.data",
+    "imports": [
+      "_CmsKOCeN.js",
+      "_Bvbqq-zN.js",
+      "_CR2liGHp.js",
+      "_C_S5TygX.js",
+      "_BoEBYeq-.js",
+      "_ClXJh1T-.js",
+      "_Djyhf4cp.js",
+      "_DWJ43-ZD.js",
+      "_D7NkiQyh.js",
+      "_CkIfqAOp.js",
+      "_CJxW89IG.js"
+    ],
+    "dynamicImports": [
+      "src/data-actions/authentication/user.auth.da.js",
+      "src/data-actions/authentication/user.auth.da.js"
+    ]
+  },
+  "_SelectBox.C4I-LW8r.css": {
+    "file": "_app/immutable/assets/SelectBox.C4I-LW8r.css",
+    "src": "_SelectBox.C4I-LW8r.css"
+  },
+  "_SideBar.D-VdH2ip.css": {
+    "file": "_app/immutable/assets/SideBar.D-VdH2ip.css",
+    "src": "_SideBar.D-VdH2ip.css"
+  },
+  "_TabSwitch.UMdf7hNE.css": {
+    "file": "_app/immutable/assets/TabSwitch.UMdf7hNE.css",
+    "src": "_TabSwitch.UMdf7hNE.css"
+  },
+  "__Vcui5w2.js": {
+    "file": "_app/immutable/chunks/_Vcui5w2.js",
+    "name": "images.constants",
+    "assets": [
+      "_app/immutable/assets/competitions.C58tQTup.png",
+      "_app/immutable/assets/friends.CpjPKI58.png",
+      "_app/immutable/assets/leaderboard.JEBUTntx.png",
+      "_app/immutable/assets/pay_for_access.nHhQp7_k.png",
+      "_app/immutable/assets/players.I7x30OZh.png",
+      "_app/immutable/assets/rewards.DlSJma12.png",
+      "_app/immutable/assets/select_opponent.CD15azkN.png",
+      "_app/immutable/assets/topics.BmBb0n-a.png",
+      "_app/immutable/assets/result.DwJcVckf.svg",
+      "_app/immutable/assets/turnyour.CWyicTqC.svg",
+      "_app/immutable/assets/turntheir.hHNiwhXv.svg",
+      "_app/immutable/assets/turninvite.De3iGrnZ.svg",
+      "_app/immutable/assets/friendsrecommended.p6raTVwh.svg",
+      "_app/immutable/assets/topics.BvXMXu1Q.svg",
+      "_app/immutable/assets/stars3.05JtbYZ7.png",
+      "_app/immutable/assets/rays.DaFCbr-s.svg",
+      "_app/immutable/assets/dailybadge.D7cs6UUa.png",
+      "_app/immutable/assets/weeklybadge.Bx9aibxf.png",
+      "_app/immutable/assets/monthlybadge.DDz_eSTV.png",
+      "_app/immutable/assets/no-data-found.C0sr3avv.svg",
+      "_app/immutable/assets/lessons.Cz2LBAPk.png",
+      "_app/immutable/assets/friends.ungRWP9V.svg",
+      "_app/immutable/assets/rewards.UsDSa_s-.svg",
+      "_app/immutable/assets/add_code.Cx6QNjGN.svg",
+      "_app/immutable/assets/playersingle.CHmWgN-Y.svg",
+      "_app/immutable/assets/multi_player_icon.BkPVo834.svg",
+      "_app/immutable/assets/coins_img.CcNMTrB3.png",
+      "_app/immutable/assets/more_coins.B4hc4Fqg.png",
+      "_app/immutable/assets/jazz_icon.CU48aWwr.svg",
+      "_app/immutable/assets/bank_icon.DlcPDJbc.svg",
+      "_app/immutable/assets/bell.BCOssu1v.png",
+      "_app/immutable/assets/feature-image-1.D6Cq5UYQ.png",
+      "_app/immutable/assets/feature-image-2.BXt3tmoN.png",
+      "_app/immutable/assets/feature-image-3.CAk04Bp2.png",
+      "_app/immutable/assets/learning-banner-1.BIz2rZS7.png",
+      "_app/immutable/assets/learning-banner-2.DDpycIcU.png",
+      "_app/immutable/assets/learning-banner-3.B0Jt0AMB.png",
+      "_app/immutable/assets/learning-banner-4.o2wUUjT7.png",
+      "_app/immutable/assets/learning-banner-5.DUzhkPU2.png",
+      "_app/immutable/assets/learning-banner-6.4O_7ZDX4.png",
+      "_app/immutable/assets/education-impact-image.O8BGTQAa.png",
+      "_app/immutable/assets/certificate_icon.DnPjfrcC.svg",
+      "_app/immutable/assets/choose_avatar.D7sIMzkX.svg",
+      "_app/immutable/assets/banner_cert_img.jyq6ayCD.png",
+      "_app/immutable/assets/totalgames.CfP7B9iA.png",
+      "_app/immutable/assets/totalgamesplayed.DXsB-zWh.png",
+      "_app/immutable/assets/totalhoursspent.B_ofSwdh.png",
+      "_app/immutable/assets/totalplayers.DR9HqzTQ.png",
+      "_app/immutable/assets/activeplayers.CuTCj87y.png",
+      "_app/immutable/assets/avgcompletionrate.KkbqXoJs.png",
+      "_app/immutable/assets/a67.CsD1LPnD.png",
+      "_app/immutable/assets/rules.-gxI2kTU.svg",
+      "_app/immutable/assets/vs.KtLT08pX.svg",
+      "_app/immutable/assets/polkadots.DvE3E5TE.svg",
+      "_app/immutable/assets/sword1.BiQcy4EQ.png",
+      "_app/immutable/assets/sword2.C9BBR0te.png",
+      "_app/immutable/assets/pb-tagline-logo-white.GkCHLDzx.png",
+      "_app/immutable/assets/pb-tagline-logo-black.BYnj2J4s.png",
+      "_app/immutable/assets/gg-web-logo.CNVW4_QI.svg",
+      "_app/immutable/assets/gg-tagline-logo-white.CYHLGt7P.svg",
+      "_app/immutable/assets/shupavu-logo.CWoNwa7_.png",
+      "_app/immutable/assets/pocket-games-logo.C3uZx_e-.svg",
+      "_app/immutable/assets/pocket-games-logo-white.sZXnQQk8.svg",
+      "_app/immutable/assets/quotient-logo-white.CVOSenH8.png",
+      "_app/immutable/assets/coin_img.Dgve14pi.svg",
+      "_app/immutable/assets/coin_img.DrPshK1h.svg",
+      "_app/immutable/assets/weekly-bundle-image.DWWc1x7_.png",
+      "_app/immutable/assets/monthly-bundle-image.D5RqFz3c.png",
+      "_app/immutable/assets/daily-bundle-image.CbWwowil.png",
+      "_app/immutable/assets/lock_icon.Bs3gu0S5.svg",
+      "_app/immutable/assets/signout.CjZ7csOv.svg",
+      "_app/immutable/assets/timer_open_bg.C_Nu5W-A.png",
+      "_app/immutable/assets/timer_close_bg.DJWagRZe.png",
+      "_app/immutable/assets/ribbon_winner_congrats.800Ah8N3.png",
+      "_app/immutable/assets/ribbon_lose.CFtDzXyr.png",
+      "_app/immutable/assets/draw_ribbon.B5XI4M0q.png",
+      "_app/immutable/assets/certificate_lock.COY0ViSn.png",
+      "_app/immutable/assets/confetti.sNNHbTbV.png",
+      "_app/immutable/assets/sgg-logo.C-FpbW20.png",
+      "_app/immutable/assets/sgg-mobile-logo.CO-9LZBd.png"
+    ]
+  },
+  "__nOA3xL7.js": {
+    "file": "_app/immutable/chunks/_nOA3xL7.js",
+    "name": "Card",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js",
+      "_CQjx5DEQ.js",
+      "_Dtj4eyj4.js"
+    ]
+  },
+  "_cR8EBM7j.js": {
+    "file": "_app/immutable/chunks/cR8EBM7j.js",
+    "name": "template",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_gqa3uC-f.js": {
+    "file": "_app/immutable/chunks/gqa3uC-f.js",
+    "name": "AppBar",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_CROUG2YM.js",
+      "_Da3Dx6pr.js",
+      "_DPui9idN.js",
+      "_MyGX-iGX.js",
+      "_BoEBYeq-.js",
+      "_DrO32kRC.js",
+      "_BErKQ2SA.js",
+      "_Bvbqq-zN.js",
+      "_DWJ43-ZD.js",
+      "__Vcui5w2.js",
+      "_BLmlSwtE.js",
+      "_C-3V0pWC.js",
+      "_CZWMLGp1.js",
+      "_DqqvuqO8.js",
+      "_RG-z8tzU.js",
+      "_CJxW89IG.js",
+      "_EsZdy3dr.js",
+      "_C_S5TygX.js",
+      "_NeQtxiIO.js",
+      "_CbiYp799.js",
+      "_ClXJh1T-.js",
+      "_CkIfqAOp.js"
+    ],
+    "css": [
+      "_app/immutable/assets/AppBar.B162EPc3.css"
+    ]
+  },
+  "_jZj24OFn.js": {
+    "file": "_app/immutable/chunks/jZj24OFn.js",
+    "name": "BackgroundImage",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_MyGX-iGX.js"
+    ]
+  },
+  "_mMuMWm2p.js": {
+    "file": "_app/immutable/chunks/mMuMWm2p.js",
+    "name": "GameCardSkeleton",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_cR8EBM7j.js"
+    ]
+  },
+  "_sqJV_oxN.js": {
+    "file": "_app/immutable/chunks/sqJV_oxN.js",
+    "name": "lesson.da"
+  },
+  "_t8zBqOd3.js": {
+    "file": "_app/immutable/chunks/t8zBqOd3.js",
+    "name": "svelte-component",
+    "imports": [
+      "_BWmI7Kwv.js"
+    ]
+  },
+  "_tHHj_MSY.js": {
+    "file": "_app/immutable/chunks/tHHj_MSY.js",
+    "name": "SideBar",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DPui9idN.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_Bg1yBDra.js",
+      "_CJxW89IG.js",
+      "_CROUG2YM.js",
+      "_CZWMLGp1.js"
+    ],
+    "css": [
+      "_app/immutable/assets/SideBar.D-VdH2ip.css"
+    ]
+  },
+  "_toast.KOmfmGu7.css": {
+    "file": "_app/immutable/assets/toast.KOmfmGu7.css",
+    "src": "_toast.KOmfmGu7.css"
+  },
+  "_vNnwmH_S.js": {
+    "file": "_app/immutable/chunks/vNnwmH_S.js",
+    "name": "timezone.constants"
+  },
+  "_yZ7lWqQn.js": {
+    "file": "_app/immutable/chunks/yZ7lWqQn.js",
+    "name": "profile.constants",
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_Dui37nOO.js",
+      "_CQjx5DEQ.js",
+      "_Cio8JTVh.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "__Vcui5w2.js",
+      "_D_xCQIDs.js",
+      "_DWJ43-ZD.js",
+      "_ClXJh1T-.js",
+      "_Bvbqq-zN.js",
+      "_CZWMLGp1.js",
+      "_DPui9idN.js",
+      "_DpwOLBsT.js",
+      "_CR2liGHp.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_BErKQ2SA.js",
+      "_NeQtxiIO.js",
+      "_BoEBYeq-.js"
+    ],
+    "css": [
+      "_app/immutable/assets/GradeConfirmModal.BZjlKESM.css"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
+    "file": "_app/immutable/entry/start.CeLHcda0.js",
+    "name": "entry/start",
+    "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
+    "isEntry": true,
+    "imports": [
+      "_BoEBYeq-.js"
+    ]
+  },
+  "src/components/Loader/Loader.svelte": {
+    "file": "_app/immutable/chunks/DE4j866z.js",
+    "name": "Loader",
+    "src": "src/components/Loader/Loader.svelte",
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_C_S5TygX.js"
+    ]
+  },
+  "src/components/RetryBox/RetryBox.svelte": {
+    "file": "_app/immutable/chunks/Dy_fgwtr.js",
+    "name": "RetryBox",
+    "src": "src/components/RetryBox/RetryBox.svelte",
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CpvBVgdC.js",
+      "_DJyY-Ao_.js",
+      "_cR8EBM7j.js",
+      "_CvLKQSYC.js",
+      "_Dtj4eyj4.js",
+      "_DjNUT-oc.js",
+      "_BErKQ2SA.js",
+      "_Bvbqq-zN.js",
+      "src/data-actions/authentication/user.auth.da.js"
+    ],
+    "css": [
+      "_app/immutable/assets/RetryBox.COlT7sBL.css"
+    ]
+  },
+  "src/components/Toast/Toast.svelte": {
+    "file": "_app/immutable/chunks/CFtg6nj5.js",
+    "name": "Toast",
+    "src": "src/components/Toast/Toast.svelte",
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_ClXJh1T-.js"
+    ]
+  },
+  "src/data-actions/authentication/user.auth.da.js": {
+    "file": "_app/immutable/chunks/3hQXMHQA.js",
+    "name": "user.auth.da",
+    "src": "src/data-actions/authentication/user.auth.da.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_BoEBYeq-.js",
+      "_CR2liGHp.js",
+      "_DWJ43-ZD.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_RG-z8tzU.js",
+      "_Bvbqq-zN.js",
+      "_ClXJh1T-.js",
+      "_Bg1yBDra.js",
+      "_CJxW89IG.js",
+      "_D7NkiQyh.js",
+      "_CkIfqAOp.js",
+      "_DqqvuqO8.js",
+      "_BwH_vxp2.js"
+    ]
+  },
+  "src/data-actions/instance/instance.da.js": {
+    "file": "_app/immutable/chunks/1ZlzwBA5.js",
+    "name": "instance.da",
+    "src": "src/data-actions/instance/instance.da.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_CR2liGHp.js",
+      "_CJxW89IG.js",
+      "_C_S5TygX.js",
+      "_Djyhf4cp.js",
+      "_DWJ43-ZD.js"
+    ]
+  },
+  "src/lib/assets/images/bonzoui/add_code.svg": {
+    "file": "_app/immutable/assets/add_code.Cx6QNjGN.svg",
+    "src": "src/lib/assets/images/bonzoui/add_code.svg"
+  },
+  "src/lib/assets/images/bonzoui/banner_cert_img.png": {
+    "file": "_app/immutable/assets/banner_cert_img.jyq6ayCD.png",
+    "src": "src/lib/assets/images/bonzoui/banner_cert_img.png"
+  },
+  "src/lib/assets/images/bonzoui/bell.png": {
+    "file": "_app/immutable/assets/bell.BCOssu1v.png",
+    "src": "src/lib/assets/images/bonzoui/bell.png"
+  },
+  "src/lib/assets/images/bonzoui/certificate_icon.svg": {
+    "file": "_app/immutable/assets/certificate_icon.DnPjfrcC.svg",
+    "src": "src/lib/assets/images/bonzoui/certificate_icon.svg"
+  },
+  "src/lib/assets/images/bonzoui/choose_avatar.svg": {
+    "file": "_app/immutable/assets/choose_avatar.D7sIMzkX.svg",
+    "src": "src/lib/assets/images/bonzoui/choose_avatar.svg"
+  },
+  "src/lib/assets/images/bonzoui/coin_img.svg": {
+    "file": "_app/immutable/assets/coin_img.Dgve14pi.svg",
+    "src": "src/lib/assets/images/bonzoui/coin_img.svg"
+  },
+  "src/lib/assets/images/bonzoui/coins_img.png": {
+    "file": "_app/immutable/assets/coins_img.CcNMTrB3.png",
+    "src": "src/lib/assets/images/bonzoui/coins_img.png"
+  },
+  "src/lib/assets/images/bonzoui/draw_ribbon.png": {
+    "file": "_app/immutable/assets/draw_ribbon.B5XI4M0q.png",
+    "src": "src/lib/assets/images/bonzoui/draw_ribbon.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/competitions.png": {
+    "file": "_app/immutable/assets/competitions.C58tQTup.png",
+    "src": "src/lib/assets/images/bonzoui/headings/competitions.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/friends.png": {
+    "file": "_app/immutable/assets/friends.CpjPKI58.png",
+    "src": "src/lib/assets/images/bonzoui/headings/friends.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/leaderboard.png": {
+    "file": "_app/immutable/assets/leaderboard.JEBUTntx.png",
+    "src": "src/lib/assets/images/bonzoui/headings/leaderboard.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/lessons.png": {
+    "file": "_app/immutable/assets/lessons.Cz2LBAPk.png",
+    "src": "src/lib/assets/images/bonzoui/headings/lessons.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/pay_for_access.png": {
+    "file": "_app/immutable/assets/pay_for_access.nHhQp7_k.png",
+    "src": "src/lib/assets/images/bonzoui/headings/pay_for_access.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/players.png": {
+    "file": "_app/immutable/assets/players.I7x30OZh.png",
+    "src": "src/lib/assets/images/bonzoui/headings/players.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/rewards.png": {
+    "file": "_app/immutable/assets/rewards.DlSJma12.png",
+    "src": "src/lib/assets/images/bonzoui/headings/rewards.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/select_opponent.png": {
+    "file": "_app/immutable/assets/select_opponent.CD15azkN.png",
+    "src": "src/lib/assets/images/bonzoui/headings/select_opponent.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/topics.png": {
+    "file": "_app/immutable/assets/topics.BmBb0n-a.png",
+    "src": "src/lib/assets/images/bonzoui/headings/topics.png"
+  },
+  "src/lib/assets/images/bonzoui/more_coins.png": {
+    "file": "_app/immutable/assets/more_coins.B4hc4Fqg.png",
+    "src": "src/lib/assets/images/bonzoui/more_coins.png"
+  },
+  "src/lib/assets/images/bonzoui/multi_player_icon.svg": {
+    "file": "_app/immutable/assets/multi_player_icon.BkPVo834.svg",
+    "src": "src/lib/assets/images/bonzoui/multi_player_icon.svg"
+  },
+  "src/lib/assets/images/bonzoui/no-data-found.svg": {
+    "file": "_app/immutable/assets/no-data-found.C0sr3avv.svg",
+    "src": "src/lib/assets/images/bonzoui/no-data-found.svg"
+  },
+  "src/lib/assets/images/bonzoui/polkadots.svg": {
+    "file": "_app/immutable/assets/polkadots.DvE3E5TE.svg",
+    "src": "src/lib/assets/images/bonzoui/polkadots.svg"
+  },
+  "src/lib/assets/images/bonzoui/ribbon_lose.png": {
+    "file": "_app/immutable/assets/ribbon_lose.CFtDzXyr.png",
+    "src": "src/lib/assets/images/bonzoui/ribbon_lose.png"
+  },
+  "src/lib/assets/images/bonzoui/ribbon_winner_congrats.png": {
+    "file": "_app/immutable/assets/ribbon_winner_congrats.800Ah8N3.png",
+    "src": "src/lib/assets/images/bonzoui/ribbon_winner_congrats.png"
+  },
+  "src/lib/assets/images/bonzoui/rules.svg": {
+    "file": "_app/immutable/assets/rules.-gxI2kTU.svg",
+    "src": "src/lib/assets/images/bonzoui/rules.svg"
+  },
+  "src/lib/assets/images/bonzoui/school-avatar.png": {
+    "file": "_app/immutable/assets/a67.CsD1LPnD.png",
+    "src": "src/lib/assets/images/bonzoui/school-avatar.png"
+  },
+  "src/lib/assets/images/bonzoui/single_player_icon.svg": {
+    "file": "_app/immutable/assets/playersingle.CHmWgN-Y.svg",
+    "src": "src/lib/assets/images/bonzoui/single_player_icon.svg"
+  },
+  "src/lib/assets/images/bonzoui/sword1.png": {
+    "file": "_app/immutable/assets/sword1.BiQcy4EQ.png",
+    "src": "src/lib/assets/images/bonzoui/sword1.png"
+  },
+  "src/lib/assets/images/bonzoui/sword2.png": {
+    "file": "_app/immutable/assets/sword2.C9BBR0te.png",
+    "src": "src/lib/assets/images/bonzoui/sword2.png"
+  },
+  "src/lib/assets/images/bonzoui/timer_close_bg.png": {
+    "file": "_app/immutable/assets/timer_close_bg.DJWagRZe.png",
+    "src": "src/lib/assets/images/bonzoui/timer_close_bg.png"
+  },
+  "src/lib/assets/images/bonzoui/timer_open_bg.png": {
+    "file": "_app/immutable/assets/timer_open_bg.C_Nu5W-A.png",
+    "src": "src/lib/assets/images/bonzoui/timer_open_bg.png"
+  },
+  "src/lib/assets/images/bonzoui/vs.svg": {
+    "file": "_app/immutable/assets/vs.KtLT08pX.svg",
+    "src": "src/lib/assets/images/bonzoui/vs.svg"
+  },
+  "src/lib/assets/images/game_type/crack_the_code.png": {
+    "file": "_app/immutable/assets/sorting.Cef1rhoz.png",
+    "src": "src/lib/assets/images/game_type/crack_the_code.png"
+  },
+  "src/lib/assets/images/game_type/dino_eggs.png": {
+    "file": "_app/immutable/assets/link.CEPGAntH.png",
+    "src": "src/lib/assets/images/game_type/dino_eggs.png"
+  },
+  "src/lib/assets/images/game_type/factor_monsters.png": {
+    "file": "_app/immutable/assets/factor_monsters.l213NjDn.png",
+    "src": "src/lib/assets/images/game_type/factor_monsters.png"
+  },
+  "src/lib/assets/images/game_type/financial_fib.png": {
+    "file": "_app/immutable/assets/financial_fib.CmPsMloe.png",
+    "src": "src/lib/assets/images/game_type/financial_fib.png"
+  },
+  "src/lib/assets/images/game_type/kampong.png": {
+    "file": "_app/immutable/assets/kampong.wsxanTnR.png",
+    "src": "src/lib/assets/images/game_type/kampong.png"
+  },
+  "src/lib/assets/images/game_type/link.png": {
+    "file": "_app/immutable/assets/link.CEPGAntH.png",
+    "src": "src/lib/assets/images/game_type/dino_eggs.png"
+  },
+  "src/lib/assets/images/game_type/matching.png": {
+    "file": "_app/immutable/assets/matching.CSUPKMrL.png",
+    "src": "src/lib/assets/images/game_type/matching.png"
+  },
+  "src/lib/assets/images/game_type/matching_flip.png": {
+    "file": "_app/immutable/assets/financial_fib.CmPsMloe.png",
+    "src": "src/lib/assets/images/game_type/financial_fib.png"
+  },
+  "src/lib/assets/images/game_type/number_battle.png": {
+    "file": "_app/immutable/assets/number_battle.CW7j1d-k.png",
+    "src": "src/lib/assets/images/game_type/number_battle.png"
+  },
+  "src/lib/assets/images/game_type/ruby_spidey.png": {
+    "file": "_app/immutable/assets/ruby_spidey.DtbcPulW.png",
+    "src": "src/lib/assets/images/game_type/ruby_spidey.png"
+  },
+  "src/lib/assets/images/game_type/sets_challenge.png": {
+    "file": "_app/immutable/assets/sets_challenge.CDdDp_R2.png",
+    "src": "src/lib/assets/images/game_type/sets_challenge.png"
+  },
+  "src/lib/assets/images/game_type/sheep_run.png": {
+    "file": "_app/immutable/assets/sheep_run.vK3A0okd.png",
+    "src": "src/lib/assets/images/game_type/sheep_run.png"
+  },
+  "src/lib/assets/images/game_type/sorting.png": {
+    "file": "_app/immutable/assets/sorting.Cef1rhoz.png",
+    "src": "src/lib/assets/images/game_type/crack_the_code.png"
+  },
+  "src/lib/assets/images/game_type/sumo_mochi.png": {
+    "file": "_app/immutable/assets/sumo_mochi.CDuX_Lqy.png",
+    "src": "src/lib/assets/images/game_type/sumo_mochi.png"
+  },
+  "src/lib/assets/images/game_type/tabular_fib.png": {
+    "file": "_app/immutable/assets/matching.CSUPKMrL.png",
+    "src": "src/lib/assets/images/game_type/matching.png"
+  },
+  "src/lib/assets/images/gclc/lock_icon.svg": {
+    "file": "_app/immutable/assets/lock_icon.Bs3gu0S5.svg",
+    "src": "src/lib/assets/images/gclc/lock_icon.svg"
+  },
+  "src/lib/assets/images/home_images/bonzo/pb-tagline-logo-black.png": {
+    "file": "_app/immutable/assets/pb-tagline-logo-black.BYnj2J4s.png",
+    "src": "src/lib/assets/images/home_images/bonzo/pb-tagline-logo-black.png"
+  },
+  "src/lib/assets/images/home_images/bonzo/pb-tagline-logo-white.png": {
+    "file": "_app/immutable/assets/pb-tagline-logo-white.GkCHLDzx.png",
+    "src": "src/lib/assets/images/home_images/bonzo/pb-tagline-logo-white.png"
+  },
+  "src/lib/assets/images/home_images/education-impact-image.png": {
+    "file": "_app/immutable/assets/education-impact-image.O8BGTQAa.png",
+    "src": "src/lib/assets/images/home_images/education-impact-image.png"
+  },
+  "src/lib/assets/images/home_images/feature-image-1.png": {
+    "file": "_app/immutable/assets/feature-image-1.D6Cq5UYQ.png",
+    "src": "src/lib/assets/images/home_images/feature-image-1.png"
+  },
+  "src/lib/assets/images/home_images/feature-image-2.png": {
+    "file": "_app/immutable/assets/feature-image-2.BXt3tmoN.png",
+    "src": "src/lib/assets/images/home_images/feature-image-2.png"
+  },
+  "src/lib/assets/images/home_images/feature-image-3.png": {
+    "file": "_app/immutable/assets/feature-image-3.CAk04Bp2.png",
+    "src": "src/lib/assets/images/home_images/feature-image-3.png"
+  },
+  "src/lib/assets/images/home_images/gclc/gg-tagline-logo-white.svg": {
+    "file": "_app/immutable/assets/gg-tagline-logo-white.CYHLGt7P.svg",
+    "src": "src/lib/assets/images/home_images/gclc/gg-tagline-logo-white.svg"
+  },
+  "src/lib/assets/images/home_images/gclc/gg-web-logo.svg": {
+    "file": "_app/immutable/assets/gg-web-logo.CNVW4_QI.svg",
+    "src": "src/lib/assets/images/home_images/gclc/gg-web-logo.svg"
+  },
+  "src/lib/assets/images/home_images/learning-banner-1.png": {
+    "file": "_app/immutable/assets/learning-banner-1.BIz2rZS7.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-1.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-2.png": {
+    "file": "_app/immutable/assets/learning-banner-2.DDpycIcU.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-2.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-3.png": {
+    "file": "_app/immutable/assets/learning-banner-3.B0Jt0AMB.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-3.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-4.png": {
+    "file": "_app/immutable/assets/learning-banner-4.o2wUUjT7.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-4.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-5.png": {
+    "file": "_app/immutable/assets/learning-banner-5.DUzhkPU2.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-5.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-6.png": {
+    "file": "_app/immutable/assets/learning-banner-6.4O_7ZDX4.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-6.png"
+  },
+  "src/lib/assets/images/home_images/pocket-games/pocket-games-logo-white.svg": {
+    "file": "_app/immutable/assets/pocket-games-logo-white.sZXnQQk8.svg",
+    "src": "src/lib/assets/images/home_images/pocket-games/pocket-games-logo-white.svg"
+  },
+  "src/lib/assets/images/home_images/pocket-games/pocket-games-logo.svg": {
+    "file": "_app/immutable/assets/pocket-games-logo.C3uZx_e-.svg",
+    "src": "src/lib/assets/images/home_images/pocket-games/pocket-games-logo.svg"
+  },
+  "src/lib/assets/images/home_images/quotient-games/quotient-logo-white.png": {
+    "file": "_app/immutable/assets/quotient-logo-white.CVOSenH8.png",
+    "src": "src/lib/assets/images/home_images/quotient-games/quotient-logo-white.png"
+  },
+  "src/lib/assets/images/home_images/sgg/sgg-logo.png": {
+    "file": "_app/immutable/assets/sgg-logo.C-FpbW20.png",
+    "src": "src/lib/assets/images/home_images/sgg/sgg-logo.png"
+  },
+  "src/lib/assets/images/home_images/sgg/sgg-mobile-logo.png": {
+    "file": "_app/immutable/assets/sgg-mobile-logo.CO-9LZBd.png",
+    "src": "src/lib/assets/images/home_images/sgg/sgg-mobile-logo.png"
+  },
+  "src/lib/assets/images/home_images/shupavu/shupavu-logo.png": {
+    "file": "_app/immutable/assets/shupavu-logo.CWoNwa7_.png",
+    "src": "src/lib/assets/images/home_images/shupavu/shupavu-logo.png"
+  },
+  "src/lib/assets/images/leaderboard/rays.svg": {
+    "file": "_app/immutable/assets/rays.DaFCbr-s.svg",
+    "src": "src/lib/assets/images/leaderboard/rays.svg"
+  },
+  "src/lib/assets/images/leaderboard/stars3.png": {
+    "file": "_app/immutable/assets/stars3.05JtbYZ7.png",
+    "src": "src/lib/assets/images/leaderboard/stars3.png"
+  },
+  "src/lib/assets/images/overview/activeplayers.png": {
+    "file": "_app/immutable/assets/activeplayers.CuTCj87y.png",
+    "src": "src/lib/assets/images/overview/activeplayers.png"
+  },
+  "src/lib/assets/images/overview/avgcompletionrate.png": {
+    "file": "_app/immutable/assets/avgcompletionrate.KkbqXoJs.png",
+    "src": "src/lib/assets/images/overview/avgcompletionrate.png"
+  },
+  "src/lib/assets/images/overview/totalgames.png": {
+    "file": "_app/immutable/assets/totalgames.CfP7B9iA.png",
+    "src": "src/lib/assets/images/overview/totalgames.png"
+  },
+  "src/lib/assets/images/overview/totalgamesplayed.png": {
+    "file": "_app/immutable/assets/totalgamesplayed.DXsB-zWh.png",
+    "src": "src/lib/assets/images/overview/totalgamesplayed.png"
+  },
+  "src/lib/assets/images/overview/totalhoursspent.png": {
+    "file": "_app/immutable/assets/totalhoursspent.B_ofSwdh.png",
+    "src": "src/lib/assets/images/overview/totalhoursspent.png"
+  },
+  "src/lib/assets/images/overview/totalplayers.png": {
+    "file": "_app/immutable/assets/totalplayers.DR9HqzTQ.png",
+    "src": "src/lib/assets/images/overview/totalplayers.png"
+  },
+  "src/lib/assets/images/payment/bank_icon.svg": {
+    "file": "_app/immutable/assets/bank_icon.DlcPDJbc.svg",
+    "src": "src/lib/assets/images/payment/bank_icon.svg"
+  },
+  "src/lib/assets/images/payment/jazz_icon.svg": {
+    "file": "_app/immutable/assets/jazz_icon.CU48aWwr.svg",
+    "src": "src/lib/assets/images/payment/jazz_icon.svg"
+  },
+  "src/lib/assets/images/pocket-games/coin_img.svg": {
+    "file": "_app/immutable/assets/coin_img.DrPshK1h.svg",
+    "src": "src/lib/assets/images/pocket-games/coin_img.svg"
+  },
+  "src/lib/assets/images/profiles/a15.png": {
+    "file": "_app/immutable/assets/a15.BLlzNQqK.png",
+    "src": "src/lib/assets/images/profiles/a15.png"
+  },
+  "src/lib/assets/images/profiles/a16.png": {
+    "file": "_app/immutable/assets/a16.DE7sve9_.png",
+    "src": "src/lib/assets/images/profiles/a16.png"
+  },
+  "src/lib/assets/images/profiles/a17.png": {
+    "file": "_app/immutable/assets/a17.cxeX9Vpp.png",
+    "src": "src/lib/assets/images/profiles/a17.png"
+  },
+  "src/lib/assets/images/profiles/a18.png": {
+    "file": "_app/immutable/assets/a18.ERdYEYBi.png",
+    "src": "src/lib/assets/images/profiles/a18.png"
+  },
+  "src/lib/assets/images/profiles/a19.png": {
+    "file": "_app/immutable/assets/a19.DG3L8nd4.png",
+    "src": "src/lib/assets/images/profiles/a19.png"
+  },
+  "src/lib/assets/images/profiles/a20.png": {
+    "file": "_app/immutable/assets/a20.CWhAvI_x.png",
+    "src": "src/lib/assets/images/profiles/a20.png"
+  },
+  "src/lib/assets/images/profiles/a21.png": {
+    "file": "_app/immutable/assets/a21.BaUsT2yc.png",
+    "src": "src/lib/assets/images/profiles/a21.png"
+  },
+  "src/lib/assets/images/profiles/a22.png": {
+    "file": "_app/immutable/assets/a22.BaBB2Cb5.png",
+    "src": "src/lib/assets/images/profiles/a22.png"
+  },
+  "src/lib/assets/images/profiles/a23.png": {
+    "file": "_app/immutable/assets/a23.B9_xNaWp.png",
+    "src": "src/lib/assets/images/profiles/a23.png"
+  },
+  "src/lib/assets/images/profiles/a24.png": {
+    "file": "_app/immutable/assets/a24.CsxjxlTV.png",
+    "src": "src/lib/assets/images/profiles/a24.png"
+  },
+  "src/lib/assets/images/profiles/a25.png": {
+    "file": "_app/immutable/assets/a25.B6R6pSi-.png",
+    "src": "src/lib/assets/images/profiles/a25.png"
+  },
+  "src/lib/assets/images/profiles/a26.png": {
+    "file": "_app/immutable/assets/a26.7K9XOkbd.png",
+    "src": "src/lib/assets/images/profiles/a26.png"
+  },
+  "src/lib/assets/images/profiles/a27.png": {
+    "file": "_app/immutable/assets/a27.di5RvDlf.png",
+    "src": "src/lib/assets/images/profiles/a27.png"
+  },
+  "src/lib/assets/images/profiles/a28.png": {
+    "file": "_app/immutable/assets/a28.Cai8Sgc5.png",
+    "src": "src/lib/assets/images/profiles/a28.png"
+  },
+  "src/lib/assets/images/profiles/a29.png": {
+    "file": "_app/immutable/assets/a29.Cxpl4pBs.png",
+    "src": "src/lib/assets/images/profiles/a29.png"
+  },
+  "src/lib/assets/images/profiles/a30.png": {
+    "file": "_app/immutable/assets/a30.CSxkBavu.png",
+    "src": "src/lib/assets/images/profiles/a30.png"
+  },
+  "src/lib/assets/images/profiles/a31.png": {
+    "file": "_app/immutable/assets/a31.DsXNS_bC.png",
+    "src": "src/lib/assets/images/profiles/a31.png"
+  },
+  "src/lib/assets/images/profiles/a32.png": {
+    "file": "_app/immutable/assets/a32.CdbHq7O-.png",
+    "src": "src/lib/assets/images/profiles/a32.png"
+  },
+  "src/lib/assets/images/profiles/a33.png": {
+    "file": "_app/immutable/assets/a33.Cvtx_jaO.png",
+    "src": "src/lib/assets/images/profiles/a33.png"
+  },
+  "src/lib/assets/images/profiles/a34.png": {
+    "file": "_app/immutable/assets/a34.KUL2AdBF.png",
+    "src": "src/lib/assets/images/profiles/a34.png"
+  },
+  "src/lib/assets/images/profiles/a35.png": {
+    "file": "_app/immutable/assets/a35.gFqOCSGZ.png",
+    "src": "src/lib/assets/images/profiles/a35.png"
+  },
+  "src/lib/assets/images/profiles/a36.png": {
+    "file": "_app/immutable/assets/a36.DtLyRyE3.png",
+    "src": "src/lib/assets/images/profiles/a36.png"
+  },
+  "src/lib/assets/images/profiles/a37.png": {
+    "file": "_app/immutable/assets/a37.8e-bHiwv.png",
+    "src": "src/lib/assets/images/profiles/a37.png"
+  },
+  "src/lib/assets/images/profiles/a38.png": {
+    "file": "_app/immutable/assets/a38.6rk9Murh.png",
+    "src": "src/lib/assets/images/profiles/a38.png"
+  },
+  "src/lib/assets/images/profiles/a39.png": {
+    "file": "_app/immutable/assets/a39.TvgLxRO7.png",
+    "src": "src/lib/assets/images/profiles/a39.png"
+  },
+  "src/lib/assets/images/profiles/a40.png": {
+    "file": "_app/immutable/assets/a40.h_vKUL7j.png",
+    "src": "src/lib/assets/images/profiles/a40.png"
+  },
+  "src/lib/assets/images/profiles/a41.png": {
+    "file": "_app/immutable/assets/a41.DXZ5qRWm.png",
+    "src": "src/lib/assets/images/profiles/a41.png"
+  },
+  "src/lib/assets/images/profiles/a42.png": {
+    "file": "_app/immutable/assets/a42.6QMcaMnF.png",
+    "src": "src/lib/assets/images/profiles/a42.png"
+  },
+  "src/lib/assets/images/profiles/a43.png": {
+    "file": "_app/immutable/assets/a43.CszkcydC.png",
+    "src": "src/lib/assets/images/profiles/a43.png"
+  },
+  "src/lib/assets/images/profiles/a44.png": {
+    "file": "_app/immutable/assets/a44.DlglqPUk.png",
+    "src": "src/lib/assets/images/profiles/a44.png"
+  },
+  "src/lib/assets/images/profiles/a45.png": {
+    "file": "_app/immutable/assets/a45.Cc-2DY5A.png",
+    "src": "src/lib/assets/images/profiles/a45.png"
+  },
+  "src/lib/assets/images/profiles/a46.png": {
+    "file": "_app/immutable/assets/a46.3LHLHRYP.png",
+    "src": "src/lib/assets/images/profiles/a46.png"
+  },
+  "src/lib/assets/images/profiles/a47.png": {
+    "file": "_app/immutable/assets/a47.CMyIUQ8-.png",
+    "src": "src/lib/assets/images/profiles/a47.png"
+  },
+  "src/lib/assets/images/profiles/a48.png": {
+    "file": "_app/immutable/assets/a48.DrO3KmWl.png",
+    "src": "src/lib/assets/images/profiles/a48.png"
+  },
+  "src/lib/assets/images/profiles/a49.png": {
+    "file": "_app/immutable/assets/a49.kzzNNrIi.png",
+    "src": "src/lib/assets/images/profiles/a49.png"
+  },
+  "src/lib/assets/images/profiles/a50.png": {
+    "file": "_app/immutable/assets/a50.DDm4KwC7.png",
+    "src": "src/lib/assets/images/profiles/a50.png"
+  },
+  "src/lib/assets/images/profiles/a51.png": {
+    "file": "_app/immutable/assets/a51.D6hqt3YQ.png",
+    "src": "src/lib/assets/images/profiles/a51.png"
+  },
+  "src/lib/assets/images/profiles/a52.png": {
+    "file": "_app/immutable/assets/a52.JNy01BBR.png",
+    "src": "src/lib/assets/images/profiles/a52.png"
+  },
+  "src/lib/assets/images/profiles/a53.png": {
+    "file": "_app/immutable/assets/a53.tKrwA6FC.png",
+    "src": "src/lib/assets/images/profiles/a53.png"
+  },
+  "src/lib/assets/images/profiles/a54.png": {
+    "file": "_app/immutable/assets/a54.pRWJnrA1.png",
+    "src": "src/lib/assets/images/profiles/a54.png"
+  },
+  "src/lib/assets/images/profiles/a55.png": {
+    "file": "_app/immutable/assets/a55.CK_Lm3Ek.png",
+    "src": "src/lib/assets/images/profiles/a55.png"
+  },
+  "src/lib/assets/images/profiles/a56.png": {
+    "file": "_app/immutable/assets/a56.DUH7qS3E.png",
+    "src": "src/lib/assets/images/profiles/a56.png"
+  },
+  "src/lib/assets/images/profiles/a57.png": {
+    "file": "_app/immutable/assets/a57.CDqw8cgx.png",
+    "src": "src/lib/assets/images/profiles/a57.png"
+  },
+  "src/lib/assets/images/profiles/a58.png": {
+    "file": "_app/immutable/assets/a58.5FKbzyP1.png",
+    "src": "src/lib/assets/images/profiles/a58.png"
+  },
+  "src/lib/assets/images/profiles/a59.png": {
+    "file": "_app/immutable/assets/a59.BjxlSIOa.png",
+    "src": "src/lib/assets/images/profiles/a59.png"
+  },
+  "src/lib/assets/images/profiles/a60.png": {
+    "file": "_app/immutable/assets/a60.B--x-ghC.png",
+    "src": "src/lib/assets/images/profiles/a60.png"
+  },
+  "src/lib/assets/images/profiles/a61.png": {
+    "file": "_app/immutable/assets/a61.D9U4Gaj_.png",
+    "src": "src/lib/assets/images/profiles/a61.png"
+  },
+  "src/lib/assets/images/profiles/a62.png": {
+    "file": "_app/immutable/assets/a62.GQBWTYaw.png",
+    "src": "src/lib/assets/images/profiles/a62.png"
+  },
+  "src/lib/assets/images/profiles/a63.png": {
+    "file": "_app/immutable/assets/a63.ICOVHFX1.png",
+    "src": "src/lib/assets/images/profiles/a63.png"
+  },
+  "src/lib/assets/images/profiles/a64.png": {
+    "file": "_app/immutable/assets/a64.BdBsphi-.png",
+    "src": "src/lib/assets/images/profiles/a64.png"
+  },
+  "src/lib/assets/images/profiles/a65.png": {
+    "file": "_app/immutable/assets/a65.DF5Tl1D7.png",
+    "src": "src/lib/assets/images/profiles/a65.png"
+  },
+  "src/lib/assets/images/profiles/a67.png": {
+    "file": "_app/immutable/assets/a67.CsD1LPnD.png",
+    "src": "src/lib/assets/images/bonzoui/school-avatar.png"
+  },
+  "src/lib/assets/images/result/coin.png": {
+    "file": "_app/immutable/assets/coin.BaRO8b4k.png",
+    "src": "src/lib/assets/images/result/coin.png"
+  },
+  "src/lib/assets/images/result/stack1-pg.png": {
+    "file": "_app/immutable/assets/stack1-pg.C94_rBxp.png",
+    "src": "src/lib/assets/images/result/stack1-pg.png"
+  },
+  "src/lib/assets/images/result/stack1.png": {
+    "file": "_app/immutable/assets/stack1.C9eVAYBG.png",
+    "src": "src/lib/assets/images/result/stack1.png"
+  },
+  "src/lib/assets/images/result/sunrays.png": {
+    "file": "_app/immutable/assets/sunrays.m2kjJ8Dx.png",
+    "src": "src/lib/assets/images/result/sunrays.png"
+  },
+  "src/lib/assets/images/rewards/dailybadge.png": {
+    "file": "_app/immutable/assets/dailybadge.D7cs6UUa.png",
+    "src": "src/lib/assets/images/rewards/dailybadge.png"
+  },
+  "src/lib/assets/images/rewards/monthlybadge.png": {
+    "file": "_app/immutable/assets/monthlybadge.DDz_eSTV.png",
+    "src": "src/lib/assets/images/rewards/monthlybadge.png"
+  },
+  "src/lib/assets/images/rewards/weeklybadge.png": {
+    "file": "_app/immutable/assets/weeklybadge.Bx9aibxf.png",
+    "src": "src/lib/assets/images/rewards/weeklybadge.png"
+  },
+  "src/lib/assets/images/shupavu/daily-bundle-image.png": {
+    "file": "_app/immutable/assets/daily-bundle-image.CbWwowil.png",
+    "src": "src/lib/assets/images/shupavu/daily-bundle-image.png"
+  },
+  "src/lib/assets/images/shupavu/monthly-bundle-image.png": {
+    "file": "_app/immutable/assets/monthly-bundle-image.D5RqFz3c.png",
+    "src": "src/lib/assets/images/shupavu/monthly-bundle-image.png"
+  },
+  "src/lib/assets/images/shupavu/weekly-bundle-image.png": {
+    "file": "_app/immutable/assets/weekly-bundle-image.DWWc1x7_.png",
+    "src": "src/lib/assets/images/shupavu/weekly-bundle-image.png"
+  },
+  "src/lib/assets/images/sidenav/friends.svg": {
+    "file": "_app/immutable/assets/friends.ungRWP9V.svg",
+    "src": "src/lib/assets/images/sidenav/friends.svg"
+  },
+  "src/lib/assets/images/sidenav/rewards.svg": {
+    "file": "_app/immutable/assets/rewards.UsDSa_s-.svg",
+    "src": "src/lib/assets/images/sidenav/rewards.svg"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_1.png": {
+    "file": "_app/immutable/assets/biology_sub_1.CTLualCK.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_2.png": {
+    "file": "_app/immutable/assets/biology_sub_2.DoANx3R3.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_3.png": {
+    "file": "_app/immutable/assets/biology_sub_3.BH8zuwbC.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_4.png": {
+    "file": "_app/immutable/assets/biology_sub_4.CJfhEVy3.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_5.png": {
+    "file": "_app/immutable/assets/biology_sub_5.Bma6T2AR.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_6.png": {
+    "file": "_app/immutable/assets/biology_sub_6.D4AVt_IN.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_1.png": {
+    "file": "_app/immutable/assets/chemistry_sub_1.CotYUrU5.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_2.png": {
+    "file": "_app/immutable/assets/chemistry_sub_2.Bb4pkWyv.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_3.png": {
+    "file": "_app/immutable/assets/chemistry_sub_3.B7pdvRiG.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_4.png": {
+    "file": "_app/immutable/assets/chemistry_sub_4.HYJv8CTA.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_5.png": {
+    "file": "_app/immutable/assets/chemistry_sub_5.D-jla_DK.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_6.png": {
+    "file": "_app/immutable/assets/chemistry_sub_6.CEU3VKXO.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_1.png": {
+    "file": "_app/immutable/assets/computer_science_sub_1.CT_kBnQh.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_2.png": {
+    "file": "_app/immutable/assets/computer_science_sub_2.DZWE0np1.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_3.png": {
+    "file": "_app/immutable/assets/computer_science_sub_3.C6XsD_nz.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_4.png": {
+    "file": "_app/immutable/assets/computer_science_sub_4.CS44gcy_.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_6.png": {
+    "file": "_app/immutable/assets/computer_science_sub_6.uzyJ8A1n.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/data_science/data_science_sub_1.png": {
+    "file": "_app/immutable/assets/data_science_sub_1.EqipjaBs.png",
+    "src": "src/lib/assets/images/subjects/data_science/data_science_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/data_science/data_science_sub_2.png": {
+    "file": "_app/immutable/assets/data_science_sub_2.K-nZdOag.png",
+    "src": "src/lib/assets/images/subjects/data_science/data_science_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/data_science/data_science_sub_3.png": {
+    "file": "_app/immutable/assets/data_science_sub_3.BAHay3Qp.png",
+    "src": "src/lib/assets/images/subjects/data_science/data_science_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/data_science/data_science_sub_4.png": {
+    "file": "_app/immutable/assets/data_science_sub_4.BUO1x9Zc.png",
+    "src": "src/lib/assets/images/subjects/data_science/data_science_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_1.png": {
+    "file": "_app/immutable/assets/english_sub_1.CGBROLdQ.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_2.png": {
+    "file": "_app/immutable/assets/english_sub_2.CSk0Uual.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_3.png": {
+    "file": "_app/immutable/assets/english_sub_3.DVQh4CL1.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_4.png": {
+    "file": "_app/immutable/assets/english_sub_4.ByA3im4H.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_5.png": {
+    "file": "_app/immutable/assets/english_sub_5.CkI2gax4.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_6.png": {
+    "file": "_app/immutable/assets/english_sub_6.CRb3LvlX.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/environmental_literacy/environmental_literacy_sub_1.png": {
+    "file": "_app/immutable/assets/environmental_literacy_sub_1.BfVuNUPA.png",
+    "src": "src/lib/assets/images/subjects/environmental_literacy/environmental_literacy_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/environmental_literacy/environmental_literacy_sub_5.png": {
+    "file": "_app/immutable/assets/environmental_literacy_sub_5.CKalAN8F.png",
+    "src": "src/lib/assets/images/subjects/environmental_literacy/environmental_literacy_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_1.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_1.xreVwFH4.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_2.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_2.DvEJAZAY.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_3.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_3.CNdzTByD.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_4.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_4.DIfPnJJF.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_5.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_5.BlPY4Dth.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_6.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_6.XhOhgHW3.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_1.png": {
+    "file": "_app/immutable/assets/health_and_wellness_sub_1.CQyLsJ3u.png",
+    "src": "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_2.png": {
+    "file": "_app/immutable/assets/health_and_wellness_sub_2.CGvuZ5pS.png",
+    "src": "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_3.png": {
+    "file": "_app/immutable/assets/health_and_wellness_sub_3.TbgQg9C3.png",
+    "src": "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_4.png": {
+    "file": "_app/immutable/assets/health_and_wellness_sub_4.BhzMF4Pr.png",
+    "src": "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_2.png": {
+    "file": "_app/immutable/assets/math_sub_2.B2MZALCj.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_3.png": {
+    "file": "_app/immutable/assets/math_sub_3.Eic8vPYn.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_4.png": {
+    "file": "_app/immutable/assets/math_sub_4.BtX2_em7.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_5.png": {
+    "file": "_app/immutable/assets/math_sub_5.DR3Hncsx.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_6.png": {
+    "file": "_app/immutable/assets/math_sub_6.BLqpZ5Ow.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_1.png": {
+    "file": "_app/immutable/assets/physics_sub_1.Hm_md6W9.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_2.png": {
+    "file": "_app/immutable/assets/physics_sub_2.D_ryAuwh.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_3.png": {
+    "file": "_app/immutable/assets/physics_sub_3.Dln78FY8.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_4.png": {
+    "file": "_app/immutable/assets/physics_sub_4.U0eBJWKa.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_5.png": {
+    "file": "_app/immutable/assets/physics_sub_5.LF0lDjUW.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_1.png": {
+    "file": "_app/immutable/assets/problem_solving_sub_1.xSbvhB5A.png",
+    "src": "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_2.png": {
+    "file": "_app/immutable/assets/problem_solving_sub_2.Bt4UipZE.png",
+    "src": "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_4.png": {
+    "file": "_app/immutable/assets/problem_solving_sub_4.ByY1Rktc.png",
+    "src": "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_5.png": {
+    "file": "_app/immutable/assets/problem_solving_sub_5.CHr-avWx.png",
+    "src": "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_1.png": {
+    "file": "_app/immutable/assets/science_sub_1.D394cxTc.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_2.png": {
+    "file": "_app/immutable/assets/science_sub_2.Be1M8-J0.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_3.png": {
+    "file": "_app/immutable/assets/science_sub_3.B0GjDxNS.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_4.png": {
+    "file": "_app/immutable/assets/science_sub_4.DIvqSIFl.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_5.png": {
+    "file": "_app/immutable/assets/science_sub_5.rXX7YICf.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_6.png": {
+    "file": "_app/immutable/assets/science_sub_6.Cxi2dT9u.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_1.png": {
+    "file": "_app/immutable/assets/urdu_sub_1.5BpQi8RP.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_2.png": {
+    "file": "_app/immutable/assets/urdu_sub_2.BgreTTNk.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_3.png": {
+    "file": "_app/immutable/assets/urdu_sub_3.b21ubLsN.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_4.png": {
+    "file": "_app/immutable/assets/urdu_sub_4.DN0OxAxv.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_5.png": {
+    "file": "_app/immutable/assets/urdu_sub_5.BlLjjOBh.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_6.png": {
+    "file": "_app/immutable/assets/urdu_sub_6.DNCz_eP5.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_6.png"
+  },
+  "src/lib/assets/images/tabicons/certificate_lock.png": {
+    "file": "_app/immutable/assets/certificate_lock.COY0ViSn.png",
+    "src": "src/lib/assets/images/tabicons/certificate_lock.png"
+  },
+  "src/lib/assets/images/tabicons/confetti.png": {
+    "file": "_app/immutable/assets/confetti.sNNHbTbV.png",
+    "src": "src/lib/assets/images/tabicons/confetti.png"
+  },
+  "src/lib/assets/images/tabicons/friendsrecommended.svg": {
+    "file": "_app/immutable/assets/friendsrecommended.p6raTVwh.svg",
+    "src": "src/lib/assets/images/tabicons/friendsrecommended.svg"
+  },
+  "src/lib/assets/images/tabicons/playersingle.svg": {
+    "file": "_app/immutable/assets/playersingle.CHmWgN-Y.svg",
+    "src": "src/lib/assets/images/bonzoui/single_player_icon.svg"
+  },
+  "src/lib/assets/images/tabicons/result.svg": {
+    "file": "_app/immutable/assets/result.DwJcVckf.svg",
+    "src": "src/lib/assets/images/tabicons/result.svg"
+  },
+  "src/lib/assets/images/tabicons/signout.svg": {
+    "file": "_app/immutable/assets/signout.CjZ7csOv.svg",
+    "src": "src/lib/assets/images/tabicons/signout.svg"
+  },
+  "src/lib/assets/images/tabicons/topics.svg": {
+    "file": "_app/immutable/assets/topics.BvXMXu1Q.svg",
+    "src": "src/lib/assets/images/tabicons/topics.svg"
+  },
+  "src/lib/assets/images/tabicons/turninvite.svg": {
+    "file": "_app/immutable/assets/turninvite.De3iGrnZ.svg",
+    "src": "src/lib/assets/images/tabicons/turninvite.svg"
+  },
+  "src/lib/assets/images/tabicons/turntheir.svg": {
+    "file": "_app/immutable/assets/turntheir.hHNiwhXv.svg",
+    "src": "src/lib/assets/images/tabicons/turntheir.svg"
+  },
+  "src/lib/assets/images/tabicons/turnyour.svg": {
+    "file": "_app/immutable/assets/turnyour.CWyicTqC.svg",
+    "src": "src/lib/assets/images/tabicons/turnyour.svg"
+  },
+  "src/lib/assets/sounds/countdown.mp3": {
+    "file": "_app/immutable/assets/countdown.Cbs6QFWp.mp3",
+    "src": "src/lib/assets/sounds/countdown.mp3"
+  },
+  "src/lib/assets/sounds/drumroll.mp3": {
+    "file": "_app/immutable/assets/drumroll.DMT6Sqnq.mp3",
+    "src": "src/lib/assets/sounds/drumroll.mp3"
+  },
+  "src/lib/assets/sounds/start_challenge.mp3": {
+    "file": "_app/immutable/assets/start_challenge.B-lbAoXm.mp3",
+    "src": "src/lib/assets/sounds/start_challenge.mp3"
+  },
+  "src/views/LmsAuthentication/LmsAuthentication.svelte": {
+    "file": "_app/immutable/chunks/CwW1hN7_.js",
+    "name": "LmsAuthentication",
+    "src": "src/views/LmsAuthentication/LmsAuthentication.svelte",
+    "isDynamicEntry": true,
+    "imports": [
+      "_BDr9Qe-U.js",
+      "_69_IOA4Y.js",
+      "_BWmI7Kwv.js",
+      "_Cio8JTVh.js",
+      "_cR8EBM7j.js",
+      "_DJyY-Ao_.js",
+      "_Dui37nOO.js",
+      "_CzvvLib5.js",
+      "_CvLKQSYC.js",
+      "_DjNUT-oc.js",
+      "_RG-z8tzU.js"
+    ],
+    "css": [
+      "_app/immutable/assets/LmsAuthentication.BnASsmZP.css"
+    ]
+  }
+}

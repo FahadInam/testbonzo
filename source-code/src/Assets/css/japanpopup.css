@@ -1,0 +1,89 @@
+
+/* --- JAPAN POPUP OVERLAY --- */
+
+.adPopupBg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: rgba(15, 13, 13, 0.7);
+  z-index: 10000;
+  overflow-y: auto;
+}
+
+.adImagePopup {
+  background-color: white;
+  max-width: 600px;
+  max-height:601px;
+  margin: auto auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+}
+
+.imgCarrier {
+  display:block;
+  overflow-y: hidden;
+  cursor: pointer;
+}
+
+.imgJPN {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .adImagePopup {
+    width: 90%;
+  }
+  
+  .imgJPN {
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-height: 600px) {
+
+  .adImagePopup {
+    height: 90%;
+    width: auto;
+    cursor: pointer;
+  }
+  
+  .imgJPN {
+    height: 100%;
+    width: auto;
+  }
+}
+
+
+
+.adPopupCloseBtn {
+  right: -15px;
+    position: absolute;
+    z-index: 10009;
+    top: -14px;
+    font-size: 18px;
+    background-color: #ffb217!important;
+    border-radius: 50px;
+    border: 0px;
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    color: #fff;
+    text-shadow: none;
+    cursor: pointer;
+}
+.adPopupCloseBtn:hover {
+opacity: 1;
+}
+
+/* --- JAPAN POPUP OVERLAY --- */

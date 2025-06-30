@@ -1,0 +1,13 @@
+
+@-moz-keyframes spin { 
+  0% { -moz-background-position: left;  }
+  100% { -moz-background-position: right; }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-background-position: left; }
+  100% { -webkit-background-position: right; }
+}
+@keyframes spin {
+  0% { background-position: left;  }
+  100% {  -webkit-background-position: right; background-position: right; }
+}

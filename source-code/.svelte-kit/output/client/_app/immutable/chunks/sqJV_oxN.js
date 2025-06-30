@@ -1,0 +1,1 @@
+function s(n,r){return n.filter(t=>t.topic===r)}const l=(n,r)=>{const t=r.filter(e=>e.skill===n);if(t.length<=1)return t;let i=t.findIndex(e=>e.type.toLowerCase()==="mcq");if(i!==-1){const[e]=t.splice(i,1);t.push(e)}return t};export{s as g,l as p};

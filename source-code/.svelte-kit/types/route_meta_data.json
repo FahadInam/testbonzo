@@ -1,0 +1,202 @@
+{
+	"/": [
+		"src/routes/+page.js",
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/404": [
+		"src/routes/+layout.js"
+	],
+	"/account/forgot-password": [
+		"src/routes/+layout.js"
+	],
+	"/account/institution/details": [
+		"src/routes/+layout.js"
+	],
+	"/account/institution/login": [
+		"src/routes/+layout.js"
+	],
+	"/account/institution/signup": [
+		"src/routes/+layout.js"
+	],
+	"/account/signup": [
+		"src/routes/+layout.js"
+	],
+	"/account/user/login": [
+		"src/routes/+layout.js"
+	],
+	"/account/user/signup": [
+		"src/routes/+layout.js"
+	],
+	"/account/verify-code": [
+		"src/routes/+layout.js"
+	],
+	"/account/verify": [
+		"src/routes/+layout.js"
+	],
+	"/admin/competitions": [
+		"src/routes/admin/competitions/+page.js",
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/admin/competitions/[competition_name]": [
+		"src/routes/+layout.js"
+	],
+	"/admin/competitions/[competition_name]/overview": [
+		"src/routes/admin/competitions/[competition_name]/overview/+page.js",
+		"src/routes/+layout.js"
+	],
+	"/admin/competitions/[competition_name]/players": [
+		"src/routes/admin/competitions/[competition_name]/players/+page.js",
+		"src/routes/+layout.js"
+	],
+	"/admin/[competition_name]": [
+		"src/routes/admin/[competition_name]/+layout.js"
+	],
+	"/auth/google": [
+		"src/routes/+layout.js"
+	],
+	"/challenge": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/challenge/player": [
+		"src/routes/+layout.js"
+	],
+	"/challenge/result": [
+		"src/routes/challenge/result/+page.js",
+		"src/routes/+layout.js"
+	],
+	"/challenge/selection": [
+		"src/routes/+layout.js"
+	],
+	"/challenge/vsscreen": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions": [
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js",
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/change-grade": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/friends": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/home": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/leaderboard": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/lessons": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/lessons/listing": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/my-games": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/my-subscription": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/profile": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/profile/edit": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/results": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/rewards": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/rules": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/competitions/[competition_name]/stats": [
+		"src/routes/competitions/[competition_name]/+layout.js",
+		"src/routes/competitions/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/contactus": [
+		"src/routes/+layout.js"
+	],
+	"/gclc-result": [
+		"src/routes/+layout.js"
+	],
+	"/green-star-school": [
+		"src/routes/+layout.js"
+	],
+	"/home": [
+		"src/routes/+layout.js"
+	],
+	"/payment": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/payment/bank": [
+		"src/routes/+layout.js"
+	],
+	"/payment/status": [
+		"src/routes/+layout.js"
+	],
+	"/privacy-policy": [
+		"src/routes/+layout.js"
+	],
+	"/profile": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/profile/edit": [
+		"src/routes/+layout.js"
+	],
+	"/program/glc": [
+		"src/routes/+layout.js"
+	],
+	"/program/sitarey": [
+		"src/routes/+layout.js"
+	],
+	"/settings/change-grade": [
+		"src/routes/+layout.js"
+	]
+}

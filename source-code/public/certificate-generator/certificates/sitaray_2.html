@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300..700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KP Certificate Generator</title>
+  <style>
+    :root {
+      --primary-color: #009eff;
+      --secondary-color: #002d44;
+      --primary-text: #000000;
+      --secondary-text: #FFFFFF;
+    }
+
+    .ribbon_image {
+      position: relative;
+      display: inline-block;
+    }
+
+    .ribbon_image img {
+      display: block;
+      width: 100%;
+      /* Adjust size as needed */
+      height: auto;
+    }
+
+    .ribbon_image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--secondary-color);
+      /* Red overlay color */
+      mix-blend-mode: darken;
+      /* Apply the color only to opaque parts */
+      pointer-events: none;
+      /* Allow clicks to pass through */
+    }
+  </style>
+</head>
+
+<body style="background-color: #ffffff">
+  <div class="certificate-container" id="certificate" style="background-color: #efefef;">
+    <div
+      style="height: 180px; width: 100%; border-bottom: 52px solid var(--primary-color); background-color: var(--secondary-color); transform: rotate(45deg); position:absolute; top: 0; right: -500px; z-index: 0">
+    </div>
+    <div
+      style="height: 180px; width: 100%; border-top: 52px solid var(--primary-color); background-color: var(--secondary-color); transform: rotate(45deg); position:absolute; bottom: 0; left: -500px; z-index: 0">
+    </div>
+    <div
+      style="background-color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: auto; margin: 4px; z-index: 1; position: relative; color: var(--primary-text);">
+      <div
+        style="display: flex; justify-content: space-between; width: 90%; height: 40px; margin: auto; margin-top: 24px; margin-bottom: 36px;">
+        <div style="width: 33.33%; display: flex; justify-content: flex-start">
+          <img width="140" height="28" style="object-fit: contain; object-position: center;"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMkAAAA1CAMAAADcSD9VAAAAS1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAD/AAD/AAD/AAD/AAD/AAD/AAAAAAD/AAAC9/GDAAAAF3RSTlMAv4BAEGDvz58g349AcFAwrxzntzCAYFpksYIAAAUcSURBVGje7Zrnmp0gEIbpzSCmmvu/0sgwA3ZNORv3Sb4fRxyHgZcesux3NE7i7HclcpjfL+YfIpHCcaHVuyfRYSzq1PsmcWNVSMdF9CJL+fzrVRy4060tHOdD9JCcPucPXswTc5K+Q2d8nfJ2fkYis0FioCwVJ4vT6hYIyfgjkmSg15jMD2fA25bgval9iuEyEYSbEjG3UCORdQCUWtryJohE8WJwnNAihjf6HCSOC/F9EixxYEBSZaEXFu99fiZqIF8SHZIssnMEWVo2hq69nqMgcJXeJ3HUB3Ltnebvgqn86BkL9N3CO5Ios3AGcxPfGFbl+bPZPq407JJoHHoUWcieOmkARi3hOSpmoY4ex0jJr4gkglExacrYMyVzXzJzbICgpSMDDLbIlMBwh+rGtfZIApQoGZF0DJuX43fFEEkzAeYelxDwt4xIONioBaWss82ViqcajSZOnVIc2I/Fr0lImlUSSVl5Iyu1EGAw0EK5d3wEI5FAV/BJFgZhhF+Y+WOLFqlcMticI8xWPyHSb5BwdkwiqqcotfV2Kl9kfAfuRDIuJMAqlxUnA4VfCKD57kAbbpOYdEHiMTVkgNxRMv/Y3EMLksBJSWz6pHW+mfcJaTYh9GbvXSnszhOa8FsSBUXVULHMag41xBE2NBJOzklOYrKuMZHmCfV+X1KqNlTOkABxf79Ia5Juj4RHnJobEtwAnFeR1kmPkRQN3dhIOnjHKKbUs2XmWM0hKQ0JDG8S5nTzQXI1UfwuSRmFwx5JP5KoqEC7pMCQjcRDBYOl/cRd7ie6BCsx5XGf4CmkSRzt8eDWbUhW5zbFqqEjyMCIZHUgUEC2rLgKKwMbVuOFYPu6jtEpXi/bdKPFXqt3SNqexPEcRiUpitlImF46U0M6qngKyGnRoNx64Dts8naKM3H+hp834pNyjMizfIJFBwDgQ1ZyU7Fh6DGHAk/Y73ICzJpWHuY7np01OQubzxBYDBlsZHx2OA6TxXlG8lGXF73qAhUDgE2+D5IBkhMtx2ZtRimfgcFxtrWzw82jlmUPE1QuRNkZbOgzLVaHZ/REkx9/op3HuSR7mPRYZdK7JmF9oB6ZQN7x6AIWMfBB9PcmFSmwVylFIV7dTNtV+L7aPdC5FH/10N3sjL8gfrRleTmpJO3bTEKaVEawP0rSbuf6t1tOtOAuKvYSEkoNvWLP1g0SDqmnCY7b3uWFTqgFiXImnzvV6u6A15SEo2/IWZ2vwYQSYSzu5dZskFOs7BbcZS9++fz9Up+/HJMEU2/AG0lCowknJNrQi4BgeEmBJBa/6WRubuufvt/Qp4/XRwLbSFSo1mOSfmyKNRiRNJm7G9z3W/pwTTLqSiLGaxJl5j7+mKRJv5jEeuYHSFSSQFe8tpDszfhIecGnIxLDCTyiz2gTFtC9lsSoemAjEk/1Z+mAhJ6eLpEtksR6b+aqc19v715LwtuBLW1vUe0piZ1bRjLQbeMy2+tJXNsv5JaEn5LwNUnXSOSbk9h2h6yIpBGaUxJT+83gfvI3SUZNZZtaXl3+4/E8cTQtdE4MTyAZnXDlWcsbAKUT8Gwkg9CNRJY8uuTVjyAh+Vqe3PxPq6YkkWACZdmTSMTufTAaVNiQKDu7X3gCCe/o+rWVV3f5rhqSXZO0W12n2NuRfDzZT5IQIqrVv359nJKeDMCicxIsUGFyip6Bsl0Wc06CVaIzRT7VtzsgX9kJyWP08cOlPrJ3QfLX/77rCfpP8jw9iuQHt7MpC510GfIAAAAASUVORK5CYII="
+            border="0" alt="Sitaray" />
+        </div>
+        <div style="width: 33.33%;">
+          <img width="140" height="28" style="object-fit: contain; object-position: center;"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAAAzCAMAAADW6Kh/AAAAYFBMVEUAAADuOozuOozuOoxYRJtYRJvuOozuOozuOoxYRJvuOoxYRJvuOoxYRJvuOoxYRJvuOoxYRJtYRJtYRJvuOozuOoxYRJtYRJvuOozuOoxYRJtYRJvuOoxYRJvuOoxYRJshqLN/AAAAHnRSTlMAv0CAgLoQ7yAwMO/Pn59wcGBQEI9QIM/fYN+Pr0AZMNKBAAAC6klEQVRo3u2Y27KrIAyGRcDzuWq1rfr+b7kRmEYO7dRuZ6pr/G8gZi38jCHBOpsI++OYec5RhMdZyDmK/JErcg6iUch1DqKTV9HJe/IudQTeilI6yPkBeO/TrFwY++dtJ6GWW/vnJYwVAnwcXsKtk/fkPXlf8AZFH8xjhHF0AF7MRr93nHpkynbP6/KJ70XiSr93XixnhRjxX+UtKaV5+4Y3JHSi5V7yIRV4t3sl7EHyhty6lGks7HTz/ZZxTDk+Pj08TiAR5vSJF5LrBBo25ZV1jNczF+N+xelRCLKA3KYbsbh20S/SSVUFeT3tkTfXqOjTc9WfZBe8l6vO66E5/T1Hw73u5PzQUo034wtmWnzTy054oWZxlXJFH/IXap3Y1Ko+vbPnBhqv6QYF6h+4kWJC6bo/V2RbEYoc/GM36qo//h0VeS95a+EW4inpQ8Nr/HHsIiPMFSEhGwVRwh+CVOZdQSvebSEWfcWLpVsq4WYhrYhbfvB26cbm6gFyZYA7iQm8NreMoSusTjqzNweMMGThRwg1bNrqzsC38j5WbDOY2N3AyySd6CVvFbPNJVIgn6eDnmRWFT/hhY42QBsJjbdmyvd+xBsuOoMscHGrrWoKRc5veNtnEWbGs6tdLLzYBbFd+xteaMwx55Wi5qrYWS1P5+1fuLmwyptYb0uh9arWFr200HmR3Q0BBd4IwmQ9V8ZzCoSLDv3/vK6v8Orf743SebxsXPIGiY23BNxQ/+6oNN4EfaaGxeYxT/gdgVeoQ0LSDStDkedeNpq8oUmXKwEH3hUK5JsFRSwZv1Vh/SrKLRmSf8nr6rwd9Jz1CmybLbVdJFvx9iwdv8XNbLuNqhVu4/gmUAts8lUTMsc8ng1md4AiEbfb8CaePG6BVLcCXLsKbmQ5OtxCYajAcelsst9qD47foKW7AatrlAdDRhttCSkv5qdSTvIW6iRaJcwKL5LKiuUdmxoJgZs/TCCv1404bj+49fjy1+F/nFMKNyhMB0UAAAAASUVORK5CYII="
+            border="0" alt="Sitaray" />
+        </div>
+        <div style="width: 33.33%; display: flex; justify-content: flex-end;">
+          <img width="100" height="28" style="object-fit: contain; object-position: center;"
+            src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAALcAAAAxCAMAAACvWchoAAAAY1BMVEUAAAAAAAAAAAAAAAAAAAAAvP8AAAAAAAAAAAAAvP8AAAAAvP8AvP8AAAAAAAAAAAAAAAAAAAAAvP8AvP8AvP8AvP8AAAAAAAAAvP8AvP8AvP8AvP8AvP8AvP8AvP8AAAAAvP/GqyV5AAAAH3RSTlMAv0CAEL8g72DvzzAQj9+vnzBAz69wcFAg34CfYFCPtOY1IgAAA65JREFUaN7dmduaqjAMhUOLnFERVE4q7/+Ue4stbRqIfnsupu51MzPk6/I3pGlggFPRd9M0dX0BX6W8m15Kc/BYp9MJZzudJu/Bx3oGrM+mJprJqAYvlXcmtTd1rZ1s3cBHpTbiALPOiPsOVGUwq4LfUj4hneGpHl3bAVXwmCXg11Rj8K/hzlOHm9aJl9wYcljbl35yW00vPa/2QU+5i04T5gBts7s5546v3HAydXx7AjcFOue95YZeHTrF8ILtcmuu8pgb7rumAMhNT+yfV+dUe81NG8vumehv4C6aCSm9fcQdXaWUSQRE4vIMVLAqvIoX7wT3yVH6AfdF/XxkCf6o40MpLiN3EQi9Koh0gChhnLSKFgCGyRUAtP3IcCMFIWiFBzsQS2eRFY2rLTfkpCVt6LGZj8mbi717tfGB4UbKNHi1dyKHcHNRHK4HKuREktOOqqpbNdDi0XB8/hxZbpqjKKaR7UVyNVC+sr3hdKttyMbhbvWlkeOmNZmt0W0u2q8F9iHzPVGGa5VcdKVQv562uQMprmVsMyRL3Ui5RB4R4jhIuWy30DyFBPorX4E47S0nnN2Clsn2WR/YGQ4zqyrVB8TJHNF4R7XIdBHxoEdAgMpKo15cpxpjNm6ZDGS2ov0bFaIEqJw+pj4uposywn21bg7ndJ62C6VGdVQXLDeU6v4DSJMy9JUqsujocod71O0uG04CWqZQzrgzNjy3WD7jaJKE8cgi6XJLtCmhpE66+DuLbERHZtrik2j3KXewQSPfckdoUzJOGtRMgPlJqwDc0Pufcl84bropee7cgHUtuFqKezjnwHMny14vNabW4V2d0E2p4oxTp6DvM1gx7JSa/DWxpE1/Krh5EFtelt20d+9+xHDjTamVME69hp51dobBvP1w/hamf0dLm0WtfQ8cN92UwDvB2FslsJuMAInnFjGFexyiZ0SfSJLlppuSc1L6N25zYssMzSfCzEDB3ox9PDcdRQR2yozTD7mpAt13qa7Ac1/JCsE6vecOn480WRmx3Lg0MxKSwHOHMeVedyrhM+6rdpTvuLOIPu7YgxHlZhMrzDBFnXhufP9Knru06y6x8xcIeMNdPajEilMm4CNufP8E4g6kgKhUN5LUUZionMdHsfWyP1n+kgFVBUrGCZU2y31BT4mwJvFXsKrqbySCH4s68dy0GsBXEW5N7M3Lqf+cO/vSOilRgwZfRbgj/HbEVxFuuNht0FsNhBuk9Y7PW53IP7wBxGGubZ+K5A/BR06C2Cz4RgAAAABJRU5ErkJggg=="
+            border="0" alt="Sitaray" />
+        </div>
+      </div>
+      <div>
+        <h1
+          style="margin: 4px; font-size: 28px; font-weight: 600; font-family: 'Fredoka', sans-serif; letter-spacing:8px; text-transform: uppercase;">
+          CERTIFICATE</h1>
+        <div style="display: flex; justify-content: center; position: relative;">
+          <span
+            style="position: absolute; left: 3px; top: 16px; height: 24px; width: 42px; z-index: 1; transform: scaleX(-1) scaleY(0.8);">
+            <div
+              style="height: 24px; width: 24px; background-color: #ffffff; position: absolute; top: 0; right: -12px; transform: rotate(45deg); z-index: 1;">
+            </div>
+            <div style="height: 24px; width: 42px; background-color: var(--secondary-color); z-index: 1;"></div>
+          </span>
+          <h1
+            style="font-size: 14px; background-color: var(--primary-color); color: var(--secondary-text); font-family: 'Fredoka', sans-serif; font-weight: 500; padding: 8px 8px; text-transform: uppercase; margin: auto 36px; width: 100%; z-index: 2; position: relative; letter-spacing: 1px;"
+            id="cType">
+            of appreciation</h1>
+          <span
+            style="position: absolute; right: 3px; top: 16px; height: 24px; width: 42px; z-index: 1; transform: scaleY(0.8);">
+            <div
+              style="height: 24px; width: 24px; background-color: #ffffff; position: absolute; top: 0; right: -12px; transform: rotate(45deg); z-index: 1;">
+            </div>
+            <div style="height: 24px; width: 42px; background-color: var(--secondary-color); z-index: 1;"></div>
+          </span>
+        </div>
+      </div>
+      <div style="font-family: 'Poppins', sans-serif;">
+        <p style="margin-top: 28px; font-size: 13px;">This certificate is proudly presented to</p>
+        <div>
+          <div style="display: flex; ">
+            <div
+              style=" width: 100%; font-size: 16px; border-bottom: 2px solid #878787; font-family: 'Fredoka', sans-serif; font-weight: 700; padding: 1px 12px; margin: auto 24px; padding-bottom: 6px;"
+              id="fName">John Doe</div>
+          </div>
+          <p style="font-size: 13px; margin: 22px 12px;">for <b>outstanding performance</b> </br>
+            in the <b>Sitarey</b> “National Digital Learning Competitions” in </p>
+          <div style="display: flex; ">
+            <div style="font-size: 12px; display: none;">SUBJECT: </div>
+            <div
+              style=" width: 100%; font-size: 16px; border-bottom: 2px solid #878787; font-family: 'Fredoka', sans-serif; font-weight: 700; padding: 1px 12px; margin: auto 24px; padding-bottom: 6px;"
+              id="subName">Computational Literacy</div>
+          </div>
+
+        </div>
+      </div>
+      <div
+        style=" margin: auto; margin-top: 48px; margin-bottom: 24px; display: flex; font-family: 'Poppins', sans-serif; width: 90%; justify-content: space-between; ">
+        <div>
+          <div
+            style="width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
+            <span
+              style="height: 36px; width: 100%; font-size: 11px; display: flex; align-items: flex-end; justify-content: center;"
+              id="dField"></span>
+            <div
+              style="height: 50px; margin-top: 8px; border-top: 2px solid #868686; padding: 2px 6px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+              <div style="font-size: 11px; width: 100%; font-weight: bold;">Date</br>&nbsp;</div>
+            </div>
+          </div>
+        </div>
+        <div style="width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+          <div
+            style="border: 6px solid yellow; border-radius: 24px; background-color: var(--secondary-color); color: var(--secondary-text); width: 180px; padding: 24px 8px 8px 8px;">
+            <img
+              src="data:image/png;base64,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"
+              width="67" height="55" alt="Tick" style="object-fit: contain; position: absolute; top: -21px; left: 0; right: 0; margin: auto; font-family: 'Poppins', sans-serif;"/>
+            <div style="font-size: 9px; color: var(--secondary-text)" id="cmpName"></div>
+            <div style="font-weight: 700; font-size: 16px; color: yellow;">Stage <span id="stNum">1</span></div>
+            <div style="font-size: 12px; color: var(--primary-color)">Completion</div>
+          </div>
+        </div>
+        <div>
+          <div
+            style="width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABICAMAAAA3UqArAAADAFBMVEX///////3///zu7vOWnMnz9fnp6vLr7fWHj8P5+vz5+Pz9/fuQlsSNk8T7+/y5vNmiqNCgpc6DjMM2QJX7+vnx8/fS1unNz+Ococ2ZocyLkcOFjcKBib9rc7NBTZ739/ry8/Xn5/Hi5O/f4e3i4+zY2urV1+nS0ufT1uW5vtyxtNawstKjps2SmsePlcaLj75yeLRmbK1aYaZFUqJJUJ48Rpz+///39/fw8Pfr6/LP0eXExd/Aw96+wd20utets9WxtdSkqtCYnsqDi8GOkr16gblocrVcaLBhaK5VYq1cY6lTXKdQWadNWKVBT6NPWKL+/v34+fn19fnv7/Xg4vDe4O/c3+3b3ezd3ejKzubR0+K7wNy2u9qyt9qrr9amqcyfpMqYnceFibp/hblwdrNYZK1bZqtWYKpASJouOJP8/P719fbt7vbe3+vZ2uXKzuPHy+PJyeLFyOHBxeHMzd+utdm+wNeprtOjq9Kqq9CmqtCTnMuOmMmKksaFi76Ahrx2frt9g7p8f7dud7dqdreChrZmb7NgbrN4e7BncLBgZqliaKhJVaQ9Sp8zQps8RZYoN5Xv8PLk5vHW2uvO0+jGyuOwsdCaoMmdn8eRl8eVmMWSlsKOlMB+i8B9hr94g713gbxue7qKjbl2frZye7Via7Bvda9ydKtPW6pLWqlIV6dUWqJMVaJRVZs4Q5owPJdNUZYkMpMnM5FARY8gK48gKYkZI4QBDn/p6vTj4ufV1ufHydvDxdm0tte5utalrdW1t9Sco8+Wn82RmsqMlcanp8F/hL1zfbt3erRrcrB7gK5eZ61RXalXXqRZX6BFTJwtPJhGSpczOo8QH4ctMYUJGYURHH4MFnwACHgCCXL19vvl6fHs7OvS0d3BxNiqrs61t81+jceam7hVZbBRYK1mb6daXZVgZJESJIwpNYojJXgAAmXl5+u2u9zf3tfCvs6Kls3Dxcqmpsl8i8SbnsCJjL+Sk7KHi7FnaJ9rbZsWLZBqa4o1PHwaH3cAAFEAAC1qaH4fAAAHhElEQVRYw+2YY3QcURiG37vKJrsb27btxmYbN3Zq23ZT27Zt27ZtG+ls2myy26SZNv/6nD3nztnBM+d778y9d/Cf/9QCQv3qGrb5v7UQiN92Ax/uPy4NT5ZBqlg8u0fh32Jg4oYq+Ib0wd8ySg4idNiXBFK5gGp7D4OirQXtaPwHQ4Rd/d1BSCWJGbc/1V45pO0Omoxzqi8S+yxHyiEq8ekxg9qV5TIwETSx6LMVQgjBmLv3UBWFw9MpybZonVTQpPkUTfxi1d1nqIr60PmUZPurG+mgSdOg07IQQrYtzYYYAcd6U+3MLjvbgibJMx8yidBhND/KG2KwimdQ7Tzbzh1AkyS7hyOEEkP+UG0TiKGh259qI7i7doAmIydeoEoO5WtKYV4q4i+aDgsLqa3FWl06gybsl18JJQkuVFvNgYRMlkZSbbh9cBfQRMbvUVIjAHxtVicdFRDxTIYtoNoovkALNJGWu9CxAeLUwtJ9wrxkIM6u40JJ9DhWIG2JxakDTcEJE3iMKYYkdh+fL5RYayjSziS9VGkjkSshbla9IAnbZaHC4DPlaUuYvpEn5TSKGWjIag0CSMjklozrD0lH1gzQhGPlMMFBpx7Az5MGIKELDwmnto5as6ZKPOAP8LAq6q4U7ArSXVvygNzJeQF1ocEddyiCpoU5dlihcw6wwU5d8iUmKc13jwMwt57GFFQlTkb5TyT6Wetac21S0C6rleQBefCa3qYyAAbIB4agKiPSUlxRA4Sg3RJnJFhPRl9fNiShGTOswOyHxJbbo2q5GPBzHCOLGtkya9ARIHOI6REfydUqigkPN2wEgBW4j1t1/EfDHnrVl4s6KFjT+hiBXDE/Qk08QwKS6BLZx4ntCsC/50CtKocw4d0VNTlkR8UIjIzXEGxeMkjTGExCqh4hrbhUZ/pxqiI++UWK0IuDCHvMn2igJtROTYpH8nmgVcmZVJhMhxiNlzlxuaUXXQFiEuHUtXFDKdE6fHvwPAmk+szlIxUAxtZzioqhK8+ZwlcJpPxsBgDmvY2yvESt3oKeK6g/1xfqTkkPTC4/l2KDhgVqQL4by9efpa51VkEQXqqknpYVBTRrDqCNFYyajWj8IcdAOrW1vCBsBSgidLWuOZgByhVV5UhVH7mKd1R/9Qy+7TZ5JR+taN1sRzubHkCWHVA/Ow8d/Ix5QblGUpn6LTRjl5VLigXW+aZgj4+HtIEejDclmvGqfz6YviULF/SxaAAo77csGGqPVbHTNIA3DoCqjQ1CMpk8m5wUz0AYTXZ2Ed7XohMTA3IMkHrGAxxrA1x/P7UgGdWRoHP+9mxz6lypgzccj07GTd1bZlDmdwe81DMQqwaGi2Ym/w4udlOKEs7JviwJCJzooRKwjoM2zu4EqevWta4udtshoRZubFlhZ7cbGpvXDiMiCnkYOTkIyOhsgbVcG8e+x4bvTwE0S50AtvWq8JJFLHsrtmqIMxNp0euRIO+3Xf+3Ej2zaTq2reJRTnyLIUp5TCDCERidWybprM3K6dkzb5LxVqs2PIKdw2I8/HIHBDnE2o939K6vOj2fA5PbexVyg0hj3m8lTTJiFaQq+qH06ILSqWXNIAcgY64d0DV00CBDKz+D8i7ita/Ibu6A1y36hnXPLh7dZJSC1ig3z369ZuVep3b/TmJ+GSIwpxS5dAFM+2kDXaKDIaPgNPyqSB9RTut7ga8MxfaF+eNOJxiZNVffItdxAgxla7NKvBQTvlABsDzEBbq6zMWdnKYizxuw+eiDSCYM+rW2dxiwRmZ0qrTU8LUDGTVet/IrSu2+f6QA4Ed2hYeg1/7BJ9VEx7wNgx1ZhkubwjAmoK1g0VqGZ0seLOupgpBaTVM1Vqj04wKzY2zR2VLNu6e1isjKV25Abkcj9G5JElfOUO00fC27ZUsCpoosauMg8JkzBz00Qfo47YauKWBUkSZJybLXMQbKbn194qnQSw1d1ph7mZXvrpVEYWhbBNvAj6sj8DrLEf5XnkmzJadnUtvNbU0NzxxooBq6cnzLJqg95iFOQDd5OLS3mlWSXR8VSO9dfbgeKKSmtuKcbEOStUvCrirT+AKxu0ARyMuOW22it+mgW8WkoFnQIt3Pdm0nTKC8sy2hGg8p/7MhZZHX1kH0Q/tbANqayVFs6KfhJ4yx85YvP3gzLclX3d8YwIFOKKNRi/NaI1F70hdOSwC6zZbr5FrRbxmX2504MW/PUx4Adx1LAsxREK7Fzo1l0pDID9kJIHhgxuZG5Y444PG7R73q/0xfTr0hcIglzMbFRJaGZHFBOgi0nXuJTg+WO3uLPNFelu4I0SjvDAwaDr0V034k2X6OfUUcM490M5dBBSobt6C3jdvPFFFbGiXc39EEBEnyk1AOZ/zy/OaV365Smcif6E7XAb0xH72prD3agILot1fqe8WtkgMNtuv1C1AGXVTaLzOp9JlRxn54O7FRotmnebH+DNCDoOnAQA5EaTV2E8TQf/GW7wnamOqax0MUDqcxxODppxizQRvPlYxaLJxolqvF6rr/5isjp1v3Eql60ahbKEkR6hy25zjUNQT/+c+/4juAmd40NdR+QwAAAABJRU5ErkJggg=="
+              alt="Umair Ali" width="50" height="36" />
+            <div
+              style="height: 50px; margin-top: 8px; border-top: 2px solid #868686; padding: 2px 6px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+              <b>Umair Ali</b>
+              <div style="font-size: 11px;">Director Outreach & Engagement</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      //------------------------------------Variables-S------------------------------------
+
+      const CERT_TYPE = 'participation';
+      const FULL_NAME = "John Doe";
+      const SUBJECT = "Computational Literacy";
+      const CERT_DATE = null;
+
+      const P_COLOR = "#ee3a8c";
+      const S_COLOR = "#47132f";
+
+      const P_TEXT_COLOR = "#000000";
+      const S_TEXT_COLOR = "#FFFFFF";
+
+      const STAGE_NUMBER = "1";
+      const COMP_NAME = ""; //"Competition 1: Climate Change";
+
+      //------------------------------------Variables-E------------------------------------
+
+
+      //------------------------------- LOGIC - Don't modify unless necessary - S //-------------------------------
+      const root = document.documentElement;
+      root.style.setProperty('--primary-color', P_COLOR);
+      root.style.setProperty('--secondary-color', S_COLOR);
+      root.style.setProperty('--primary-text', P_TEXT_COLOR);
+      root.style.setProperty('--secondary-text', S_TEXT_COLOR);
+
+
+      document.getElementById('cType').innerText = 'of ' + CERT_TYPE;
+      document.getElementById('fName').innerText = FULL_NAME;
+      document.getElementById('subName').innerText = SUBJECT;
+      document.getElementById('dField').innerText = CERT_DATE || (new Date()).getDate().toString().padStart(2, '0') + ' ' + (new Date()).toLocaleString('en-US', { month: 'long' }) + ', ' + (new Date()).getFullYear();
+      document.getElementById('stNum').innerText = STAGE_NUMBER || 1;
+      document.getElementById('cmpName').innerText = COMP_NAME || "";
+
+      //------------------------------- LOGIC - Don't modify unless necessary - E //-------------------------------
+    </script>
+
+
+
+    <script src="../scripts/certificate.framework.js"></script>
+</body>
+
+</html>

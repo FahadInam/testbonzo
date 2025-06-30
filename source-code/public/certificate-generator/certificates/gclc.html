@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KP Certificate Generator</title>
+  <style>
+    :root {
+      --primary-color: #009eff;
+      --secondary-color: #002d44;
+      --primary-text: #000000;
+      --secondary-text: #FFFFFF;
+    }
+
+    .ribbon_image {
+      position: relative;
+      display: inline-block;
+    }
+
+    .ribbon_image img {
+      display: block;
+      width: 100%;
+      /* Adjust size as needed */
+      height: auto;
+    }
+
+    .ribbon_image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--secondary-color);
+      /* Red overlay color */
+      mix-blend-mode: darken;
+      /* Apply the color only to opaque parts */
+      pointer-events: none;
+      /* Allow clicks to pass through */
+    }
+
+    @font-face {
+      font-family: 'Fredoka';
+      font-style: normal;
+      font-weight: normal;
+      src: url('fonts/fredoka.ttf');
+    }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('fonts/poppins-regular.ttf');
+  }
+</style>
+</head>
+
+<body style="background-color: #ffffff; letter-spacing: 0px !important;">
+  <div style="background-color: #efefef; color:#868686; font-family: Arial, Helvetica, sans-serif; position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center; text-align: center; z-index: 999999" id="cert_loader">Loading Certificate..</div>
+  <div class="certificate-container" id="certificate" style="background-color: #efefef;">
+    <div
+      style="height: 180px; width: 100%; border-bottom: 52px solid var(--primary-color); background-color: var(--secondary-color); transform: rotate(45deg); position:absolute; top: 0; right: -500px; z-index: 0">
+    </div>
+    <div
+      style="height: 180px; width: 100%; border-top: 52px solid var(--primary-color); background-color: var(--secondary-color); transform: rotate(45deg); position:absolute; bottom: 0; left: -500px; z-index: 0">
+    </div>
+    <div
+      style="background-color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: auto; margin: 4px; z-index: 1; position: relative; color: var(--primary-text);">
+      <div
+        style="display: flex; justify-content: space-between; width: 90%; height: 40px; margin: auto; margin-top: 24px; margin-bottom: 36px;">
+        <div style="width: 33.33%; display: flex; justify-content: flex-start">
+          <img height="28" style="max-width: 140px; object-fit: contain; object-position: center;"
+          src="" id="logoL"
+            border="0" alt="Logo1" />
+        </div>
+        <div style="width: 33.33%; display: flex; justify-content: center">
+          <img height="28" style="max-width: 140px; object-fit: contain; object-position: center;"
+          src="" id="logoC"
+            border="0" alt="Logo2" />
+        </div>
+        <div style="width: 33.33%; display: flex; justify-content: flex-end;">
+          <img height="28" style="max-width: 140px; object-fit: contain; object-position: center;"
+          src="" id="logoR"
+            border="0" alt="Logo3" />
+        </div>
+      </div>
+      <div>
+        <h1
+          style="margin: 4px; font-size: 28px; font-weight: 600; font-family: 'Fredoka', sans-serif; letter-spacing:8px; text-transform: uppercase;">
+          CERTIFICATE</h1>
+        <div style="display: flex; justify-content: center; position: relative;">
+          <span
+            style="position: absolute; left: 3px; top: 16px; height: 24px; width: 42px; z-index: 1; transform: scaleX(-1) scaleY(0.8);">
+            <div
+              style="height: 24px; width: 24px; background-color: #ffffff; position: absolute; top: 0; right: -12px; transform: rotate(45deg); z-index: 1;">
+            </div>
+            <div style="height: 24px; width: 42px; background-color: var(--secondary-color); z-index: 1;"></div>
+          </span>
+          <h1
+            style="font-size: 14px; background-color: var(--primary-color); color: var(--secondary-text); font-family: 'Fredoka', sans-serif; font-weight: 500; padding: 8px 8px; text-transform: uppercase; margin: auto 36px; width: 100%; z-index: 2; position: relative; letter-spacing: 1px;"
+            id="cType">
+            of appreciation</h1>
+          <span
+            style="position: absolute; right: 3px; top: 16px; height: 24px; width: 42px; z-index: 1; transform: scaleY(0.8);">
+            <div
+              style="height: 24px; width: 24px; background-color: #ffffff; position: absolute; top: 0; right: -12px; transform: rotate(45deg); z-index: 1;">
+            </div>
+            <div style="height: 24px; width: 42px; background-color: var(--secondary-color); z-index: 1;"></div>
+          </span>
+        </div>
+      </div>
+      <div style=" max-height: 163px; min-height: 163px; overflow: hidden;margin-top: 28px; font-family: 'Poppins', sans-serif; font-size: 13px; display: flex; flex-direction: column; justify-content: center; align-items: center; " id="cert_body">
+        <!-- <p style="margin-top: 28px; font-size: 13px;">This is to certify that</p>
+        <div>
+          <div style="display: flex; ">
+            <div
+              style=" width: 100%; font-size: 16px; border-bottom: 2px solid #878787; font-family: 'Fredoka', sans-serif; font-weight: 700; padding: 1px 12px; margin: auto 24px; padding-bottom: 6px;"
+              id="fName">John Doe</div>
+          </div>
+          <p style="font-size: 13px; margin: 22px 12px; max-width: 470px;">has successfully participated in<br/><b>“Global Climate Literacy Competitions”</b></br>
+            & has demonstrated outstanding knowledge & commitment </br> to environment sustainability. </p>
+          <div style="display: none; ">
+            <div style="font-size: 12px; display: none;">SUBJECT: </div>
+            <div
+              style=" width: 100%; font-size: 16px; border-bottom: 2px solid #878787; font-family: 'Fredoka', sans-serif; font-weight: 700; padding: 1px 12px; margin: auto 24px; padding-bottom: 6px;"
+              id="subName">Computational Literacy</div>
+          </div>
+
+        </div> -->
+      </div>
+      <div
+        style=" margin: auto; margin-top: 48px; margin-bottom: 24px; display: flex; font-family: 'Poppins', sans-serif; width: 90%; justify-content: space-between; ">
+        <div>
+          <div
+            style="width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
+            <span
+              style="height: 36px; width: 100%; font-size: 11px; display: flex; align-items: flex-end; justify-content: center;"
+              id="dField"></span>
+            <div
+              style="height: 50px; margin-top: 8px; border-top: 2px solid #868686; padding: 2px 6px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+              <div style="font-size: 11px; width: 100%; font-weight: bold;">Date</br>&nbsp;</div>
+            </div>
+          </div>
+        </div>
+        <div style="width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;" id="stageSection">
+          <div id="badgeDiv"
+            style="border: 6px solid yellow; border-radius: 24px; background-color: var(--secondary-color); color: var(--secondary-text); width: 180px; padding: 24px 8px 8px 8px;">
+            <img
+            id="badgeImage"
+              src="data:image/png;base64,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"
+              width="67" height="48" alt="Tick" style="object-fit: contain; position: absolute; top: -21px; left: 0; right: 0; margin: auto; font-family: 'Poppins', sans-serif;"/>
+            <div style="font-size: 9px;" id="cmpName">&nbsp;</div>
+            <div style="font-weight: 700; font-size: 16px;"><span id="stNum">1</span></div>
+            <div style="font-size: 12px;"span id="cmpDetails">Completion</div>
+          </div>
+        </div>
+        <div>
+          <div
+            style="width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
+            <img
+            id="signImg"
+              src=""
+              alt="Signature" style="max-width: 70px; object-fit: contain; background-size: contain; object-position: center;" height="36" />
+            <div
+              style="height: 50px; margin-top: 8px; border-top: 2px solid #868686; padding: 2px 6px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+              <b id="signName">-</b>
+              <div id="signPost" style="font-size: 11px;">-</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+ let xl = false;
+ let timerRun;
+
+
+
+ function stringToDOM(htmlString) {
+    const template = document.createElement('template');
+    template.innerHTML = htmlString.trim();
+    return template.content.firstChild;
+}
+
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
+
+  // Get day, month, and year
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  const month = monthNames[date.getMonth()];
+
+  // Determine ordinal suffix for the day
+  const ordinalSuffix = (n) => {
+    const lastDigit = n % 10;
+    if (n > 10 && n < 20) return "th";
+    if (lastDigit === 1) return "st";
+    if (lastDigit === 2) return "nd";
+    if (lastDigit === 3) return "rd";
+    return "th";
+  };
+
+  return `${day}${ordinalSuffix(day)} ${month}, ${year}`;
+}
+
+      // Replace with the actual origin of the React app to allow messages only from trusted sources
+      const parentOrigin = '*';
+      let certData;
+      // Listen for messages from the parent
+      window.addEventListener('message', (event) => {
+        // Verify the origin of the message
+        if (event.origin !== parentOrigin && event.origin !== 'http://localhost:3000' && event.origin.indexOf('globalclimateliteracy.org') === -1 && event.origin.indexOf('localhost') === -1 && event.origin.indexOf('.netlify.app') === -1 && event.origin.indexOf('knowledgeplatform') === -1) {
+          console.warn('Message origin not trusted:', event.origin);
+          return;
+        }
+    
+        const { type, payload } = event.data;
+    
+        if (type === 'CERT_DATA') {
+          
+          if(payload.length > 0) {
+            xl = true;
+        event.source.postMessage(
+          { type: 'RESPONSE', payload: 'Hello from JS iframe!' },
+          event.origin // Use the origin of the event for security
+        );
+      }
+        
+          // console.log('Received greeting from React parent:', payload);
+          if(payload.length > 0)
+          certData = JSON.parse(payload);
+          else
+          {
+          certData = {};
+          return;
+          }
+      //------------------------------------Variables-S------------------------------------
+          // console.log('certData: ', certData?.data2);
+          const cbData = certData?.cData?.length > 0 ? JSON.parse(JSON.parse(certData?.cData)) : null;
+      const CERT_TYPE = cbData?.cert_type || 'participation';
+      const FULL_NAME = certData?.data2?.full_name || "-";
+      const SUBJECT = certData?.data2?.competition_title || "-";
+      const CERT_DATE = formatDate(certData?.data2?.awarded_on) || "-";
+
+      const P_COLOR = cbData?.certificate_primary_color || "#03a383";
+      const S_COLOR = cbData?.certificate_secondary_color || "#0a4232";
+
+      const P_TEXT_COLOR = cbData?.primary_text_color ||"#000000";
+      const S_TEXT_COLOR = cbData?.secondary_text_color ||"#FFFFFF";
+
+      // console.log('certData?.cData?.batch_name: ', cbData);
+      const SHOW_STAGE_SECTION = cbData?.show_stage_badge === 1 || false;
+      // console.log('SHOW_STAGE_SECTION: ', SHOW_STAGE_SECTION);
+      const STAGE_NUMBER = cbData?.current_stage || "1";
+      const COMP_NAME = cbData?.batch_name || "";
+
+      
+      const LOGO_LEFT = cbData?.logos?.left_logo || "";
+      const LOGO_CENTER = cbData?.logos?.center_logo || "";
+      const LOGO_RIGHT = cbData?.logos?.right_logo || "";
+
+      
+      const SIGN_NAME = cbData?.signature?.name || "-";
+      const SIGN_IMG = cbData?.signature?.sign_img || "";
+      const SIGN_POST = cbData?.signature?.designation || "-";
+
+      const COMPETITION_TITLE = cbData?.competition_title || "";
+      
+      const BODY_TEXT = cbData?.body_text.replace("__NAME_LINE__","<div style=\"width: 100%; font-size: 16px; border-bottom: 2px solid #878787; font-family: 'Fredoka', sans-serif; font-weight: 700; padding: 1px 12px; margin: auto 24px; padding-bottom: 6px;\" id=\"fName\">"+FULL_NAME+"</div>").replace("__COMPETITION_TITLE__","<b>"+COMPETITION_TITLE+"</b>") || "";
+          // console.log('BODY_TEXT: ', BODY_TEXT);
+
+          
+      
+      const BADGE_TEXT_1 = cbData?.badge_info?.color_text_competition || "#FFFFFF";
+      const BADGE_TEXT_2 = cbData?.badge_info?.color_text_stage || "#FFE100";
+      const BADGE_TEXT_3 = cbData?.badge_info?.color_text_details || "#00C9FF";
+      const BADGE_IMAGE = cbData?.badge_info?.badge_image || "tick";
+      const BADGE_BORDER = cbData?.badge_info?.border_color || "#00D2FF";
+      const BADGE_BG = cbData?.badge_info?.bg_color || "#0080D5";
+
+      //------------------------------------Variables-E------------------------------------
+
+
+      //------------------------------- LOGIC - Don't modify unless necessary - S //-------------------------------
+      const root = document.documentElement;
+      root.style.setProperty('--primary-color', P_COLOR);
+      root.style.setProperty('--secondary-color', S_COLOR);
+      root.style.setProperty('--primary-text', P_TEXT_COLOR);
+      root.style.setProperty('--secondary-text', S_TEXT_COLOR);
+
+
+      document.getElementById('cType').innerText = 'of ' + CERT_TYPE;
+      // document.getElementById('fName').innerText = FULL_NAME;
+      if(  document.getElementById('subName'))
+      document.getElementById('subName').innerText = SUBJECT;
+      document.getElementById('dField').innerText = CERT_DATE || (new Date()).getDate().toString().padStart(2, '0') + ' ' + (new Date()).toLocaleString('en-US', { month: 'long' }) + ', ' + (new Date()).getFullYear();
+      if(  document.getElementById('stNum'))
+      document.getElementById('stNum').innerText = STAGE_NUMBER || 1;
+      if(  document.getElementById('cmpName'))
+      document.getElementById('cmpName').innerText = COMP_NAME || "";
+      document.getElementById('signName').innerText = SIGN_NAME || "";
+      document.getElementById('signPost').innerText = SIGN_POST || "";
+
+      if(SHOW_STAGE_SECTION) {
+        document.getElementById('stageSection').style.visibility = 'visible';
+      } else {
+        document.getElementById('stageSection').style.visibility = 'hidden';
+      }
+
+      if(LOGO_LEFT.length > 0)
+      document.getElementById('logoL').src = "logos/"+LOGO_LEFT+".png";
+    else
+      document.getElementById('logoL').style.visibility = 'hidden';
+
+      if(LOGO_CENTER.length > 0)
+      document.getElementById('logoC').src = "logos/"+LOGO_CENTER+".png";
+    else
+      document.getElementById('logoC').style.visibility = 'hidden';
+
+      if(LOGO_RIGHT.length > 0)
+      document.getElementById('logoR').src = "logos/"+LOGO_RIGHT+".png";
+    else
+      document.getElementById('logoR').style.visibility = 'hidden';
+
+
+      
+      if(SIGN_IMG.length > 0)
+      document.getElementById('signImg').src = "s/"+SIGN_IMG+".png";
+    else
+      document.getElementById('signImg').style.visibility = 'hidden';
+
+
+
+    const certBodyDiv = document.getElementById('cert_body');
+    if (certBodyDiv) {
+        certBodyDiv.innerHTML= BODY_TEXT;
+    } 
+
+    if(SHOW_STAGE_SECTION) {
+      document.getElementById('badgeImage').height = 54;
+      document.getElementById('cmpName').style.color = BADGE_TEXT_1 || "";
+      document.getElementById('stNum').style.color = BADGE_TEXT_2 || "";
+      document.getElementById('cmpDetails').style.color = BADGE_TEXT_3 || "";
+      if(BADGE_IMAGE?.length > 0)
+        document.getElementById('badgeImage').src = "b/"+BADGE_IMAGE.trim()+".png" || "";
+      
+      document.getElementById('badgeDiv').style.borderColor = BADGE_BORDER || "";
+      document.getElementById('badgeDiv').style.backgroundColor = BADGE_BG || "";
+    }
+
+      //------------------------------- LOGIC - Don't modify unless necessary - E //-------------------------------
+
+   
+        // console.log('Waiting for fonts to load.');
+    // Wait for custom fonts to finish loading
+        if (document.readyState === "complete") {
+    document.fonts.ready.then(() => {
+      timerRun = setInterval(() => {
+        // console.log('checking For Data');
+      if(payload.length > 0 && certData?.data2?.full_name?.length > 0) {
+        // console.log('FOUND - checking For Data');
+   clearInterval(timerRun);
+   setTimeout(() => { document.getElementById('cert_loader').style.display = 'none';
+   document.getElementById('cert_loader').innerText = '';
+    }, 500);
+  }
+
+      }, 3000);
+    });
+
+  }
+
+
+      setTimeout(() => {
+      clearInterval(timerRun);
+      if(!(certData?.data2?.full_name?.length > 0) || !xl) {
+      document.getElementById('cert_loader').innerText = 'Unable to fetch certificate from server. Please try again later.';
+      } }, 20000);
+          //   // Send a response back to the parent
+          //   event.source.postMessage(
+          //   { type: 'RESPONSE', payload: 'CERT VALUES SET' },
+          //   event.origin // Use the origin of the event for security
+          // );
+        } else {
+          console.warn('Unknown message type received:', type);
+        }
+      });
+    </script>
+
+
+
+    <script src="../scripts/certificate.framework.js"></script>
+</body>
+
+</html>

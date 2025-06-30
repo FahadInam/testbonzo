@@ -1,0 +1,1 @@
+import"../chunks/BDr9Qe-U.js";import"../chunks/69_IOA4Y.js";import{p as m,a as r}from"../chunks/UMRfY9Ko.js";import{i as t}from"../chunks/DwRdgw7B.js";import{g as p}from"../chunks/Bhxzz1gg.js";import{p as i}from"../chunks/Dt_aWHDm.js";function a(n,o){m(o,!1),p(i.url.pathname+"/selection"),t(),r()}export{a as component};

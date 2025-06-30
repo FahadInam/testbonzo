@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/competitions/[competition_name]/change-grade/+page.svelte";

@@ -1,0 +1,3262 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js"
+    ]
+  },
+  "_AppBar.B162EPc3.css": {
+    "file": "_app/immutable/assets/AppBar.B162EPc3.css",
+    "src": "_AppBar.B162EPc3.css"
+  },
+  "_AppBar.js": {
+    "file": "chunks/AppBar.js",
+    "name": "AppBar",
+    "imports": [
+      "_index.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_appbar.store.js",
+      "_ArrowButton.js",
+      "_client.js",
+      "_index-server.js",
+      "_client2.js",
+      "_Avatar.js",
+      "_Button.js",
+      "_language.store.js",
+      "_escaping.js",
+      "_images.constants.js",
+      "_user.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_gamedata.store.js",
+      "_useractivity.store.js",
+      "_avatar2.js",
+      "_common.auth.data.js",
+      "_Image.js",
+      "_Modal.js",
+      "_index3.js",
+      "_utils.js"
+    ],
+    "css": [
+      "_app/immutable/assets/AppBar.B162EPc3.css",
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/ConfirmationModal.BZjlKESM.css"
+    ]
+  },
+  "_ArrowButton.js": {
+    "file": "chunks/ArrowButton.js",
+    "name": "ArrowButton",
+    "imports": [
+      "_index.js",
+      "_utils2.js",
+      "_client.js",
+      "_attributes.js",
+      "_client2.js",
+      "_user.store.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_escaping.js"
+    ]
+  },
+  "_AuthenticationView.js": {
+    "file": "chunks/AuthenticationView.js",
+    "name": "AuthenticationView",
+    "imports": [
+      "_index.js",
+      "_index3.js",
+      "_Button.js",
+      "_Form.js",
+      "_PopupScreen.js",
+      "_Modal.js",
+      "_client.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_client2.js",
+      "_escaping.js",
+      "_system..da.js",
+      "_Image.js"
+    ]
+  },
+  "_Avatar.js": {
+    "file": "chunks/Avatar.js",
+    "name": "Avatar",
+    "imports": [
+      "_index.js",
+      "_avatar2.js",
+      "_utils2.js",
+      "_attributes.js"
+    ]
+  },
+  "_BackToTop.js": {
+    "file": "chunks/BackToTop.js",
+    "name": "BackToTop",
+    "imports": [
+      "_index.js",
+      "_index-server.js"
+    ]
+  },
+  "_BackgroundImage.js": {
+    "file": "chunks/BackgroundImage.js",
+    "name": "BackgroundImage",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_BannerText.js": {
+    "file": "chunks/BannerText.js",
+    "name": "BannerText",
+    "imports": [
+      "_index.js",
+      "_images.constants.js",
+      "_attributes.js",
+      "_html.js"
+    ]
+  },
+  "_Button.4cFhq8PD.css": {
+    "file": "_app/immutable/assets/Button.4cFhq8PD.css",
+    "src": "_Button.4cFhq8PD.css"
+  },
+  "_Button.js": {
+    "file": "chunks/Button.js",
+    "name": "Button",
+    "imports": [
+      "_index.js",
+      "_client.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_client2.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button.4cFhq8PD.css"
+    ]
+  },
+  "_Card.js": {
+    "file": "chunks/Card.js",
+    "name": "Card",
+    "imports": [
+      "_index.js",
+      "_utils2.js",
+      "_attributes.js"
+    ]
+  },
+  "_Carousel.CJG2uct-.css": {
+    "file": "_app/immutable/assets/Carousel.CJG2uct-.css",
+    "src": "_Carousel.CJG2uct-.css"
+  },
+  "_CertificateDownloadModal.js": {
+    "file": "chunks/CertificateDownloadModal.js",
+    "name": "CertificateDownloadModal",
+    "imports": [
+      "_index.js",
+      "_ListingSkeleton.js",
+      "_utils2.js",
+      "_images.constants.js",
+      "_Button.js",
+      "_Image.js",
+      "_Modal.js",
+      "_language.store.js",
+      "_escaping.js",
+      "_client.js"
+    ],
+    "css": [
+      "_app/immutable/assets/ConfirmationModal.BZjlKESM.css"
+    ]
+  },
+  "_ConfirmationModal.BZjlKESM.css": {
+    "file": "_app/immutable/assets/ConfirmationModal.BZjlKESM.css",
+    "src": "_ConfirmationModal.BZjlKESM.css"
+  },
+  "_EditProfileSkeleton.js": {
+    "file": "chunks/EditProfileSkeleton.js",
+    "name": "EditProfileSkeleton"
+  },
+  "_Form.DuozghpI.css": {
+    "file": "_app/immutable/assets/Form.DuozghpI.css",
+    "src": "_Form.DuozghpI.css"
+  },
+  "_Form.js": {
+    "file": "chunks/Form.js",
+    "name": "Form",
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_Button.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "_FullPageIframe.js": {
+    "file": "chunks/FullPageIframe.js",
+    "name": "FullPageIframe",
+    "imports": [
+      "_index.js",
+      "_utils2.js",
+      "_attributes.js"
+    ]
+  },
+  "_GameCard.CVnY9sfe.css": {
+    "file": "_app/immutable/assets/GameCard.CVnY9sfe.css",
+    "src": "_GameCard.CVnY9sfe.css"
+  },
+  "_GameCard.svelte_svelte_type_style_lang.js": {
+    "file": "chunks/GameCard.svelte_svelte_type_style_lang.js",
+    "name": "GameCard.svelte_svelte_type_style_lang",
+    "css": [
+      "_app/immutable/assets/GameCard.CVnY9sfe.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/sorting.Cef1rhoz.png",
+      "_app/immutable/assets/link.CEPGAntH.png",
+      "_app/immutable/assets/factor_monsters.l213NjDn.png",
+      "_app/immutable/assets/financial_fib.CmPsMloe.png",
+      "_app/immutable/assets/kampong.wsxanTnR.png",
+      "_app/immutable/assets/matching.CSUPKMrL.png",
+      "_app/immutable/assets/number_battle.CW7j1d-k.png",
+      "_app/immutable/assets/ruby_spidey.DtbcPulW.png",
+      "_app/immutable/assets/sets_challenge.CDdDp_R2.png",
+      "_app/immutable/assets/sheep_run.vK3A0okd.png",
+      "_app/immutable/assets/sumo_mochi.CDuX_Lqy.png",
+      "_app/immutable/assets/science_sub_1.D394cxTc.png",
+      "_app/immutable/assets/science_sub_2.Be1M8-J0.png",
+      "_app/immutable/assets/science_sub_3.B0GjDxNS.png",
+      "_app/immutable/assets/science_sub_4.DIvqSIFl.png",
+      "_app/immutable/assets/science_sub_5.rXX7YICf.png",
+      "_app/immutable/assets/science_sub_6.Cxi2dT9u.png",
+      "_app/immutable/assets/physics_sub_1.Hm_md6W9.png",
+      "_app/immutable/assets/physics_sub_2.D_ryAuwh.png",
+      "_app/immutable/assets/physics_sub_3.Dln78FY8.png",
+      "_app/immutable/assets/physics_sub_4.U0eBJWKa.png",
+      "_app/immutable/assets/physics_sub_5.LF0lDjUW.png",
+      "_app/immutable/assets/math_sub_2.B2MZALCj.png",
+      "_app/immutable/assets/math_sub_3.Eic8vPYn.png",
+      "_app/immutable/assets/math_sub_4.BtX2_em7.png",
+      "_app/immutable/assets/math_sub_5.DR3Hncsx.png",
+      "_app/immutable/assets/math_sub_6.BLqpZ5Ow.png",
+      "_app/immutable/assets/english_sub_1.CGBROLdQ.png",
+      "_app/immutable/assets/english_sub_2.CSk0Uual.png",
+      "_app/immutable/assets/english_sub_3.DVQh4CL1.png",
+      "_app/immutable/assets/english_sub_4.ByA3im4H.png",
+      "_app/immutable/assets/english_sub_5.CkI2gax4.png",
+      "_app/immutable/assets/english_sub_6.CRb3LvlX.png",
+      "_app/immutable/assets/chemistry_sub_1.CotYUrU5.png",
+      "_app/immutable/assets/chemistry_sub_2.Bb4pkWyv.png",
+      "_app/immutable/assets/chemistry_sub_3.B7pdvRiG.png",
+      "_app/immutable/assets/chemistry_sub_4.HYJv8CTA.png",
+      "_app/immutable/assets/chemistry_sub_5.D-jla_DK.png",
+      "_app/immutable/assets/chemistry_sub_6.CEU3VKXO.png",
+      "_app/immutable/assets/biology_sub_1.CTLualCK.png",
+      "_app/immutable/assets/biology_sub_2.DoANx3R3.png",
+      "_app/immutable/assets/biology_sub_3.BH8zuwbC.png",
+      "_app/immutable/assets/biology_sub_4.CJfhEVy3.png",
+      "_app/immutable/assets/biology_sub_5.Bma6T2AR.png",
+      "_app/immutable/assets/biology_sub_6.D4AVt_IN.png",
+      "_app/immutable/assets/data_science_sub_1.EqipjaBs.png",
+      "_app/immutable/assets/data_science_sub_2.K-nZdOag.png",
+      "_app/immutable/assets/data_science_sub_3.BAHay3Qp.png",
+      "_app/immutable/assets/data_science_sub_4.BUO1x9Zc.png",
+      "_app/immutable/assets/environmental_literacy_sub_1.BfVuNUPA.png",
+      "_app/immutable/assets/environmental_literacy_sub_5.CKalAN8F.png",
+      "_app/immutable/assets/financial_literacy_sub_1.xreVwFH4.png",
+      "_app/immutable/assets/financial_literacy_sub_2.DvEJAZAY.png",
+      "_app/immutable/assets/financial_literacy_sub_3.CNdzTByD.png",
+      "_app/immutable/assets/financial_literacy_sub_4.DIfPnJJF.png",
+      "_app/immutable/assets/financial_literacy_sub_5.BlPY4Dth.png",
+      "_app/immutable/assets/financial_literacy_sub_6.XhOhgHW3.png",
+      "_app/immutable/assets/problem_solving_sub_1.xSbvhB5A.png",
+      "_app/immutable/assets/problem_solving_sub_2.Bt4UipZE.png",
+      "_app/immutable/assets/problem_solving_sub_4.ByY1Rktc.png",
+      "_app/immutable/assets/problem_solving_sub_5.CHr-avWx.png",
+      "_app/immutable/assets/urdu_sub_1.5BpQi8RP.png",
+      "_app/immutable/assets/urdu_sub_2.BgreTTNk.png",
+      "_app/immutable/assets/urdu_sub_3.b21ubLsN.png",
+      "_app/immutable/assets/urdu_sub_4.DN0OxAxv.png",
+      "_app/immutable/assets/urdu_sub_5.BlLjjOBh.png",
+      "_app/immutable/assets/urdu_sub_6.DNCz_eP5.png",
+      "_app/immutable/assets/health_and_wellness_sub_1.CQyLsJ3u.png",
+      "_app/immutable/assets/health_and_wellness_sub_2.CGvuZ5pS.png",
+      "_app/immutable/assets/health_and_wellness_sub_3.TbgQg9C3.png",
+      "_app/immutable/assets/health_and_wellness_sub_4.BhzMF4Pr.png",
+      "_app/immutable/assets/computer_science_sub_1.CT_kBnQh.png",
+      "_app/immutable/assets/computer_science_sub_2.DZWE0np1.png",
+      "_app/immutable/assets/computer_science_sub_3.C6XsD_nz.png",
+      "_app/immutable/assets/computer_science_sub_4.CS44gcy_.png",
+      "_app/immutable/assets/computer_science_sub_6.uzyJ8A1n.png"
+    ]
+  },
+  "_GameCardSkeleton.js": {
+    "file": "chunks/GameCardSkeleton.js",
+    "name": "GameCardSkeleton"
+  },
+  "_GradeConfirmModal.js": {
+    "file": "chunks/GradeConfirmModal.js",
+    "name": "GradeConfirmModal",
+    "imports": [
+      "_index.js",
+      "_appbar.store.js",
+      "_images.constants.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js",
+      "_index3.js",
+      "_Button.js",
+      "_Image.js",
+      "_Modal.js",
+      "_language.store.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.tn0RQdqM.css",
+      "_app/immutable/assets/ConfirmationModal.BZjlKESM.css"
+    ]
+  },
+  "_Image.js": {
+    "file": "chunks/Image.js",
+    "name": "Image",
+    "imports": [
+      "_index.js",
+      "_utils2.js",
+      "_attributes.js"
+    ]
+  },
+  "_ListBoxSkeleton.js": {
+    "file": "chunks/ListBoxSkeleton.js",
+    "name": "ListBoxSkeleton",
+    "imports": [
+      "_index.js",
+      "_utils2.js"
+    ]
+  },
+  "_ListingSkeleton.js": {
+    "file": "chunks/ListingSkeleton.js",
+    "name": "ListingSkeleton",
+    "imports": [
+      "_index.js",
+      "_utils2.js"
+    ]
+  },
+  "_Modal.js": {
+    "file": "chunks/Modal.js",
+    "name": "Modal",
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_utils2.js",
+      "_attributes.js"
+    ]
+  },
+  "_NavBar.js": {
+    "file": "chunks/NavBar.js",
+    "name": "NavBar",
+    "imports": [
+      "_index.js",
+      "_Button.js",
+      "_index4.js",
+      "_system..da.js",
+      "_index3.js",
+      "_client.js",
+      "_attributes.js",
+      "_escaping.js"
+    ]
+  },
+  "_NoDataFound.js": {
+    "file": "chunks/NoDataFound.js",
+    "name": "NoDataFound",
+    "imports": [
+      "_index.js",
+      "_images.constants.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js"
+    ]
+  },
+  "_PageHeading.js": {
+    "file": "chunks/PageHeading.js",
+    "name": "PageHeading",
+    "imports": [
+      "_index.js",
+      "_Image.js",
+      "_language.store.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js"
+    ]
+  },
+  "_PopupScreen.js": {
+    "file": "chunks/PopupScreen.js",
+    "name": "PopupScreen",
+    "imports": [
+      "_index.js",
+      "_ArrowButton.js",
+      "_BackgroundImage.js",
+      "_utils2.js"
+    ]
+  },
+  "_SelectBox.C4I-LW8r.css": {
+    "file": "_app/immutable/assets/SelectBox.C4I-LW8r.css",
+    "src": "_SelectBox.C4I-LW8r.css"
+  },
+  "_SelectBox.js": {
+    "file": "chunks/SelectBox.js",
+    "name": "SelectBox",
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/SelectBox.C4I-LW8r.css"
+    ]
+  },
+  "_SideBar.D-VdH2ip.css": {
+    "file": "_app/immutable/assets/SideBar.D-VdH2ip.css",
+    "src": "_SideBar.D-VdH2ip.css"
+  },
+  "_SideBar.js": {
+    "file": "chunks/SideBar.js",
+    "name": "SideBar",
+    "imports": [
+      "_index.js",
+      "_index4.js",
+      "_system..da.js",
+      "_client.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_Image.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/SideBar.D-VdH2ip.css"
+    ]
+  },
+  "_Stepper.js": {
+    "file": "chunks/Stepper.js",
+    "name": "Stepper",
+    "imports": [
+      "_index.js",
+      "_system..da.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js"
+    ]
+  },
+  "_SubscriptionCard.js": {
+    "file": "chunks/SubscriptionCard.js",
+    "name": "SubscriptionCard",
+    "imports": [
+      "_index.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js"
+    ]
+  },
+  "_TabSwitch.UMdf7hNE.css": {
+    "file": "_app/immutable/assets/TabSwitch.UMdf7hNE.css",
+    "src": "_TabSwitch.UMdf7hNE.css"
+  },
+  "_TabSwitch.js": {
+    "file": "chunks/TabSwitch.js",
+    "name": "TabSwitch",
+    "imports": [
+      "_index.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/TabSwitch.UMdf7hNE.css"
+    ]
+  },
+  "_admin.competition.da.js": {
+    "file": "chunks/admin.competition.da.js",
+    "name": "admin.competition.da",
+    "imports": [
+      "_api.service.js",
+      "_index3.js",
+      "_api.definitions.js",
+      "_appbar.store.js",
+      "_utils.js",
+      "_images.constants.js"
+    ]
+  },
+  "_api.definitions.js": {
+    "file": "chunks/api.definitions.js",
+    "name": "api.definitions",
+    "imports": [
+      "_language.store.js"
+    ]
+  },
+  "_api.service.js": {
+    "file": "chunks/api.service.js",
+    "name": "api.service",
+    "imports": [
+      "_index3.js",
+      "_user.store.js",
+      "_utils.js"
+    ]
+  },
+  "_appbar.da.js": {
+    "file": "chunks/appbar.da.js",
+    "name": "appbar.da",
+    "imports": [
+      "_common.auth.data.js",
+      "_language.store.js",
+      "_index3.js",
+      "_payment.store.js",
+      "_meta.store.js"
+    ]
+  },
+  "_appbar.store.js": {
+    "file": "chunks/appbar.store.js",
+    "name": "appbar.store",
+    "imports": [
+      "_client.js",
+      "_index3.js",
+      "_client2.js"
+    ]
+  },
+  "_attributes.js": {
+    "file": "chunks/attributes.js",
+    "name": "attributes",
+    "imports": [
+      "_escaping.js"
+    ]
+  },
+  "_avatar2.js": {
+    "file": "chunks/avatar2.js",
+    "name": "avatar",
+    "imports": [
+      "_utils.js"
+    ],
+    "assets": [
+      "_app/immutable/assets/a15.BLlzNQqK.png",
+      "_app/immutable/assets/a16.DE7sve9_.png",
+      "_app/immutable/assets/a17.cxeX9Vpp.png",
+      "_app/immutable/assets/a18.ERdYEYBi.png",
+      "_app/immutable/assets/a19.DG3L8nd4.png",
+      "_app/immutable/assets/a20.CWhAvI_x.png",
+      "_app/immutable/assets/a21.BaUsT2yc.png",
+      "_app/immutable/assets/a22.BaBB2Cb5.png",
+      "_app/immutable/assets/a23.B9_xNaWp.png",
+      "_app/immutable/assets/a24.CsxjxlTV.png",
+      "_app/immutable/assets/a25.B6R6pSi-.png",
+      "_app/immutable/assets/a26.7K9XOkbd.png",
+      "_app/immutable/assets/a27.di5RvDlf.png",
+      "_app/immutable/assets/a28.Cai8Sgc5.png",
+      "_app/immutable/assets/a29.Cxpl4pBs.png",
+      "_app/immutable/assets/a30.CSxkBavu.png",
+      "_app/immutable/assets/a31.DsXNS_bC.png",
+      "_app/immutable/assets/a32.CdbHq7O-.png",
+      "_app/immutable/assets/a33.Cvtx_jaO.png",
+      "_app/immutable/assets/a34.KUL2AdBF.png",
+      "_app/immutable/assets/a35.gFqOCSGZ.png",
+      "_app/immutable/assets/a36.DtLyRyE3.png",
+      "_app/immutable/assets/a37.8e-bHiwv.png",
+      "_app/immutable/assets/a38.6rk9Murh.png",
+      "_app/immutable/assets/a39.TvgLxRO7.png",
+      "_app/immutable/assets/a40.h_vKUL7j.png",
+      "_app/immutable/assets/a41.DXZ5qRWm.png",
+      "_app/immutable/assets/a42.6QMcaMnF.png",
+      "_app/immutable/assets/a43.CszkcydC.png",
+      "_app/immutable/assets/a44.DlglqPUk.png",
+      "_app/immutable/assets/a45.Cc-2DY5A.png",
+      "_app/immutable/assets/a46.3LHLHRYP.png",
+      "_app/immutable/assets/a47.CMyIUQ8-.png",
+      "_app/immutable/assets/a48.DrO3KmWl.png",
+      "_app/immutable/assets/a49.kzzNNrIi.png",
+      "_app/immutable/assets/a50.DDm4KwC7.png",
+      "_app/immutable/assets/a51.D6hqt3YQ.png",
+      "_app/immutable/assets/a52.JNy01BBR.png",
+      "_app/immutable/assets/a53.tKrwA6FC.png",
+      "_app/immutable/assets/a54.pRWJnrA1.png",
+      "_app/immutable/assets/a55.CK_Lm3Ek.png",
+      "_app/immutable/assets/a56.DUH7qS3E.png",
+      "_app/immutable/assets/a57.CDqw8cgx.png",
+      "_app/immutable/assets/a58.5FKbzyP1.png",
+      "_app/immutable/assets/a59.BjxlSIOa.png",
+      "_app/immutable/assets/a60.B--x-ghC.png",
+      "_app/immutable/assets/a61.D9U4Gaj_.png",
+      "_app/immutable/assets/a62.GQBWTYaw.png",
+      "_app/immutable/assets/a63.ICOVHFX1.png",
+      "_app/immutable/assets/a64.BdBsphi-.png",
+      "_app/immutable/assets/a65.DF5Tl1D7.png",
+      "_app/immutable/assets/a67.CsD1LPnD.png"
+    ]
+  },
+  "_client.js": {
+    "file": "chunks/client.js",
+    "name": "client",
+    "imports": [
+      "_exports.js",
+      "_index3.js",
+      "_utils2.js"
+    ]
+  },
+  "_client2.js": {
+    "file": "chunks/client2.js",
+    "name": "client",
+    "imports": [
+      "_client.js"
+    ]
+  },
+  "_common.auth.data.js": {
+    "file": "chunks/common.auth.data.js",
+    "name": "common.auth.data",
+    "imports": [
+      "_language.store.js",
+      "_api.service.js",
+      "_index3.js",
+      "_client.js",
+      "_user.store.js",
+      "_api.definitions.js",
+      "_utils.js",
+      "_avatar2.js"
+    ],
+    "dynamicImports": [
+      "_user.auth.da.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "_competitions.da.js": {
+    "file": "chunks/competitions.da.js",
+    "name": "competitions.da",
+    "imports": [
+      "_api.service.js",
+      "_utils.js",
+      "_index3.js",
+      "_api.definitions.js",
+      "_user.store.js",
+      "_appbar.store.js",
+      "_client.js",
+      "_language.store.js",
+      "_toast.store.js",
+      "_user.auth.da.js",
+      "_system..da.js",
+      "_meta.store.js"
+    ]
+  },
+  "_country.constant.js": {
+    "file": "chunks/country.constant.js",
+    "name": "country.constant"
+  },
+  "_escaping.js": {
+    "file": "chunks/escaping.js",
+    "name": "escaping"
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports"
+  },
+  "_gamedata.store.js": {
+    "file": "chunks/gamedata.store.js",
+    "name": "gamedata.store",
+    "imports": [
+      "_user.store.js"
+    ]
+  },
+  "_html.js": {
+    "file": "chunks/html.js",
+    "name": "html"
+  },
+  "_images.constants.js": {
+    "file": "chunks/images.constants.js",
+    "name": "images.constants",
+    "assets": [
+      "_app/immutable/assets/competitions.C58tQTup.png",
+      "_app/immutable/assets/friends.CpjPKI58.png",
+      "_app/immutable/assets/leaderboard.JEBUTntx.png",
+      "_app/immutable/assets/pay_for_access.nHhQp7_k.png",
+      "_app/immutable/assets/players.I7x30OZh.png",
+      "_app/immutable/assets/rewards.DlSJma12.png",
+      "_app/immutable/assets/select_opponent.CD15azkN.png",
+      "_app/immutable/assets/topics.BmBb0n-a.png",
+      "_app/immutable/assets/result.DwJcVckf.svg",
+      "_app/immutable/assets/turnyour.CWyicTqC.svg",
+      "_app/immutable/assets/turntheir.hHNiwhXv.svg",
+      "_app/immutable/assets/turninvite.De3iGrnZ.svg",
+      "_app/immutable/assets/friendsrecommended.p6raTVwh.svg",
+      "_app/immutable/assets/topics.BvXMXu1Q.svg",
+      "_app/immutable/assets/stars3.05JtbYZ7.png",
+      "_app/immutable/assets/rays.DaFCbr-s.svg",
+      "_app/immutable/assets/dailybadge.D7cs6UUa.png",
+      "_app/immutable/assets/weeklybadge.Bx9aibxf.png",
+      "_app/immutable/assets/monthlybadge.DDz_eSTV.png",
+      "_app/immutable/assets/no-data-found.C0sr3avv.svg",
+      "_app/immutable/assets/lessons.Cz2LBAPk.png",
+      "_app/immutable/assets/friends.ungRWP9V.svg",
+      "_app/immutable/assets/rewards.UsDSa_s-.svg",
+      "_app/immutable/assets/add_code.Cx6QNjGN.svg",
+      "_app/immutable/assets/playersingle.CHmWgN-Y.svg",
+      "_app/immutable/assets/multi_player_icon.BkPVo834.svg",
+      "_app/immutable/assets/coins_img.CcNMTrB3.png",
+      "_app/immutable/assets/more_coins.B4hc4Fqg.png",
+      "_app/immutable/assets/jazz_icon.CU48aWwr.svg",
+      "_app/immutable/assets/bank_icon.DlcPDJbc.svg",
+      "_app/immutable/assets/bell.BCOssu1v.png",
+      "_app/immutable/assets/feature-image-1.D6Cq5UYQ.png",
+      "_app/immutable/assets/feature-image-2.BXt3tmoN.png",
+      "_app/immutable/assets/feature-image-3.CAk04Bp2.png",
+      "_app/immutable/assets/learning-banner-1.BIz2rZS7.png",
+      "_app/immutable/assets/learning-banner-2.DDpycIcU.png",
+      "_app/immutable/assets/learning-banner-3.B0Jt0AMB.png",
+      "_app/immutable/assets/learning-banner-4.o2wUUjT7.png",
+      "_app/immutable/assets/learning-banner-5.DUzhkPU2.png",
+      "_app/immutable/assets/learning-banner-6.4O_7ZDX4.png",
+      "_app/immutable/assets/education-impact-image.O8BGTQAa.png",
+      "_app/immutable/assets/certificate_icon.DnPjfrcC.svg",
+      "_app/immutable/assets/choose_avatar.D7sIMzkX.svg",
+      "_app/immutable/assets/banner_cert_img.jyq6ayCD.png",
+      "_app/immutable/assets/totalgames.CfP7B9iA.png",
+      "_app/immutable/assets/totalgamesplayed.DXsB-zWh.png",
+      "_app/immutable/assets/totalhoursspent.B_ofSwdh.png",
+      "_app/immutable/assets/totalplayers.DR9HqzTQ.png",
+      "_app/immutable/assets/activeplayers.CuTCj87y.png",
+      "_app/immutable/assets/avgcompletionrate.KkbqXoJs.png",
+      "_app/immutable/assets/a67.CsD1LPnD.png",
+      "_app/immutable/assets/rules.-gxI2kTU.svg",
+      "_app/immutable/assets/vs.KtLT08pX.svg",
+      "_app/immutable/assets/polkadots.DvE3E5TE.svg",
+      "_app/immutable/assets/sword1.BiQcy4EQ.png",
+      "_app/immutable/assets/sword2.C9BBR0te.png",
+      "_app/immutable/assets/pb-tagline-logo-white.GkCHLDzx.png",
+      "_app/immutable/assets/pb-tagline-logo-black.BYnj2J4s.png",
+      "_app/immutable/assets/gg-web-logo.CNVW4_QI.svg",
+      "_app/immutable/assets/gg-tagline-logo-white.CYHLGt7P.svg",
+      "_app/immutable/assets/shupavu-logo.CWoNwa7_.png",
+      "_app/immutable/assets/pocket-games-logo.C3uZx_e-.svg",
+      "_app/immutable/assets/pocket-games-logo-white.sZXnQQk8.svg",
+      "_app/immutable/assets/quotient-logo-white.CVOSenH8.png",
+      "_app/immutable/assets/coin_img.Dgve14pi.svg",
+      "_app/immutable/assets/coin_img.DrPshK1h.svg",
+      "_app/immutable/assets/weekly-bundle-image.DWWc1x7_.png",
+      "_app/immutable/assets/monthly-bundle-image.D5RqFz3c.png",
+      "_app/immutable/assets/daily-bundle-image.CbWwowil.png",
+      "_app/immutable/assets/lock_icon.Bs3gu0S5.svg",
+      "_app/immutable/assets/signout.CjZ7csOv.svg",
+      "_app/immutable/assets/timer_open_bg.C_Nu5W-A.png",
+      "_app/immutable/assets/timer_close_bg.DJWagRZe.png",
+      "_app/immutable/assets/ribbon_winner_congrats.800Ah8N3.png",
+      "_app/immutable/assets/ribbon_lose.CFtDzXyr.png",
+      "_app/immutable/assets/draw_ribbon.B5XI4M0q.png",
+      "_app/immutable/assets/certificate_lock.COY0ViSn.png",
+      "_app/immutable/assets/confetti.sNNHbTbV.png",
+      "_app/immutable/assets/sgg-logo.C-FpbW20.png",
+      "_app/immutable/assets/sgg-mobile-logo.CO-9LZBd.png"
+    ]
+  },
+  "_index-server.js": {
+    "file": "chunks/index-server.js",
+    "name": "index-server",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index",
+    "imports": [
+      "_utils2.js"
+    ]
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index"
+  },
+  "_index3.js": {
+    "file": "chunks/index3.js",
+    "name": "index",
+    "imports": [
+      "_utils2.js"
+    ]
+  },
+  "_index4.js": {
+    "file": "chunks/index4.js",
+    "name": "index",
+    "imports": [
+      "_client2.js",
+      "_index.js"
+    ]
+  },
+  "_instance.store.js": {
+    "file": "chunks/instance.store.js",
+    "name": "instance.store",
+    "imports": [
+      "_index3.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_utils2.js",
+      "_index.js"
+    ]
+  },
+  "_language.store.js": {
+    "file": "chunks/language.store.js",
+    "name": "language.store",
+    "imports": [
+      "_index3.js"
+    ]
+  },
+  "_leaderboards.da.js": {
+    "file": "chunks/leaderboards.da.js",
+    "name": "leaderboards.da",
+    "imports": [
+      "_index.js",
+      "_Avatar.js",
+      "_Image.js",
+      "_images.constants.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js"
+    ]
+  },
+  "_meta.store.js": {
+    "file": "chunks/meta.store.js",
+    "name": "meta.store",
+    "imports": [
+      "_index3.js"
+    ]
+  },
+  "_navigation.service.js": {
+    "file": "chunks/navigation.service.js",
+    "name": "navigation.service",
+    "imports": [
+      "_client.js"
+    ]
+  },
+  "_notyf.KOmfmGu7.css": {
+    "file": "_app/immutable/assets/notyf.KOmfmGu7.css",
+    "src": "_notyf.KOmfmGu7.css"
+  },
+  "_payment.da.js": {
+    "file": "chunks/payment.da.js",
+    "name": "payment.da",
+    "imports": [
+      "_api.service.js",
+      "_api.definitions.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_payment.store.js",
+      "_user.constants.js",
+      "_images.constants.js"
+    ]
+  },
+  "_payment.store.js": {
+    "file": "chunks/payment.store.js",
+    "name": "payment.store",
+    "imports": [
+      "_user.store.js"
+    ]
+  },
+  "_rewards.da.js": {
+    "file": "chunks/rewards.da.js",
+    "name": "rewards.da",
+    "imports": [
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js"
+    ]
+  },
+  "_sidebar.store.js": {
+    "file": "chunks/sidebar.store.js",
+    "name": "sidebar.store",
+    "imports": [
+      "_index3.js"
+    ]
+  },
+  "_stores.js": {
+    "file": "chunks/stores.js",
+    "name": "stores",
+    "imports": [
+      "_index.js",
+      "_client.js"
+    ]
+  },
+  "_system..da.js": {
+    "file": "chunks/system..da.js",
+    "name": "system..da",
+    "imports": [
+      "_index3.js",
+      "_images.constants.js"
+    ]
+  },
+  "_title.store.js": {
+    "file": "chunks/title.store.js",
+    "name": "title.store",
+    "imports": [
+      "_index3.js"
+    ]
+  },
+  "_toast.store.js": {
+    "file": "chunks/toast.store.js",
+    "name": "toast.store",
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "_user.auth.da.js": {
+    "file": "chunks/user.auth.da.js",
+    "name": "user.auth.da",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client.js",
+      "_api.service.js",
+      "_utils.js",
+      "_index3.js",
+      "_api.definitions.js",
+      "_common.auth.data.js",
+      "_language.store.js",
+      "_user.store.js",
+      "_index4.js",
+      "_instance.store.js",
+      "_system..da.js",
+      "_avatar2.js",
+      "_appbar.store.js",
+      "_gamedata.store.js",
+      "_useractivity.store.js",
+      "_user.constants.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "_user.constants.js": {
+    "file": "chunks/user.constants.js",
+    "name": "user.constants",
+    "imports": [
+      "_index3.js",
+      "_user.store.js"
+    ]
+  },
+  "_user.store.js": {
+    "file": "chunks/user.store.js",
+    "name": "user.store",
+    "imports": [
+      "_index3.js"
+    ]
+  },
+  "_useractivity.store.js": {
+    "file": "chunks/useractivity.store.js",
+    "name": "useractivity.store",
+    "imports": [
+      "_user.store.js"
+    ]
+  },
+  "_utils.js": {
+    "file": "chunks/utils.js",
+    "name": "utils",
+    "imports": [
+      "_index3.js",
+      "_appbar.store.js",
+      "_user.store.js",
+      "_sidebar.store.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_client.js",
+      "_index2.js"
+    ]
+  },
+  "_utils2.js": {
+    "file": "chunks/utils2.js",
+    "name": "utils"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/layout.svelte": {
+    "file": "entries/fallbacks/layout.svelte.js",
+    "name": "entries/fallbacks/layout.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/layout.svelte",
+    "isEntry": true
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_utils2.js",
+      "_internal.js",
+      "_index2.js",
+      "_exports.js",
+      "_index3.js"
+    ]
+  },
+  "src/data-actions/instance/instance.da.js": {
+    "file": "chunks/instance.da.js",
+    "name": "instance.da",
+    "src": "src/data-actions/instance/instance.da.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_api.service.js",
+      "_system..da.js",
+      "_index3.js",
+      "_api.definitions.js",
+      "_instance.store.js"
+    ]
+  },
+  "src/lib/assets/images/bonzoui/add_code.svg": {
+    "file": "_app/immutable/assets/add_code.Cx6QNjGN.svg",
+    "src": "src/lib/assets/images/bonzoui/add_code.svg"
+  },
+  "src/lib/assets/images/bonzoui/banner_cert_img.png": {
+    "file": "_app/immutable/assets/banner_cert_img.jyq6ayCD.png",
+    "src": "src/lib/assets/images/bonzoui/banner_cert_img.png"
+  },
+  "src/lib/assets/images/bonzoui/bell.png": {
+    "file": "_app/immutable/assets/bell.BCOssu1v.png",
+    "src": "src/lib/assets/images/bonzoui/bell.png"
+  },
+  "src/lib/assets/images/bonzoui/certificate_icon.svg": {
+    "file": "_app/immutable/assets/certificate_icon.DnPjfrcC.svg",
+    "src": "src/lib/assets/images/bonzoui/certificate_icon.svg"
+  },
+  "src/lib/assets/images/bonzoui/choose_avatar.svg": {
+    "file": "_app/immutable/assets/choose_avatar.D7sIMzkX.svg",
+    "src": "src/lib/assets/images/bonzoui/choose_avatar.svg"
+  },
+  "src/lib/assets/images/bonzoui/coin_img.svg": {
+    "file": "_app/immutable/assets/coin_img.Dgve14pi.svg",
+    "src": "src/lib/assets/images/bonzoui/coin_img.svg"
+  },
+  "src/lib/assets/images/bonzoui/coins_img.png": {
+    "file": "_app/immutable/assets/coins_img.CcNMTrB3.png",
+    "src": "src/lib/assets/images/bonzoui/coins_img.png"
+  },
+  "src/lib/assets/images/bonzoui/draw_ribbon.png": {
+    "file": "_app/immutable/assets/draw_ribbon.B5XI4M0q.png",
+    "src": "src/lib/assets/images/bonzoui/draw_ribbon.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/competitions.png": {
+    "file": "_app/immutable/assets/competitions.C58tQTup.png",
+    "src": "src/lib/assets/images/bonzoui/headings/competitions.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/friends.png": {
+    "file": "_app/immutable/assets/friends.CpjPKI58.png",
+    "src": "src/lib/assets/images/bonzoui/headings/friends.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/leaderboard.png": {
+    "file": "_app/immutable/assets/leaderboard.JEBUTntx.png",
+    "src": "src/lib/assets/images/bonzoui/headings/leaderboard.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/lessons.png": {
+    "file": "_app/immutable/assets/lessons.Cz2LBAPk.png",
+    "src": "src/lib/assets/images/bonzoui/headings/lessons.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/pay_for_access.png": {
+    "file": "_app/immutable/assets/pay_for_access.nHhQp7_k.png",
+    "src": "src/lib/assets/images/bonzoui/headings/pay_for_access.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/players.png": {
+    "file": "_app/immutable/assets/players.I7x30OZh.png",
+    "src": "src/lib/assets/images/bonzoui/headings/players.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/rewards.png": {
+    "file": "_app/immutable/assets/rewards.DlSJma12.png",
+    "src": "src/lib/assets/images/bonzoui/headings/rewards.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/select_opponent.png": {
+    "file": "_app/immutable/assets/select_opponent.CD15azkN.png",
+    "src": "src/lib/assets/images/bonzoui/headings/select_opponent.png"
+  },
+  "src/lib/assets/images/bonzoui/headings/topics.png": {
+    "file": "_app/immutable/assets/topics.BmBb0n-a.png",
+    "src": "src/lib/assets/images/bonzoui/headings/topics.png"
+  },
+  "src/lib/assets/images/bonzoui/more_coins.png": {
+    "file": "_app/immutable/assets/more_coins.B4hc4Fqg.png",
+    "src": "src/lib/assets/images/bonzoui/more_coins.png"
+  },
+  "src/lib/assets/images/bonzoui/multi_player_icon.svg": {
+    "file": "_app/immutable/assets/multi_player_icon.BkPVo834.svg",
+    "src": "src/lib/assets/images/bonzoui/multi_player_icon.svg"
+  },
+  "src/lib/assets/images/bonzoui/no-data-found.svg": {
+    "file": "_app/immutable/assets/no-data-found.C0sr3avv.svg",
+    "src": "src/lib/assets/images/bonzoui/no-data-found.svg"
+  },
+  "src/lib/assets/images/bonzoui/polkadots.svg": {
+    "file": "_app/immutable/assets/polkadots.DvE3E5TE.svg",
+    "src": "src/lib/assets/images/bonzoui/polkadots.svg"
+  },
+  "src/lib/assets/images/bonzoui/ribbon_lose.png": {
+    "file": "_app/immutable/assets/ribbon_lose.CFtDzXyr.png",
+    "src": "src/lib/assets/images/bonzoui/ribbon_lose.png"
+  },
+  "src/lib/assets/images/bonzoui/ribbon_winner_congrats.png": {
+    "file": "_app/immutable/assets/ribbon_winner_congrats.800Ah8N3.png",
+    "src": "src/lib/assets/images/bonzoui/ribbon_winner_congrats.png"
+  },
+  "src/lib/assets/images/bonzoui/rules.svg": {
+    "file": "_app/immutable/assets/rules.-gxI2kTU.svg",
+    "src": "src/lib/assets/images/bonzoui/rules.svg"
+  },
+  "src/lib/assets/images/bonzoui/school-avatar.png": {
+    "file": "_app/immutable/assets/a67.CsD1LPnD.png",
+    "src": "src/lib/assets/images/bonzoui/school-avatar.png"
+  },
+  "src/lib/assets/images/bonzoui/single_player_icon.svg": {
+    "file": "_app/immutable/assets/playersingle.CHmWgN-Y.svg",
+    "src": "src/lib/assets/images/bonzoui/single_player_icon.svg"
+  },
+  "src/lib/assets/images/bonzoui/sword1.png": {
+    "file": "_app/immutable/assets/sword1.BiQcy4EQ.png",
+    "src": "src/lib/assets/images/bonzoui/sword1.png"
+  },
+  "src/lib/assets/images/bonzoui/sword2.png": {
+    "file": "_app/immutable/assets/sword2.C9BBR0te.png",
+    "src": "src/lib/assets/images/bonzoui/sword2.png"
+  },
+  "src/lib/assets/images/bonzoui/timer_close_bg.png": {
+    "file": "_app/immutable/assets/timer_close_bg.DJWagRZe.png",
+    "src": "src/lib/assets/images/bonzoui/timer_close_bg.png"
+  },
+  "src/lib/assets/images/bonzoui/timer_open_bg.png": {
+    "file": "_app/immutable/assets/timer_open_bg.C_Nu5W-A.png",
+    "src": "src/lib/assets/images/bonzoui/timer_open_bg.png"
+  },
+  "src/lib/assets/images/bonzoui/vs.svg": {
+    "file": "_app/immutable/assets/vs.KtLT08pX.svg",
+    "src": "src/lib/assets/images/bonzoui/vs.svg"
+  },
+  "src/lib/assets/images/game_type/crack_the_code.png": {
+    "file": "_app/immutable/assets/sorting.Cef1rhoz.png",
+    "src": "src/lib/assets/images/game_type/crack_the_code.png"
+  },
+  "src/lib/assets/images/game_type/dino_eggs.png": {
+    "file": "_app/immutable/assets/link.CEPGAntH.png",
+    "src": "src/lib/assets/images/game_type/dino_eggs.png"
+  },
+  "src/lib/assets/images/game_type/factor_monsters.png": {
+    "file": "_app/immutable/assets/factor_monsters.l213NjDn.png",
+    "src": "src/lib/assets/images/game_type/factor_monsters.png"
+  },
+  "src/lib/assets/images/game_type/financial_fib.png": {
+    "file": "_app/immutable/assets/financial_fib.CmPsMloe.png",
+    "src": "src/lib/assets/images/game_type/financial_fib.png"
+  },
+  "src/lib/assets/images/game_type/kampong.png": {
+    "file": "_app/immutable/assets/kampong.wsxanTnR.png",
+    "src": "src/lib/assets/images/game_type/kampong.png"
+  },
+  "src/lib/assets/images/game_type/link.png": {
+    "file": "_app/immutable/assets/link.CEPGAntH.png",
+    "src": "src/lib/assets/images/game_type/dino_eggs.png"
+  },
+  "src/lib/assets/images/game_type/matching.png": {
+    "file": "_app/immutable/assets/matching.CSUPKMrL.png",
+    "src": "src/lib/assets/images/game_type/matching.png"
+  },
+  "src/lib/assets/images/game_type/matching_flip.png": {
+    "file": "_app/immutable/assets/financial_fib.CmPsMloe.png",
+    "src": "src/lib/assets/images/game_type/financial_fib.png"
+  },
+  "src/lib/assets/images/game_type/number_battle.png": {
+    "file": "_app/immutable/assets/number_battle.CW7j1d-k.png",
+    "src": "src/lib/assets/images/game_type/number_battle.png"
+  },
+  "src/lib/assets/images/game_type/ruby_spidey.png": {
+    "file": "_app/immutable/assets/ruby_spidey.DtbcPulW.png",
+    "src": "src/lib/assets/images/game_type/ruby_spidey.png"
+  },
+  "src/lib/assets/images/game_type/sets_challenge.png": {
+    "file": "_app/immutable/assets/sets_challenge.CDdDp_R2.png",
+    "src": "src/lib/assets/images/game_type/sets_challenge.png"
+  },
+  "src/lib/assets/images/game_type/sheep_run.png": {
+    "file": "_app/immutable/assets/sheep_run.vK3A0okd.png",
+    "src": "src/lib/assets/images/game_type/sheep_run.png"
+  },
+  "src/lib/assets/images/game_type/sorting.png": {
+    "file": "_app/immutable/assets/sorting.Cef1rhoz.png",
+    "src": "src/lib/assets/images/game_type/crack_the_code.png"
+  },
+  "src/lib/assets/images/game_type/sumo_mochi.png": {
+    "file": "_app/immutable/assets/sumo_mochi.CDuX_Lqy.png",
+    "src": "src/lib/assets/images/game_type/sumo_mochi.png"
+  },
+  "src/lib/assets/images/game_type/tabular_fib.png": {
+    "file": "_app/immutable/assets/matching.CSUPKMrL.png",
+    "src": "src/lib/assets/images/game_type/matching.png"
+  },
+  "src/lib/assets/images/gclc/lock_icon.svg": {
+    "file": "_app/immutable/assets/lock_icon.Bs3gu0S5.svg",
+    "src": "src/lib/assets/images/gclc/lock_icon.svg"
+  },
+  "src/lib/assets/images/home_images/bonzo/pb-tagline-logo-black.png": {
+    "file": "_app/immutable/assets/pb-tagline-logo-black.BYnj2J4s.png",
+    "src": "src/lib/assets/images/home_images/bonzo/pb-tagline-logo-black.png"
+  },
+  "src/lib/assets/images/home_images/bonzo/pb-tagline-logo-white.png": {
+    "file": "_app/immutable/assets/pb-tagline-logo-white.GkCHLDzx.png",
+    "src": "src/lib/assets/images/home_images/bonzo/pb-tagline-logo-white.png"
+  },
+  "src/lib/assets/images/home_images/education-impact-image.png": {
+    "file": "_app/immutable/assets/education-impact-image.O8BGTQAa.png",
+    "src": "src/lib/assets/images/home_images/education-impact-image.png"
+  },
+  "src/lib/assets/images/home_images/feature-image-1.png": {
+    "file": "_app/immutable/assets/feature-image-1.D6Cq5UYQ.png",
+    "src": "src/lib/assets/images/home_images/feature-image-1.png"
+  },
+  "src/lib/assets/images/home_images/feature-image-2.png": {
+    "file": "_app/immutable/assets/feature-image-2.BXt3tmoN.png",
+    "src": "src/lib/assets/images/home_images/feature-image-2.png"
+  },
+  "src/lib/assets/images/home_images/feature-image-3.png": {
+    "file": "_app/immutable/assets/feature-image-3.CAk04Bp2.png",
+    "src": "src/lib/assets/images/home_images/feature-image-3.png"
+  },
+  "src/lib/assets/images/home_images/gclc/gg-tagline-logo-white.svg": {
+    "file": "_app/immutable/assets/gg-tagline-logo-white.CYHLGt7P.svg",
+    "src": "src/lib/assets/images/home_images/gclc/gg-tagline-logo-white.svg"
+  },
+  "src/lib/assets/images/home_images/gclc/gg-web-logo.svg": {
+    "file": "_app/immutable/assets/gg-web-logo.CNVW4_QI.svg",
+    "src": "src/lib/assets/images/home_images/gclc/gg-web-logo.svg"
+  },
+  "src/lib/assets/images/home_images/learning-banner-1.png": {
+    "file": "_app/immutable/assets/learning-banner-1.BIz2rZS7.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-1.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-2.png": {
+    "file": "_app/immutable/assets/learning-banner-2.DDpycIcU.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-2.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-3.png": {
+    "file": "_app/immutable/assets/learning-banner-3.B0Jt0AMB.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-3.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-4.png": {
+    "file": "_app/immutable/assets/learning-banner-4.o2wUUjT7.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-4.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-5.png": {
+    "file": "_app/immutable/assets/learning-banner-5.DUzhkPU2.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-5.png"
+  },
+  "src/lib/assets/images/home_images/learning-banner-6.png": {
+    "file": "_app/immutable/assets/learning-banner-6.4O_7ZDX4.png",
+    "src": "src/lib/assets/images/home_images/learning-banner-6.png"
+  },
+  "src/lib/assets/images/home_images/pocket-games/pocket-games-logo-white.svg": {
+    "file": "_app/immutable/assets/pocket-games-logo-white.sZXnQQk8.svg",
+    "src": "src/lib/assets/images/home_images/pocket-games/pocket-games-logo-white.svg"
+  },
+  "src/lib/assets/images/home_images/pocket-games/pocket-games-logo.svg": {
+    "file": "_app/immutable/assets/pocket-games-logo.C3uZx_e-.svg",
+    "src": "src/lib/assets/images/home_images/pocket-games/pocket-games-logo.svg"
+  },
+  "src/lib/assets/images/home_images/quotient-games/quotient-logo-white.png": {
+    "file": "_app/immutable/assets/quotient-logo-white.CVOSenH8.png",
+    "src": "src/lib/assets/images/home_images/quotient-games/quotient-logo-white.png"
+  },
+  "src/lib/assets/images/home_images/sgg/sgg-logo.png": {
+    "file": "_app/immutable/assets/sgg-logo.C-FpbW20.png",
+    "src": "src/lib/assets/images/home_images/sgg/sgg-logo.png"
+  },
+  "src/lib/assets/images/home_images/sgg/sgg-mobile-logo.png": {
+    "file": "_app/immutable/assets/sgg-mobile-logo.CO-9LZBd.png",
+    "src": "src/lib/assets/images/home_images/sgg/sgg-mobile-logo.png"
+  },
+  "src/lib/assets/images/home_images/shupavu/shupavu-logo.png": {
+    "file": "_app/immutable/assets/shupavu-logo.CWoNwa7_.png",
+    "src": "src/lib/assets/images/home_images/shupavu/shupavu-logo.png"
+  },
+  "src/lib/assets/images/leaderboard/rays.svg": {
+    "file": "_app/immutable/assets/rays.DaFCbr-s.svg",
+    "src": "src/lib/assets/images/leaderboard/rays.svg"
+  },
+  "src/lib/assets/images/leaderboard/stars3.png": {
+    "file": "_app/immutable/assets/stars3.05JtbYZ7.png",
+    "src": "src/lib/assets/images/leaderboard/stars3.png"
+  },
+  "src/lib/assets/images/overview/activeplayers.png": {
+    "file": "_app/immutable/assets/activeplayers.CuTCj87y.png",
+    "src": "src/lib/assets/images/overview/activeplayers.png"
+  },
+  "src/lib/assets/images/overview/avgcompletionrate.png": {
+    "file": "_app/immutable/assets/avgcompletionrate.KkbqXoJs.png",
+    "src": "src/lib/assets/images/overview/avgcompletionrate.png"
+  },
+  "src/lib/assets/images/overview/totalgames.png": {
+    "file": "_app/immutable/assets/totalgames.CfP7B9iA.png",
+    "src": "src/lib/assets/images/overview/totalgames.png"
+  },
+  "src/lib/assets/images/overview/totalgamesplayed.png": {
+    "file": "_app/immutable/assets/totalgamesplayed.DXsB-zWh.png",
+    "src": "src/lib/assets/images/overview/totalgamesplayed.png"
+  },
+  "src/lib/assets/images/overview/totalhoursspent.png": {
+    "file": "_app/immutable/assets/totalhoursspent.B_ofSwdh.png",
+    "src": "src/lib/assets/images/overview/totalhoursspent.png"
+  },
+  "src/lib/assets/images/overview/totalplayers.png": {
+    "file": "_app/immutable/assets/totalplayers.DR9HqzTQ.png",
+    "src": "src/lib/assets/images/overview/totalplayers.png"
+  },
+  "src/lib/assets/images/payment/bank_icon.svg": {
+    "file": "_app/immutable/assets/bank_icon.DlcPDJbc.svg",
+    "src": "src/lib/assets/images/payment/bank_icon.svg"
+  },
+  "src/lib/assets/images/payment/jazz_icon.svg": {
+    "file": "_app/immutable/assets/jazz_icon.CU48aWwr.svg",
+    "src": "src/lib/assets/images/payment/jazz_icon.svg"
+  },
+  "src/lib/assets/images/pocket-games/coin_img.svg": {
+    "file": "_app/immutable/assets/coin_img.DrPshK1h.svg",
+    "src": "src/lib/assets/images/pocket-games/coin_img.svg"
+  },
+  "src/lib/assets/images/profiles/a15.png": {
+    "file": "_app/immutable/assets/a15.BLlzNQqK.png",
+    "src": "src/lib/assets/images/profiles/a15.png"
+  },
+  "src/lib/assets/images/profiles/a16.png": {
+    "file": "_app/immutable/assets/a16.DE7sve9_.png",
+    "src": "src/lib/assets/images/profiles/a16.png"
+  },
+  "src/lib/assets/images/profiles/a17.png": {
+    "file": "_app/immutable/assets/a17.cxeX9Vpp.png",
+    "src": "src/lib/assets/images/profiles/a17.png"
+  },
+  "src/lib/assets/images/profiles/a18.png": {
+    "file": "_app/immutable/assets/a18.ERdYEYBi.png",
+    "src": "src/lib/assets/images/profiles/a18.png"
+  },
+  "src/lib/assets/images/profiles/a19.png": {
+    "file": "_app/immutable/assets/a19.DG3L8nd4.png",
+    "src": "src/lib/assets/images/profiles/a19.png"
+  },
+  "src/lib/assets/images/profiles/a20.png": {
+    "file": "_app/immutable/assets/a20.CWhAvI_x.png",
+    "src": "src/lib/assets/images/profiles/a20.png"
+  },
+  "src/lib/assets/images/profiles/a21.png": {
+    "file": "_app/immutable/assets/a21.BaUsT2yc.png",
+    "src": "src/lib/assets/images/profiles/a21.png"
+  },
+  "src/lib/assets/images/profiles/a22.png": {
+    "file": "_app/immutable/assets/a22.BaBB2Cb5.png",
+    "src": "src/lib/assets/images/profiles/a22.png"
+  },
+  "src/lib/assets/images/profiles/a23.png": {
+    "file": "_app/immutable/assets/a23.B9_xNaWp.png",
+    "src": "src/lib/assets/images/profiles/a23.png"
+  },
+  "src/lib/assets/images/profiles/a24.png": {
+    "file": "_app/immutable/assets/a24.CsxjxlTV.png",
+    "src": "src/lib/assets/images/profiles/a24.png"
+  },
+  "src/lib/assets/images/profiles/a25.png": {
+    "file": "_app/immutable/assets/a25.B6R6pSi-.png",
+    "src": "src/lib/assets/images/profiles/a25.png"
+  },
+  "src/lib/assets/images/profiles/a26.png": {
+    "file": "_app/immutable/assets/a26.7K9XOkbd.png",
+    "src": "src/lib/assets/images/profiles/a26.png"
+  },
+  "src/lib/assets/images/profiles/a27.png": {
+    "file": "_app/immutable/assets/a27.di5RvDlf.png",
+    "src": "src/lib/assets/images/profiles/a27.png"
+  },
+  "src/lib/assets/images/profiles/a28.png": {
+    "file": "_app/immutable/assets/a28.Cai8Sgc5.png",
+    "src": "src/lib/assets/images/profiles/a28.png"
+  },
+  "src/lib/assets/images/profiles/a29.png": {
+    "file": "_app/immutable/assets/a29.Cxpl4pBs.png",
+    "src": "src/lib/assets/images/profiles/a29.png"
+  },
+  "src/lib/assets/images/profiles/a30.png": {
+    "file": "_app/immutable/assets/a30.CSxkBavu.png",
+    "src": "src/lib/assets/images/profiles/a30.png"
+  },
+  "src/lib/assets/images/profiles/a31.png": {
+    "file": "_app/immutable/assets/a31.DsXNS_bC.png",
+    "src": "src/lib/assets/images/profiles/a31.png"
+  },
+  "src/lib/assets/images/profiles/a32.png": {
+    "file": "_app/immutable/assets/a32.CdbHq7O-.png",
+    "src": "src/lib/assets/images/profiles/a32.png"
+  },
+  "src/lib/assets/images/profiles/a33.png": {
+    "file": "_app/immutable/assets/a33.Cvtx_jaO.png",
+    "src": "src/lib/assets/images/profiles/a33.png"
+  },
+  "src/lib/assets/images/profiles/a34.png": {
+    "file": "_app/immutable/assets/a34.KUL2AdBF.png",
+    "src": "src/lib/assets/images/profiles/a34.png"
+  },
+  "src/lib/assets/images/profiles/a35.png": {
+    "file": "_app/immutable/assets/a35.gFqOCSGZ.png",
+    "src": "src/lib/assets/images/profiles/a35.png"
+  },
+  "src/lib/assets/images/profiles/a36.png": {
+    "file": "_app/immutable/assets/a36.DtLyRyE3.png",
+    "src": "src/lib/assets/images/profiles/a36.png"
+  },
+  "src/lib/assets/images/profiles/a37.png": {
+    "file": "_app/immutable/assets/a37.8e-bHiwv.png",
+    "src": "src/lib/assets/images/profiles/a37.png"
+  },
+  "src/lib/assets/images/profiles/a38.png": {
+    "file": "_app/immutable/assets/a38.6rk9Murh.png",
+    "src": "src/lib/assets/images/profiles/a38.png"
+  },
+  "src/lib/assets/images/profiles/a39.png": {
+    "file": "_app/immutable/assets/a39.TvgLxRO7.png",
+    "src": "src/lib/assets/images/profiles/a39.png"
+  },
+  "src/lib/assets/images/profiles/a40.png": {
+    "file": "_app/immutable/assets/a40.h_vKUL7j.png",
+    "src": "src/lib/assets/images/profiles/a40.png"
+  },
+  "src/lib/assets/images/profiles/a41.png": {
+    "file": "_app/immutable/assets/a41.DXZ5qRWm.png",
+    "src": "src/lib/assets/images/profiles/a41.png"
+  },
+  "src/lib/assets/images/profiles/a42.png": {
+    "file": "_app/immutable/assets/a42.6QMcaMnF.png",
+    "src": "src/lib/assets/images/profiles/a42.png"
+  },
+  "src/lib/assets/images/profiles/a43.png": {
+    "file": "_app/immutable/assets/a43.CszkcydC.png",
+    "src": "src/lib/assets/images/profiles/a43.png"
+  },
+  "src/lib/assets/images/profiles/a44.png": {
+    "file": "_app/immutable/assets/a44.DlglqPUk.png",
+    "src": "src/lib/assets/images/profiles/a44.png"
+  },
+  "src/lib/assets/images/profiles/a45.png": {
+    "file": "_app/immutable/assets/a45.Cc-2DY5A.png",
+    "src": "src/lib/assets/images/profiles/a45.png"
+  },
+  "src/lib/assets/images/profiles/a46.png": {
+    "file": "_app/immutable/assets/a46.3LHLHRYP.png",
+    "src": "src/lib/assets/images/profiles/a46.png"
+  },
+  "src/lib/assets/images/profiles/a47.png": {
+    "file": "_app/immutable/assets/a47.CMyIUQ8-.png",
+    "src": "src/lib/assets/images/profiles/a47.png"
+  },
+  "src/lib/assets/images/profiles/a48.png": {
+    "file": "_app/immutable/assets/a48.DrO3KmWl.png",
+    "src": "src/lib/assets/images/profiles/a48.png"
+  },
+  "src/lib/assets/images/profiles/a49.png": {
+    "file": "_app/immutable/assets/a49.kzzNNrIi.png",
+    "src": "src/lib/assets/images/profiles/a49.png"
+  },
+  "src/lib/assets/images/profiles/a50.png": {
+    "file": "_app/immutable/assets/a50.DDm4KwC7.png",
+    "src": "src/lib/assets/images/profiles/a50.png"
+  },
+  "src/lib/assets/images/profiles/a51.png": {
+    "file": "_app/immutable/assets/a51.D6hqt3YQ.png",
+    "src": "src/lib/assets/images/profiles/a51.png"
+  },
+  "src/lib/assets/images/profiles/a52.png": {
+    "file": "_app/immutable/assets/a52.JNy01BBR.png",
+    "src": "src/lib/assets/images/profiles/a52.png"
+  },
+  "src/lib/assets/images/profiles/a53.png": {
+    "file": "_app/immutable/assets/a53.tKrwA6FC.png",
+    "src": "src/lib/assets/images/profiles/a53.png"
+  },
+  "src/lib/assets/images/profiles/a54.png": {
+    "file": "_app/immutable/assets/a54.pRWJnrA1.png",
+    "src": "src/lib/assets/images/profiles/a54.png"
+  },
+  "src/lib/assets/images/profiles/a55.png": {
+    "file": "_app/immutable/assets/a55.CK_Lm3Ek.png",
+    "src": "src/lib/assets/images/profiles/a55.png"
+  },
+  "src/lib/assets/images/profiles/a56.png": {
+    "file": "_app/immutable/assets/a56.DUH7qS3E.png",
+    "src": "src/lib/assets/images/profiles/a56.png"
+  },
+  "src/lib/assets/images/profiles/a57.png": {
+    "file": "_app/immutable/assets/a57.CDqw8cgx.png",
+    "src": "src/lib/assets/images/profiles/a57.png"
+  },
+  "src/lib/assets/images/profiles/a58.png": {
+    "file": "_app/immutable/assets/a58.5FKbzyP1.png",
+    "src": "src/lib/assets/images/profiles/a58.png"
+  },
+  "src/lib/assets/images/profiles/a59.png": {
+    "file": "_app/immutable/assets/a59.BjxlSIOa.png",
+    "src": "src/lib/assets/images/profiles/a59.png"
+  },
+  "src/lib/assets/images/profiles/a60.png": {
+    "file": "_app/immutable/assets/a60.B--x-ghC.png",
+    "src": "src/lib/assets/images/profiles/a60.png"
+  },
+  "src/lib/assets/images/profiles/a61.png": {
+    "file": "_app/immutable/assets/a61.D9U4Gaj_.png",
+    "src": "src/lib/assets/images/profiles/a61.png"
+  },
+  "src/lib/assets/images/profiles/a62.png": {
+    "file": "_app/immutable/assets/a62.GQBWTYaw.png",
+    "src": "src/lib/assets/images/profiles/a62.png"
+  },
+  "src/lib/assets/images/profiles/a63.png": {
+    "file": "_app/immutable/assets/a63.ICOVHFX1.png",
+    "src": "src/lib/assets/images/profiles/a63.png"
+  },
+  "src/lib/assets/images/profiles/a64.png": {
+    "file": "_app/immutable/assets/a64.BdBsphi-.png",
+    "src": "src/lib/assets/images/profiles/a64.png"
+  },
+  "src/lib/assets/images/profiles/a65.png": {
+    "file": "_app/immutable/assets/a65.DF5Tl1D7.png",
+    "src": "src/lib/assets/images/profiles/a65.png"
+  },
+  "src/lib/assets/images/profiles/a67.png": {
+    "file": "_app/immutable/assets/a67.CsD1LPnD.png",
+    "src": "src/lib/assets/images/bonzoui/school-avatar.png"
+  },
+  "src/lib/assets/images/result/coin.png": {
+    "file": "_app/immutable/assets/coin.BaRO8b4k.png",
+    "src": "src/lib/assets/images/result/coin.png"
+  },
+  "src/lib/assets/images/result/stack1-pg.png": {
+    "file": "_app/immutable/assets/stack1-pg.C94_rBxp.png",
+    "src": "src/lib/assets/images/result/stack1-pg.png"
+  },
+  "src/lib/assets/images/result/stack1.png": {
+    "file": "_app/immutable/assets/stack1.C9eVAYBG.png",
+    "src": "src/lib/assets/images/result/stack1.png"
+  },
+  "src/lib/assets/images/result/sunrays.png": {
+    "file": "_app/immutable/assets/sunrays.m2kjJ8Dx.png",
+    "src": "src/lib/assets/images/result/sunrays.png"
+  },
+  "src/lib/assets/images/rewards/dailybadge.png": {
+    "file": "_app/immutable/assets/dailybadge.D7cs6UUa.png",
+    "src": "src/lib/assets/images/rewards/dailybadge.png"
+  },
+  "src/lib/assets/images/rewards/monthlybadge.png": {
+    "file": "_app/immutable/assets/monthlybadge.DDz_eSTV.png",
+    "src": "src/lib/assets/images/rewards/monthlybadge.png"
+  },
+  "src/lib/assets/images/rewards/weeklybadge.png": {
+    "file": "_app/immutable/assets/weeklybadge.Bx9aibxf.png",
+    "src": "src/lib/assets/images/rewards/weeklybadge.png"
+  },
+  "src/lib/assets/images/shupavu/daily-bundle-image.png": {
+    "file": "_app/immutable/assets/daily-bundle-image.CbWwowil.png",
+    "src": "src/lib/assets/images/shupavu/daily-bundle-image.png"
+  },
+  "src/lib/assets/images/shupavu/monthly-bundle-image.png": {
+    "file": "_app/immutable/assets/monthly-bundle-image.D5RqFz3c.png",
+    "src": "src/lib/assets/images/shupavu/monthly-bundle-image.png"
+  },
+  "src/lib/assets/images/shupavu/weekly-bundle-image.png": {
+    "file": "_app/immutable/assets/weekly-bundle-image.DWWc1x7_.png",
+    "src": "src/lib/assets/images/shupavu/weekly-bundle-image.png"
+  },
+  "src/lib/assets/images/sidenav/friends.svg": {
+    "file": "_app/immutable/assets/friends.ungRWP9V.svg",
+    "src": "src/lib/assets/images/sidenav/friends.svg"
+  },
+  "src/lib/assets/images/sidenav/rewards.svg": {
+    "file": "_app/immutable/assets/rewards.UsDSa_s-.svg",
+    "src": "src/lib/assets/images/sidenav/rewards.svg"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_1.png": {
+    "file": "_app/immutable/assets/biology_sub_1.CTLualCK.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_2.png": {
+    "file": "_app/immutable/assets/biology_sub_2.DoANx3R3.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_3.png": {
+    "file": "_app/immutable/assets/biology_sub_3.BH8zuwbC.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_4.png": {
+    "file": "_app/immutable/assets/biology_sub_4.CJfhEVy3.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_5.png": {
+    "file": "_app/immutable/assets/biology_sub_5.Bma6T2AR.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/biology/biology_sub_6.png": {
+    "file": "_app/immutable/assets/biology_sub_6.D4AVt_IN.png",
+    "src": "src/lib/assets/images/subjects/biology/biology_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_1.png": {
+    "file": "_app/immutable/assets/chemistry_sub_1.CotYUrU5.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_2.png": {
+    "file": "_app/immutable/assets/chemistry_sub_2.Bb4pkWyv.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_3.png": {
+    "file": "_app/immutable/assets/chemistry_sub_3.B7pdvRiG.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_4.png": {
+    "file": "_app/immutable/assets/chemistry_sub_4.HYJv8CTA.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_5.png": {
+    "file": "_app/immutable/assets/chemistry_sub_5.D-jla_DK.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/chemistry/chemistry_sub_6.png": {
+    "file": "_app/immutable/assets/chemistry_sub_6.CEU3VKXO.png",
+    "src": "src/lib/assets/images/subjects/chemistry/chemistry_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_1.png": {
+    "file": "_app/immutable/assets/computer_science_sub_1.CT_kBnQh.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_2.png": {
+    "file": "_app/immutable/assets/computer_science_sub_2.DZWE0np1.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_3.png": {
+    "file": "_app/immutable/assets/computer_science_sub_3.C6XsD_nz.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_4.png": {
+    "file": "_app/immutable/assets/computer_science_sub_4.CS44gcy_.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/computer_science/computer_science_sub_6.png": {
+    "file": "_app/immutable/assets/computer_science_sub_6.uzyJ8A1n.png",
+    "src": "src/lib/assets/images/subjects/computer_science/computer_science_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/data_science/data_science_sub_1.png": {
+    "file": "_app/immutable/assets/data_science_sub_1.EqipjaBs.png",
+    "src": "src/lib/assets/images/subjects/data_science/data_science_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/data_science/data_science_sub_2.png": {
+    "file": "_app/immutable/assets/data_science_sub_2.K-nZdOag.png",
+    "src": "src/lib/assets/images/subjects/data_science/data_science_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/data_science/data_science_sub_3.png": {
+    "file": "_app/immutable/assets/data_science_sub_3.BAHay3Qp.png",
+    "src": "src/lib/assets/images/subjects/data_science/data_science_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/data_science/data_science_sub_4.png": {
+    "file": "_app/immutable/assets/data_science_sub_4.BUO1x9Zc.png",
+    "src": "src/lib/assets/images/subjects/data_science/data_science_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_1.png": {
+    "file": "_app/immutable/assets/english_sub_1.CGBROLdQ.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_2.png": {
+    "file": "_app/immutable/assets/english_sub_2.CSk0Uual.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_3.png": {
+    "file": "_app/immutable/assets/english_sub_3.DVQh4CL1.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_4.png": {
+    "file": "_app/immutable/assets/english_sub_4.ByA3im4H.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_5.png": {
+    "file": "_app/immutable/assets/english_sub_5.CkI2gax4.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/english/english_sub_6.png": {
+    "file": "_app/immutable/assets/english_sub_6.CRb3LvlX.png",
+    "src": "src/lib/assets/images/subjects/english/english_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/environmental_literacy/environmental_literacy_sub_1.png": {
+    "file": "_app/immutable/assets/environmental_literacy_sub_1.BfVuNUPA.png",
+    "src": "src/lib/assets/images/subjects/environmental_literacy/environmental_literacy_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/environmental_literacy/environmental_literacy_sub_5.png": {
+    "file": "_app/immutable/assets/environmental_literacy_sub_5.CKalAN8F.png",
+    "src": "src/lib/assets/images/subjects/environmental_literacy/environmental_literacy_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_1.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_1.xreVwFH4.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_2.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_2.DvEJAZAY.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_3.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_3.CNdzTByD.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_4.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_4.DIfPnJJF.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_5.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_5.BlPY4Dth.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_6.png": {
+    "file": "_app/immutable/assets/financial_literacy_sub_6.XhOhgHW3.png",
+    "src": "src/lib/assets/images/subjects/financial_literacy/financial_literacy_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_1.png": {
+    "file": "_app/immutable/assets/health_and_wellness_sub_1.CQyLsJ3u.png",
+    "src": "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_2.png": {
+    "file": "_app/immutable/assets/health_and_wellness_sub_2.CGvuZ5pS.png",
+    "src": "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_3.png": {
+    "file": "_app/immutable/assets/health_and_wellness_sub_3.TbgQg9C3.png",
+    "src": "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_4.png": {
+    "file": "_app/immutable/assets/health_and_wellness_sub_4.BhzMF4Pr.png",
+    "src": "src/lib/assets/images/subjects/health_and_wellness/health_and_wellness_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_2.png": {
+    "file": "_app/immutable/assets/math_sub_2.B2MZALCj.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_3.png": {
+    "file": "_app/immutable/assets/math_sub_3.Eic8vPYn.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_4.png": {
+    "file": "_app/immutable/assets/math_sub_4.BtX2_em7.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_5.png": {
+    "file": "_app/immutable/assets/math_sub_5.DR3Hncsx.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/mathematics/math_sub_6.png": {
+    "file": "_app/immutable/assets/math_sub_6.BLqpZ5Ow.png",
+    "src": "src/lib/assets/images/subjects/mathematics/math_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_1.png": {
+    "file": "_app/immutable/assets/physics_sub_1.Hm_md6W9.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_2.png": {
+    "file": "_app/immutable/assets/physics_sub_2.D_ryAuwh.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_3.png": {
+    "file": "_app/immutable/assets/physics_sub_3.Dln78FY8.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_4.png": {
+    "file": "_app/immutable/assets/physics_sub_4.U0eBJWKa.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/physics/physics_sub_5.png": {
+    "file": "_app/immutable/assets/physics_sub_5.LF0lDjUW.png",
+    "src": "src/lib/assets/images/subjects/physics/physics_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_1.png": {
+    "file": "_app/immutable/assets/problem_solving_sub_1.xSbvhB5A.png",
+    "src": "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_2.png": {
+    "file": "_app/immutable/assets/problem_solving_sub_2.Bt4UipZE.png",
+    "src": "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_4.png": {
+    "file": "_app/immutable/assets/problem_solving_sub_4.ByY1Rktc.png",
+    "src": "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_5.png": {
+    "file": "_app/immutable/assets/problem_solving_sub_5.CHr-avWx.png",
+    "src": "src/lib/assets/images/subjects/problem_solving/problem_solving_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_1.png": {
+    "file": "_app/immutable/assets/science_sub_1.D394cxTc.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_2.png": {
+    "file": "_app/immutable/assets/science_sub_2.Be1M8-J0.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_3.png": {
+    "file": "_app/immutable/assets/science_sub_3.B0GjDxNS.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_4.png": {
+    "file": "_app/immutable/assets/science_sub_4.DIvqSIFl.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_5.png": {
+    "file": "_app/immutable/assets/science_sub_5.rXX7YICf.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/science/science_sub_6.png": {
+    "file": "_app/immutable/assets/science_sub_6.Cxi2dT9u.png",
+    "src": "src/lib/assets/images/subjects/science/science_sub_6.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_1.png": {
+    "file": "_app/immutable/assets/urdu_sub_1.5BpQi8RP.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_1.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_2.png": {
+    "file": "_app/immutable/assets/urdu_sub_2.BgreTTNk.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_2.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_3.png": {
+    "file": "_app/immutable/assets/urdu_sub_3.b21ubLsN.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_3.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_4.png": {
+    "file": "_app/immutable/assets/urdu_sub_4.DN0OxAxv.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_4.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_5.png": {
+    "file": "_app/immutable/assets/urdu_sub_5.BlLjjOBh.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_5.png"
+  },
+  "src/lib/assets/images/subjects/urdu/urdu_sub_6.png": {
+    "file": "_app/immutable/assets/urdu_sub_6.DNCz_eP5.png",
+    "src": "src/lib/assets/images/subjects/urdu/urdu_sub_6.png"
+  },
+  "src/lib/assets/images/tabicons/certificate_lock.png": {
+    "file": "_app/immutable/assets/certificate_lock.COY0ViSn.png",
+    "src": "src/lib/assets/images/tabicons/certificate_lock.png"
+  },
+  "src/lib/assets/images/tabicons/confetti.png": {
+    "file": "_app/immutable/assets/confetti.sNNHbTbV.png",
+    "src": "src/lib/assets/images/tabicons/confetti.png"
+  },
+  "src/lib/assets/images/tabicons/friendsrecommended.svg": {
+    "file": "_app/immutable/assets/friendsrecommended.p6raTVwh.svg",
+    "src": "src/lib/assets/images/tabicons/friendsrecommended.svg"
+  },
+  "src/lib/assets/images/tabicons/playersingle.svg": {
+    "file": "_app/immutable/assets/playersingle.CHmWgN-Y.svg",
+    "src": "src/lib/assets/images/bonzoui/single_player_icon.svg"
+  },
+  "src/lib/assets/images/tabicons/result.svg": {
+    "file": "_app/immutable/assets/result.DwJcVckf.svg",
+    "src": "src/lib/assets/images/tabicons/result.svg"
+  },
+  "src/lib/assets/images/tabicons/signout.svg": {
+    "file": "_app/immutable/assets/signout.CjZ7csOv.svg",
+    "src": "src/lib/assets/images/tabicons/signout.svg"
+  },
+  "src/lib/assets/images/tabicons/topics.svg": {
+    "file": "_app/immutable/assets/topics.BvXMXu1Q.svg",
+    "src": "src/lib/assets/images/tabicons/topics.svg"
+  },
+  "src/lib/assets/images/tabicons/turninvite.svg": {
+    "file": "_app/immutable/assets/turninvite.De3iGrnZ.svg",
+    "src": "src/lib/assets/images/tabicons/turninvite.svg"
+  },
+  "src/lib/assets/images/tabicons/turntheir.svg": {
+    "file": "_app/immutable/assets/turntheir.hHNiwhXv.svg",
+    "src": "src/lib/assets/images/tabicons/turntheir.svg"
+  },
+  "src/lib/assets/images/tabicons/turnyour.svg": {
+    "file": "_app/immutable/assets/turnyour.CWyicTqC.svg",
+    "src": "src/lib/assets/images/tabicons/turnyour.svg"
+  },
+  "src/lib/assets/sounds/countdown.mp3": {
+    "file": "_app/immutable/assets/countdown.Cbs6QFWp.mp3",
+    "src": "src/lib/assets/sounds/countdown.mp3"
+  },
+  "src/lib/assets/sounds/drumroll.mp3": {
+    "file": "_app/immutable/assets/drumroll.DMT6Sqnq.mp3",
+    "src": "src/lib/assets/sounds/drumroll.mp3"
+  },
+  "src/lib/assets/sounds/start_challenge.mp3": {
+    "file": "_app/immutable/assets/start_challenge.B-lbAoXm.mp3",
+    "src": "src/lib/assets/sounds/start_challenge.mp3"
+  },
+  "src/routes/+error.svelte": {
+    "file": "entries/pages/_error.svelte.js",
+    "name": "entries/pages/_error.svelte",
+    "src": "src/routes/+error.svelte",
+    "isEntry": true
+  },
+  "src/routes/+layout.js": {
+    "file": "entries/pages/_layout.js",
+    "name": "entries/pages/_layout",
+    "src": "src/routes/+layout.js",
+    "isEntry": true,
+    "imports": [
+      "_language.store.js"
+    ],
+    "dynamicImports": [
+      "src/data-actions/instance/instance.da.js"
+    ]
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_client.js",
+      "_language.store.js",
+      "_user.store.js",
+      "_index4.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.DuEeXLPT.css"
+    ]
+  },
+  "src/routes/+page.js": {
+    "file": "entries/pages/_page.js",
+    "name": "entries/pages/_page",
+    "src": "src/routes/+page.js",
+    "isEntry": true,
+    "imports": [
+      "_utils.js"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Button.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js",
+      "_NavBar.js",
+      "_language.store.js",
+      "_images.constants.js",
+      "_utils.js",
+      "_Image.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_system..da.js",
+      "_index2.js",
+      "_html.js",
+      "_index-server.js",
+      "_index3.js",
+      "_Card.js",
+      "_NoDataFound.js",
+      "_api.definitions.js",
+      "_user.auth.da.js",
+      "_BackToTop.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.D0BkdGkF.css",
+      "_app/immutable/assets/Carousel.CJG2uct-.css",
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/404/+page.svelte": {
+    "file": "entries/pages/404/_page.svelte.js",
+    "name": "entries/pages/404/_page.svelte",
+    "src": "src/routes/404/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_escaping.js",
+      "_index.js",
+      "_client.js"
+    ]
+  },
+  "src/routes/account/forgot-password/+page.svelte": {
+    "file": "entries/pages/account/forgot-password/_page.svelte.js",
+    "name": "entries/pages/account/forgot-password/_page.svelte",
+    "src": "src/routes/account/forgot-password/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_user.auth.da.js",
+      "_AuthenticationView.js",
+      "_api.service.js",
+      "_api.definitions.js",
+      "_language.store.js",
+      "_toast.store.js",
+      "_system..da.js",
+      "_Button.js",
+      "_Image.js",
+      "_utils2.js",
+      "_escaping.js",
+      "_index-server.js",
+      "_client.js",
+      "_utils.js",
+      "_BackgroundImage.js"
+    ]
+  },
+  "src/routes/account/institution/details/+page.svelte": {
+    "file": "entries/pages/account/institution/details/_page.svelte.js",
+    "name": "entries/pages/account/institution/details/_page.svelte",
+    "src": "src/routes/account/institution/details/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_common.auth.data.js",
+      "_user.auth.da.js",
+      "_country.constant.js",
+      "_Form.js",
+      "_PopupScreen.js",
+      "_appbar.store.js",
+      "_Modal.js",
+      "_utils2.js",
+      "_escaping.js"
+    ]
+  },
+  "src/routes/account/institution/login/+page.svelte": {
+    "file": "entries/pages/account/institution/login/_page.svelte.js",
+    "name": "entries/pages/account/institution/login/_page.svelte",
+    "src": "src/routes/account/institution/login/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_common.auth.data.js",
+      "_user.auth.da.js",
+      "_country.constant.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "src/routes/account/institution/signup/+page.svelte": {
+    "file": "entries/pages/account/institution/signup/_page.svelte.js",
+    "name": "entries/pages/account/institution/signup/_page.svelte",
+    "src": "src/routes/account/institution/signup/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_common.auth.data.js",
+      "_user.auth.da.js",
+      "_country.constant.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "src/routes/account/signup/+page.svelte": {
+    "file": "entries/pages/account/signup/_page.svelte.js",
+    "name": "entries/pages/account/signup/_page.svelte",
+    "src": "src/routes/account/signup/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_client.js",
+      "_client2.js",
+      "_common.auth.data.js",
+      "_AuthenticationView.js",
+      "_language.store.js",
+      "_utils.js"
+    ]
+  },
+  "src/routes/account/user/login/+page.svelte": {
+    "file": "entries/pages/account/user/login/_page.svelte.js",
+    "name": "entries/pages/account/user/login/_page.svelte",
+    "src": "src/routes/account/user/login/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_client.js",
+      "_client2.js",
+      "_user.store.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_user.auth.da.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "src/routes/account/user/signup/+page.svelte": {
+    "file": "entries/pages/account/user/signup/_page.svelte.js",
+    "name": "entries/pages/account/user/signup/_page.svelte",
+    "src": "src/routes/account/user/signup/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_user.auth.da.js",
+      "_client.js",
+      "_client2.js",
+      "_user.store.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "src/routes/account/verify-code/+page.svelte": {
+    "file": "entries/pages/account/verify-code/_page.svelte.js",
+    "name": "entries/pages/account/verify-code/_page.svelte",
+    "src": "src/routes/account/verify-code/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_client.js",
+      "_client2.js",
+      "_user.store.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_user.auth.da.js",
+      "_AuthenticationView.js",
+      "_common.auth.data.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "src/routes/account/verify/+page.svelte": {
+    "file": "entries/pages/account/verify/_page.svelte.js",
+    "name": "entries/pages/account/verify/_page.svelte",
+    "src": "src/routes/account/verify/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Button.js",
+      "_PopupScreen.js",
+      "_stores.js",
+      "_Form.js",
+      "_api.service.js",
+      "_user.auth.da.js",
+      "_language.store.js",
+      "_client.js",
+      "_appbar.store.js",
+      "_escaping.js",
+      "_attributes.js"
+    ]
+  },
+  "src/routes/admin/[competition_name]/+layout.js": {
+    "file": "entries/pages/admin/_competition_name_/_layout.js",
+    "name": "entries/pages/admin/_competition_name_/_layout",
+    "src": "src/routes/admin/[competition_name]/+layout.js",
+    "isEntry": true
+  },
+  "src/routes/admin/competitions/+layout.svelte": {
+    "file": "entries/pages/admin/competitions/_layout.svelte.js",
+    "name": "entries/pages/admin/competitions/_layout.svelte",
+    "src": "src/routes/admin/competitions/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_AppBar.js",
+      "_appbar.store.js",
+      "_client.js",
+      "_client2.js",
+      "_user.store.js",
+      "_appbar.da.js",
+      "_useractivity.store.js",
+      "_sidebar.store.js",
+      "_SideBar.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_user.auth.da.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/admin/competitions/+page.js": {
+    "file": "entries/pages/admin/competitions/_page.js",
+    "name": "entries/pages/admin/competitions/_page",
+    "src": "src/routes/admin/competitions/+page.js",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_user.store.js"
+    ]
+  },
+  "src/routes/admin/competitions/+page.svelte": {
+    "file": "entries/pages/admin/competitions/_page.svelte.js",
+    "name": "entries/pages/admin/competitions/_page.svelte",
+    "src": "src/routes/admin/competitions/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index3.js",
+      "_language.store.js",
+      "_title.store.js",
+      "_user.store.js",
+      "_utils.js",
+      "_api.definitions.js",
+      "_Button.js",
+      "_client.js",
+      "_user.auth.da.js",
+      "_instance.store.js",
+      "_system..da.js",
+      "_BannerText.js",
+      "_sidebar.store.js",
+      "_escaping.js",
+      "_attributes.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/TabSwitch.UMdf7hNE.css"
+    ]
+  },
+  "src/routes/admin/competitions/[competition_name]/+layout.svelte": {
+    "file": "entries/pages/admin/competitions/_competition_name_/_layout.svelte.js",
+    "name": "entries/pages/admin/competitions/_competition_name_/_layout.svelte",
+    "src": "src/routes/admin/competitions/[competition_name]/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_sidebar.store.js"
+    ]
+  },
+  "src/routes/admin/competitions/[competition_name]/overview/+page.js": {
+    "file": "entries/pages/admin/competitions/_competition_name_/overview/_page.js",
+    "name": "entries/pages/admin/competitions/_competition_name_/overview/_page",
+    "src": "src/routes/admin/competitions/[competition_name]/overview/+page.js",
+    "isEntry": true
+  },
+  "src/routes/admin/competitions/[competition_name]/overview/+page.svelte": {
+    "file": "entries/pages/admin/competitions/_competition_name_/overview/_page.svelte.js",
+    "name": "entries/pages/admin/competitions/_competition_name_/overview/_page.svelte",
+    "src": "src/routes/admin/competitions/[competition_name]/overview/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_images.constants.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_language.store.js",
+      "_utils.js",
+      "_system..da.js",
+      "_index2.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js",
+      "_Avatar.js",
+      "_PageHeading.js",
+      "_SelectBox.js",
+      "_admin.competition.da.js",
+      "_competitions.da.js"
+    ]
+  },
+  "src/routes/admin/competitions/[competition_name]/players/+page.js": {
+    "file": "entries/pages/admin/competitions/_competition_name_/players/_page.js",
+    "name": "entries/pages/admin/competitions/_competition_name_/players/_page",
+    "src": "src/routes/admin/competitions/[competition_name]/players/+page.js",
+    "isEntry": true
+  },
+  "src/routes/admin/competitions/[competition_name]/players/+page.svelte": {
+    "file": "entries/pages/admin/competitions/_competition_name_/players/_page.svelte.js",
+    "name": "entries/pages/admin/competitions/_competition_name_/players/_page.svelte",
+    "src": "src/routes/admin/competitions/[competition_name]/players/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_language.store.js",
+      "_competitions.da.js",
+      "_leaderboards.da.js",
+      "_SelectBox.js",
+      "_images.constants.js",
+      "_PageHeading.js",
+      "_admin.competition.da.js",
+      "_TabSwitch.js",
+      "_utils.js",
+      "_client.js",
+      "_attributes.js",
+      "_client2.js",
+      "_appbar.store.js",
+      "_escaping.js"
+    ]
+  },
+  "src/routes/auth/google/+page.svelte": {
+    "file": "entries/pages/auth/google/_page.svelte.js",
+    "name": "entries/pages/auth/google/_page.svelte",
+    "src": "src/routes/auth/google/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_common.auth.data.js"
+    ]
+  },
+  "src/routes/challenge/+layout.svelte": {
+    "file": "entries/pages/challenge/_layout.svelte.js",
+    "name": "entries/pages/challenge/_layout.svelte",
+    "src": "src/routes/challenge/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index3.js",
+      "_AppBar.js",
+      "_BackgroundImage.js",
+      "_appbar.da.js",
+      "_user.store.js",
+      "_appbar.store.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_client.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_user.auth.da.js",
+      "_useractivity.store.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/challenge/+page.svelte": {
+    "file": "entries/pages/challenge/_page.svelte.js",
+    "name": "entries/pages/challenge/_page.svelte",
+    "src": "src/routes/challenge/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_client.js",
+      "_client2.js"
+    ]
+  },
+  "src/routes/challenge/player/+page.svelte": {
+    "file": "entries/pages/challenge/player/_page.svelte.js",
+    "name": "entries/pages/challenge/player/_page.svelte",
+    "src": "src/routes/challenge/player/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_utils2.js",
+      "_escaping.js",
+      "_images.constants.js",
+      "_attributes.js",
+      "_client.js",
+      "_user.store.js",
+      "_client2.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_gamedata.store.js",
+      "_api.definitions.js",
+      "_useractivity.store.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.cN2tRNgI.css",
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/challenge/result/+page.js": {
+    "file": "entries/pages/challenge/result/_page.js",
+    "name": "entries/pages/challenge/result/_page",
+    "src": "src/routes/challenge/result/+page.js",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_user.store.js"
+    ]
+  },
+  "src/routes/challenge/result/+page.svelte": {
+    "file": "entries/pages/challenge/result/_page.svelte.js",
+    "name": "entries/pages/challenge/result/_page.svelte",
+    "src": "src/routes/challenge/result/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js",
+      "_SubscriptionCard.js",
+      "_images.constants.js",
+      "_index3.js",
+      "_user.store.js",
+      "_language.store.js",
+      "_user.auth.da.js",
+      "_Button.js",
+      "_avatar2.js",
+      "_client.js",
+      "_gamedata.store.js",
+      "_appbar.store.js",
+      "_Avatar.js",
+      "_common.auth.data.js",
+      "_index-server.js",
+      "_client2.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_country.constant.js",
+      "_AuthenticationView.js",
+      "_utils.js",
+      "_stores.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.VIEE2QvU.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/sunrays.m2kjJ8Dx.png",
+      "_app/immutable/assets/stack1.C9eVAYBG.png",
+      "_app/immutable/assets/stack1-pg.C94_rBxp.png",
+      "_app/immutable/assets/coin.BaRO8b4k.png"
+    ]
+  },
+  "src/routes/challenge/selection/+page.svelte": {
+    "file": "entries/pages/challenge/selection/_page.svelte.js",
+    "name": "entries/pages/challenge/selection/_page.svelte",
+    "src": "src/routes/challenge/selection/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_images.constants.js",
+      "_user.auth.da.js",
+      "_PageHeading.js",
+      "_language.store.js",
+      "_user.store.js",
+      "_index3.js",
+      "_toast.store.js",
+      "_Avatar.js",
+      "_Image.js",
+      "_attributes.js",
+      "_escaping.js",
+      "_Button.js",
+      "_utils.js",
+      "_utils2.js",
+      "_client.js",
+      "_gamedata.store.js",
+      "_stores.js",
+      "_competitions.da.js",
+      "_client2.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js"
+    ]
+  },
+  "src/routes/challenge/vsscreen/+layout.svelte": {
+    "file": "entries/pages/challenge/vsscreen/_layout.svelte.js",
+    "name": "entries/pages/challenge/vsscreen/_layout.svelte",
+    "src": "src/routes/challenge/vsscreen/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_AppBar.js",
+      "_BackgroundImage.js"
+    ]
+  },
+  "src/routes/challenge/vsscreen/+page.svelte": {
+    "file": "entries/pages/challenge/vsscreen/_page.svelte.js",
+    "name": "entries/pages/challenge/vsscreen/_page.svelte",
+    "src": "src/routes/challenge/vsscreen/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_user.store.js",
+      "_gamedata.store.js",
+      "_index-server.js",
+      "_images.constants.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js",
+      "_Avatar.js",
+      "_language.store.js",
+      "_utils.js",
+      "_client.js",
+      "_client2.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_useractivity.store.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.Czxv_IF_.css",
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/ConfirmationModal.BZjlKESM.css",
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/start_challenge.B-lbAoXm.mp3",
+      "_app/immutable/assets/drumroll.DMT6Sqnq.mp3",
+      "_app/immutable/assets/countdown.Cbs6QFWp.mp3",
+      "_app/immutable/assets/timer_close_bg.DJWagRZe.png",
+      "_app/immutable/assets/timer_open_bg.C_Nu5W-A.png"
+    ]
+  },
+  "src/routes/competitions/+layout.js": {
+    "file": "entries/pages/competitions/_layout.js",
+    "name": "entries/pages/competitions/_layout",
+    "src": "src/routes/competitions/+layout.js",
+    "isEntry": true
+  },
+  "src/routes/competitions/+layout.svelte": {
+    "file": "entries/pages/competitions/_layout.svelte.js",
+    "name": "entries/pages/competitions/_layout.svelte",
+    "src": "src/routes/competitions/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_AppBar.js",
+      "_Button.js",
+      "_SideBar.js",
+      "_escaping.js",
+      "_user.store.js",
+      "_appbar.store.js",
+      "_sidebar.store.js",
+      "_client.js",
+      "_client2.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_user.auth.da.js",
+      "_common.auth.data.js",
+      "_country.constant.js",
+      "_appbar.da.js",
+      "_useractivity.store.js",
+      "_payment.store.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "src/routes/competitions/+page.svelte": {
+    "file": "entries/pages/competitions/_page.svelte.js",
+    "name": "entries/pages/competitions/_page.svelte",
+    "src": "src/routes/competitions/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_escaping.js",
+      "_user.store.js",
+      "_utils.js",
+      "_index-server.js",
+      "_api.definitions.js",
+      "_images.constants.js",
+      "_PageHeading.js",
+      "_index3.js",
+      "_competitions.da.js",
+      "_system..da.js",
+      "_language.store.js",
+      "_Button.js",
+      "_Card.js",
+      "_Image.js",
+      "_Modal.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_TabSwitch.js",
+      "_instance.store.js",
+      "_BannerText.js",
+      "_NoDataFound.js",
+      "_BackgroundImage.js",
+      "_sidebar.store.js",
+      "_client.js",
+      "_appbar.store.js",
+      "_meta.store.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/+layout.js": {
+    "file": "entries/pages/competitions/_competition_name_/_layout.js",
+    "name": "entries/pages/competitions/_competition_name_/_layout",
+    "src": "src/routes/competitions/[competition_name]/+layout.js",
+    "isEntry": true,
+    "imports": [
+      "_api.service.js",
+      "_index3.js",
+      "_api.definitions.js",
+      "_appbar.store.js",
+      "_utils.js",
+      "_payment.store.js"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/+layout.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/_layout.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/_layout.svelte",
+    "src": "src/routes/competitions/[competition_name]/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BackgroundImage.js",
+      "_appbar.store.js",
+      "_language.store.js",
+      "_sidebar.store.js",
+      "_user.store.js",
+      "_system..da.js",
+      "_client.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_payment.store.js",
+      "_images.constants.js",
+      "_Button.js",
+      "_Image.js",
+      "_Modal.js",
+      "_utils2.js",
+      "_html.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.mW-FCGVD.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_client.js",
+      "_client2.js"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/change-grade/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/change-grade/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/change-grade/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/change-grade/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BackgroundImage.js",
+      "_language.store.js",
+      "_title.store.js",
+      "_index3.js",
+      "_client.js",
+      "_competitions.da.js",
+      "_GradeConfirmModal.js",
+      "_appbar.store.js",
+      "_system..da.js",
+      "_user.store.js",
+      "_client2.js",
+      "_index2.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/friends/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/friends/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/friends/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/friends/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_language.store.js",
+      "_competitions.da.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_Avatar.js",
+      "_Image.js",
+      "_escaping.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_system..da.js",
+      "_index2.js",
+      "_gamedata.store.js",
+      "_api.definitions.js",
+      "_useractivity.store.js",
+      "_images.constants.js",
+      "_PageHeading.js",
+      "_NoDataFound.js",
+      "_ListBoxSkeleton.js",
+      "_avatar2.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/home/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/home/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/home/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/home/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_GameCard.svelte_svelte_type_style_lang.js",
+      "_language.store.js",
+      "_appbar.store.js",
+      "_escaping.js",
+      "_user.store.js",
+      "_utils.js",
+      "_api.definitions.js",
+      "_client.js",
+      "_user.auth.da.js",
+      "_system..da.js",
+      "_avatar2.js",
+      "_gamedata.store.js",
+      "_useractivity.store.js",
+      "_GameCardSkeleton.js",
+      "_ListBoxSkeleton.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Carousel.CJG2uct-.css",
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/leaderboard/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/leaderboard/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/leaderboard/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/leaderboard/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_language.store.js",
+      "_competitions.da.js",
+      "_leaderboards.da.js",
+      "_SelectBox.js",
+      "_images.constants.js",
+      "_PageHeading.js",
+      "_utils2.js",
+      "_escaping.js",
+      "_attributes.js"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/lessons/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/lessons/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/lessons/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/lessons/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_language.store.js",
+      "_PageHeading.js",
+      "_escaping.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_system..da.js",
+      "_images.constants.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_user.auth.da.js",
+      "_avatar2.js",
+      "_gamedata.store.js",
+      "_useractivity.store.js",
+      "_ListingSkeleton.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/lessons/listing/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/lessons/listing/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/lessons/listing/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/lessons/listing/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_PageHeading.js",
+      "_images.constants.js",
+      "_language.store.js",
+      "_navigation.service.js",
+      "_gamedata.store.js",
+      "_GameCard.svelte_svelte_type_style_lang.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js",
+      "_utils.js"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/my-games/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/my-games/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/my-games/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/my-games/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_images.constants.js",
+      "_PageHeading.js",
+      "_language.store.js",
+      "_escaping.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_user.auth.da.js",
+      "_gamedata.store.js",
+      "_GameCard.svelte_svelte_type_style_lang.js",
+      "_GameCardSkeleton.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/my-subscription/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/my-subscription/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/my-subscription/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/my-subscription/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_SubscriptionCard.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_images.constants.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_gamedata.store.js",
+      "_useractivity.store.js",
+      "_payment.da.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Button.4cFhq8PD.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/profile/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/profile/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/profile/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/profile/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_index3.js",
+      "_client.js",
+      "_language.store.js",
+      "_images.constants.js",
+      "_PageHeading.js",
+      "_avatar2.js",
+      "_rewards.da.js",
+      "_user.store.js",
+      "_client2.js",
+      "_utils.js",
+      "_country.constant.js",
+      "_api.definitions.js",
+      "_system..da.js",
+      "_CertificateDownloadModal.js",
+      "_appbar.store.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/ConfirmationModal.BZjlKESM.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/profile/edit/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/profile/edit/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/profile/edit/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/profile/edit/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_utils.js",
+      "_language.store.js",
+      "_client.js",
+      "_user.store.js",
+      "_country.constant.js",
+      "_api.definitions.js",
+      "_system..da.js",
+      "_client2.js",
+      "_avatar2.js",
+      "_EditProfileSkeleton.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/results/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/results/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/results/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/results/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_utils.js",
+      "_language.store.js",
+      "_escaping.js",
+      "_client.js",
+      "_client2.js",
+      "_images.constants.js",
+      "_navigation.service.js",
+      "_avatar2.js",
+      "_utils2.js",
+      "_Image.js",
+      "_Button.js",
+      "_attributes.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button.4cFhq8PD.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/rewards/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/rewards/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/rewards/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/rewards/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_language.store.js",
+      "_PageHeading.js",
+      "_rewards.da.js",
+      "_images.constants.js",
+      "_client.js",
+      "_index3.js",
+      "_client2.js",
+      "_SelectBox.js",
+      "_user.store.js",
+      "_utils2.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/rules/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/rules/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/rules/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/rules/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_images.constants.js",
+      "_Image.js",
+      "_utils2.js",
+      "_escaping.js",
+      "_attributes.js",
+      "_language.store.js",
+      "_appbar.store.js",
+      "_sidebar.store.js",
+      "_Button.js",
+      "_client.js",
+      "_utils.js",
+      "_user.store.js",
+      "_html.js"
+    ]
+  },
+  "src/routes/competitions/[competition_name]/stats/+page.svelte": {
+    "file": "entries/pages/competitions/_competition_name_/stats/_page.svelte.js",
+    "name": "entries/pages/competitions/_competition_name_/stats/_page.svelte",
+    "src": "src/routes/competitions/[competition_name]/stats/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_language.store.js",
+      "_escaping.js",
+      "_client.js",
+      "_client2.js",
+      "_user.store.js",
+      "_utils.js",
+      "_api.definitions.js"
+    ]
+  },
+  "src/routes/contactus/+page.svelte": {
+    "file": "entries/pages/contactus/_page.svelte.js",
+    "name": "entries/pages/contactus/_page.svelte",
+    "src": "src/routes/contactus/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index3.js",
+      "_index.js",
+      "_FullPageIframe.js",
+      "_NavBar.js",
+      "_system..da.js"
+    ]
+  },
+  "src/routes/gclc-result/+page.svelte": {
+    "file": "entries/pages/gclc-result/_page.svelte.js",
+    "name": "entries/pages/gclc-result/_page.svelte",
+    "src": "src/routes/gclc-result/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_FullPageIframe.js",
+      "_NavBar.js"
+    ]
+  },
+  "src/routes/green-star-school/+page.svelte": {
+    "file": "entries/pages/green-star-school/_page.svelte.js",
+    "name": "entries/pages/green-star-school/_page.svelte",
+    "src": "src/routes/green-star-school/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_FullPageIframe.js",
+      "_NavBar.js"
+    ]
+  },
+  "src/routes/home/+page.svelte": {
+    "file": "entries/pages/home/_page.svelte.js",
+    "name": "entries/pages/home/_page.svelte",
+    "src": "src/routes/home/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_Form.js"
+    ]
+  },
+  "src/routes/payment/+layout.svelte": {
+    "file": "entries/pages/payment/_layout.svelte.js",
+    "name": "entries/pages/payment/_layout.svelte",
+    "src": "src/routes/payment/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_AppBar.js",
+      "_appbar.da.js",
+      "_appbar.store.js",
+      "_language.store.js",
+      "_client.js",
+      "_client2.js",
+      "_payment.store.js",
+      "_user.store.js"
+    ]
+  },
+  "src/routes/payment/+page.svelte": {
+    "file": "entries/pages/payment/_page.svelte.js",
+    "name": "entries/pages/payment/_page.svelte",
+    "src": "src/routes/payment/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_utils2.js",
+      "_attributes.js",
+      "_escaping.js",
+      "_Stepper.js",
+      "_payment.da.js",
+      "_user.store.js",
+      "_language.store.js",
+      "_payment.store.js",
+      "_client.js",
+      "_system..da.js",
+      "_user.constants.js",
+      "_images.constants.js",
+      "_Form.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.CedevshO.css"
+    ]
+  },
+  "src/routes/payment/bank/+page.svelte": {
+    "file": "entries/pages/payment/bank/_page.svelte.js",
+    "name": "entries/pages/payment/bank/_page.svelte",
+    "src": "src/routes/payment/bank/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Stepper.js",
+      "_payment.da.js",
+      "_language.store.js",
+      "_appbar.store.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.tn0RQdqM.css"
+    ]
+  },
+  "src/routes/payment/status/+page.svelte": {
+    "file": "entries/pages/payment/status/_page.svelte.js",
+    "name": "entries/pages/payment/status/_page.svelte",
+    "src": "src/routes/payment/status/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_attributes.js",
+      "_language.store.js",
+      "_payment.da.js",
+      "_images.constants.js",
+      "_client.js",
+      "_payment.store.js",
+      "_user.store.js",
+      "_client2.js",
+      "_system..da.js",
+      "_index2.js",
+      "_api.definitions.js",
+      "_user.auth.da.js",
+      "_Stepper.js",
+      "_escaping.js",
+      "_gamedata.store.js",
+      "_useractivity.store.js",
+      "_utils2.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
+  "src/routes/privacy-policy/+page.svelte": {
+    "file": "entries/pages/privacy-policy/_page.svelte.js",
+    "name": "entries/pages/privacy-policy/_page.svelte",
+    "src": "src/routes/privacy-policy/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_client.js",
+      "_images.constants.js",
+      "_BackToTop.js",
+      "_Image.js"
+    ]
+  },
+  "src/routes/profile/+layout.svelte": {
+    "file": "entries/pages/profile/_layout.svelte.js",
+    "name": "entries/pages/profile/_layout.svelte",
+    "src": "src/routes/profile/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_AppBar.js",
+      "_BackgroundImage.js",
+      "_appbar.store.js",
+      "_language.store.js",
+      "_user.store.js",
+      "_appbar.da.js",
+      "_client.js",
+      "_client2.js",
+      "_stores.js"
+    ]
+  },
+  "src/routes/profile/+page.svelte": {
+    "file": "entries/pages/profile/_page.svelte.js",
+    "name": "entries/pages/profile/_page.svelte",
+    "src": "src/routes/profile/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_language.store.js",
+      "_images.constants.js",
+      "_PageHeading.js",
+      "_escaping.js",
+      "_avatar2.js",
+      "_rewards.da.js",
+      "_user.store.js",
+      "_client.js",
+      "_client2.js",
+      "_system..da.js",
+      "_index2.js",
+      "_country.constant.js",
+      "_api.definitions.js",
+      "_CertificateDownloadModal.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Button.4cFhq8PD.css"
+    ]
+  },
+  "src/routes/profile/edit/+page.svelte": {
+    "file": "entries/pages/profile/edit/_page.svelte.js",
+    "name": "entries/pages/profile/edit/_page.svelte",
+    "src": "src/routes/profile/edit/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index-server.js",
+      "_client.js",
+      "_user.store.js",
+      "_utils.js",
+      "_country.constant.js",
+      "_api.definitions.js",
+      "_language.store.js",
+      "_system..da.js",
+      "_client2.js",
+      "_avatar2.js",
+      "_EditProfileSkeleton.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Button.4cFhq8PD.css",
+      "_app/immutable/assets/Form.DuozghpI.css"
+    ]
+  },
+  "src/routes/program/glc/+page.svelte": {
+    "file": "entries/pages/program/glc/_page.svelte.js",
+    "name": "entries/pages/program/glc/_page.svelte",
+    "src": "src/routes/program/glc/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_FullPageIframe.js",
+      "_NavBar.js"
+    ]
+  },
+  "src/routes/program/sitarey/+page.svelte": {
+    "file": "entries/pages/program/sitarey/_page.svelte.js",
+    "name": "entries/pages/program/sitarey/_page.svelte",
+    "src": "src/routes/program/sitarey/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_FullPageIframe.js",
+      "_NavBar.js"
+    ]
+  },
+  "src/routes/settings/change-grade/+page.svelte": {
+    "file": "entries/pages/settings/change-grade/_page.svelte.js",
+    "name": "entries/pages/settings/change-grade/_page.svelte",
+    "src": "src/routes/settings/change-grade/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_BackgroundImage.js",
+      "_language.store.js",
+      "_title.store.js",
+      "_index3.js",
+      "_client.js",
+      "_competitions.da.js",
+      "_GradeConfirmModal.js",
+      "_appbar.store.js",
+      "_system..da.js",
+      "_escaping.js"
+    ]
+  }
+}

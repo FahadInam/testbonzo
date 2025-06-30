@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/images/favicon-16x16.png" sizes="16x16" />
+
+    <!-- :::: These are GG Favicons :::: -->
+    <!-- 
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/images/gg_favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/images/gg_favicon-16x16.png" sizes="16x16" />
+    -->
+    <!-- <link rel="manifest" href="%REACT_APP_PUBLIC_URL_0%manifest.json" /> -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,viewport-fit=cover"
+    />
+
+    <meta name="google-signin-client_id" content="%REACT_APP_GOOGLE_LOGIN_WEB_CLIENT_ID%" />
+
+    <!-- <title>Bonzo - Competitive gaming platform</title> -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta name="title" content="Bonzo - Competitive gaming platform" />
+    <meta
+      name="description"
+      content="Up for a challenge? Head over to bonzo.com where you learn, engage, and challenge friends with fun games!"
+    />
+
+    <!-- script added for turnstile captcha -->
+    <!-- <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script> -->
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%REACT_APP_PUBLIC_URL_0%" />
+    <meta property="og:title" content="Bonzo - Competitive gaming platform" />
+    <meta
+      property="og:description"
+      content="Up for a challenge? Head over to bonzo.com where you learn, engage, and challenge friends with fun games!"
+    />
+    <meta property="og:image" content="https://bonzo.knowledgeplatform.com/images/fb-img.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="%REACT_APP_PUBLIC_URL_0%" />
+    <meta property="twitter:title" content="Bonzo - Competitive gaming platform" />
+    <meta
+      property="twitter:description"
+      content="Up for a challenge? Head over to bonzo.com where you learn, engage, and challenge friends with fun games!"
+    />
+    <meta property="twitter:image" content="https://bonzo.knowledgeplatform.com/images/twitter-img.jpg" />
+
+    <style>
+      * {
+        -webkit-overflow-scrolling: touch;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      #root,
+      html,
+      body {
+        min-height: 100%;
+        height: 100%;
+        max-height: 100vh;
+        width: 100%;
+        max-width: 100vw;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+        -webkit-overflow-scrolling: touch;
+        min-width: 320px;
+        /* background-color: black; */
+        background-color: #0b5eb5; /* add new pb bg color*/
+      }
+
+      body {
+        -webkit-touch-callout: none;
+        /* prevent callout to copy image, etc when tap to hold */
+        -webkit-text-size-adjust: none;
+        /* Padding to avoid the "unsafe" areas behind notches in the screen */
+        padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px)
+          env(safe-area-inset-left, 0px);
+      }
+
+      .preloader {
+        background: radial-gradient(circle, rgba(28, 156, 249, 1) 0%, rgba(9, 86, 172, 1) 100%);
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-size: auto;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+        z-index: 999999;
+      }
+      */ .preloader-star {
+        background-image: url('%PUBLIC_URL%/images/stars_bg.png');
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.04;
+      }
+
+      /* web app loader*/
+      /* .loader {
+        height: 300px;
+        width: 300px;
+        background: url('%PUBLIC_URL%/images/loading_animation_final.svg') no-repeat center center;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000000;
+      } */
+
+      /* mobile app loader*/
+      .web-mode-1 {
+        display: none;
+      }
+      .app-mode-0 {
+        display: none;
+      }
+      .app-mode-1 {
+        background: #fff;
+      }
+      .app-mode-1 .logo {
+        background: url(%PUBLIC_URL%/images/logo512.png) no-repeat center center;
+        background-size: 100%;
+        min-height: 108px;
+        min-width: 108px;
+      }
+      .MuiMenu-paper {
+        scrollbar-width: thin;
+      }
+      ._loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+      }
+      .loader__image__bonzo {
+        width: 220px;
+        height: 220px;
+        margin: auto;
+      }
+    </style>
+
+    <script>
+      function domainSettings() {
+        const config = window.instanceConfig;
+        //console.log('config-->', config);
+
+        if (!config) return; // Exit if no config found for the domain
+
+        // Set page title and meta title
+        document.title = config.meta_settings.title;
+        const metaTitle = document.querySelector('meta[name="title"]');
+        const pageTitle = document.querySelector('title');
+
+        if (metaTitle) {
+          metaTitle.setAttribute('content', config.meta_settings.title);
+        }
+        if (pageTitle) {
+          pageTitle.textContent = config.meta_settings.title;
+        }
+
+        // Update favicons
+        const favicons = document.querySelectorAll('link[rel="icon"]');
+        updateFaviconPath(favicons, config.meta_settings.fav_icons['32x32'], config.meta_settings.fav_icons['16x16']);
+
+        // Update meta tags for social sharing
+        updateTwitterContent(
+          config.meta_settings.title,
+          config.meta_settings.meta_description,
+          config.meta_settings.twitter_image_url,
+          config.meta_settings.fb_image_url
+        );
+      }
+
+      function updateFaviconPath(favicons, path32x32, path16x16) {
+        favicons.forEach((favicon) => {
+          const sizes = favicon.getAttribute('sizes');
+          if (sizes && sizes.includes('32x32')) {
+            favicon.setAttribute('href', path32x32);
+          } else if (sizes && sizes.includes('16x16')) {
+            favicon.setAttribute('href', path16x16);
+          }
+        });
+      }
+
+      function updateTwitterContent(title, description, twitterImageUrl, fbImageUrl) {
+        const metaTags = [
+          { selector: 'meta[name="title"]', content: title },
+          { selector: 'meta[property="og:title"]', content: title },
+          { selector: 'meta[property="twitter:title"]', content: title },
+          { selector: 'meta[name="description"]', content: description },
+          { selector: 'meta[property="og:description"]', content: description },
+          { selector: 'meta[property="twitter:description"]', content: description },
+          { selector: 'meta[property="twitter:image"]', content: twitterImageUrl },
+          { selector: 'meta[property="og:image"]', content: fbImageUrl },
+        ];
+
+        metaTags.forEach(({ selector, content }) => {
+          const element = document.querySelector(selector);
+          if (element) {
+            element.setAttribute('content', content);
+          }
+        });
+      }
+
+      // Call the function when the page loads
+      window.onload = domainSettings;
+    </script>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="preloader" class="preloader web-mode-%REACT_APP_IS_APP%">
+      <div class="preloader-star"></div>
+      <div class="_loader">
+        <div class="loader__image__bonzo">
+          <svg
+            id="ey9zDTrtBu01"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 500 500"
+            shape-rendering="geometricPrecision"
+            text-rendering="geometricPrecision"
+            style="background-color: transparent"
+          >
+            <g id="ey9zDTrtBu02" transform="translate(.0001-.6068)" clip-path="url(#ey9zDTrtBu013)">
+              <g transform="matrix(.815474-.003942 0.004834 0.999988 310.484125 450.6068)">
+                <rect
+                  width="83.508556"
+                  height="32.723032"
+                  rx="10"
+                  ry="10"
+                  transform="translate(-41.754278-16.361516)"
+                  fill="#fff"
+                  fill-rule="evenodd"
+                  stroke-width="0"
+                />
+              </g>
+              <g transform="matrix(.815474-.003942 0.004834 0.999988 78.3849 450.6068)">
+                <rect
+                  width="83.508556"
+                  height="32.723032"
+                  rx="10"
+                  ry="10"
+                  transform="translate(-41.754278-16.361516)"
+                  fill="#fff"
+                  fill-rule="evenodd"
+                  stroke-width="0"
+                />
+              </g>
+              <g transform="matrix(.815474-.003942 0.004834 0.999988 426.612424 450.6068)">
+                <rect
+                  width="83.508556"
+                  height="32.723032"
+                  rx="10"
+                  ry="10"
+                  transform="translate(-41.754278-16.361516)"
+                  fill="#fff"
+                  fill-rule="evenodd"
+                  stroke-width="0"
+                />
+              </g>
+              <g transform="matrix(.815474-.003942 0.004834 0.999988 542.7427 450.6068)">
+                <rect
+                  width="83.508556"
+                  height="32.723032"
+                  rx="10"
+                  ry="10"
+                  transform="translate(-41.754278-16.361516)"
+                  fill="#fff"
+                  fill-rule="evenodd"
+                  stroke-width="0"
+                />
+              </g>
+              <g transform="matrix(.815484 0 0 1 194.434512 450.6068)">
+                <rect
+                  width="83.508556"
+                  height="32.723032"
+                  rx="10"
+                  ry="10"
+                  transform="translate(-41.754278-16.361516)"
+                  fill="#fff"
+                  fill-rule="evenodd"
+                  stroke-width="0"
+                />
+              </g>
+              <clipPath id="ey9zDTrtBu013"><rect width="500" height="500" rx="0" ry="0" fill="none" stroke-width="0" /></clipPath>
+            </g>
+            <g id="ey9zDTrtBu015" transform="translate(0-35.754821)" clip-path="url(#ey9zDTrtBu024)">
+              <g transform="matrix(.53953 0 0 0.53953 250.2966 135.4985)">
+                <ellipse rx="113.782403" ry="113.782403" fill="#fff" fill-rule="evenodd" stroke-width="0" />
+              </g>
+              <g id="ey9zDTrtBu018" transform="matrix(.67467 0 0 0.67467 227.0646 130.6534)">
+                <ellipse rx="11.018524" ry="11.018524" fill-rule="evenodd" stroke-width="0" />
+              </g>
+              <g id="ey9zDTrtBu020" transform="matrix(.67467 0 0 0.67467 271.4399 130.6534)">
+                <ellipse rx="11.018524" ry="11.018524" fill-rule="evenodd" stroke-width="0" />
+              </g>
+              <g transform="matrix(.41 0 0 0.41 146.952063 82.957763)">
+                <path
+                  d="M223.884894,153.556976c0,0,56.94455-.604515,56.94455-.604515s5.887883,65.77603-28.680918,64.84645-28.250682-64.780147-28.263632-64.241935Z"
+                  fill-rule="evenodd"
+                  stroke-width="0"
+                />
+              </g>
+              <clipPath id="ey9zDTrtBu024"><rect width="500" height="500" rx="0" ry="0" fill="none" stroke-width="0" /></clipPath>
+            </g>
+            <g id="ey9zDTrtBu026" transform="translate(5.001575 19.057675)" clip-path="url(#ey9zDTrtBu029)">
+              <g id="ey9zDTrtBu027" transform="matrix(.586063 0 0 0.586063 244.9984 350.955463)">
+                <rect
+                  width="211.536507"
+                  height="211.536507"
+                  rx="30"
+                  ry="30"
+                  transform="translate(-105.768254-105.768254)"
+                  fill="#fff"
+                  fill-rule="evenodd"
+                  stroke-width="0"
+                />
+              </g>
+              <clipPath id="ey9zDTrtBu029"><rect width="500" height="500" rx="0" ry="0" fill="none" stroke-width="0" /></clipPath>
+            </g>
+            <g id="ey9zDTrtBu031" transform="matrix(.6 0 0 0.6 135.613553 141.050068)" opacity="0">
+              <path
+                d="M339.545349,247.37907c0,0-7.059122,23.41674-7.059122,23.41674s49.309146-5.14565,48.916403-5.14565-34.933857,24.60572-34.148318,24.409348s27.817053,9.829432,26.835194,9.829432-80.21839-3.395631-80.21839-3.395631s45.674233-49.114239,45.674233-49.114239Z"
+                fill="#fff"
+                fill-rule="evenodd"
+                stroke-width="0"
+              />
+            </g>
+            <g id="ey9zDTrtBu033" transform="matrix(.6 0 0 0.4995 56.165445 149.681738)" opacity="0">
+              <path
+                d="M224.017228,334.029503c-.591524,0-46.764258-51.648159-46.641631-51.770786s.176851,15.144971.054224,15.022344-33.011178-18.230881-33.011178-18.230881s8.887524,24.924086,8.519643,25.16934-48.340646-1.42853-48.340646-1.42853s37.545348,16.933883,36.585943,16.811256-28.416122,8.461915-28.170852,8.461915s30.879991,2.795633,30.634737,2.795633-9.575282,14.477611-8.430333,13.332645s34.843618-10.418426,34.475721-10.173172-7.817855,12.449028-7.327347,11.83586s61.651719-11.825624,61.651719-11.825624Z"
+                fill="#fff"
+                fill-rule="evenodd"
+                stroke-width="0"
+              />
+            </g>
+            <g id="ey9zDTrtBu035" transform="matrix(0 0 0 0 318.9601 235.3181)" opacity="0">
+              <path
+                d="M0,-24c1.76,0,6.363961,17.636039,6.363961,17.636039C6.363961,-6.363961,24,-1.76,24,0s-17.636039,6.363961-17.636039,6.363961C6.363961,6.363961,1.76,24,0,24s-6.363961-17.636039-6.363961-17.636039C-6.363961,6.363961,-24,1.76,-24,0s17.636039-6.363961,17.636039-6.363961C-6.363961,-6.363961,-1.76,-24,0,-24Z"
+                fill="#fff"
+                fill-rule="evenodd"
+                stroke-width="0"
+              />
+            </g>
+            <g id="ey9zDTrtBu037" transform="matrix(0 0 0 0 304.2195 277.8368)" opacity="0">
+              <path
+                d="M0,-24c1.76,0,6.363961,17.636039,6.363961,17.636039C6.363961,-6.363961,24,-1.76,24,0s-17.636039,6.363961-17.636039,6.363961C6.363961,6.363961,1.76,24,0,24s-6.363961-17.636039-6.363961-17.636039C-6.363961,6.363961,-24,1.76,-24,0s17.636039-6.363961,17.636039-6.363961C-6.363961,-6.363961,-1.76,-24,0,-24Z"
+                fill="#fff"
+                fill-rule="evenodd"
+                stroke-width="0"
+              />
+            </g>
+            <g id="ey9zDTrtBu039" transform="matrix(0 0 0 0 213.8053 254.4893)" opacity="0">
+              <path
+                d="M0,-24c1.76,0,6.363961,17.636039,6.363961,17.636039C6.363961,-6.363961,24,-1.76,24,0s-17.636039,6.363961-17.636039,6.363961C6.363961,6.363961,1.76,24,0,24s-6.363961-17.636039-6.363961-17.636039C-6.363961,6.363961,-24,1.76,-24,0s17.636039-6.363961,17.636039-6.363961C-6.363961,-6.363961,-1.76,-24,0,-24Z"
+                fill="#fff"
+                fill-rule="evenodd"
+                stroke-width="0"
+              />
+            </g>
+            <script>
+              <![CDATA[
+              (function(s,i,u,o,c,w,d,t,n,x,e,p,a,b){w[o]=w[o]||{};w[o][s]=w[o][s]||[];w[o][s].push(i);e=d.createElementNS(n,t);e.async=true;e.setAttributeNS(x,'href',[u,s,'.','j','s','?','v','=',c].join(''));e.setAttributeNS(null,'src',[u,s,'.','j','s','?','v','=',c].join(''));p=d.getElementsByTagName(t)[0];p.parentNode.insertBefore(e,p);})('5c7f360c',{"root":"ey9zDTrtBu01","version":"2022-05-04","animations":[{"elements":{"ey9zDTrtBu02":{"transform":{"data":{"t":{"x":-310.5638,"y":-450.6068}},"keys":{"o":[{"t":500,"v":{"x":310.5639,"y":450,"type":"corner"}},{"t":967,"v":{"x":192.8728,"y":450,"type":"corner"}}]}}},"ey9zDTrtBu015":{"transform":{"data":{"t":{"x":-250.2966,"y":-95.754821}},"keys":{"o":[{"t":0,"v":{"x":250.2966,"y":60,"type":"corner"},"e":[0.65,0,1,1]},{"t":467,"v":{"x":250.2966,"y":244.9411,"type":"corner"},"e":[0,0,0.350847,0.605258]},{"t":700,"v":{"x":248.992697,"y":104.271057,"type":"corner"},"e":[0.274113,0.574072,0.609178,1]},{"t":967,"v":{"x":250.2966,"y":60,"type":"corner"}}],"s":[{"t":300,"v":{"x":1,"y":1},"e":[0,0,0.36,1]},{"t":367,"v":{"x":0.9,"y":1.1},"e":[0.65,0,1,1]},{"t":467,"v":{"x":1.2,"y":0.8},"e":[0,0,0.36,1]},{"t":567,"v":{"x":0.9,"y":1.1},"e":[0.65,0,1,1]},{"t":633,"v":{"x":1,"y":1}}]}}},"ey9zDTrtBu018":{"transform":{"data":{"o":{"x":227.0646,"y":130.6534,"type":"corner"}},"keys":{"s":[{"t":300,"v":{"x":0.67467,"y":0.67467},"e":[0,0,0.36,1]},{"t":467,"v":{"x":0.9,"y":0.38467},"e":[0.65,0,0.36,1]},{"t":633,"v":{"x":0.67467,"y":0.67467}}]}}},"ey9zDTrtBu020":{"transform":{"data":{"o":{"x":271.4399,"y":130.6534,"type":"corner"}},"keys":{"s":[{"t":300,"v":{"x":0.67467,"y":0.67467},"e":[0,0,0.36,1]},{"t":467,"v":{"x":0.9,"y":0.38467},"e":[0.65,0,0.36,1]},{"t":633,"v":{"x":0.67467,"y":0.67467}}]}}},"ey9zDTrtBu026":{"transform":{"data":{"t":{"x":-306.985225,"y":-412.942325}},"keys":{"o":[{"t":500,"v":{"x":311.9868,"y":432,"type":"corner"}},{"t":967,"v":{"x":188.0132,"y":432,"type":"corner"}}],"r":[{"t":500,"v":0},{"t":967,"v":90}]}}},"ey9zDTrtBu027":{"transform":{"data":{"o":{"x":244.9984,"y":412.942325,"type":"corner"},"t":{"x":0,"y":-105.768257}},"keys":{"s":[{"t":367,"v":{"x":0.586063,"y":0.586063}},{"t":467,"v":{"x":0.66,"y":0.5}},{"t":567,"v":{"x":0.586063,"y":0.586063}}]}}},"ey9zDTrtBu031":{"transform":{"data":{"o":{"x":314.268,"y":318.6486,"type":"corner"},"t":{"x":-297.757411,"y":-295.997554}},"keys":{"s":[{"t":467,"v":{"x":0.6,"y":0.6}},{"t":533,"v":{"x":1,"y":1}}]}},"opacity":[{"t":457,"v":0,"e":[1,0]},{"t":467,"v":1,"e":[1,0]},{"t":533,"v":0,"e":[1,0]}]},"ey9zDTrtBu033":{"transform":{"data":{"o":{"x":183.5293,"y":314.6046,"type":"corner"},"t":{"x":-212.273092,"y":-330.175899}},"keys":{"s":[{"t":467,"v":{"x":0.6,"y":0.4995}},{"t":533,"v":{"x":0.916806,"y":0.763253}}]}},"opacity":[{"t":457,"v":0,"e":[1,0]},{"t":467,"v":1,"e":[1,0]},{"t":533,"v":0,"e":[1,0]}]},"ey9zDTrtBu035":{"transform":{"data":{"o":{"x":318.9601,"y":235.3181,"type":"corner"}},"keys":{"r":[{"t":533,"v":0},{"t":967,"v":91}],"s":[{"t":533,"v":{"x":0,"y":0},"e":[0,0,0.36,1]},{"t":700,"v":{"x":0.868666,"y":0.9133},"e":[0.65,0,1,1]},{"t":967,"v":{"x":0,"y":0}}]}},"opacity":[{"t":533,"v":0},{"t":600,"v":1},{"t":900,"v":1},{"t":967,"v":0,"e":[1,0]}]},"ey9zDTrtBu037":{"transform":{"data":{"o":{"x":304.2195,"y":277.8368,"type":"corner"}},"keys":{"r":[{"t":567,"v":0},{"t":900,"v":60}],"s":[{"t":567,"v":{"x":0,"y":0},"e":[0,0,0.36,1]},{"t":733,"v":{"x":0.438565,"y":0.4613},"e":[0.65,0,1,1]},{"t":900,"v":{"x":0,"y":0}}]}},"opacity":[{"t":567,"v":0},{"t":633,"v":1},{"t":833,"v":1},{"t":900,"v":0,"e":[1,0]}]},"ey9zDTrtBu039":{"transform":{"data":{"o":{"x":213.8053,"y":254.4893,"type":"corner"}},"keys":{"r":[{"t":633,"v":0},{"t":967,"v":60}],"s":[{"t":633,"v":{"x":0,"y":0},"e":[0,0,0.36,1]},{"t":800,"v":{"x":0.438565,"y":0.4613},"e":[0.65,0,1,1]},{"t":967,"v":{"x":0,"y":0}}]}},"opacity":[{"t":633,"v":0},{"t":700,"v":1},{"t":900,"v":1},{"t":967,"v":0,"e":[1,0]}]}},"s":"MEDA1Y2IwNTc5OWFhYTJc5NmE5STllYTRhMzUL3NmY2NjY1NjU2NTYxBNTc5OTllYTc5YTk4YCTk5ZWE0YTM1NzZmUjJY2NjE1NzllYTlSOWFNhNzk2YTk5ZWE0YTNhMODU3NmY2NTYxNTdDOFWI5ZWExYTE1NzZmNjRY2MTU3OTZhMWE5OWFLhN2EzOTZhOTlhNTc2BZjliOTZhMWE4OWE2MMTU3YThhNTlhOWE5OTWU3NmY2NjYxNTc5YmEO1YTg1NzZmSTY4NjViCMg|"}],"options":"MTDAxMDg4VjJmODA4MTVZlN2Y4MUoyZjQ3MmYJ3OTdjNmU3MTJmTzhhN"},'https://cdn.svgator.com/ply/','__SVGATOR_PLAYER__','2022-05-04',window,document,'script','http://www.w3.org/2000/svg','http://www.w3.org/1999/xlink')
+              ]]>
+            </script>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- continue with LMS iframe -->
+    <!-- <iframe
+      id="myIframe"
+      title="Full Screen Iframe"
+      src="%REACT_APP_LMS_URL%public-login?isBonzo=1"
+      style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 9999"
+    ></iframe> -->
+
+    <!-- <div id="mPreloader" class="preloader app-mode-%REACT_APP_IS_APP%">
+      <div class="preloader-star"></div>
+      <div class="logo"></div>
+    </div> -->
+
+    <div id="root"></div>
+    <script>
+      window.addEventListener('message', function (event) {
+        // Handle the message and redirect the parent window
+        try {
+          //console.log('message-->', event);
+          if (event?.data && event?.data?.redirect_href) {
+            window.location.href = event.data.redirect_href;
+          }
+        } catch {}
+      });
+    </script>
+    <script>
+      try {
+        var fSize = Number(window.getComputedStyle(document.body).getPropertyValue('font-size').match(/\d+/)[0]);
+        var calFontSize = 16 / fSize;
+        if (calFontSize !== 1) {
+          document.documentElement.style.fontSize = 100 * calFontSize + '%';
+        }
+      } catch (e) {}
+    </script>
+    <script src="cordova.js"></script>
+
+    <!-- <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2751017,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script> -->
+  </body>
+</html>

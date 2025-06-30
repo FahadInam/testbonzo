@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/admin/competitions/[competition_name]/+layout.svelte";
