@@ -4,10 +4,7 @@
   import Button from "../../components/Button/Button.svelte";
   import SideBar from "../../components/SideBar/SideBar.svelte";
   import StickyBanner from "../../components/StickyBanner/StickyBanner.svelte";
-  import {
-    getNavBarItems,
-    loadGrades,
-  } from "../../data-actions/competitions/competitions.da";
+  import { getNavBarItems, loadGrades } from "../../data-actions/competitions/competitions.da";
   import { appbarStore } from "../../stores/appbar.store";
   import { authModalStore } from "../../stores/auth.modal.store";
   import { t } from "../../stores/language.store";
@@ -27,7 +24,7 @@
   import { afterNavigate, goto } from "$app/navigation";
   import { get } from "svelte/store";
   import { transferStore } from "../../stores/transfer.store";
-    import { guestStore } from "../../stores/guest.store";
+  import { guestStore } from "../../stores/guest.store";
 
   /**
    * @type {({ icon: string; label: any; link: string; isRequired: boolean; } | { icon: string; label: any; link: string; isRequired?: undefined; })[]}
@@ -58,7 +55,7 @@
       }
     }
   };
-
+  // $: console.log(dropdownItems, "dropdownItems")
   //This function is called every time a user reaches the base path or any of its child paths.
   onLayoutPathMount("/competitions", async (path, params) => {
     //code for handling direct links and making sure data is ready for path
@@ -75,7 +72,10 @@
     setTimeout(() => {
       hidePopup = false;
     }, 60);
-    
+  });
+
+  const unsubscribe = paymentStore.subscribe(async () => {
+    dropdownItems = await loggedInUserCompAppBarData();
   });
 </script>
 
@@ -112,11 +112,7 @@
         type="3d-secondary"
         customClass="w-[100px] ml-auto"
         onClick={() => {
-          const {
-            competition_id,
-            current_grade = null,
-            url,
-          } = $competitionStore;
+          const { competition_id, current_grade = null, url } = $competitionStore;
           paymentStore.set({ competition_id, current_grade, url });
           goto("/payment");
         }}

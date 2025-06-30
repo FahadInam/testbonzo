@@ -45,7 +45,7 @@ let __tla = Promise.all([
     }, 50);
     store_get($$store_subs ??= {}, "$page", page).url.pathname;
     BackgroundImage($$payload, {});
-    $$payload.out += `<!----> <div class="flex flex-col h-screen"><div class="flex flex-1 overflow-hidden"><div class="flex flex-col flex-1">`;
+    $$payload.out += `<!----> <div class="flex flex-col h-screen"><div class="flex flex-1 overflow-hidden"><div class="flex flex-col w-full flex-1">`;
     AppBar($$payload, {
       backLabel: store_get($$store_subs ??= {}, "$appbarStore", appbarStore).backLabel,
       isBackButtonVisible: store_get($$store_subs ??= {}, "$appbarStore", appbarStore).isBackButtonVisible,
@@ -57,7 +57,7 @@ let __tla = Promise.all([
       dropdownItems
     });
     $$payload.out += `<!----> <div class="w-[100%] lg:w-[100%] rounded-2xl overflow-y-auto z-1 mb-8 lg:mb-0 p-2 md:p-4 mx-auto"><div class="w-[100%] mx-auto"><!---->`;
-    slot($$payload, $$props, "default", {});
+    slot($$payload, $$props, "default", {}, null);
     $$payload.out += `<!----></div></div></div></div></div>`;
     if ($$store_subs) unsubscribe_stores($$store_subs);
     pop();

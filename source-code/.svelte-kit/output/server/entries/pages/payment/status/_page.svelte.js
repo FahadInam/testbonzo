@@ -1,5 +1,4 @@
-import { s as store_get, u as unsubscribe_stores, c as bind_props, p as pop, b as push } from "../../../../chunks/index.js";
-import { a as attr } from "../../../../chunks/attributes.js";
+import { e as escape_html, s as store_get, u as unsubscribe_stores, d as bind_props, p as pop, b as push, c as attr } from "../../../../chunks/index.js";
 import { t } from "../../../../chunks/language.store.js";
 import { f as formatPaymentMethod, c as calculateExpiryDate, P as PAYMENT_SUPPORT_DETAILS, a as formatDate$1, g as getPaymentTitle, b as getPaymentDescription, i as isPaymentSuccessful, __tla as __tla_0 } from "../../../../chunks/payment.da.js";
 import { I as IMAGES } from "../../../../chunks/images.constants.js";
@@ -14,9 +13,7 @@ import { __tla as __tla_1 } from "../../../../chunks/api.definitions.js";
 import "notyf";
 import { __tla as __tla_2 } from "../../../../chunks/user.auth.da.js";
 import { S as Stepper } from "../../../../chunks/Stepper.js";
-import { e as escape_html } from "../../../../chunks/escaping.js";
 import "clsx";
-import "../../../../chunks/gamedata.store.js";
 import "../../../../chunks/useractivity.store.js";
 import { f as fallback } from "../../../../chunks/utils2.js";
 let _page;

@@ -1,5 +1,4 @@
-import { d as stringify, c as bind_props, b as push, i as copy_payload, j as assign_payload, p as pop, s as store_get, u as unsubscribe_stores, f as ensure_array_like, h as head } from "../../../chunks/index.js";
-import { e as escape_html } from "../../../chunks/escaping.js";
+import { c as attr, f as stringify, e as escape_html, d as bind_props, b as push, k as copy_payload, l as assign_payload, p as pop, s as store_get, u as unsubscribe_stores, j as ensure_array_like, h as head } from "../../../chunks/index.js";
 import "clsx";
 import { u as userStore } from "../../../chunks/user.store.js";
 import { r as remapKeys, i as getItemByProperty } from "../../../chunks/utils.js";
@@ -17,7 +16,6 @@ import { C as Card } from "../../../chunks/Card.js";
 import { I as Image } from "../../../chunks/Image.js";
 import { M as Modal } from "../../../chunks/Modal.js";
 import { f as fallback } from "../../../chunks/utils2.js";
-import { a as attr } from "../../../chunks/attributes.js";
 import { T as TabSwitch } from "../../../chunks/TabSwitch.js";
 import { i as instanceStore } from "../../../chunks/instance.store.js";
 import { g as getTextForRole, B as BannerText } from "../../../chunks/BannerText.js";

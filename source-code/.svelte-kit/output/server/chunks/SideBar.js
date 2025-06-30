@@ -1,11 +1,9 @@
-import { f as ensure_array_like, d as stringify, c as bind_props, p as pop, b as push } from "./index.js";
+import { j as ensure_array_like, c as attr, f as stringify, e as escape_html, d as bind_props, p as pop, b as push } from "./index.js";
 import { p as page } from "./index4.js";
 import { g as getSystemDarkLogo } from "./system..da.js";
 import "./client.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
 import { I as Image } from "./Image.js";
-import { e as escape_html } from "./escaping.js";
 function SideBar($$payload, $$props) {
   push();
   let navItems = fallback(

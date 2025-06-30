@@ -8,6 +8,7 @@
   import { firstLoadStore } from "../stores/firstload.store";
   import { checkPathRedirection } from "../data-actions/pathRedirections/path.redirections";
   import { page } from "$app/state";
+    import { initInternetMonitoring } from "$lib/InternetMonitor";
   let loaderInterval = -1;
   /**
    * @type {__sveltets_2_IsomorphicComponent<{ [x: string]: never; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string>}
@@ -26,6 +27,11 @@
    * @type {__sveltets_2_IsomorphicComponent<{ [x: string]: never; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string>}
    */
   let LmsAuthentication;
+  /**
+   * @type {__sveltets_2_IsomorphicComponent<{ [x: string]: never; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string>}
+   */
+  let ConnectionBanner;
+
 
   function hideMainLoader() {
     clearInterval(loaderInterval);
@@ -58,17 +64,23 @@
       { default: RetryBoxComponent },
       { default: LoaderComponent },
       { default: LmsAuthenticationComponent },
+      { default: ConnectionBannerComponent}
     ] = await Promise.all([
       import("../components/Toast/Toast.svelte"),
       import("../components/RetryBox/RetryBox.svelte"),
       import("../components/Loader/Loader.svelte"),
-       import("../views/LmsAuthentication/LmsAuthentication.svelte")
+       import("../views/LmsAuthentication/LmsAuthentication.svelte"),
+      import("../components/ConnectionBanner/ConnectionBanner.svelte"),
+
     ]);
 
     Toast = ToastComponent;
     RetryBox = RetryBoxComponent;
     Loader = LoaderComponent;
     LmsAuthentication = LmsAuthenticationComponent;
+    ConnectionBanner = ConnectionBannerComponent
+    initInternetMonitoring()
+
     firstLoadStore.set({ isUILoaded: true });
   });
 
@@ -90,4 +102,8 @@
 
 {#if LmsAuthentication}
   <svelte:component this={LmsAuthentication} />
+{/if}
+
+{#if ConnectionBanner}
+  <svelte:component this={ConnectionBanner} />
 {/if}

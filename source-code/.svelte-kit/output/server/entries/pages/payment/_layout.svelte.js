@@ -54,7 +54,7 @@ let __tla = Promise.all([
       dropdownItems
     });
     $$payload.out += `<!----> <div class="bg-white w-[95%] lg:w-[80%] rounded-2xl overflow-y-auto z-1 mb-8 lg:mb-0 sm:p-6 mx-auto scrollbar-hide"><div class="w-[91%] mx-auto"><!---->`;
-    slot($$payload, $$props, "default", {});
+    slot($$payload, $$props, "default", {}, null);
     $$payload.out += `<!----></div></div></div></div></div>`;
     if ($$store_subs) unsubscribe_stores($$store_subs);
     pop();

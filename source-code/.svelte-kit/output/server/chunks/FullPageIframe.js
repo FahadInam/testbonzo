@@ -1,6 +1,5 @@
-import { c as bind_props, p as pop, b as push, d as stringify } from "./index.js";
+import { c as attr, d as bind_props, p as pop, b as push, f as stringify } from "./index.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
 function FullPageIframe($$payload, $$props) {
   push();
   let url = $$props["url"];

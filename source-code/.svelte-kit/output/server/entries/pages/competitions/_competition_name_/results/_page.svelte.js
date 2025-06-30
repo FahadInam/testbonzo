@@ -1,18 +1,20 @@
-import { s as store_get, f as ensure_array_like, u as unsubscribe_stores, c as bind_props, p as pop, b as push, h as head } from "../../../../../chunks/index.js";
+import { e as escape_html, s as store_get, j as ensure_array_like, c as attr, u as unsubscribe_stores, d as bind_props, p as pop, b as push, h as head } from "../../../../../chunks/index.js";
 import { o as onDestroy } from "../../../../../chunks/index-server.js";
 import { s as sideBarAndAppBarSettings } from "../../../../../chunks/utils.js";
 import { t } from "../../../../../chunks/language.store.js";
-import { e as escape_html } from "../../../../../chunks/escaping.js";
 import "clsx";
-import "../../../../../chunks/client.js";
+import { g as goto } from "../../../../../chunks/client.js";
 import "../../../../../chunks/client2.js";
 import { I as IMAGES } from "../../../../../chunks/images.constants.js";
-import { g as gotoURL } from "../../../../../chunks/navigation.service.js";
 import "../../../../../chunks/avatar2.js";
 import { f as fallback } from "../../../../../chunks/utils2.js";
 import { I as Image } from "../../../../../chunks/Image.js";
 import { B as Button } from "../../../../../chunks/Button.js";
-import { a as attr } from "../../../../../chunks/attributes.js";
+function gotoURL(url) {
+  {
+    goto();
+  }
+}
 function Result($$payload, $$props) {
   push();
   var $$store_subs;
@@ -84,7 +86,7 @@ function _page($$payload, $$props) {
     sideBarAndAppBarSettings(false, "competitions", "/competitions");
   });
   function Back(data) {
-    gotoURL("/competitions");
+    gotoURL();
   }
   head($$payload, ($$payload2) => {
     $$payload2.title = `<title>${escape_html(store_get($$store_subs ??= {}, "$t", t)("lessons_listing"))}</title>`;

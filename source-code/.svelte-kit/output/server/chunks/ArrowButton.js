@@ -1,14 +1,12 @@
-import { c as bind_props, p as pop, b as push, d as stringify } from "./index.js";
+import { c as attr, e as escape_html, d as bind_props, p as pop, b as push, f as stringify } from "./index.js";
 import { f as fallback } from "./utils2.js";
 import "./client.js";
-import { a as attr } from "./attributes.js";
 import "./client2.js";
 import "./user.store.js";
 import "lz-string";
 import "./language.store.js";
 import "./system..da.js";
 import "./index2.js";
-import { e as escape_html } from "./escaping.js";
 function ArrowButton($$payload, $$props) {
   push();
   let label = fallback($$props["label"], "");

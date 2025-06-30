@@ -1,7 +1,5 @@
-import { f as ensure_array_like, d as stringify, c as bind_props } from "./index.js";
+import { j as ensure_array_like, c as attr, f as stringify, e as escape_html, d as bind_props } from "./index.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
-import { e as escape_html } from "./escaping.js";
 function TabSwitch($$payload, $$props) {
   let tabs = fallback($$props["tabs"], () => ["Tab 1", "Tab 2"], true);
   let selectedTab = fallback($$props["selectedTab"], 0);

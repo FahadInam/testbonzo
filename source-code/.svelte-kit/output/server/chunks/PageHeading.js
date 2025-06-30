@@ -1,9 +1,7 @@
-import { s as store_get, u as unsubscribe_stores, c as bind_props, p as pop, b as push, d as stringify } from "./index.js";
+import { c as attr, e as escape_html, s as store_get, u as unsubscribe_stores, d as bind_props, p as pop, b as push, f as stringify } from "./index.js";
 import { I as Image } from "./Image.js";
 import { t } from "./language.store.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
-import { e as escape_html } from "./escaping.js";
 function PageHeading($$payload, $$props) {
   push();
   var $$store_subs;

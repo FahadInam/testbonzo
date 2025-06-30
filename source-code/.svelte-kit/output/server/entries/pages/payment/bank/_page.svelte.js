@@ -1,9 +1,8 @@
-import { s as store_get, u as unsubscribe_stores, p as pop, b as push } from "../../../../chunks/index.js";
+import { e as escape_html, s as store_get, u as unsubscribe_stores, p as pop, b as push } from "../../../../chunks/index.js";
 import { S as Stepper } from "../../../../chunks/Stepper.js";
 import { B as BANK_DETAILS, __tla as __tla_0 } from "../../../../chunks/payment.da.js";
 import { t } from "../../../../chunks/language.store.js";
 import { s as setBackUrl } from "../../../../chunks/appbar.store.js";
-import { e as escape_html } from "../../../../chunks/escaping.js";
 let _page;
 let __tla = Promise.all([
   (() => {

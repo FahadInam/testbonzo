@@ -1,27 +1,25 @@
-import { s as store_get, u as unsubscribe_stores, p as pop, b as push, f as ensure_array_like, c as bind_props, h as head } from "../../../../chunks/index.js";
+import { c as attr, e as escape_html, s as store_get, u as unsubscribe_stores, p as pop, b as push, j as ensure_array_like, d as bind_props, h as head } from "../../../../chunks/index.js";
 import { I as IMAGES } from "../../../../chunks/images.constants.js";
-import { S as StartChallenge, u as updateGameData, __tla as __tla_0 } from "../../../../chunks/user.auth.da.js";
+import { S as StartChallenge, u as updateGameData, __tla as __tla_0 } from "../../../../chunks/challenge.da.js";
 import { P as PageHeading } from "../../../../chunks/PageHeading.js";
 import { t } from "../../../../chunks/language.store.js";
 import { u as userStore } from "../../../../chunks/user.store.js";
 import { g as get } from "../../../../chunks/index3.js";
-import { b as showWarning } from "../../../../chunks/toast.store.js";
+import { c as showWarning, __tla as __tla_1 } from "../../../../chunks/user.auth.da.js";
 import { A as Avatar } from "../../../../chunks/Avatar.js";
 import { I as Image } from "../../../../chunks/Image.js";
-import { a as attr } from "../../../../chunks/attributes.js";
-import { e as escape_html } from "../../../../chunks/escaping.js";
 import { B as Button } from "../../../../chunks/Button.js";
 import { I as IsGuestMode } from "../../../../chunks/utils.js";
 import { f as fallback } from "../../../../chunks/utils2.js";
 import { g as goto } from "../../../../chunks/client.js";
-import { g as gameDataStore } from "../../../../chunks/gamedata.store.js";
+import { g as gameDataStore } from "../../../../chunks/useractivity.store.js";
 import { p as page } from "../../../../chunks/stores.js";
-import { b as getCompetitionRecommendation, __tla as __tla_1 } from "../../../../chunks/competitions.da.js";
+import { b as getCompetitionRecommendation, __tla as __tla_2 } from "../../../../chunks/competitions.da.js";
 import "lz-string";
 import "../../../../chunks/client2.js";
 import "../../../../chunks/system..da.js";
 import "../../../../chunks/index2.js";
-import { __tla as __tla_2 } from "../../../../chunks/api.definitions.js";
+import { __tla as __tla_3 } from "../../../../chunks/api.definitions.js";
 let _page;
 let __tla = Promise.all([
   (() => {
@@ -39,6 +37,12 @@ let __tla = Promise.all([
   (() => {
     try {
       return __tla_2;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_3;
     } catch {
     }
   })()

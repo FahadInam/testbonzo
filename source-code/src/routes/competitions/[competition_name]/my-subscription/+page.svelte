@@ -16,10 +16,11 @@
     const cancelSubscription = async () => {
         const res = await subscriptionCancellation(data.transactionToken);
         if(res.error_code === 0){
-            getSubscriptionDetails();
+           data = getSubscriptionDetails();
             showSuccess($t("subscription_cancelled"));
         }
     }
+    $: console.log(data, "data")
 </script>
 
 <SubscriptionCard icon={IMAGES.SUBSCRIPTION_ICON} width="w-[80%]" >
@@ -27,6 +28,7 @@
           <div class="flex flex-col items-center justify-center my-22">
 
     <TransactionReceipt paymentData={data} successful={true} />
+        {#if data.payment_mode === 'card' && data?.isSubscriptionCancel == 0}
       <Button
         label={$t("cancel")}
         size="small"
@@ -36,6 +38,7 @@
             cancelSubscription();
         }}  
       />
+      {/if}
     </div>
     {/if}
 

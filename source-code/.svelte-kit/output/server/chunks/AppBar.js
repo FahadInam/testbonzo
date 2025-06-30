@@ -1,6 +1,5 @@
-import { b as push, a as slot, c as bind_props, p as pop, i as copy_payload, j as assign_payload, s as store_get, u as unsubscribe_stores, d as stringify } from "./index.js";
+import { b as push, a as slot, d as bind_props, p as pop, e as escape_html, c as attr, k as copy_payload, l as assign_payload, s as store_get, u as unsubscribe_stores, f as stringify } from "./index.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
 import { n as navigationStore, a as appbarStore } from "./appbar.store.js";
 import { A as ArrowButton } from "./ArrowButton.js";
 import "./client.js";
@@ -10,18 +9,16 @@ import "./client2.js";
 import { A as Avatar } from "./Avatar.js";
 import { B as Button } from "./Button.js";
 import { t } from "./language.store.js";
-import { e as escape_html } from "./escaping.js";
 import { I as IMAGES } from "./images.constants.js";
 import { u as userStore } from "./user.store.js";
 import "lz-string";
 import { s as systemSettingsStore, k as getSystemLightLogo, j as isGlobalClimateLiteracy, a as isShupavu } from "./system..da.js";
 import "./index2.js";
 import { __tla as __tla_0 } from "./api.definitions.js";
-import "./gamedata.store.js";
-import "notyf";
 import "./useractivity.store.js";
+import "notyf";
 import "./avatar2.js";
-import { i as guestStore, l as logoutUser, __tla as __tla_1 } from "./common.auth.data.js";
+import { f as guestStore, l as logoutUser, __tla as __tla_1 } from "./common.auth.data.js";
 import { I as Image } from "./Image.js";
 import { M as Modal } from "./Modal.js";
 import { g as get } from "./index3.js";
@@ -60,7 +57,7 @@ let __tla = Promise.all([
     onDestroy(() => {
     });
     $$payload.out += `<div class="relative dropdown-container"><button><!---->`;
-    slot($$payload, $$props, "default", {});
+    slot($$payload, $$props, "default", {}, null);
     $$payload.out += `<!----></button> `;
     {
       $$payload.out += "<!--[!-->";

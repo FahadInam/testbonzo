@@ -1,8 +1,6 @@
-import { f as ensure_array_like, d as stringify, c as bind_props, p as pop, b as push } from "./index.js";
+import { j as ensure_array_like, c as attr, e as escape_html, f as stringify, d as bind_props, p as pop, b as push } from "./index.js";
 import { a as isShupavu } from "./system..da.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
-import { e as escape_html } from "./escaping.js";
 function Stepper($$payload, $$props) {
   push();
   let stepStates;

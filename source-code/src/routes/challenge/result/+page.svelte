@@ -18,12 +18,13 @@
   import { competitionStore } from "../../../stores/competition.store";
   import PlayerCard from "../../../components/Result/PlayerCard.svelte";
   import { userStore } from "../../../stores/user.store";
+  import { paymentStore } from "../../../stores/payment.store";
   import { metaStore } from "../../../stores/meta.store";
   import { authModalStore } from "../../../stores/auth.modal.store";
   import AuthenticationPopupView from "../../../views/AuthenticationPopupView/AuthenticationPopupView.svelte";
   import ResultAnimation from "../../../components/Animation/ResultAnimation.svelte";
   import { page } from "$app/stores";
-
+  import { isShupavu } from "../../../data-actions/system/system..da";
   $: isMultiplayer = checkMultiplayerStatus($resultStore, $userStore);
   let resultTitleText = "";
   let competitionUrl;
@@ -53,7 +54,8 @@
       coinAnimation = true;
     }
   }
-
+  $: isSubscribed = $paymentStore?.payment_status?.is_subscribed === 1;
+  $: isFreeShupavu = isShupavu && !isSubscribed && !$userStore?.is_guest_mode ;
   $: playerScore = $resultStore?.player?.points ?? 0;
 
   function checkForScore() {
@@ -154,7 +156,7 @@
 
         <!-- Winner ribbon section -->
         {#if !isMultiplayer}
-          <div class="bonzoui__winner__ribbon" style="position: relative !important;">
+          <div   class="bonzoui__winner__ribbon {isFreeShupavu ? 'mb-[3rem]' : '' }" style="position: relative !important;">
             <img
               alt="ribbon"
               src={hasPassed ? IMAGES.RIBBON_WINNER_CONGRATS : IMAGES.RIBBON_WINNER_LOSE}
@@ -166,8 +168,8 @@
               {hasPassed ? $t("congratulation") : $t("try_again")}
             </div>
           </div>
-
-          {#if !hasPassed && !$userStore?.is_guest_mode}
+          {#if !isFreeShupavu}
+          {#if !hasPassed && !$userStore?.is_guest_mode }
             <div
               class="bg-[#000000CC] w-full relative rounded-[19px] mb-[44px] p-[12px] text-white flex mt-[49px] max-w-[290px] md:max-w-[320px] flex-col items-center justify-center"
             >
@@ -188,7 +190,7 @@
                 {$t("to_unlock_result_box")}
               </div>
             </div>
-          {:else if !$userStore?.is_guest_mode}
+          {:else if !$userStore?.is_guest_mode  }
             <div class="w-full mt-10 flex items-center justify-center">
               <img class="w-[120px] md:w-[160px] h-auto object-contain" src={IMAGES.MORE_COINS} alt="Winner" />
               <span class="text-white text-[36px] md:text-[54px] font-bold title-shadow"
@@ -206,6 +208,7 @@
                 {$t("save_progress_unlock_rewards")}
               </div>
             </div>
+          {/if}
           {/if}
         {/if}
 
@@ -279,7 +282,19 @@
       </div>
     </div>
     <div class="flex justify-center w-full mt-4">
-      {#if !$userStore?.is_guest_mode}
+      {#if isFreeShupavu} 
+         <Button
+          label={$t("subscribe_for_more_games")}
+          size="large"
+          type="3d-secondary"
+          customClass="w-[300px] text-lg md:text-[22px]"
+          onClick={() => {
+          paymentStore.set({ competition_id: $competitionStore?.competition_id, current_grade: $competitionStore?.current_grade, url: $competitionStore?.url });
+            goto(`/payment`);
+          }}
+        />
+        
+      {:else if !$userStore?.is_guest_mode}
         <Button
           label={$t("continue")}
           size="large"

@@ -17,6 +17,8 @@
   import { userActivityStore } from "../../../stores/useractivity.store";
   import { abbreviateNumber } from "$lib/utils";
   import { guestStore } from "../../../stores/guest.store";
+    import { isShupavu } from "../../../data-actions/system/system..da";
+    import { paymentStore } from "../../../stores/payment.store";
 
   // Props
   export let userData;
@@ -38,7 +40,8 @@
 
   // Calculate launch URL
   $: launchUrl = `${$gameDataStore.link}&user_id=${$userStore.user_id}&isPlayBonzo=1`;
-
+  $: isSubscribed = $paymentStore?.payment_status?.is_subscribed === 1;
+  $: isFreeShupavu = isShupavu && !isSubscribed && !$userStore?.is_guest_mode ;
   // Game data tracking
   let gameStartTime = 0;
   let gameTrackingData = {
@@ -135,9 +138,11 @@
   function handleGameComplete() {
     const finalResult = calculateResult();
     submitPlayerData(finalResult);
-    if (!$userStore?.is_guest_mode) {
+    console.log($gameDataStore, $paymentStore, "gameDataStore")
+    if (!$userStore?.is_guest_mode && !isFreeShupavu ) {
       SaveChallenge($gameDataStore.subjectData, finalResult);
     } else {
+      if(!isFreeShupavu) {
       const pointsGained = PointsCalc(
         finalResult.total_correct,
         finalResult.total_attempted,
@@ -160,6 +165,7 @@
         ...state,
         points: total_points_earned + $guestStore.points,
       }));
+    }
       goto("/challenge/result");
     }
   }
@@ -288,7 +294,7 @@
    */
   function initiateResign() {
     const finalResult = calculateResult();
-    if (!$userStore?.is_guest_mode) {
+    if (!$userStore?.is_guest_mode && !isFreeShupavu) {
       submitPlayerData(finalResult);
       ResignChallenge($gameDataStore.subjectData, finalResult);
     } else {

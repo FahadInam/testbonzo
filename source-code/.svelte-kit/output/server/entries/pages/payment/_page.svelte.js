@@ -1,7 +1,5 @@
-import { b as push, f as ensure_array_like, d as stringify, c as bind_props, p as pop, s as store_get, u as unsubscribe_stores, i as copy_payload, j as assign_payload } from "../../../chunks/index.js";
+import { b as push, j as ensure_array_like, c as attr, f as stringify, e as escape_html, d as bind_props, p as pop, s as store_get, u as unsubscribe_stores, k as copy_payload, l as assign_payload } from "../../../chunks/index.js";
 import { f as fallback } from "../../../chunks/utils2.js";
-import { a as attr } from "../../../chunks/attributes.js";
-import { e as escape_html } from "../../../chunks/escaping.js";
 import { S as Stepper } from "../../../chunks/Stepper.js";
 import { C as COLOR_CONFIG, D as DEFAULT_COLORS, t as texts, G as GAMES_COUNT, d as filterBundlesByUserType, p as paymentDataFields, e as processSafaricomPayment, h as processDpoPayment, j as paymentOptions, __tla as __tla_0 } from "../../../chunks/payment.da.js";
 import { u as userStore } from "../../../chunks/user.store.js";
@@ -11,12 +9,18 @@ import "../../../chunks/client.js";
 import { a as isShupavu } from "../../../chunks/system..da.js";
 import { i as isSafaricomUser } from "../../../chunks/user.constants.js";
 import { I as IMAGES } from "../../../chunks/images.constants.js";
-import { F as Form } from "../../../chunks/Form.js";
+import { F as Form, __tla as __tla_1 } from "../../../chunks/Form.js";
 let _page;
 let __tla = Promise.all([
   (() => {
     try {
       return __tla_0;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_1;
     } catch {
     }
   })()
@@ -68,14 +72,14 @@ let __tla = Promise.all([
     } else {
       $$payload.out += "<!--[!-->";
     }
-    $$payload.out += `<!--]--> <div${attr("class", `bundle-card-inner min-h-[320px] rounded-[14px] mb-[11px] p-[15px] pb-0 ${stringify(isSelected ? "shadow-[0px_12px_0px_-1px_#02bbfe]" : "bundle-card-shadow shadow-[0px_12px_0px_-1px_#d5dbea]")}`)}><div class="bundle-shape-box relative mt-[10px] mb-0"><div class="bundle-icon absolute w-[60px] left-[-22px] z-10 top-[-5px]"><img${attr("src", image)}${attr("alt", `${stringify(bundle.title)} Bundle Icon`)} class="w-full"></div> <div class="bundle-shape-container w-[90%] h-[50px] relative rounded-lg svelte-wr7ntx"${attr("style", `background-color: ${stringify(colors.bgColor)};`)}><span class="bundle-title text-white text-[22px] font-medium flex justify-start items-center h-full pl-[60px]">${escape_html(bundle.title)}</span></div> <span class="bundle-fix-title font-semibold text-lg mt-[2px] block text-left pl-[60px]"${attr("style", `color: ${stringify(colors.textColor)}`)}>${escape_html(texts.BUNDLE)}</span></div> <div class="mt-2 relative">`;
+    $$payload.out += `<!--]--> <div${attr("class", `bundle-card-inner min-h-[320px] rounded-[14px] mb-[11px] p-[15px] pb-0 ${stringify(isSelected ? "shadow-[0px_12px_0px_-1px_#02bbfe]" : "bundle-card-shadow shadow-[0px_12px_0px_-1px_#d5dbea]")}`)}><div class="bundle-shape-box relative mt-[10px] mb-0"><div class="bundle-icon absolute w-[60px] left-[-22px] z-10 top-[-5px]"><img${attr("src", image)}${attr("alt", `${stringify(bundle.title)} Bundle Icon`)} class="w-full"></div> <div class="bundle-shape-container w-[90%] h-[50px] relative rounded-lg svelte-wr7ntx"${attr("style", `background-color: ${stringify(colors.bgColor)};`)}><span class="bundle-title text-white text-[22px] font-medium flex justify-start items-center h-full pl-[60px]">${escape_html(bundle.title)}</span></div> <span class="bundle-fix-title font-semibold text-lg mt-[2px] block text-left pl-[60px]"${attr("style", `color: ${stringify(colors.textColor)}`)}>${escape_html(texts.BUNDLE)}</span></div> <div class="relative">`;
     if (colors.perdayText) {
       $$payload.out += "<!--[-->";
       $$payload.out += `<span class="games_badge absolute text-xs w-fit-content top-1 right-8 rounded-[30px] p-[2px_8px] font-medium transform -rotate-7"${attr("style", `color: ${stringify(colors.bgColor)}; background-color: ${stringify(colors.perdayTextBg)}`)}>${escape_html(colors.perdayText)}</span>`;
     } else {
       $$payload.out += "<!--[!-->";
     }
-    $$payload.out += `<!--]--> <h4 class="bundle-games-count text-[47px] font-semibold my-1 mx-0 relative"><span class="text-shadow-custom"${attr("style", `color: ${stringify(colors.gameNumberColor)};`)}>${escape_html(gamesCount)}</span> <span class="games-count-title text-[28px] mx-2 text-black">${escape_html(texts.GAMES)}</span></h4></div> <div class="bundle-pricing flex justify-center items-center font-semibold text-[22px] uppercase leading-[90px]"><span class="currency-title text-black">KES</span> <span class="bundle-amount text-[76px] text-[#ffff00] px-5 text-shadow-custom">${escape_html(bundle.amount)}</span></div> <div class="pb-4"><p class="bundle-description text-xs font-normal leading-normal py-0 px-5 w-[160px] mx-auto text-black">Up for ${escape_html(gameCount)} Games For Form 2</p></div></div></div></div>`;
+    $$payload.out += `<!--]--> <h4 class="bundle-games-count text-[40px] lg:text-[47px] font-semibold mt-1 mx-0 relative"><span class="text-shadow-custom"${attr("style", `color: ${stringify(colors.gameNumberColor)};`)}>${escape_html(gamesCount)}</span> <span class="games-count-title text-[28px] mx-2 text-black">${escape_html(texts.GAMES)}</span></h4></div> <div class="bundle-pricing flex justify-center items-center font-semibold text-[22px] uppercase leading-[90px]"><span class="currency-title text-black">KES</span> <span class="bundle-amount text-[50px] lg:text-[76px] text-[#ffff00] px-5 text-shadow-custom">${escape_html(bundle.amount)}</span></div> <div class="pb-4"><p class="bundle-description text-xs font-normal leading-normal py-0 px-5 w-[160px] mx-auto text-black">Up for ${escape_html(gameCount)} Games For Form 2</p></div></div></div></div>`;
     bind_props($$props, {
       bundle,
       isSelected,
@@ -120,11 +124,11 @@ let __tla = Promise.all([
     filteredBundle = filterBundlesByUserType(bundles);
     formFields = isSafaricomUser() ? paymentDataFields.fields.filter((field) => field.name !== "email") : paymentDataFields.fields;
     console.log(paymentDataFields, "isSafaricomUser");
-    $$payload.out += `<div class="flex justify-center">`;
+    $$payload.out += `<div class="flex justify-center mb-2">`;
     if (!paymentInitiated && filteredBundle.length) {
       $$payload.out += "<!--[-->";
       const each_array = ensure_array_like(filteredBundle);
-      $$payload.out += `<!--[-->`;
+      $$payload.out += `<div class="flex gap-4 md:justify-center w-full px-4 overflow-x-auto md:overflow-x-visible scroll-smooth snap-x snap-mandatory md:snap-none overflow-y-visible scrollbar-thin p-[0.8rem]"><!--[-->`;
       for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
         let bundle = each_array[$$index];
         ShupavuPaymentCard($$payload, {
@@ -133,9 +137,10 @@ let __tla = Promise.all([
           onClick: () => handleBundleSelect(bundle)
         });
       }
-      $$payload.out += `<!--]-->`;
+      $$payload.out += `<!--]--></div>`;
     } else {
       $$payload.out += "<!--[!-->";
+      $$payload.out += `<div class="w-full md:w-[460px]">`;
       Form($$payload, {
         enableTurnstile: false,
         turnstileSiteKey: "",
@@ -149,6 +154,7 @@ let __tla = Promise.all([
           }
         ]
       });
+      $$payload.out += `<!----></div>`;
     }
     $$payload.out += `<!--]--></div>`;
     if ($$store_subs) unsubscribe_stores($$store_subs);
@@ -182,7 +188,7 @@ let __tla = Promise.all([
         steps,
         activeStep
       });
-      $$payload2.out += `<!----> <div class="text-left">`;
+      $$payload2.out += `<!----> <div class="text-left w-full mx-auto">`;
       if (!isShupavu) {
         $$payload2.out += "<!--[-->";
         $$payload2.out += `<h1 class="sm:text-3xl text-2xl font-bold mb-3 sm:mb-6 mt-6 sm:mt-12">${escape_html(store_get($$store_subs ??= {}, "$t", t)("payment"))}</h1>`;

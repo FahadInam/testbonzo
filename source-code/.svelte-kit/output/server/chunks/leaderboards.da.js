@@ -1,16 +1,15 @@
-import { b as push, f as ensure_array_like, d as stringify, c as bind_props, p as pop } from "./index.js";
+import { b as push, j as ensure_array_like, c as attr, e as escape_html, f as stringify, d as bind_props, p as pop } from "./index.js";
 import { A as Avatar } from "./Avatar.js";
 import { I as Image } from "./Image.js";
 import { I as IMAGES } from "./images.constants.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
-import { e as escape_html } from "./escaping.js";
 function Table($$payload, $$props) {
   push();
   let columns = fallback($$props["columns"], () => [], true);
   let data = fallback($$props["data"], () => [], true);
   let rankImages = fallback($$props["rankImages"], () => ({}), true);
   let isLoading = fallback($$props["isLoading"], false);
+  let firstRowClass = fallback($$props["firstRowClass"], void 0);
   function getRankImage(rank) {
     return rankImages[rank] || void 0;
   }
@@ -28,7 +27,7 @@ function Table($$payload, $$props) {
     for (let rowIndex = 0, $$length = each_array_1.length; rowIndex < $$length; rowIndex++) {
       each_array_1[rowIndex];
       const each_array_2 = ensure_array_like(columns);
-      $$payload.out += `<div class="flex first:bg-blue-100 even:bg-gray-100 animate-pulse top-[40px] z-10"><!--[-->`;
+      $$payload.out += `<div class="flex even:bg-gray-100 animate-pulse top-[40px] z-10"><!--[-->`;
       for (let $$index_1 = 0, $$length2 = each_array_2.length; $$index_1 < $$length2; $$index_1++) {
         let column = each_array_2[$$index_1];
         $$payload.out += `<div class="px-2 md:px-4 py-2"${attr("style", `width: ${stringify(column.width)}`)}>`;
@@ -50,7 +49,7 @@ function Table($$payload, $$props) {
     for (let i = 0, $$length = each_array_3.length; i < $$length; i++) {
       let row = each_array_3[i];
       const each_array_4 = ensure_array_like(columns);
-      $$payload.out += `<div class="flex first:bg-[var(--primary-color)] even:bg-gray-100"><!--[-->`;
+      $$payload.out += `<div${attr("class", `flex ${stringify(firstRowClass || "")} even:bg-gray-100`)}><!--[-->`;
       for (let $$index_3 = 0, $$length2 = each_array_4.length; $$index_3 < $$length2; $$index_3++) {
         let column = each_array_4[$$index_3];
         $$payload.out += `<div class="px-1 md:px-4 py-2 text-left flex items-center"${attr("style", `width: ${stringify(column.width)}`)}><div class="flex items-center gap-2 w-full">`;
@@ -100,7 +99,13 @@ function Table($$payload, $$props) {
     $$payload.out += `<!--]-->`;
   }
   $$payload.out += `<!--]--></div></div>`;
-  bind_props($$props, { columns, data, rankImages, isLoading });
+  bind_props($$props, {
+    columns,
+    data,
+    rankImages,
+    isLoading,
+    firstRowClass
+  });
   pop();
 }
 function LeaderboardCard($$payload, $$props) {

@@ -1,10 +1,7 @@
 <script>
   import { onDestroy, onMount } from "svelte";
   import { getText, t } from "../../../../../stores/language.store";
-  import {
-    getCompetitionLeaderBoard,
-    mapGrades,
-  } from "../../../../../data-actions/competitions/competitions.da";
+  import { getCompetitionLeaderBoard, mapGrades } from "../../../../../data-actions/competitions/competitions.da";
   import Table from "../../../../../components/Table/Table.svelte";
   import LeaderboardCard from "../../../../../components/LeaderboardCard/LeaderboardCard.svelte";
   import SelectBox from "../../../../../components/SelectBox/SelectBox.svelte";
@@ -41,6 +38,7 @@
   let time_type = 0;
   let is_school_based = 0;
   let isLoading = true;
+  let isMobile = false;
   /**
    * @type {number | undefined}
    */
@@ -112,6 +110,21 @@
     isLoading = false;
   }
 
+  // Function to handle window resize and update screen size status
+  const updateScreenSize = () => {
+    isMobile = window.innerWidth < 600;
+  };
+
+  // Set initial screen size when the component is mounted
+  onMount(() => {
+    updateScreenSize();
+    window.addEventListener("resize", updateScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", updateScreenSize);
+    };
+  });
+
   $: if (selectedTab !== undefined) {
     fetchLeaderboard();
   }
@@ -137,13 +150,9 @@
   <div class="w-full max-w-screen-lg space-y-6">
     <!--heading section (with dropdown)-->
     <div class="w-full relative">
-      <div
-        class="flex flex-col xl:flex-row xl:justify-between items-center w-full gap-4"
-      >
+      <div class="flex flex-col xl:flex-row xl:justify-between items-center w-full gap-4">
         <!-- Centered Title & Image Wrapper -->
-        <div
-          class="flex items-center gap-3 xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2"
-        >
+        <div class="flex items-center gap-3 xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2">
           <PageHeading
             customClass="xl:mr-10"
             icon={IMAGES.LEADERBOARD_ICON}
@@ -214,7 +223,7 @@
             { label: $t("rank"), key: "rank", type: "text", width: "10%" },
             { label: $t("players"), key: "name", type: "avatar", width: "70%" },
             {
-              label: $t("coins_earned"),
+              label: isMobile ? $t("coins") : $t("coins_earned"),
               key: "total_points",
               type: "icon",
               width: "20%",

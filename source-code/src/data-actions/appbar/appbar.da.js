@@ -97,9 +97,7 @@ export async function loggedInUserCompAppBarData() {
           },
         ]
       : []),
-    ...(payment?.payment_status?.is_subscribed === 1
-      ? premiumUserAppBarData
-      : []),
+    ...(payment?.payment_status?.is_subscribed === 1 ? premiumUserAppBarData : []),
     {
       label: await getText("rules"),
       // link: "/settings/rules",

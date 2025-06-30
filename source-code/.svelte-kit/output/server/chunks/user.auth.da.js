@@ -1,21 +1,20 @@
 import { g as goto } from "./client.js";
 import { r as request } from "./api.service.js";
-import { c as waitForCompetitionGradeData, r as remapKeys, u as updateStoreVariable } from "./utils.js";
-import { g as get } from "./index3.js";
+import { r as remapKeys, u as updateStoreVariable } from "./utils.js";
+import { w as writable, g as get } from "./index3.js";
 import { A as API_DEFINITIONS, __tla as __tla_0 } from "./api.definitions.js";
-import { b as otpStore, a as authModalStore, c as openCoachApp, h as handleGoogleLogin, s as shupavuLoginFields, d as loginFields, g as gclcSignUpFields, e as shupavuSignupFields, f as signUpFields, i as guestStore, j as forgotPasswordFields, __tla as __tla_1 } from "./common.auth.data.js";
+import { a as authModalStore, o as openCoachApp, h as handleGoogleLogin, b as shupavuLoginFields, c as loginFields, g as gclcSignUpFields, d as shupavuSignupFields, e as signUpFields, f as guestStore, i as forgotPasswordFields, __tla as __tla_1 } from "./common.auth.data.js";
 import { g as getText } from "./language.store.js";
 import "notyf";
 import { u as userStore } from "./user.store.js";
 import { p as page } from "./index4.js";
 import { i as instanceStore } from "./instance.store.js";
-import { a as isShupavu, e as isPocketGames, i as isGCLC, s as systemSettingsStore } from "./system..da.js";
+import { a as isShupavu, i as isGCLC, e as isPocketGames, s as systemSettingsStore } from "./system..da.js";
 import { g as getRandomGenericAvatar, b as getRandomAvatar } from "./avatar2.js";
 import { c as competitionStore } from "./appbar.store.js";
-import { g as gameDataStore } from "./gamedata.store.js";
-import "./useractivity.store.js";
+import { s as setGradePoints, __tla as __tla_2 } from "./challenge.da.js";
 import { U as USER_TYPE } from "./user.constants.js";
-let IsSinglePlayerMatch, StartChallenge, refreshUserToken, userSignUpFormPopup, userLoginFormPopup, user_auth_da, forgotPasswordForm, loginUser, resendEmail, signUpUserUsingFormData, updateGameData;
+let refreshUserToken, showSuccess, showWarning, signUpUserUsingFormData, userLoginFormPopup, forgotPasswordForm, loginUser, otpStore, resendEmail, showError, userSignUpFormPopup;
 let __tla = Promise.all([
   (() => {
     try {
@@ -28,68 +27,26 @@ let __tla = Promise.all([
       return __tla_1;
     } catch {
     }
+  })(),
+  (() => {
+    try {
+      return __tla_2;
+    } catch {
+    }
   })()
 ]).then(async () => {
-  StartChallenge = async function(subjectData, opponent, playMode) {
-    await waitForCompetitionGradeData();
-    const grade = get(competitionStore).current_grade;
-    const id = get(competitionStore).competition_id;
-    const { subject, content_id, type } = subjectData;
-    console.log({
-      competition_id: id,
-      grade,
-      subject,
-      content_id,
-      friend_id: opponent.user_id || opponent.id,
-      is_game: 1,
-      content_type: type
-    });
-    return await request(API_DEFINITIONS.CHALLENGE_START, {
-      competition_id: id,
-      grade,
-      subject,
-      content_id,
-      ...playMode === 1 ? {
-        friend_id: opponent.user_id || opponent.id
-      } : {},
-      is_game: 1,
-      content_type: type
-    }, {});
+  showSuccess = (message) => {
   };
-  IsSinglePlayerMatch = (opponent_id) => {
-    const user_id = get(userStore)?.user_id;
-    return user_id === opponent_id || opponent_id < 1;
+  showError = (message) => {
   };
-  updateGameData = function({ opponent, playMode, matchData, subjectData, matchingItem = {}, link }) {
-    console.log(matchingItem, "matchingItem");
-    gameDataStore.update((currentData) => {
-      return {
-        ...currentData,
-        ...matchingItem,
-        ...playMode === 1 && {
-          opponent
-        },
-        isSinglePlayer: playMode,
-        matchData,
-        subjectData: {
-          summary_id: matchData?.summary_id,
-          match_id: matchData?.match_id,
-          content_id: subjectData?.content_id || currentData?.content_id,
-          base_points: subjectData?.base_points
-        },
-        link
-      };
-    });
+  showWarning = (message) => {
   };
-  async function setGradePoints(data) {
-    const { competition_id, grade, points } = data;
-    const pointsToSend = points > 200 ? 200 : points;
-    await request(API_DEFINITIONS.SET_GRADE_POINTS, {
-      competition_id,
-      grade,
-      points: pointsToSend
-    });
-  }
+  otpStore = writable({
+    is_otp_verified: false,
+    phone_number: null,
+    otp_forgot_password: false,
+    user_id: null
+  });
   const getUserLoginForm = async () => {
     const config = get(systemSettingsStore);
     return {
@@ -257,10 +214,12 @@ let __tla = Promise.all([
     });
     if (data.error_code == 0) {
       if (isShupavu && !otpSuccess) {
+        showSuccess(await getText("otp_send_text"));
         goto();
         otpStore.update((store) => ({
           ...store,
-          phone_number: formData.phone_number
+          phone_number: formData.phone_number,
+          otp_forgot_password: false
         }));
       } else if (data.data.origin) {
         goto("/account/verify", {});
@@ -333,32 +292,18 @@ let __tla = Promise.all([
     const data = await request(API_DEFINITIONS.EMAIL_SIGNUP, formData);
     if (data.error_code == 0) ;
   };
-  user_auth_da = Object.freeze(Object.defineProperty({
-    __proto__: null,
-    forgotPasswordForm,
-    getUserLoginForm,
-    getUserSignUpForm,
-    loginUser,
-    refreshUserToken,
-    resendEmail,
-    signUpUserUsingFormData,
-    userLoginFormPopup,
-    userSignUpFormPopup
-  }, Symbol.toStringTag, {
-    value: "Module"
-  }));
 });
 export {
-  IsSinglePlayerMatch as I,
-  StartChallenge as S,
   __tla,
   refreshUserToken as a,
-  userSignUpFormPopup as b,
-  userLoginFormPopup as c,
-  user_auth_da as d,
+  showSuccess as b,
+  showWarning as c,
+  signUpUserUsingFormData as d,
+  userLoginFormPopup as e,
   forgotPasswordForm as f,
   loginUser as l,
+  otpStore as o,
   resendEmail as r,
-  signUpUserUsingFormData as s,
-  updateGameData as u
+  showError as s,
+  userSignUpFormPopup as u
 };

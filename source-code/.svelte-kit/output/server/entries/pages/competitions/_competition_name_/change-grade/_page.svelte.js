@@ -1,4 +1,4 @@
-import { s as store_get, i as copy_payload, j as assign_payload, u as unsubscribe_stores, p as pop, b as push, h as head } from "../../../../../chunks/index.js";
+import { s as store_get, k as copy_payload, l as assign_payload, u as unsubscribe_stores, p as pop, b as push, h as head, e as escape_html } from "../../../../../chunks/index.js";
 import { B as BackgroundImage } from "../../../../../chunks/BackgroundImage.js";
 import { t } from "../../../../../chunks/language.store.js";
 import { g as getTitle } from "../../../../../chunks/title.store.js";
@@ -13,7 +13,6 @@ import "../../../../../chunks/user.store.js";
 import "lz-string";
 import "../../../../../chunks/client2.js";
 import "../../../../../chunks/index2.js";
-import { e as escape_html } from "../../../../../chunks/escaping.js";
 let _page;
 let __tla = Promise.all([
   (() => {
@@ -60,14 +59,7 @@ let __tla = Promise.all([
       head($$payload2, ($$payload3) => {
         $$payload3.title = `<title>${escape_html(getTitle(store_get($$store_subs ??= {}, "$t", t)("select_grade")))}</title>`;
       });
-      if (isShupavu) {
-        $$payload2.out += "<!--[-->";
-        $$payload2.out += `<h1 class="md:text-4xl text-3xl font-bold text-white text-center w-full">${escape_html(store_get($$store_subs ??= {}, "$t", t)("select_grade_kenya_title"))}</h1>`;
-      } else {
-        $$payload2.out += "<!--[!-->";
-        $$payload2.out += `<h1 class="md:text-4xl text-3xl font-bold text-white text-center w-full">${escape_html(store_get($$store_subs ??= {}, "$t", t)("select_grade"))}</h1>`;
-      }
-      $$payload2.out += `<!--]--> `;
+      $$payload2.out += `<h1 class="text-3xl md:text-4xl font-medium text-white text-center w-full">${escape_html(store_get($$store_subs ??= {}, "$t", t)(isShupavu ? "select_grade_kenya_title" : "select_grade"))}</h1> `;
       BackgroundImage($$payload2, {
         children: ($$payload3) => {
           $$payload3.out += `<div class="flex items-center justify-center max-w-xl w-full bg-transparent rounded-lg p-8 mx-auto text-center space-y-10">`;

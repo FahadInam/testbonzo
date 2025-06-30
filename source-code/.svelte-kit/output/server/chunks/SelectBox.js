@@ -1,8 +1,6 @@
-import { c as bind_props, p as pop, b as push, d as stringify } from "./index.js";
+import { c as attr, e as escape_html, d as bind_props, p as pop, b as push, f as stringify } from "./index.js";
 import { o as onDestroy } from "./index-server.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
-import { e as escape_html } from "./escaping.js";
 function SelectBox($$payload, $$props) {
   push();
   let options = fallback(

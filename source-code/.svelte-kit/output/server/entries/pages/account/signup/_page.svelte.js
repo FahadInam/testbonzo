@@ -3,7 +3,7 @@ import "../../../../chunks/client.js";
 import "clsx";
 import "../../../../chunks/client2.js";
 import { __tla as __tla_0 } from "../../../../chunks/common.auth.data.js";
-import { A as AuthenticationView } from "../../../../chunks/AuthenticationView.js";
+import { A as AuthenticationView, __tla as __tla_1 } from "../../../../chunks/AuthenticationView.js";
 import { t } from "../../../../chunks/language.store.js";
 import { g as getInstanceText } from "../../../../chunks/utils.js";
 let _page;
@@ -11,6 +11,12 @@ let __tla = Promise.all([
   (() => {
     try {
       return __tla_0;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_1;
     } catch {
     }
   })()

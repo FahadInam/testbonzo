@@ -72,7 +72,6 @@
   }
 
   const back_url = get(systemSettingsStore)?.account_back_url;
-  // console.log("navigationStore ====>>", $navigationStore.back_url);
 </script>
 
 <!-- backButtonLink={$navigationStore.back_url} -->
@@ -87,7 +86,7 @@
     <div class="text-left">
       <Image src={logo} alt="Instance Logo" className={`${logoClass} mx-auto mb-4`} />
       {#if cards.length == 0}
-        <h3 class="text-2xl font-medium text-gray-800 mt-5 pt-2">
+        <h3 class="text-xl md:text-2xl font-medium text-gray-800 mt-5 pt-2">
           {form.title}
         </h3>
       {/if}
@@ -131,8 +130,8 @@
       </main>
     {/if}
   </div>
-
   <div slot="footer">
+  {#if Object.keys(form.footer).length > 0}
     {#if cards.length == 0}
       <div class="text-center mt-0 text-gray-600 bg-gray-100 p-2">
         {form.footer.text}
@@ -140,5 +139,6 @@
         <Button width="w-[120px]" {...form.footer.button} />
       </div>
     {/if}
+  {/if}
   </div>
 </svelte:component>

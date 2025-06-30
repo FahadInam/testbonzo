@@ -1,9 +1,7 @@
-import { a as slot, c as bind_props, p as pop, b as push, d as stringify, s as store_get, u as unsubscribe_stores } from "../../../../../chunks/index.js";
+import { e as escape_html, c as attr, a as slot, d as bind_props, p as pop, b as push, f as stringify, s as store_get, u as unsubscribe_stores } from "../../../../../chunks/index.js";
 import { I as IMAGES } from "../../../../../chunks/images.constants.js";
 import { I as Image } from "../../../../../chunks/Image.js";
 import { f as fallback } from "../../../../../chunks/utils2.js";
-import { e as escape_html } from "../../../../../chunks/escaping.js";
-import { a as attr } from "../../../../../chunks/attributes.js";
 import { g as getText, t } from "../../../../../chunks/language.store.js";
 import { a as appbarStore, c as competitionStore } from "../../../../../chunks/appbar.store.js";
 import { s as sidebarStore } from "../../../../../chunks/sidebar.store.js";
@@ -26,7 +24,7 @@ function DataCard($$payload, $$props) {
     className: `transition-opacity duration-500 ease-in-out ${stringify(imageClass)}`
   });
   $$payload.out += `<!----></div> <h2 class="text-lg sm:text-xl font-semibold">${escape_html(title)}</h2></div> <div${attr("class", `${stringify(cardClass)} overflow-y-auto`)}${attr("style", `max-height: ${stringify(maxHeight)}`)}><!---->`;
-  slot($$payload, $$props, "default", {});
+  slot($$payload, $$props, "default", {}, null);
   $$payload.out += `<!----></div></div>`;
   bind_props($$props, {
     title,

@@ -1,5 +1,6 @@
 <script>
     import { gotoURL } from "$lib/navigation.service";
+    import { GamePlay } from "../../data-actions/challenge/challenge.da";
   import { preProcessLessonGames } from "../../data-actions/lessons/lesson.da";
     import { gameDataStore } from "../../stores/gamedata.store";
   import GameCard from "../GameCard/GameCard.svelte";
@@ -10,10 +11,10 @@
 
   const listToShow = preProcessLessonGames(item.skill, list);
 
-   function GamePlay(data) {
-    gameDataStore.set({ ...data });
-    gotoURL("/challenge");
-  }
+  //  function GamePlay(data) {
+  //   gameDataStore.set({ ...data });
+  //   gotoURL("/challenge");
+  // }
 </script>
 
 <div class="flex flex-col w-full p-4 box-border items-center">

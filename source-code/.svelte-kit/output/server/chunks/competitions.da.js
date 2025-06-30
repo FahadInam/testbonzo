@@ -6,8 +6,7 @@ import { u as userStore } from "./user.store.js";
 import { c as competitionStore } from "./appbar.store.js";
 import { g as goto } from "./client.js";
 import { g as getText } from "./language.store.js";
-import { s as showError } from "./toast.store.js";
-import { a as refreshUserToken, __tla as __tla_1 } from "./user.auth.da.js";
+import { a as refreshUserToken, s as showError, __tla as __tla_1 } from "./user.auth.da.js";
 import { a as isShupavu, s as systemSettingsStore } from "./system..da.js";
 import { m as metaStore } from "./meta.store.js";
 let mapSubjects, getCompetitionRecommendation, searchFriends, addVoucherCode, extractSubjects, getCompetitions, getCompetitionLeaderBoard, mapGrades, setCompetitionGrade;
@@ -83,6 +82,10 @@ let __tla = Promise.all([
   setCompetitionGrade = async function(grade) {
     const isGuestUser = get(userStore).is_guest_mode;
     const currentCompetition = get(competitionStore);
+    const user = get(userStore);
+    const isLearner = user?.active_role === "learner";
+    const hasCurrentGrade = currentCompetition && get(competitionStore).current_grade;
+    const isUserNameNumber = !isNaN(user?.name);
     if (isGuestUser) {
       updateStoreVariable(competitionStore, "current_grade", grade);
     } else {
@@ -96,8 +99,14 @@ let __tla = Promise.all([
       updateStoreVariable(competitionStore, "current_grade", grade);
       updateStoreVariable(metaStore, "current_grade", grade);
     }
-    console.log(get(competitionStore));
-    goto("/competitions/" + currentCompetition.url + "/home");
+    const isShupavuNewUser = isShupavu && isLearner && !hasCurrentGrade && isUserNameNumber;
+    const baseUrl = `/competitions/${currentCompetition?.url}`;
+    if (isShupavuNewUser) {
+      const target = `${baseUrl}/profile/edit`;
+      goto(target, {});
+    } else {
+      goto();
+    }
   };
   getCompetitionRecommendation = async function() {
     await waitForCompetitionGradeData();

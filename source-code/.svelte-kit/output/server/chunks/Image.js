@@ -1,6 +1,5 @@
-import { c as bind_props } from "./index.js";
+import { c as attr, d as bind_props } from "./index.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
 function Image($$payload, $$props) {
   let src = fallback($$props["src"], "");
   let alt = fallback($$props["alt"], "Image");

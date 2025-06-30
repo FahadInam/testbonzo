@@ -1,6 +1,5 @@
-import { c as bind_props, p as pop, b as push } from "./index.js";
+import { c as attr, d as bind_props, p as pop, b as push } from "./index.js";
 import { I as IMAGES } from "./images.constants.js";
-import { a as attr } from "./attributes.js";
 import { h as html } from "./html.js";
 const getTextForRole = (role, subscriptionStatus, textObject, lang = "eng") => {
   const defaultTexts = { text: "" };

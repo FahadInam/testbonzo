@@ -351,3 +351,6 @@ fancy scrollbar to entire project
 .scrollbar-hide {
   scrollbar-width: none;
 }
+.scrollbar-thin {
+  scrollbar-width: thin;
+}

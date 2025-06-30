@@ -9,6 +9,7 @@ import "../../../../../chunks/language.store.js";
 import "../../../../../chunks/system..da.js";
 import "../../../../../chunks/index2.js";
 import "js-sha256";
+import "notyf";
 let _page;
 let __tla = Promise.all([
   (() => {

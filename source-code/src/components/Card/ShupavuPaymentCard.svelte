@@ -76,7 +76,7 @@
       </div>
       
       <!-- Games count section with enhanced styling -->
-      <div class="mt-2 relative">
+      <div class="relative">
         {#if colors.perdayText}
           <span 
             class="games_badge absolute text-xs w-fit-content top-1 right-8 rounded-[30px] p-[2px_8px] font-medium transform -rotate-7"
@@ -86,7 +86,7 @@
           </span>
         {/if}
         
-        <h4 class="bundle-games-count text-[47px] font-semibold my-1 mx-0 relative">
+        <h4 class="bundle-games-count text-[40px] lg:text-[47px]   font-semibold mt-1 mx-0 relative">
           <span 
             class="text-shadow-custom"
             style="color: {colors.gameNumberColor};"
@@ -104,7 +104,7 @@
       <div class="bundle-pricing flex justify-center items-center font-semibold text-[22px] uppercase leading-[90px]">
         <span class="currency-title text-black">KES</span>
         <span 
-          class="bundle-amount text-[76px] text-[#ffff00] px-5 text-shadow-custom"
+          class="bundle-amount text-[50px] lg:text-[76px] text-[#ffff00] px-5 text-shadow-custom"
         >
           {bundle.amount}
         </span>

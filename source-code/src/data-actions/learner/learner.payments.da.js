@@ -4,6 +4,7 @@ import { API_DEFINITIONS } from "../../apis/api.definitions";
 import { competitionStore } from "../../stores/competition.store";
 import { waitForCompetitionGradeData } from "$lib/utils";
 import { paymentStore } from "../../stores/payment.store";
+import { appbarStore } from "../../stores/appbar.store";
 
 export async function getLearnerPaymentStatus() {
   await waitForCompetitionGradeData();
@@ -23,6 +24,11 @@ export async function getLearnerPaymentStatus() {
       ...store,
       payment_status: data.data,
     }));
+    appbarStore.update((store) => ({
+      ...store,
+      isShowPaymentBanner: data.data.is_subscribed === 0,
+    }));
+
     return data.data;
   }
   return null;

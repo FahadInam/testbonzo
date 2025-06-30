@@ -4,6 +4,7 @@ import "../../chunks/language.store.js";
 import "clsx";
 import "../../chunks/user.store.js";
 import { p as page } from "../../chunks/index4.js";
+import "notyf";
 function checkPathRedirection(path, instanceId = null) {
   return;
 }
@@ -21,8 +22,12 @@ function _layout($$payload, $$props) {
   hideMainLoader();
   checkPathRedirection(page.url.pathname);
   $$payload.out += `<!---->`;
-  slot($$payload, $$props, "default", {});
+  slot($$payload, $$props, "default", {}, null);
   $$payload.out += `<!----> `;
+  {
+    $$payload.out += "<!--[!-->";
+  }
+  $$payload.out += `<!--]--> `;
   {
     $$payload.out += "<!--[!-->";
   }

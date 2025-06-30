@@ -12,6 +12,7 @@ import { __tla as __tla_1 } from "../../../../../chunks/common.auth.data.js";
 import { __tla as __tla_2 } from "../../../../../chunks/user.auth.da.js";
 import "../../../../../chunks/country.constant.js";
 import "js-sha256";
+import "notyf";
 let _page;
 let __tla = Promise.all([
   (() => {

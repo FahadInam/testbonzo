@@ -1,20 +1,24 @@
-import { s as store_get, u as unsubscribe_stores, p as pop, b as push } from "../../../../chunks/index.js";
+import { s as store_get, u as unsubscribe_stores, p as pop, b as push, e as escape_html, c as attr } from "../../../../chunks/index.js";
 import { B as Button } from "../../../../chunks/Button.js";
 import { P as PopupScreen } from "../../../../chunks/PopupScreen.js";
 import { p as page } from "../../../../chunks/stores.js";
-import { F as Form } from "../../../../chunks/Form.js";
-import { P as PUBLIC_TURNSTILE_KEY } from "../../../../chunks/api.service.js";
-import { r as resendEmail, __tla as __tla_0 } from "../../../../chunks/user.auth.da.js";
+import { F as Form, __tla as __tla_0 } from "../../../../chunks/Form.js";
+import { P as PUBLIC_TURNSTILE_KEY } from "../../../../chunks/public.js";
+import { r as resendEmail, __tla as __tla_1 } from "../../../../chunks/user.auth.da.js";
 import { t } from "../../../../chunks/language.store.js";
 import "../../../../chunks/client.js";
 import { n as navigationStore } from "../../../../chunks/appbar.store.js";
-import { e as escape_html } from "../../../../chunks/escaping.js";
-import { a as attr } from "../../../../chunks/attributes.js";
 let _page;
 let __tla = Promise.all([
   (() => {
     try {
       return __tla_0;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_1;
     } catch {
     }
   })()

@@ -1,13 +1,13 @@
 import { g as getText } from "./language.store.js";
-import { P as PUBLIC_TURNSTILE_KEY, r as request, a as PUBLIC_GOOGLE_CLIENT_ID, b as PUBLIC_LMS_URL } from "./api.service.js";
+import { P as PUBLIC_TURNSTILE_KEY, b as PUBLIC_GOOGLE_CLIENT_ID, c as PUBLIC_LMS_URL } from "./public.js";
 import { w as writable, g as get } from "./index3.js";
 import { g as goto } from "./client.js";
 import "notyf";
 import { u as userStore } from "./user.store.js";
-import { A as API_DEFINITIONS, __tla as __tla_0 } from "./api.definitions.js";
 import { e as getInstanceTextAsync } from "./utils.js";
+import { __tla as __tla_0 } from "./api.definitions.js";
 import "./avatar2.js";
-let authModalStore, otpStore, openCoachApp, loginFields, shupavuSignupFields, signUpFields, gclcSignUpFields, handleGoogleLogin, guestStore, forgotPasswordFields, logoutUser, otpVerificationField, shupavuLoginFields, userSelectionCardsPopup;
+let authModalStore, shupavuLoginFields, loginFields, shupavuSignupFields, signUpFields, guestStore, gclcSignUpFields, handleGoogleLogin, forgotPasswordFields, logoutUser, openCoachApp, shupavuForgotPasswordFields, userSelectionCardsPopup;
 let __tla = Promise.all([
   (() => {
     try {
@@ -42,10 +42,6 @@ let __tla = Promise.all([
       url
     });
   }
-  otpStore = writable({
-    is_otp_verified: false,
-    phone_number: null
-  });
   signUpFields = {
     title: await getText("get_started"),
     fields: [
@@ -61,7 +57,8 @@ let __tla = Promise.all([
         type: "password",
         label: await getText("password"),
         placeholder: await getText("enter_your_password"),
-        required: true
+        required: true,
+        showPasswordStrength: true
       }
     ],
     buttons: [
@@ -176,7 +173,8 @@ let __tla = Promise.all([
         type: "password",
         label: await getText("enter_new_password"),
         placeholder: await getText("enter_your_new_password"),
-        required: true
+        required: true,
+        showPasswordStrength: true
       },
       {
         name: "confirmPassword",
@@ -202,7 +200,8 @@ let __tla = Promise.all([
         type: "password",
         label: await getText("password"),
         placeholder: await getText("password"),
-        required: true
+        required: true,
+        showPasswordStrength: true
       }
     ],
     buttons: [
@@ -270,28 +269,21 @@ let __tla = Promise.all([
     enableTurnstile: true,
     turnstileSiteKey: PUBLIC_TURNSTILE_KEY
   };
-  otpVerificationField = {
-    title: await getText("confirm_your_number"),
+  shupavuForgotPasswordFields = {
+    title: await getText("reset_your_password"),
     fields: [
       {
-        name: "otp",
-        type: "text",
-        label: await getText("otp_code"),
-        placeholder: await getText("enter_code"),
-        required: true
-      },
-      {
-        name: "password",
-        type: "password",
-        label: await getText("password"),
-        placeholder: await getText("password"),
+        name: "phone_number",
+        type: "tel",
+        label: await getText("phone_number"),
+        prefix: "+254",
         required: true,
-        isShow: false
+        placeholder: await getText("enter_phone_number")
       }
     ],
     buttons: [
       {
-        label: await getText("verify"),
+        label: await getText("next"),
         type: "submit",
         customClass: "w-full"
       }
@@ -302,23 +294,6 @@ let __tla = Promise.all([
         label: await getText("login"),
         type: "secondary-outlined-inverted",
         link: "/account/user/login"
-      }
-    },
-    handleSubmit: async (formData) => {
-      const { is_otp_verified, phone_number } = get(otpStore);
-      if (is_otp_verified) {
-        const updatedFormData = {
-          ...formData,
-          phone_number,
-          username: ""
-        };
-        const { signUpUserUsingFormData } = await import("./user.auth.da.js").then(async (m) => {
-          await m.__tla;
-          return m;
-        }).then((n) => n.d);
-        signUpUserUsingFormData(updatedFormData, "learner", true);
-      } else {
-        handleOtpVerification(formData);
       }
     },
     enableTurnstile: true,
@@ -368,38 +343,20 @@ let __tla = Promise.all([
     window.dispatchEvent(new Event("loaderStart"));
     openIframe(PUBLIC_LMS_URL);
   };
-  const handleOtpVerification = async (data) => {
-    const otpData = get(otpStore);
-    const { turnstileToken, ...filteredData } = data;
-    const requestData = {
-      ...filteredData,
-      phone_number: otpData.phone_number,
-      t_token: turnstileToken,
-      otp: data.otp
-    };
-    const response = await request(API_DEFINITIONS.OTP_VERIFY, requestData, {});
-    if (response.error_code == 0) {
-      otpStore.update((store) => ({
-        ...store,
-        is_otp_verified: true
-      }));
-    }
-  };
 });
 export {
   __tla,
   authModalStore as a,
-  otpStore as b,
-  openCoachApp as c,
-  loginFields as d,
-  shupavuSignupFields as e,
-  signUpFields as f,
+  shupavuLoginFields as b,
+  loginFields as c,
+  shupavuSignupFields as d,
+  signUpFields as e,
+  guestStore as f,
   gclcSignUpFields as g,
   handleGoogleLogin as h,
-  guestStore as i,
-  forgotPasswordFields as j,
+  forgotPasswordFields as i,
   logoutUser as l,
-  otpVerificationField as o,
-  shupavuLoginFields as s,
+  openCoachApp as o,
+  shupavuForgotPasswordFields as s,
   userSelectionCardsPopup as u
 };

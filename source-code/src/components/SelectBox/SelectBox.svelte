@@ -81,8 +81,7 @@
   <!-- Dropdown menu -->
   {#if isOpen}
     <div
-      class="absolute left-0 right-0 mt-1 bg-white rounded-2xl shadow-lg z-10 overflow-hidden"
-      style="width: 100%;"
+      class="absolute right-0 mt-1 bg-white rounded-2xl shadow-lg z-10 overflow-hidden left-[-38px] top-0 w-[266px]"
     >
       {#each options as option}
         <button

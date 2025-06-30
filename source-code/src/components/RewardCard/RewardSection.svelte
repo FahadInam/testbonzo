@@ -1,12 +1,9 @@
 <script>
-  import {
-    getBadgeIcon,
-    RewardsType,
-  } from "../../data-actions/rewards/rewards.da";
+  import { getBadgeIcon, RewardsType } from "../../data-actions/rewards/rewards.da";
   import NoDataFound from "../NoDataFound/NoDataFound.svelte";
   import PageSubTitle from "../PageSubTitle/PageSubTitle.svelte";
   import RewardCard from "./RewardCard.svelte";
-
+  import { t } from "./../../stores/language.store";
   export let selectedRewardsType = 0;
   /**
    * @type { any[]}
@@ -33,46 +30,29 @@
   export let ActionButton = (label, data) => {}; // Callback function
 
   $: showTimeRewards =
-    selectedRewardsType === 1 ||
-    (selectedRewardsType === 0 &&
-      (time_rewards.length > 0 || certificate_status === 1));
+    selectedRewardsType === 1 || (selectedRewardsType === 0 && (time_rewards.length > 0 || certificate_status === 1));
   $: showOtherRewards = selectedRewardsType === 2 || selectedRewardsType === 0;
 
   // Show claimed rewards if selectedRewardsType is 3 (explicit selection) OR if selectedRewardsType is 0 (show all rewards)
   $: showClaimedRewards =
-    selectedRewardsType === 3 ||
-    (selectedRewardsType === 0 &&
-      time_rewards.some((reward) => reward.is_claimed === 1));
+    selectedRewardsType === 3 || (selectedRewardsType === 0 && time_rewards.some((reward) => reward.is_claimed === 1));
 
   // Show NoDataFound when both arrays are empty
-  $: showNoDataRewards =
-    selectedRewardsType === 0 &&
-    time_rewards.length === 0 &&
-    rewards.length === 0;
+  $: showNoDataRewards = selectedRewardsType === 0 && time_rewards.length === 0 && rewards.length === 0;
 </script>
 
 {#if showTimeRewards}
   <div class="flex flex-col w-full mb-15">
     <PageSubTitle name={RewardsType[1]?.label} />
     {#if selectedRewardsType === 1 && time_rewards.length === 0 && certificate_status === 0}
-      <NoDataFound />
+      <NoDataFound noDataMsg={$t("no_rewards")} />
     {:else}
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4"
-      >
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {#if certificate_status === 1 && certificate_data.title}
-          <RewardCard
-            data={certificate_data}
-            onButtonClick={ActionButton}
-            buttonLabel="Download"
-          />
+          <RewardCard data={certificate_data} onButtonClick={ActionButton} buttonLabel="Download" />
         {/if}
         {#each time_rewards as reward (reward.title)}
-          <RewardCard
-            data={reward}
-            onButtonClick={ActionButton}
-            buttonLabel="Claimed"
-          />
+          <RewardCard data={reward} onButtonClick={ActionButton} buttonLabel="Claimed" />
         {/each}
       </div>
     {/if}
@@ -85,17 +65,11 @@
       <PageSubTitle name={RewardsType[2]?.label} />
     {/if}
     {#if selectedRewardsType === 2 && time_rewards.length === 0 && rewards.length === 0}
-      <NoDataFound />
+      <NoDataFound noDataMsg={$t("no_rewards")} />
     {:else}
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4"
-      >
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {#if certificate_data.title && certificate_status === 0}
-          <RewardCard
-            data={certificate_data}
-            onButtonClick={ActionButton}
-            buttonLabel="How to Earn"
-          />
+          <RewardCard data={certificate_data} onButtonClick={ActionButton} buttonLabel="How to Earn" />
         {/if}
         {#if rewards.length > 0}
           {#each rewards as reward (reward.title)}
@@ -116,11 +90,9 @@
   <div class="flex flex-col w-full mb-15">
     <PageSubTitle name={RewardsType[3]?.label} />
     {#if selectedRewardsType === 3 && !time_rewards.some((reward) => reward.is_claimed === 1)}
-      <NoDataFound />
+      <NoDataFound noDataMsg={$t("no_rewards")} />
     {:else}
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4"
-      >
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {#each time_rewards as reward (reward.title)}
           {#if reward.is_claimed === 1}
             <RewardCard
@@ -138,6 +110,6 @@
 
 {#if showNoDataRewards}
   <div class="flex flex-col w-full">
-    <NoDataFound />
+    <NoDataFound noDataMsg={$t("no_rewards")} />
   </div>
 {/if}

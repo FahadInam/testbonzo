@@ -1,7 +1,5 @@
-import { a as slot, c as bind_props } from "./index.js";
+import { c as attr, e as escape_html, a as slot, d as bind_props } from "./index.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
-import { e as escape_html } from "./escaping.js";
 function SubscriptionCard($$payload, $$props) {
   let text = fallback($$props["text"], "My Subscription");
   let icon = fallback($$props["icon"], null);
@@ -17,7 +15,7 @@ function SubscriptionCard($$payload, $$props) {
     $$payload.out += "<!--[!-->";
   }
   $$payload.out += `<!--]--> <h2 class="text-xl font-bold text-center">${escape_html(text)}</h2></div> <div${attr("class", `bg-white ${padding}`)}><!---->`;
-  slot($$payload, $$props, "default", {});
+  slot($$payload, $$props, "default", {}, null);
   $$payload.out += `<!----></div></div>`;
   bind_props($$props, {
     text,

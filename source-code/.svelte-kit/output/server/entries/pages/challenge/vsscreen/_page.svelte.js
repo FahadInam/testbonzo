@@ -1,22 +1,20 @@
-import { b as push, d as stringify, c as bind_props, p as pop, s as store_get, u as unsubscribe_stores, i as copy_payload, j as assign_payload } from "../../../../chunks/index.js";
+import { b as push, c as attr, e as escape_html, f as stringify, d as bind_props, p as pop, s as store_get, u as unsubscribe_stores, k as copy_payload, l as assign_payload } from "../../../../chunks/index.js";
 import { u as userStore } from "../../../../chunks/user.store.js";
-import { g as gameDataStore } from "../../../../chunks/gamedata.store.js";
+import { g as gameDataStore } from "../../../../chunks/useractivity.store.js";
 import { o as onDestroy } from "../../../../chunks/index-server.js";
 import { p as polkaDots, s as spikes, a as singlePlayerBanner, v as vsImage } from "../../../../chunks/images.constants.js";
 import { f as fallback } from "../../../../chunks/utils2.js";
-import { a as attr } from "../../../../chunks/attributes.js";
-import { e as escape_html } from "../../../../chunks/escaping.js";
 import { A as Avatar } from "../../../../chunks/Avatar.js";
 import { t } from "../../../../chunks/language.store.js";
 import { z as zeroPad } from "../../../../chunks/utils.js";
 import "../../../../chunks/client.js";
 import "../../../../chunks/client2.js";
 import "lz-string";
-import "../../../../chunks/system..da.js";
+import { a as isShupavu } from "../../../../chunks/system..da.js";
 import "../../../../chunks/index2.js";
 import { __tla as __tla_0 } from "../../../../chunks/api.definitions.js";
 import "notyf";
-import "../../../../chunks/useractivity.store.js";
+import { p as paymentStore } from "../../../../chunks/payment.store.js";
 let _page;
 let __tla = Promise.all([
   (() => {
@@ -304,7 +302,7 @@ let __tla = Promise.all([
   _page = function($$payload, $$props) {
     push();
     var $$store_subs;
-    let launchUrl;
+    let launchUrl, isSubscribed;
     let userData = $$props["userData"];
     let gameData = $$props["gameData"];
     let isLoading = true;
@@ -319,6 +317,8 @@ let __tla = Promise.all([
       }
     }
     launchUrl = `${store_get($$store_subs ??= {}, "$gameDataStore", gameDataStore).link}&user_id=${store_get($$store_subs ??= {}, "$userStore", userStore).user_id}&isPlayBonzo=1`;
+    isSubscribed = store_get($$store_subs ??= {}, "$paymentStore", paymentStore)?.payment_status?.is_subscribed === 1;
+    isShupavu && !isSubscribed && !store_get($$store_subs ??= {}, "$userStore", userStore)?.is_guest_mode;
     console.log(store_get($$store_subs ??= {}, "$gameDataStore", gameDataStore), "gameDataStore");
     let $$settled = true;
     let $$inner_payload;

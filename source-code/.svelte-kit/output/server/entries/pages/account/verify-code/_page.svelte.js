@@ -8,9 +8,9 @@ import "../../../../chunks/language.store.js";
 import "../../../../chunks/system..da.js";
 import "../../../../chunks/index2.js";
 import "js-sha256";
-import { __tla as __tla_0 } from "../../../../chunks/user.auth.da.js";
-import { A as AuthenticationView } from "../../../../chunks/AuthenticationView.js";
-import { o as otpVerificationField, b as otpStore, __tla as __tla_1 } from "../../../../chunks/common.auth.data.js";
+import { o as otpStore, __tla as __tla_0 } from "../../../../chunks/user.auth.da.js";
+import "notyf";
+import { __tla as __tla_1 } from "../../../../chunks/common.auth.data.js";
 let _page;
 let __tla = Promise.all([
   (() => {
@@ -29,23 +29,31 @@ let __tla = Promise.all([
   _page = function($$payload, $$props) {
     push();
     var $$store_subs;
-    let isOtpVerified, filteredOtpVerificationField;
+    let isOtpVerified;
+    let otpVerificationFields;
     isOtpVerified = store_get($$store_subs ??= {}, "$otpStore", otpStore).is_otp_verified;
-    filteredOtpVerificationField = {
-      ...otpVerificationField,
-      fields: otpVerificationField.fields.map((field) => {
+    ({
+      ...otpVerificationFields,
+      fields: otpVerificationFields?.fields.map((field) => {
         if (field.name === "password") {
           return {
             ...field,
             isShow: isOtpVerified
           };
         }
+        if (field.name === "otp") {
+          return {
+            ...field,
+            readonly: isOtpVerified
+          };
+        }
         return field;
       }).filter((field) => field.isShow !== false)
-    };
-    AuthenticationView($$payload, {
-      form: filteredOtpVerificationField
     });
+    {
+      $$payload.out += "<!--[!-->";
+    }
+    $$payload.out += `<!--]-->`;
     if ($$store_subs) unsubscribe_stores($$store_subs);
     pop();
   };

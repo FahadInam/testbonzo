@@ -1,4 +1,4 @@
-import { b as push, f as ensure_array_like, c as bind_props, p as pop, i as copy_payload, j as assign_payload, s as store_get, u as unsubscribe_stores } from "./index.js";
+import { b as push, j as ensure_array_like, d as bind_props, p as pop, k as copy_payload, l as assign_payload, e as escape_html, s as store_get, u as unsubscribe_stores } from "./index.js";
 import { L as ListingSkeleton } from "./ListingSkeleton.js";
 import { f as fallback } from "./utils2.js";
 import { I as IMAGES } from "./images.constants.js";
@@ -6,7 +6,6 @@ import { B as Button } from "./Button.js";
 import { I as Image } from "./Image.js";
 import { M as Modal } from "./Modal.js";
 import { t } from "./language.store.js";
-import { e as escape_html } from "./escaping.js";
 import "./client.js";
 function ProfileSkeleton($$payload, $$props) {
   push();

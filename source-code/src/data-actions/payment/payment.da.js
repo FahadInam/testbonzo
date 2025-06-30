@@ -295,6 +295,7 @@ export const getSubscriptionDetails = async () => {
     subscription_end_date: res.data.subscriptionEndDate,
     transactionDate: res.data.subscriptionStartDate,
     transactionToken: res.data.transactionToken,
+    isSubscriptionCancel: res.data.isSubscriptionCancel,
   };
   return transformedData;
 };

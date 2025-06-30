@@ -1,8 +1,6 @@
-import { f as ensure_array_like, c as bind_props, s as store_get, d as stringify, u as unsubscribe_stores, p as pop, b as push, a as slot, h as head } from "../../chunks/index.js";
+import { j as ensure_array_like, c as attr, e as escape_html, d as bind_props, s as store_get, f as stringify, u as unsubscribe_stores, p as pop, b as push, a as slot, h as head } from "../../chunks/index.js";
 import { B as Button } from "../../chunks/Button.js";
 import { f as fallback } from "../../chunks/utils2.js";
-import { a as attr } from "../../chunks/attributes.js";
-import { e as escape_html } from "../../chunks/escaping.js";
 import { N as NavBar } from "../../chunks/NavBar.js";
 import { g as getText, t } from "../../chunks/language.store.js";
 import { I as IMAGES } from "../../chunks/images.constants.js";
@@ -427,7 +425,7 @@ let __tla = Promise.all([
       stopAutoplay();
     });
     $$payload.out += `<div class="embla max-w-full mx-auto relative py-3 overflow-hidden svelte-1v3rcho"><div class="embla__container flex items-center svelte-1v3rcho"><!---->`;
-    slot($$payload, $$props, "default", {});
+    slot($$payload, $$props, "default", {}, null);
     $$payload.out += `<!----></div> `;
     if (settings.showNav) {
       $$payload.out += "<!--[-->";

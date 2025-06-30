@@ -1,4 +1,5 @@
-import { e as current_component } from "./index.js";
+import { g as current_component } from "./index.js";
+import { n as noop } from "./utils2.js";
 function onDestroy(fn) {
   var context = (
     /** @type {Component} */
@@ -6,6 +7,13 @@ function onDestroy(fn) {
   );
   (context.d ??= []).push(fn);
 }
+function createEventDispatcher() {
+  return noop;
+}
+async function tick() {
+}
 export {
-  onDestroy as o
+  createEventDispatcher as c,
+  onDestroy as o,
+  tick as t
 };

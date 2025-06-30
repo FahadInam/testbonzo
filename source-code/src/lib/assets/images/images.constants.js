@@ -173,6 +173,7 @@ import confetti_icon from "$lib/assets/images/tabicons/confetti.png";
 import single_player_image from "$lib/assets/images/tabicons/playersingle.svg";
 import sgg_web_logo from "$lib/assets/images/home_images/sgg/sgg-logo.png";
 import sgg_mobile_logo from "$lib/assets/images/home_images/sgg/sgg-mobile-logo.png";
+import check_icon from "$lib/assets/images/bonzoui/green_check.svg";
 
 export const IMAGES = {
   WARNING: warning,
@@ -287,6 +288,7 @@ export const IMAGES = {
   AVG_COMPLETION_RATE: avg_completion_rate,
   SCHOOL_AVATAR: school_img,
   CHOOSE_AVATAR_ICON: choose_avatar_icon,
+  CHECK_ICON: check_icon,
 
   REJECT: reject,
   ACCEPT: accept,

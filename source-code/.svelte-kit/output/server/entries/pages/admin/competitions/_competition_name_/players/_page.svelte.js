@@ -1,4 +1,4 @@
-import { s as store_get, i as copy_payload, j as assign_payload, u as unsubscribe_stores, p as pop, b as push, h as head, f as ensure_array_like, k as spread_props } from "../../../../../../chunks/index.js";
+import { s as store_get, k as copy_payload, l as assign_payload, u as unsubscribe_stores, p as pop, b as push, h as head, e as escape_html, j as ensure_array_like, c as attr, m as spread_props } from "../../../../../../chunks/index.js";
 import { o as onDestroy } from "../../../../../../chunks/index-server.js";
 import { t } from "../../../../../../chunks/language.store.js";
 import { m as mapGrades, __tla as __tla_0 } from "../../../../../../chunks/competitions.da.js";
@@ -10,10 +10,8 @@ import { g as getInstitutionLeaderBoard, a as getInstitutionSchoolLeaderBoard, _
 import { T as TabSwitch } from "../../../../../../chunks/TabSwitch.js";
 import { a as gradesStore } from "../../../../../../chunks/utils.js";
 import "../../../../../../chunks/client.js";
-import { a as attr } from "../../../../../../chunks/attributes.js";
 import "../../../../../../chunks/client2.js";
 import { a as appbarStore } from "../../../../../../chunks/appbar.store.js";
-import { e as escape_html } from "../../../../../../chunks/escaping.js";
 let _page;
 let __tla = Promise.all([
   (() => {

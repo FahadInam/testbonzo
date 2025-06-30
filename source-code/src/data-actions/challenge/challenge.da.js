@@ -13,6 +13,7 @@ import { showSuccess } from "../../stores/toast.store";
 import { userActivityStore } from "../../stores/useractivity.store";
 import { metaStore } from "../../stores/meta.store";
 import { guestStore } from "../../stores/guest.store";
+import { checkInternetStability } from "$lib/internetStabilityChecker";
 
 export async function getOpponentsToChallenge() {
   await waitForCompetitionGradeData();
@@ -37,16 +38,7 @@ export async function StartChallenge(subjectData, opponent, playMode) {
   const grade = get(competitionStore).current_grade;
   const id = get(competitionStore).competition_id;
   const { subject, content_id, type } = subjectData;
-
-  console.log({
-    competition_id: id,
-    grade: grade,
-    subject: subject,
-    content_id: content_id,
-    friend_id: opponent.user_id || opponent.id,
-    is_game: 1,
-    content_type: type,
-  });
+  checkInternetStability();
 
   return await request(
     API_DEFINITIONS.CHALLENGE_START,
@@ -127,7 +119,7 @@ export async function ResignChallenge(subjectData, resultData) {
     });
     console.log("url", url);
     goto(`/competitions/${url}`);
-    showSuccess("You have resigned the match");
+    showSuccess("You have quit the game.");
   }
 }
 
@@ -380,4 +372,36 @@ export async function setGradePoints(data) {
     grade,
     points: pointsToSend,
   });
+}
+
+export async function GamePlay(data) {
+  gameDataStore.set({ ...data });
+
+  const compeStore = get(competitionStore);
+  const gameStore = get(gameDataStore);
+  const user = get(userStore);
+
+  if (!compeStore.is_multiplayer_allowed) {
+    const response = await StartChallenge(gameStore, null, 0);
+
+    if (response.error_code === 0) {
+      updateGameData({
+        opponent: user,
+        playMode: 0,
+        matchData: response.data,
+        subjectData: {
+          summary_id: response?.data?.summary_id,
+          match_id: response?.data?.match_id,
+          content_id: gameStore?.content_id,
+          base_points: response?.data?.base_points,
+        },
+        matchingItem: gameStore,
+        link: gameStore?.link,
+      });
+
+      goto("/challenge/vsscreen");
+      return;
+    }
+  }
+  goto("/challenge");
 }

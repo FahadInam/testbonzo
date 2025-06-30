@@ -1,8 +1,7 @@
-import { s as store_get, h as head, u as unsubscribe_stores, p as pop, b as push } from "../../../../../chunks/index.js";
+import { s as store_get, h as head, e as escape_html, u as unsubscribe_stores, p as pop, b as push } from "../../../../../chunks/index.js";
 import "../../../../../chunks/GameCard.svelte_svelte_type_style_lang.js";
 import { t } from "../../../../../chunks/language.store.js";
 import { c as competitionStore } from "../../../../../chunks/appbar.store.js";
-import { e as escape_html } from "../../../../../chunks/escaping.js";
 import "clsx";
 import { u as userStore } from "../../../../../chunks/user.store.js";
 import { I as IsGuestMode } from "../../../../../chunks/utils.js";
@@ -12,8 +11,8 @@ import "notyf";
 import { __tla as __tla_1 } from "../../../../../chunks/user.auth.da.js";
 import "../../../../../chunks/system..da.js";
 import "../../../../../chunks/avatar2.js";
-import "../../../../../chunks/gamedata.store.js";
 import "../../../../../chunks/useractivity.store.js";
+import "../../../../../chunks/payment.store.js";
 import { G as GameCardSkeleton } from "../../../../../chunks/GameCardSkeleton.js";
 import { L as ListBoxSkeleton } from "../../../../../chunks/ListBoxSkeleton.js";
 import moment from "moment";
@@ -51,7 +50,7 @@ let __tla = Promise.all([
     head($$payload, ($$payload2) => {
       $$payload2.title = `<title>${escape_html(store_get($$store_subs ??= {}, "$competitionStore", competitionStore).name || store_get($$store_subs ??= {}, "$t", t)("competition"))}</title>`;
     });
-    $$payload.out += `<div class="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-10"><div class="w-full max-w-screen-lg space-y-6"><div class="w-full mb-0 text-center"><h2 class="text-white font-medium text-3xl mb-2">${escape_html(store_get($$store_subs ??= {}, "$competitionStore", competitionStore).name)}</h2> <p class="text-white font-normal text-lg">${escape_html(title)}</p></div> `;
+    $$payload.out += `<div class="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-10"><div class="w-full max-w-screen-lg space-y-6"><div class="w-full mb-0 text-center"><h2 class="text-white font-medium text-2xl md:text-3xl mb-2">${escape_html(store_get($$store_subs ??= {}, "$competitionStore", competitionStore).name)}</h2> <p class="text-white font-normal text-lg">${escape_html(title)}</p></div> `;
     {
       $$payload.out += "<!--[!-->";
     }

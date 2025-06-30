@@ -1,4 +1,4 @@
-import { h as head, s as store_get, u as unsubscribe_stores, p as pop, b as push } from "../../../../chunks/index.js";
+import { h as head, e as escape_html, s as store_get, c as attr, u as unsubscribe_stores, p as pop, b as push } from "../../../../chunks/index.js";
 import { g as get } from "../../../../chunks/index3.js";
 import { t } from "../../../../chunks/language.store.js";
 import { g as getTitle } from "../../../../chunks/title.store.js";
@@ -13,8 +13,6 @@ import { i as instanceStore } from "../../../../chunks/instance.store.js";
 import { i as isGCLC } from "../../../../chunks/system..da.js";
 import { g as getTextForRole, B as BannerText } from "../../../../chunks/BannerText.js";
 import { s as sidebarStore } from "../../../../chunks/sidebar.store.js";
-import { e as escape_html } from "../../../../chunks/escaping.js";
-import { a as attr } from "../../../../chunks/attributes.js";
 let _page;
 let __tla = Promise.all([
   (() => {

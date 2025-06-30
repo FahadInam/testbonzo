@@ -10,9 +10,8 @@ import "../../../../../chunks/system..da.js";
 import { I as IMAGES } from "../../../../../chunks/images.constants.js";
 import "../../../../../chunks/index2.js";
 import { __tla as __tla_0 } from "../../../../../chunks/api.definitions.js";
-import "../../../../../chunks/gamedata.store.js";
-import "notyf";
 import "../../../../../chunks/useractivity.store.js";
+import "notyf";
 import { __tla as __tla_1 } from "../../../../../chunks/payment.da.js";
 let _page;
 let __tla = Promise.all([
@@ -31,6 +30,8 @@ let __tla = Promise.all([
 ]).then(async () => {
   _page = function($$payload, $$props) {
     push();
+    let data;
+    console.log(data, "data");
     SubscriptionCard($$payload, {
       icon: IMAGES.SUBSCRIPTION_ICON,
       width: "w-[80%]",

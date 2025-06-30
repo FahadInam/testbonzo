@@ -1,4 +1,4 @@
-import { i as copy_payload, j as assign_payload, c as bind_props, p as pop, b as push, s as store_get, a as slot, u as unsubscribe_stores } from "../../../../chunks/index.js";
+import { k as copy_payload, l as assign_payload, d as bind_props, p as pop, b as push, s as store_get, a as slot, u as unsubscribe_stores } from "../../../../chunks/index.js";
 import { B as BackgroundImage } from "../../../../chunks/BackgroundImage.js";
 import { a as appbarStore, s as setBackUrl, c as competitionStore } from "../../../../chunks/appbar.store.js";
 import { g as getText } from "../../../../chunks/language.store.js";
@@ -124,9 +124,15 @@ let __tla = Promise.all([
         isShowRules: false
       }));
     };
+    if (store_get($$store_subs ??= {}, "$appbarStore", appbarStore)?.isNotificationVisible === false || store_get($$store_subs ??= {}, "$appbarStore", appbarStore)?.isNotificationVisible === void 0) {
+      appbarStore.update((state) => ({
+        ...state,
+        isNotificationVisible: true
+      }));
+    }
     BackgroundImage($$payload, {});
     $$payload.out += `<!----> <!---->`;
-    slot($$payload, $$props, "default", {});
+    slot($$payload, $$props, "default", {}, null);
     $$payload.out += `<!----> `;
     InfoModal($$payload, {
       showModal: store_get($$store_subs ??= {}, "$appbarStore", appbarStore).isShowRules,

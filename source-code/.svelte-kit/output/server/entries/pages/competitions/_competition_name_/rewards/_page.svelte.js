@@ -1,4 +1,4 @@
-import { f as ensure_array_like, c as bind_props, i as copy_payload, j as assign_payload, p as pop, b as push, h as head, s as store_get, u as unsubscribe_stores } from "../../../../../chunks/index.js";
+import { j as ensure_array_like, d as bind_props, k as copy_payload, l as assign_payload, p as pop, b as push, h as head, e as escape_html, s as store_get, u as unsubscribe_stores } from "../../../../../chunks/index.js";
 import { t } from "../../../../../chunks/language.store.js";
 import { P as PageHeading } from "../../../../../chunks/PageHeading.js";
 import { R as RewardsType, __tla as __tla_0 } from "../../../../../chunks/rewards.da.js";
@@ -10,7 +10,6 @@ import { S as SelectBox } from "../../../../../chunks/SelectBox.js";
 import "notyf";
 import { u as userStore } from "../../../../../chunks/user.store.js";
 import { f as fallback } from "../../../../../chunks/utils2.js";
-import { e as escape_html } from "../../../../../chunks/escaping.js";
 let _page;
 let __tla = Promise.all([
   (() => {

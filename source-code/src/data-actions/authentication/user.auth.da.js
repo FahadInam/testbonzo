@@ -233,10 +233,12 @@ export async function signUpUserUsingFormData(formData, userRole = "learner", ot
   });
   if (data.error_code == 0) {
     if (isShupavu && !otpSuccess) {
+      showSuccess(await getText("otp_send_text"));
       goto("/account/verify-code");
       otpStore.update((store) => ({
         ...store,
         phone_number: formData.phone_number,
+        otp_forgot_password: false,
       }));
     } else if (data.data.origin) {
       goto("/account/verify", {
@@ -355,5 +357,30 @@ export async function resendEmail(formData) {
   const data = await request(API_DEFINITIONS.EMAIL_SIGNUP, formData);
   if (data.error_code == 0) {
     showSuccess("Email sent successfully!");
+  }
+}
+
+/**
+ * @param {undefined} [token]
+ */
+export async function resendOtp(token) {
+  const otpData = get(otpStore);
+  const instance_id = get(instanceStore).instance_id;
+
+  const data = await request(
+    API_DEFINITIONS.OTP_SIGNUP,
+    {
+      otp_type: 2,
+      phone_number: otpData.phone_number,
+      t_token: token,
+    },
+    {
+      headers: {
+        instance_id: instance_id,
+      },
+    },
+  );
+  if (data.error_code == 0) {
+    showSuccess(await getText("otp_send_text"));
   }
 }

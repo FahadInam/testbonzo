@@ -1,11 +1,8 @@
+import { a as PUBLIC_API_BASE_URL } from "./public.js";
 import { w as writable, g as get } from "./index3.js";
 import { u as userStore } from "./user.store.js";
 import { d as awaitStoreKey } from "./utils.js";
 const firstLoadStore = writable({ isUILoaded: false });
-const PUBLIC_API_BASE_URL = "https://devcompetitionapi.knowledgeplatform.com/api/";
-const PUBLIC_TURNSTILE_KEY = "0x4AAAAAAATTI8DjOR9nUgOF";
-const PUBLIC_GOOGLE_CLIENT_ID = "993486033665-pvkgktsljun2jmjapsm1kmcpa252j5ef.apps.googleusercontent.com";
-const PUBLIC_LMS_URL = "https://qa--kplmsdev.netlify.app/public-login?isBonzo=1&isGlobalGreenGuardians=1";
 const API_BASE_URL = PUBLIC_API_BASE_URL;
 const apiCache = writable(/* @__PURE__ */ new Map());
 const activeControllers = /* @__PURE__ */ new Set();
@@ -163,8 +160,5 @@ function getAuthToken() {
   return get(userStore).auth_token;
 }
 export {
-  PUBLIC_TURNSTILE_KEY as P,
-  PUBLIC_GOOGLE_CLIENT_ID as a,
-  PUBLIC_LMS_URL as b,
   request as r
 };

@@ -485,6 +485,17 @@ export const API_DEFINITIONS = {
       "-10": await getText("number_already_exists"),
     },
   },
+  OTP_RECOVER_MOBILE: {
+    method: "POST",
+    endpoint: "password/recovermobile",
+    requiredParams: [],
+    cache: false,
+    secure: false,
+    loader: true,
+    errorCodes: {
+      "-10": await getText("number_already_exists"),
+    },
+  },
   OTP_VERIFY: {
     method: "POST",
     endpoint: "user/otp/verify",

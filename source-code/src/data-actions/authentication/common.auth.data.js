@@ -2,13 +2,13 @@ import { getText, t } from "../../stores/language.store";
 import { PUBLIC_LMS_URL, PUBLIC_TURNSTILE_KEY } from "$env/static/public";
 import { authModalStore } from "../../stores/auth.modal.store";
 import { goto } from "$app/navigation";
-import { showWarning } from "../../stores/toast.store";
+import { showSuccess, showWarning } from "../../stores/toast.store";
 import { userStore } from "../../stores/user.store";
 import { PUBLIC_GOOGLE_CLIENT_ID } from "$env/static/public";
 import { request } from "$lib/api.service";
 import { API_DEFINITIONS } from "../../apis/api.definitions";
 import { instanceStore } from "../../stores/instance.store";
-import { get } from "svelte/store";
+import { get, readonly } from "svelte/store";
 import { PUBLIC_GOOGLE_ACCOUNT_OAUTH_URL } from "$env/static/public";
 import { openIframe } from "../../stores/iframeStore";
 import { getInstanceText, getInstanceTextAsync, waitForInstance } from "$lib/utils";
@@ -33,6 +33,7 @@ export const signUpFields = {
       label: await getText("password"),
       placeholder: await getText("enter_your_password"),
       required: true,
+      showPasswordStrength: true,
     },
   ],
   buttons: [
@@ -169,6 +170,7 @@ export const resetPasswordFields = {
       label: await getText("enter_new_password"),
       placeholder: await getText("enter_your_new_password"),
       required: true,
+      showPasswordStrength: true,
     },
     {
       name: "confirmPassword",
@@ -201,6 +203,7 @@ export const emailVerificationFieldsSetup = {
       label: await getText("password"),
       placeholder: await getText("password"),
       required: true,
+      showPasswordStrength: true,
     },
   ],
   buttons: [
@@ -277,31 +280,25 @@ export const shupavuSignupFields = {
   enableTurnstile: true,
   turnstileSiteKey: PUBLIC_TURNSTILE_KEY,
 };
-/**
- * OTP VERIFICATION SETUP
+
+/*
+ * SHUPAVU FORGOT PASSWORD FORM FIELDS
  */
-export const otpVerificationField = {
-  title: await getText("confirm_your_number"),
+export const shupavuForgotPasswordFields = {
+  title: await getText("reset_your_password"),
   fields: [
     {
-      name: "otp",
-      type: "text",
-      label: await getText("otp_code"),
-      placeholder: await getText("enter_code"),
+      name: "phone_number",
+      type: "tel",
+      label: await getText("phone_number"),
+      prefix: "+254",
       required: true,
-    },
-    {
-      name: "password",
-      type: "password",
-      label: await getText("password"),
-      placeholder: await getText("password"),
-      required: true,
-      isShow: false,
+      placeholder: await getText("enter_phone_number"),
     },
   ],
   buttons: [
     {
-      label: await getText("verify"),
+      label: await getText("next"),
       type: "submit",
       customClass: "w-full",
     },
@@ -314,24 +311,91 @@ export const otpVerificationField = {
       link: "/account/user/login",
     },
   },
-  handleSubmit: async (/** @type {any} */ formData) => {
-    const { is_otp_verified, phone_number } = get(otpStore);
-
-    if (is_otp_verified) {
-      const updatedFormData = {
-        ...formData,
-        phone_number,
-        username: "",
-      };
-      const { signUpUserUsingFormData } = await import("./user.auth.da");
-      signUpUserUsingFormData(updatedFormData, "learner", true);
-    } else {
-      handleOtpVerification(formData);
-    }
-  },
   enableTurnstile: true,
   turnstileSiteKey: PUBLIC_TURNSTILE_KEY,
 };
+
+/**
+ * OTP VERIFICATION SETUP
+ */
+export const getOtpVerificationFields = async () => {
+  const { is_otp_verified } = get(otpStore);
+  return {
+    title: await getText("confirm_your_number"),
+    fields: [
+      {
+        name: "otp",
+        type: "text",
+        label: await getText("otp_code"),
+        placeholder: await getText("enter_code"),
+        required: true,
+        readonly: is_otp_verified,
+      },
+      {
+        name: "password",
+        type: "password",
+        label: await getText("password"),
+        placeholder: await getText("password"),
+        required: true,
+        isShow: false,
+        showPasswordStrength: true,
+      },
+    ],
+    buttons: [
+      {
+        label: await getText("verify"),
+        type: "submit",
+        customClass: "w-full",
+      },
+    ],
+    footer: {},
+    handleSubmit: async (/** @type {any} */ formData) => {
+      const { is_otp_verified, phone_number, otp_forgot_password } = get(otpStore);
+
+      if (is_otp_verified) {
+        const updatedFormData = {
+          ...formData,
+          phone_number,
+          username: "",
+        };
+        if (otp_forgot_password) {
+          handleOtpVerificationForgotPassword(formData);
+        } else {
+          const { signUpUserUsingFormData } = await import("./user.auth.da");
+          signUpUserUsingFormData(updatedFormData, "learner", true);
+        }
+      } else {
+        handleOtpVerification(formData);
+      }
+    },
+    enableTurnstile: true,
+    turnstileSiteKey: PUBLIC_TURNSTILE_KEY,
+  };
+};
+
+/**
+ * Handles OTP verification for the "Forgot Password" flow.
+ * Sends the OTP and new password to the API for verification.
+ * If successful, shows a success message and logs in the user.
+ *
+ * @param {{ otp: string; password: string }} data - The OTP and new password entered by the user.
+ * @returns {Promise<void>} A promise that resolves when the process is complete.
+ */
+export const handleOtpVerificationForgotPassword = async (data) => {
+  const { user_id, phone_number } = get(otpStore);
+  const { error_code } = await request(API_DEFINITIONS.OTP_RECOVER_MOBILE, {
+    otp: data.otp,
+    password: data.password,
+    user_id: user_id,
+  });
+
+  if (error_code === 0) {
+    showSuccess(await getText("password_changed_text"));
+    const { loginUser } = await import("./user.auth.da");
+    await loginUser("", data.password, phone_number);
+  }
+};
+
 /**
 /**
  * @param {boolean | undefined} [isToast]
@@ -494,6 +558,7 @@ export const handleOtpVerification = async (data) => {
     otpStore.update((store) => ({
       ...store,
       is_otp_verified: true,
+      user_id: response?.data?.user_id,
     }));
   }
 };

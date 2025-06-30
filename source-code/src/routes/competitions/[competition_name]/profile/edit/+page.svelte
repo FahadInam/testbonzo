@@ -5,19 +5,22 @@
   import { sideBarAndAppBarSettings } from "$lib/utils";
   import { t } from "../../../../../stores/language.store";
   import DataCard from "../../../../../components/DataCard/DataCard.svelte";
-  import {
-    getProfileData,
-    getUserProfileFields,
-  } from "../../../../../data-actions/profile/profile.da";
+  import { getProfileData, getUserProfileFields } from "../../../../../data-actions/profile/profile.da";
   import ProfileEditView from "../../../../../views/ProfileEditView/ProfileEditView.svelte";
   import EditProfileSkeleton from "../../../../../components/Skeleton/EditProfileSkeleton.svelte";
+  import { page } from "$app/state";
 
   let userProfileForm = {};
   let isLoading = true;
   let profile_picture = "";
 
+  let cameFromChangeGrade = false;
+
+  if (page?.state?.fromChangeGrade) {
+    cameFromChangeGrade = true;
+  }
   async function loadFields() {
-    userProfileForm = await getUserProfileFields();
+    userProfileForm = await getUserProfileFields(cameFromChangeGrade);
   }
   // Fetches user profile and initializes form data
   async function fetchUserProfile() {
@@ -92,12 +95,7 @@
       <EditProfileSkeleton />
     </div>
   {:else}
-    <DataCard
-      title={$t("personal_details")}
-      imageSrc={IMAGES.PROFILE_ICON}
-      imageClass="w-12 h-12"
-      maxHeight="auto"
-    >
+    <DataCard title={$t("personal_details")} imageSrc={IMAGES.PROFILE_ICON} imageClass="w-12 h-12" maxHeight="auto">
       <div class="w-full">
         <ProfileEditView form={userProfileForm} {profile_picture} />
       </div>

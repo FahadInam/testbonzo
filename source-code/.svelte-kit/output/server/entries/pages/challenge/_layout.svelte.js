@@ -71,7 +71,7 @@ let __tla = Promise.all([
       dropdownItems
     });
     $$payload.out += `<!----> <div class="flex-1 overflow-y-auto save-scroll"><!---->`;
-    slot($$payload, $$props, "default", {});
+    slot($$payload, $$props, "default", {}, null);
     $$payload.out += `<!----></div></div></div></div>`;
     if ($$store_subs) unsubscribe_stores($$store_subs);
     pop();

@@ -1,9 +1,7 @@
-import { c as bind_props, p as pop, b as push, d as stringify, h as head, s as store_get, u as unsubscribe_stores } from "../../../../chunks/index.js";
+import { e as escape_html, d as bind_props, p as pop, b as push, c as attr, f as stringify, n as clsx, h as head, s as store_get, u as unsubscribe_stores } from "../../../../chunks/index.js";
 import { o as onDestroy } from "../../../../chunks/index-server.js";
 import { f as fallback } from "../../../../chunks/utils2.js";
-import { e as escape_html } from "../../../../chunks/escaping.js";
 import { I as IMAGES } from "../../../../chunks/images.constants.js";
-import { a as attr, c as clsx } from "../../../../chunks/attributes.js";
 import "../../../../chunks/client.js";
 import "notyf";
 import "clsx";
@@ -13,9 +11,8 @@ import "../../../../chunks/client2.js";
 import { t } from "../../../../chunks/language.store.js";
 import "../../../../chunks/system..da.js";
 import "../../../../chunks/index2.js";
-import "../../../../chunks/gamedata.store.js";
-import { __tla as __tla_0 } from "../../../../chunks/api.definitions.js";
 import "../../../../chunks/useractivity.store.js";
+import { __tla as __tla_0 } from "../../../../chunks/api.definitions.js";
 let _page;
 let __tla = Promise.all([
   (() => {

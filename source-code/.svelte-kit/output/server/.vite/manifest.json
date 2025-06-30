@@ -18,7 +18,6 @@
     "imports": [
       "_index.js",
       "_utils2.js",
-      "_attributes.js",
       "_appbar.store.js",
       "_ArrowButton.js",
       "_client.js",
@@ -27,13 +26,11 @@
       "_Avatar.js",
       "_Button.js",
       "_language.store.js",
-      "_escaping.js",
       "_images.constants.js",
       "_user.store.js",
       "_system..da.js",
       "_index2.js",
       "_api.definitions.js",
-      "_gamedata.store.js",
       "_useractivity.store.js",
       "_avatar2.js",
       "_common.auth.data.js",
@@ -56,13 +53,11 @@
       "_index.js",
       "_utils2.js",
       "_client.js",
-      "_attributes.js",
       "_client2.js",
       "_user.store.js",
       "_language.store.js",
       "_system..da.js",
-      "_index2.js",
-      "_escaping.js"
+      "_index2.js"
     ]
   },
   "_AuthenticationView.js": {
@@ -77,9 +72,7 @@
       "_Modal.js",
       "_client.js",
       "_utils2.js",
-      "_attributes.js",
       "_client2.js",
-      "_escaping.js",
       "_system..da.js",
       "_Image.js"
     ]
@@ -90,8 +83,7 @@
     "imports": [
       "_index.js",
       "_avatar2.js",
-      "_utils2.js",
-      "_attributes.js"
+      "_utils2.js"
     ]
   },
   "_BackToTop.js": {
@@ -115,7 +107,6 @@
     "imports": [
       "_index.js",
       "_images.constants.js",
-      "_attributes.js",
       "_html.js"
     ]
   },
@@ -130,9 +121,7 @@
       "_index.js",
       "_client.js",
       "_utils2.js",
-      "_attributes.js",
-      "_client2.js",
-      "_escaping.js"
+      "_client2.js"
     ],
     "css": [
       "_app/immutable/assets/Button.4cFhq8PD.css"
@@ -143,8 +132,7 @@
     "name": "Card",
     "imports": [
       "_index.js",
-      "_utils2.js",
-      "_attributes.js"
+      "_utils2.js"
     ]
   },
   "_Carousel.CJG2uct-.css": {
@@ -163,7 +151,6 @@
       "_Image.js",
       "_Modal.js",
       "_language.store.js",
-      "_escaping.js",
       "_client.js"
     ],
     "css": [
@@ -178,9 +165,9 @@
     "file": "chunks/EditProfileSkeleton.js",
     "name": "EditProfileSkeleton"
   },
-  "_Form.DuozghpI.css": {
-    "file": "_app/immutable/assets/Form.DuozghpI.css",
-    "src": "_Form.DuozghpI.css"
+  "_Form.DufxgO_l.css": {
+    "file": "_app/immutable/assets/Form.DufxgO_l.css",
+    "src": "_Form.DufxgO_l.css"
   },
   "_Form.js": {
     "file": "chunks/Form.js",
@@ -190,17 +177,20 @@
       "_index-server.js",
       "_Button.js",
       "_utils2.js",
-      "_attributes.js",
       "_user.store.js",
       "_client.js",
       "_client2.js",
       "_language.store.js",
       "_system..da.js",
+      "_images.constants.js",
       "_index2.js",
-      "_escaping.js"
+      "_user.auth.da.js",
+      "_index3.js",
+      "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/Form.DuozghpI.css"
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Form.DufxgO_l.css"
     ]
   },
   "_FullPageIframe.js": {
@@ -208,8 +198,7 @@
     "name": "FullPageIframe",
     "imports": [
       "_index.js",
-      "_utils2.js",
-      "_attributes.js"
+      "_utils2.js"
     ]
   },
   "_GameCard.CVnY9sfe.css": {
@@ -313,8 +302,6 @@
       "_appbar.store.js",
       "_images.constants.js",
       "_utils2.js",
-      "_attributes.js",
-      "_escaping.js",
       "_index3.js",
       "_Button.js",
       "_Image.js",
@@ -331,8 +318,7 @@
     "name": "Image",
     "imports": [
       "_index.js",
-      "_utils2.js",
-      "_attributes.js"
+      "_utils2.js"
     ]
   },
   "_ListBoxSkeleton.js": {
@@ -357,8 +343,7 @@
     "imports": [
       "_index.js",
       "_index-server.js",
-      "_utils2.js",
-      "_attributes.js"
+      "_utils2.js"
     ]
   },
   "_NavBar.js": {
@@ -370,9 +355,7 @@
       "_index4.js",
       "_system..da.js",
       "_index3.js",
-      "_client.js",
-      "_attributes.js",
-      "_escaping.js"
+      "_client.js"
     ]
   },
   "_NoDataFound.js": {
@@ -381,9 +364,7 @@
     "imports": [
       "_index.js",
       "_images.constants.js",
-      "_utils2.js",
-      "_attributes.js",
-      "_escaping.js"
+      "_utils2.js"
     ]
   },
   "_PageHeading.js": {
@@ -393,9 +374,7 @@
       "_index.js",
       "_Image.js",
       "_language.store.js",
-      "_utils2.js",
-      "_attributes.js",
-      "_escaping.js"
+      "_utils2.js"
     ]
   },
   "_PopupScreen.js": {
@@ -418,9 +397,7 @@
     "imports": [
       "_index.js",
       "_index-server.js",
-      "_utils2.js",
-      "_attributes.js",
-      "_escaping.js"
+      "_utils2.js"
     ],
     "css": [
       "_app/immutable/assets/SelectBox.C4I-LW8r.css"
@@ -439,9 +416,7 @@
       "_system..da.js",
       "_client.js",
       "_utils2.js",
-      "_attributes.js",
-      "_Image.js",
-      "_escaping.js"
+      "_Image.js"
     ],
     "css": [
       "_app/immutable/assets/SideBar.D-VdH2ip.css"
@@ -453,9 +428,7 @@
     "imports": [
       "_index.js",
       "_system..da.js",
-      "_utils2.js",
-      "_attributes.js",
-      "_escaping.js"
+      "_utils2.js"
     ]
   },
   "_SubscriptionCard.js": {
@@ -463,9 +436,7 @@
     "name": "SubscriptionCard",
     "imports": [
       "_index.js",
-      "_utils2.js",
-      "_attributes.js",
-      "_escaping.js"
+      "_utils2.js"
     ]
   },
   "_TabSwitch.UMdf7hNE.css": {
@@ -477,9 +448,7 @@
     "name": "TabSwitch",
     "imports": [
       "_index.js",
-      "_utils2.js",
-      "_attributes.js",
-      "_escaping.js"
+      "_utils2.js"
     ],
     "css": [
       "_app/immutable/assets/TabSwitch.UMdf7hNE.css"
@@ -508,6 +477,7 @@
     "file": "chunks/api.service.js",
     "name": "api.service",
     "imports": [
+      "_public.js",
       "_index3.js",
       "_user.store.js",
       "_utils.js"
@@ -519,6 +489,7 @@
     "imports": [
       "_common.auth.data.js",
       "_language.store.js",
+      "_appbar.store.js",
       "_index3.js",
       "_payment.store.js",
       "_meta.store.js"
@@ -531,13 +502,6 @@
       "_client.js",
       "_index3.js",
       "_client2.js"
-    ]
-  },
-  "_attributes.js": {
-    "file": "chunks/attributes.js",
-    "name": "attributes",
-    "imports": [
-      "_escaping.js"
     ]
   },
   "_avatar2.js": {
@@ -601,6 +565,24 @@
       "_app/immutable/assets/a67.CsD1LPnD.png"
     ]
   },
+  "_challenge.da.js": {
+    "file": "chunks/challenge.da.js",
+    "name": "challenge.da",
+    "imports": [
+      "_utils.js",
+      "_index3.js",
+      "_appbar.store.js",
+      "_useractivity.store.js",
+      "_api.definitions.js",
+      "_api.service.js",
+      "_user.store.js",
+      "_language.store.js",
+      "_client.js"
+    ],
+    "css": [
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
+    ]
+  },
   "_client.js": {
     "file": "chunks/client.js",
     "name": "client",
@@ -622,16 +604,13 @@
     "name": "common.auth.data",
     "imports": [
       "_language.store.js",
-      "_api.service.js",
+      "_public.js",
       "_index3.js",
       "_client.js",
       "_user.store.js",
-      "_api.definitions.js",
       "_utils.js",
+      "_api.definitions.js",
       "_avatar2.js"
-    ],
-    "dynamicImports": [
-      "_user.auth.da.js"
     ],
     "css": [
       "_app/immutable/assets/notyf.KOmfmGu7.css"
@@ -649,7 +628,6 @@
       "_appbar.store.js",
       "_client.js",
       "_language.store.js",
-      "_toast.store.js",
       "_user.auth.da.js",
       "_system..da.js",
       "_meta.store.js"
@@ -659,20 +637,9 @@
     "file": "chunks/country.constant.js",
     "name": "country.constant"
   },
-  "_escaping.js": {
-    "file": "chunks/escaping.js",
-    "name": "escaping"
-  },
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
-  },
-  "_gamedata.store.js": {
-    "file": "chunks/gamedata.store.js",
-    "name": "gamedata.store",
-    "imports": [
-      "_user.store.js"
-    ]
   },
   "_html.js": {
     "file": "chunks/html.js",
@@ -768,7 +735,8 @@
     "file": "chunks/index-server.js",
     "name": "index-server",
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_utils2.js"
     ]
   },
   "_index.js": {
@@ -827,9 +795,7 @@
       "_Avatar.js",
       "_Image.js",
       "_images.constants.js",
-      "_utils2.js",
-      "_attributes.js",
-      "_escaping.js"
+      "_utils2.js"
     ]
   },
   "_meta.store.js": {
@@ -837,13 +803,6 @@
     "name": "meta.store",
     "imports": [
       "_index3.js"
-    ]
-  },
-  "_navigation.service.js": {
-    "file": "chunks/navigation.service.js",
-    "name": "navigation.service",
-    "imports": [
-      "_client.js"
     ]
   },
   "_notyf.KOmfmGu7.css": {
@@ -873,6 +832,10 @@
     "imports": [
       "_user.store.js"
     ]
+  },
+  "_public.js": {
+    "file": "chunks/public.js",
+    "name": "public"
   },
   "_rewards.da.js": {
     "file": "chunks/rewards.da.js",
@@ -917,17 +880,9 @@
       "_index3.js"
     ]
   },
-  "_toast.store.js": {
-    "file": "chunks/toast.store.js",
-    "name": "toast.store",
-    "css": [
-      "_app/immutable/assets/notyf.KOmfmGu7.css"
-    ]
-  },
   "_user.auth.da.js": {
     "file": "chunks/user.auth.da.js",
     "name": "user.auth.da",
-    "isDynamicEntry": true,
     "imports": [
       "_client.js",
       "_api.service.js",
@@ -942,8 +897,7 @@
       "_system..da.js",
       "_avatar2.js",
       "_appbar.store.js",
-      "_gamedata.store.js",
-      "_useractivity.store.js",
+      "_challenge.da.js",
       "_user.constants.js"
     ],
     "css": [
@@ -1933,7 +1887,8 @@
       "_index4.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DuEeXLPT.css"
+      "_app/immutable/assets/_layout.sWxCXE2c.css",
+      "_app/immutable/assets/notyf.KOmfmGu7.css"
     ]
   },
   "src/routes/+page.js": {
@@ -1954,8 +1909,6 @@
       "_index.js",
       "_Button.js",
       "_utils2.js",
-      "_attributes.js",
-      "_escaping.js",
       "_NavBar.js",
       "_language.store.js",
       "_images.constants.js",
@@ -1988,7 +1941,6 @@
     "src": "src/routes/404/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_escaping.js",
       "_index.js",
       "_client.js"
     ]
@@ -2005,16 +1957,17 @@
       "_api.service.js",
       "_api.definitions.js",
       "_language.store.js",
-      "_toast.store.js",
       "_system..da.js",
       "_Button.js",
       "_Image.js",
       "_utils2.js",
-      "_escaping.js",
       "_index-server.js",
       "_client.js",
       "_utils.js",
-      "_BackgroundImage.js"
+      "_BackgroundImage.js",
+      "_common.auth.data.js",
+      "_instance.store.js",
+      "_index3.js"
     ]
   },
   "src/routes/account/institution/details/+page.svelte": {
@@ -2038,8 +1991,7 @@
       "_PopupScreen.js",
       "_appbar.store.js",
       "_Modal.js",
-      "_utils2.js",
-      "_escaping.js"
+      "_utils2.js"
     ]
   },
   "src/routes/account/institution/login/+page.svelte": {
@@ -2062,7 +2014,8 @@
     ],
     "css": [
       "_app/immutable/assets/Button.4cFhq8PD.css",
-      "_app/immutable/assets/Form.DuozghpI.css"
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Form.DufxgO_l.css"
     ]
   },
   "src/routes/account/institution/signup/+page.svelte": {
@@ -2085,7 +2038,8 @@
     ],
     "css": [
       "_app/immutable/assets/Button.4cFhq8PD.css",
-      "_app/immutable/assets/Form.DuozghpI.css"
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Form.DufxgO_l.css"
     ]
   },
   "src/routes/account/signup/+page.svelte": {
@@ -2120,7 +2074,8 @@
     ],
     "css": [
       "_app/immutable/assets/Button.4cFhq8PD.css",
-      "_app/immutable/assets/Form.DuozghpI.css"
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Form.DufxgO_l.css"
     ]
   },
   "src/routes/account/user/signup/+page.svelte": {
@@ -2140,7 +2095,8 @@
     ],
     "css": [
       "_app/immutable/assets/Button.4cFhq8PD.css",
-      "_app/immutable/assets/Form.DuozghpI.css"
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Form.DufxgO_l.css"
     ]
   },
   "src/routes/account/verify-code/+page.svelte": {
@@ -2157,12 +2113,12 @@
       "_system..da.js",
       "_index2.js",
       "_user.auth.da.js",
-      "_AuthenticationView.js",
       "_common.auth.data.js"
     ],
     "css": [
       "_app/immutable/assets/Button.4cFhq8PD.css",
-      "_app/immutable/assets/Form.DuozghpI.css"
+      "_app/immutable/assets/notyf.KOmfmGu7.css",
+      "_app/immutable/assets/Form.DufxgO_l.css"
     ]
   },
   "src/routes/account/verify/+page.svelte": {
@@ -2176,13 +2132,11 @@
       "_PopupScreen.js",
       "_stores.js",
       "_Form.js",
-      "_api.service.js",
+      "_public.js",
       "_user.auth.da.js",
       "_language.store.js",
       "_client.js",
-      "_appbar.store.js",
-      "_escaping.js",
-      "_attributes.js"
+      "_appbar.store.js"
     ]
   },
   "src/routes/admin/[competition_name]/+layout.js": {
@@ -2246,9 +2200,7 @@
       "_instance.store.js",
       "_system..da.js",
       "_BannerText.js",
-      "_sidebar.store.js",
-      "_escaping.js",
-      "_attributes.js"
+      "_sidebar.store.js"
     ],
     "css": [
       "_app/immutable/assets/notyf.KOmfmGu7.css",
@@ -2287,8 +2239,6 @@
       "_system..da.js",
       "_index2.js",
       "_utils2.js",
-      "_attributes.js",
-      "_escaping.js",
       "_Avatar.js",
       "_PageHeading.js",
       "_SelectBox.js",
@@ -2320,10 +2270,8 @@
       "_TabSwitch.js",
       "_utils.js",
       "_client.js",
-      "_attributes.js",
       "_client2.js",
-      "_appbar.store.js",
-      "_escaping.js"
+      "_appbar.store.js"
     ]
   },
   "src/routes/auth/google/+page.svelte": {
@@ -2381,18 +2329,15 @@
       "_index.js",
       "_index-server.js",
       "_utils2.js",
-      "_escaping.js",
       "_images.constants.js",
-      "_attributes.js",
       "_client.js",
       "_user.store.js",
       "_client2.js",
       "_language.store.js",
       "_system..da.js",
       "_index2.js",
-      "_gamedata.store.js",
-      "_api.definitions.js",
-      "_useractivity.store.js"
+      "_useractivity.store.js",
+      "_api.definitions.js"
     ],
     "css": [
       "_app/immutable/assets/_page.cN2tRNgI.css",
@@ -2417,26 +2362,26 @@
     "imports": [
       "_index.js",
       "_utils2.js",
-      "_attributes.js",
-      "_escaping.js",
       "_SubscriptionCard.js",
       "_images.constants.js",
       "_index3.js",
       "_user.store.js",
       "_language.store.js",
-      "_user.auth.da.js",
+      "_challenge.da.js",
+      "_payment.store.js",
+      "_system..da.js",
       "_Button.js",
       "_avatar2.js",
       "_client.js",
-      "_gamedata.store.js",
+      "_useractivity.store.js",
       "_appbar.store.js",
       "_Avatar.js",
       "_common.auth.data.js",
       "_index-server.js",
       "_client2.js",
-      "_system..da.js",
       "_index2.js",
       "_api.definitions.js",
+      "_user.auth.da.js",
       "_country.constant.js",
       "_AuthenticationView.js",
       "_utils.js",
@@ -2460,21 +2405,19 @@
     "imports": [
       "_index.js",
       "_images.constants.js",
-      "_user.auth.da.js",
+      "_challenge.da.js",
       "_PageHeading.js",
       "_language.store.js",
       "_user.store.js",
       "_index3.js",
-      "_toast.store.js",
+      "_user.auth.da.js",
       "_Avatar.js",
       "_Image.js",
-      "_attributes.js",
-      "_escaping.js",
       "_Button.js",
       "_utils.js",
       "_utils2.js",
       "_client.js",
-      "_gamedata.store.js",
+      "_useractivity.store.js",
       "_stores.js",
       "_competitions.da.js",
       "_client2.js",
@@ -2502,12 +2445,10 @@
     "imports": [
       "_index.js",
       "_user.store.js",
-      "_gamedata.store.js",
+      "_useractivity.store.js",
       "_index-server.js",
       "_images.constants.js",
       "_utils2.js",
-      "_attributes.js",
-      "_escaping.js",
       "_Avatar.js",
       "_language.store.js",
       "_utils.js",
@@ -2516,7 +2457,7 @@
       "_system..da.js",
       "_index2.js",
       "_api.definitions.js",
-      "_useractivity.store.js"
+      "_payment.store.js"
     ],
     "css": [
       "_app/immutable/assets/_page.Czxv_IF_.css",
@@ -2548,7 +2489,6 @@
       "_AppBar.js",
       "_Button.js",
       "_SideBar.js",
-      "_escaping.js",
       "_user.store.js",
       "_appbar.store.js",
       "_sidebar.store.js",
@@ -2567,7 +2507,7 @@
     ],
     "css": [
       "_app/immutable/assets/notyf.KOmfmGu7.css",
-      "_app/immutable/assets/Form.DuozghpI.css"
+      "_app/immutable/assets/Form.DufxgO_l.css"
     ]
   },
   "src/routes/competitions/+page.svelte": {
@@ -2577,7 +2517,6 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_escaping.js",
       "_user.store.js",
       "_utils.js",
       "_index-server.js",
@@ -2593,7 +2532,6 @@
       "_Image.js",
       "_Modal.js",
       "_utils2.js",
-      "_attributes.js",
       "_TabSwitch.js",
       "_instance.store.js",
       "_BannerText.js",
@@ -2612,15 +2550,7 @@
     "file": "entries/pages/competitions/_competition_name_/_layout.js",
     "name": "entries/pages/competitions/_competition_name_/_layout",
     "src": "src/routes/competitions/[competition_name]/+layout.js",
-    "isEntry": true,
-    "imports": [
-      "_api.service.js",
-      "_index3.js",
-      "_api.definitions.js",
-      "_appbar.store.js",
-      "_utils.js",
-      "_payment.store.js"
-    ]
+    "isEntry": true
   },
   "src/routes/competitions/[competition_name]/+layout.svelte": {
     "file": "entries/pages/competitions/_competition_name_/_layout.svelte.js",
@@ -2679,8 +2609,7 @@
       "_system..da.js",
       "_user.store.js",
       "_client2.js",
-      "_index2.js",
-      "_escaping.js"
+      "_index2.js"
     ],
     "css": [
       "_app/immutable/assets/notyf.KOmfmGu7.css"
@@ -2696,18 +2625,16 @@
       "_language.store.js",
       "_competitions.da.js",
       "_utils2.js",
-      "_attributes.js",
       "_Avatar.js",
       "_Image.js",
-      "_escaping.js",
       "_user.store.js",
       "_client.js",
       "_client2.js",
       "_system..da.js",
       "_index2.js",
-      "_gamedata.store.js",
-      "_api.definitions.js",
       "_useractivity.store.js",
+      "_api.definitions.js",
+      "_payment.store.js",
       "_images.constants.js",
       "_PageHeading.js",
       "_NoDataFound.js",
@@ -2728,7 +2655,6 @@
       "_GameCard.svelte_svelte_type_style_lang.js",
       "_language.store.js",
       "_appbar.store.js",
-      "_escaping.js",
       "_user.store.js",
       "_utils.js",
       "_api.definitions.js",
@@ -2736,8 +2662,8 @@
       "_user.auth.da.js",
       "_system..da.js",
       "_avatar2.js",
-      "_gamedata.store.js",
       "_useractivity.store.js",
+      "_payment.store.js",
       "_GameCardSkeleton.js",
       "_ListBoxSkeleton.js"
     ],
@@ -2761,8 +2687,8 @@
       "_images.constants.js",
       "_PageHeading.js",
       "_utils2.js",
-      "_escaping.js",
-      "_attributes.js"
+      "_system..da.js",
+      "_utils.js"
     ]
   },
   "src/routes/competitions/[competition_name]/lessons/+page.svelte": {
@@ -2774,7 +2700,6 @@
       "_index.js",
       "_language.store.js",
       "_PageHeading.js",
-      "_escaping.js",
       "_user.store.js",
       "_client.js",
       "_client2.js",
@@ -2784,8 +2709,8 @@
       "_api.definitions.js",
       "_user.auth.da.js",
       "_avatar2.js",
-      "_gamedata.store.js",
       "_useractivity.store.js",
+      "_payment.store.js",
       "_ListingSkeleton.js"
     ],
     "css": [
@@ -2803,12 +2728,11 @@
       "_PageHeading.js",
       "_images.constants.js",
       "_language.store.js",
-      "_navigation.service.js",
-      "_gamedata.store.js",
+      "_client.js",
+      "_challenge.da.js",
+      "_useractivity.store.js",
       "_GameCard.svelte_svelte_type_style_lang.js",
       "_utils2.js",
-      "_attributes.js",
-      "_escaping.js",
       "_utils.js"
     ]
   },
@@ -2822,7 +2746,6 @@
       "_images.constants.js",
       "_PageHeading.js",
       "_language.store.js",
-      "_escaping.js",
       "_user.store.js",
       "_client.js",
       "_client2.js",
@@ -2830,7 +2753,7 @@
       "_index2.js",
       "_api.definitions.js",
       "_user.auth.da.js",
-      "_gamedata.store.js",
+      "_useractivity.store.js",
       "_GameCard.svelte_svelte_type_style_lang.js",
       "_GameCardSkeleton.js"
     ],
@@ -2854,7 +2777,6 @@
       "_images.constants.js",
       "_index2.js",
       "_api.definitions.js",
-      "_gamedata.store.js",
       "_useractivity.store.js",
       "_payment.da.js"
     ],
@@ -2884,9 +2806,8 @@
       "_country.constant.js",
       "_api.definitions.js",
       "_system..da.js",
-      "_CertificateDownloadModal.js",
       "_appbar.store.js",
-      "_escaping.js"
+      "_CertificateDownloadModal.js"
     ],
     "css": [
       "_app/immutable/assets/notyf.KOmfmGu7.css",
@@ -2909,14 +2830,15 @@
       "_country.constant.js",
       "_api.definitions.js",
       "_system..da.js",
-      "_client2.js",
+      "_index4.js",
+      "_user.auth.da.js",
       "_avatar2.js",
       "_EditProfileSkeleton.js"
     ],
     "css": [
       "_app/immutable/assets/notyf.KOmfmGu7.css",
       "_app/immutable/assets/Button.4cFhq8PD.css",
-      "_app/immutable/assets/Form.DuozghpI.css"
+      "_app/immutable/assets/Form.DufxgO_l.css"
     ]
   },
   "src/routes/competitions/[competition_name]/results/+page.svelte": {
@@ -2929,16 +2851,13 @@
       "_index-server.js",
       "_utils.js",
       "_language.store.js",
-      "_escaping.js",
       "_client.js",
       "_client2.js",
       "_images.constants.js",
-      "_navigation.service.js",
       "_avatar2.js",
       "_utils2.js",
       "_Image.js",
-      "_Button.js",
-      "_attributes.js"
+      "_Button.js"
     ],
     "css": [
       "_app/immutable/assets/Button.4cFhq8PD.css"
@@ -2960,8 +2879,7 @@
       "_client2.js",
       "_SelectBox.js",
       "_user.store.js",
-      "_utils2.js",
-      "_escaping.js"
+      "_utils2.js"
     ],
     "css": [
       "_app/immutable/assets/Button.4cFhq8PD.css",
@@ -2978,8 +2896,6 @@
       "_images.constants.js",
       "_Image.js",
       "_utils2.js",
-      "_escaping.js",
-      "_attributes.js",
       "_language.store.js",
       "_appbar.store.js",
       "_sidebar.store.js",
@@ -2999,7 +2915,6 @@
       "_index.js",
       "_index-server.js",
       "_language.store.js",
-      "_escaping.js",
       "_client.js",
       "_client2.js",
       "_user.store.js",
@@ -3074,8 +2989,6 @@
     "imports": [
       "_index.js",
       "_utils2.js",
-      "_attributes.js",
-      "_escaping.js",
       "_Stepper.js",
       "_payment.da.js",
       "_user.store.js",
@@ -3101,8 +3014,7 @@
       "_Stepper.js",
       "_payment.da.js",
       "_language.store.js",
-      "_appbar.store.js",
-      "_escaping.js"
+      "_appbar.store.js"
     ],
     "css": [
       "_app/immutable/assets/_page.tn0RQdqM.css"
@@ -3115,7 +3027,6 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_attributes.js",
       "_language.store.js",
       "_payment.da.js",
       "_images.constants.js",
@@ -3128,8 +3039,6 @@
       "_api.definitions.js",
       "_user.auth.da.js",
       "_Stepper.js",
-      "_escaping.js",
-      "_gamedata.store.js",
       "_useractivity.store.js",
       "_utils2.js"
     ],
@@ -3178,7 +3087,6 @@
       "_language.store.js",
       "_images.constants.js",
       "_PageHeading.js",
-      "_escaping.js",
       "_avatar2.js",
       "_rewards.da.js",
       "_user.store.js",
@@ -3211,13 +3119,14 @@
       "_language.store.js",
       "_system..da.js",
       "_client2.js",
+      "_user.auth.da.js",
       "_avatar2.js",
       "_EditProfileSkeleton.js"
     ],
     "css": [
       "_app/immutable/assets/notyf.KOmfmGu7.css",
       "_app/immutable/assets/Button.4cFhq8PD.css",
-      "_app/immutable/assets/Form.DuozghpI.css"
+      "_app/immutable/assets/Form.DufxgO_l.css"
     ]
   },
   "src/routes/program/glc/+page.svelte": {
@@ -3255,8 +3164,7 @@
       "_competitions.da.js",
       "_GradeConfirmModal.js",
       "_appbar.store.js",
-      "_system..da.js",
-      "_escaping.js"
+      "_system..da.js"
     ]
   }
 }

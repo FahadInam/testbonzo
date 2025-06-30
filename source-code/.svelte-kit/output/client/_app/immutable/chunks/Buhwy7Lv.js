@@ -1,1 +1,0 @@
-import{w as t}from"./CS3uJLGD.js";const i={title:"",description:"",url:"",link:""},r=JSON.parse(sessionStorage.getItem("meta")||JSON.stringify(i)),s=t(r);s.subscribe(e=>{sessionStorage.setItem("meta",JSON.stringify(e))});export{s as m};

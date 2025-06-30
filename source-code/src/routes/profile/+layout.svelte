@@ -5,10 +5,7 @@
   import { appbarStore } from "../../stores/appbar.store";
   import { getText } from "../../stores/language.store";
   import { userStore } from "../../stores/user.store";
-  import {
-    adminAppBarData,
-    loggedInUserAppBarData,
-  } from "../../data-actions/appbar/appbar.da";
+  import { adminAppBarData, loggedInUserAppBarData } from "../../data-actions/appbar/appbar.da";
   import { afterNavigate } from "$app/navigation";
   import { setBackUrl } from "../../stores/navigation.store";
   import { page } from "$app/stores";
@@ -42,9 +39,7 @@
       dropdownItems = adminAppBarData.filter((item) => !item.hidden);
     } else {
       if (currentPath === "/profile") {
-        dropdownItems = loggedInUserAppBarData.filter(
-          (item) => !("hidden" in item) || !item.hidden,
-        );
+        dropdownItems = loggedInUserAppBarData.filter((item) => !("hidden" in item) || !item.hidden);
       } else if (currentPath === "/profile/edit") {
         dropdownItems = loggedInUserAppBarData;
       }
@@ -68,7 +63,7 @@
 
 <div class="flex flex-col h-screen">
   <div class="flex flex-1 overflow-hidden">
-    <div class="flex flex-col flex-1">
+    <div class="flex flex-col w-full flex-1">
       <AppBar
         backLabel={$appbarStore.backLabel}
         isBackButtonVisible={$appbarStore.isBackButtonVisible}
@@ -79,9 +74,7 @@
         isProfileVisible={$appbarStore.isProfileVisible}
         {dropdownItems}
       />
-      <div
-        class="w-[100%] lg:w-[100%] rounded-2xl overflow-y-auto z-1 mb-8 lg:mb-0 p-2 md:p-4 mx-auto"
-      >
+      <div class="w-[100%] lg:w-[100%] rounded-2xl overflow-y-auto z-1 mb-8 lg:mb-0 p-2 md:p-4 mx-auto">
         <div class="w-[100%] mx-auto">
           <slot />
         </div>

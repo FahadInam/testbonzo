@@ -1,8 +1,7 @@
-import { i as copy_payload, j as assign_payload, p as pop, b as push, h as head, s as store_get, u as unsubscribe_stores } from "../../../chunks/index.js";
+import { k as copy_payload, l as assign_payload, p as pop, b as push, h as head, e as escape_html, s as store_get, u as unsubscribe_stores } from "../../../chunks/index.js";
 import { t } from "../../../chunks/language.store.js";
 import { I as IMAGES } from "../../../chunks/images.constants.js";
 import { P as PageHeading } from "../../../chunks/PageHeading.js";
-import { e as escape_html } from "../../../chunks/escaping.js";
 import "clsx";
 import "../../../chunks/avatar2.js";
 import { __tla as __tla_0 } from "../../../chunks/rewards.da.js";

@@ -153,6 +153,7 @@ const confetti_icon = "/_app/immutable/assets/confetti.sNNHbTbV.png";
 const single_player_image = "/_app/immutable/assets/playersingle.CHmWgN-Y.svg";
 const sgg_web_logo = "/_app/immutable/assets/sgg-logo.C-FpbW20.png";
 const sgg_mobile_logo = "/_app/immutable/assets/sgg-mobile-logo.CO-9LZBd.png";
+const check_icon = "data:image/svg+xml,%3csvg%20width='29'%20height='29'%20viewBox='0%200%2029%2029'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='14.5'%20cy='14.5'%20r='14.5'%20fill='%236CF700'/%3e%3cpath%20d='M9%2014.2195L13.3902%2018.6098L21%2011'%20stroke='white'%20stroke-width='2.76'%20stroke-linecap='round'/%3e%3c/svg%3e";
 const IMAGES = {
   WARNING: warning,
   SIGN_OUT: signout,
@@ -266,6 +267,7 @@ const IMAGES = {
   AVG_COMPLETION_RATE: avg_completion_rate,
   SCHOOL_AVATAR: school_img,
   CHOOSE_AVATAR_ICON: choose_avatar_icon,
+  CHECK_ICON: check_icon,
   REJECT: reject,
   ACCEPT: accept,
   RULES: rules,

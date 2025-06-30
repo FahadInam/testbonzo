@@ -3,6 +3,8 @@ import { get } from "svelte/store";
 import { userStore } from "../../stores/user.store";
 import { getText } from "../../stores/language.store";
 import { IsSinglePlayerMatch } from "./challenge.da";
+import { paymentStore } from "../../stores/payment.store";
+import { isShupavu } from "../system/system..da";
 /**
  * @param {Object} player - Player data with properties like name, score, accuracy, timeTaken
  * @param {Object} opponent - Opponent data with properties like name, score
@@ -12,6 +14,9 @@ import { IsSinglePlayerMatch } from "./challenge.da";
 export function formatGameData(player = {}, opponent = {}) {
   // Default images if not provided
   const defaultPlayerAvatar = IMAGES.DEFAULT_AVATAR;
+  let isSubscribed = get(paymentStore)?.payment_status?.is_subscribed === 1;
+  let isFreeShupavu = isShupavu && !isSubscribed && !get(userStore)?.is_guest_mode;
+
   const defaultOpponentAvatar = IMAGES.DEFAULT_AVATAR;
   const user = get(userStore);
   console.log(player, opponent, user, "player and opponent");
@@ -19,9 +24,7 @@ export function formatGameData(player = {}, opponent = {}) {
   return {
     // Player data
     playerName: player.playerName || "Player",
-    score: user?.is_guest_mode
-      ? player.total_correct * 100 || "-"
-      : player.score || "-",
+    score: user?.is_guest_mode || isFreeShupavu ? player.total_correct * 100 || "-" : player.score || "-",
     accuracy: player.accuracy ? `${player.accuracy * 100}%` : "-",
     timeTaken: player.timeTaken ? `${player.timeTaken}s` : "-",
     playerAvatar: user?.profile_picture,
@@ -30,10 +33,7 @@ export function formatGameData(player = {}, opponent = {}) {
     // Opponent data
     opponentName: opponent.playerName || "Opponent",
     opponentScore: opponent.score < 0 ? "0" : opponent.score,
-    opponentAccuracy:
-      opponent.accuracy && opponent.score >= 0
-        ? `${opponent.accuracy * 100}%`
-        : "-",
+    opponentAccuracy: opponent.accuracy && opponent.score >= 0 ? `${opponent.accuracy * 100}%` : "-",
     opponentTimeTaken: opponent.timeTaken ? `${opponent.timeTaken}s` : "-",
     opponentAvatar: opponent.avatar || defaultOpponentAvatar,
     opponentPoints: opponent?.points || "-",

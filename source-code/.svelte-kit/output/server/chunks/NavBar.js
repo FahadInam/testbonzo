@@ -1,11 +1,9 @@
-import { f as ensure_array_like, d as stringify, p as pop, b as push } from "./index.js";
+import { j as ensure_array_like, c as attr, e as escape_html, f as stringify, p as pop, b as push } from "./index.js";
 import { B as Button } from "./Button.js";
 import { p as page } from "./index4.js";
 import { g as getSystemDarkLogo, s as systemSettingsStore } from "./system..da.js";
 import { g as get } from "./index3.js";
 import "./client.js";
-import { a as attr } from "./attributes.js";
-import { e as escape_html } from "./escaping.js";
 function NavBar($$payload, $$props) {
   push();
   let isMenuOpen = false;

@@ -63,26 +63,20 @@
 <svelte:head>
   <title>{getTitle($t("select_grade"))}</title>
 </svelte:head>
-<h1 class="md:text-4xl text-3xl font-bold text-white text-center w-full mt-20">
-  {$t("select_grade")}
+
+<h1 class="text-3xl md:text-4xl font-medium text-white text-center w-full mt-20">
+  {$t(isShupavu ? "select_grade_kenya_title" : "select_grade")}
 </h1>
+
 <BackgroundImage>
   <div
     class="flex items-center justify-center max-w-xl w-full bg-transparent rounded-lg p-8 mx-auto text-center space-y-10"
   >
     <!-- <div class="text-white text-2xl mt-5">{$t("select_grade")}</div> -->
     {#if isShupavu}
-      <ShupavuGradeSelector
-        title={$t("select_grade")}
-        options={cGrades}
-        onSelect={handleSelect}
-      />
+      <ShupavuGradeSelector title={$t("select_grade")} options={cGrades} onSelect={handleSelect} />
     {:else}
-      <GradeSelectBox
-        title={$t("select_grade")}
-        options={cGrades}
-        onSelect={handleSelect}
-      />
+      <GradeSelectBox title={$t("select_grade")} options={cGrades} onSelect={handleSelect} />
     {/if}
   </div>
   <GradeConfirmModal

@@ -46,8 +46,12 @@
 
         $: console.log(paymentDataFields, "isSafaricomUser")
 </script>
-<div class="flex justify-center">
+<div class="flex justify-center mb-2">
     {#if !paymentInitiated && filteredBundle.length}
+    <div     class="flex gap-4  md:justify-center w-full px-4
+         overflow-x-auto md:overflow-x-visible
+         scroll-smooth snap-x snap-mandatory md:snap-none overflow-y-visible scrollbar-thin p-[0.8rem]">
+
 {#each filteredBundle as bundle (bundle.id)}
 		<ShupavuPaymentCard 
        bundle = {bundle}
@@ -55,7 +59,9 @@
         onClick={() => handleBundleSelect(bundle)}
              />
 	{/each}
+</div>
     {:else}
+    <div class="w-full md:w-[460px] ">
           <Form
           enableTurnstile={false}
           turnstileSiteKey=""
@@ -63,5 +69,6 @@
           fields={formFields}
           buttons={[{ type: "submit", label: "Continue", customClass: "w-[500px]", }]}
         />
+    </div>
     {/if}
 </div>

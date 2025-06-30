@@ -1,8 +1,6 @@
-import { c as bind_props, p as pop, b as push } from "./index.js";
+import { c as attr, e as escape_html, d as bind_props, p as pop, b as push } from "./index.js";
 import { I as IMAGES } from "./images.constants.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
-import { e as escape_html } from "./escaping.js";
 function NoDataFound($$payload, $$props) {
   push();
   let noDataMsg = fallback($$props["noDataMsg"], "");

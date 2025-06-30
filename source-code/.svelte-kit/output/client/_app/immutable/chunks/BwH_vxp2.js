@@ -1,1 +1,0 @@
-var m;import{g as o}from"./C_S5TygX.js";import{u as s}from"./Bvbqq-zN.js";const r={Normal:0,MCD:1,Safaricom:2},t=()=>{var a;return((a=o(s))==null?void 0:a.user_type)===r.Normal};(m=o(s))==null||m.user_type,r.MCD;const e=()=>{var a;return((a=o(s))==null?void 0:a.user_type)===r.Safaricom};export{r as U,t as a,e as i};

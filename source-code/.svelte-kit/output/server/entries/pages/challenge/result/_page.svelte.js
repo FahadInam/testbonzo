@@ -1,29 +1,29 @@
-import { s as store_get, i as copy_payload, j as assign_payload, u as unsubscribe_stores, p as pop, b as push, d as stringify, c as bind_props, k as spread_props } from "../../../../chunks/index.js";
+import { s as store_get, k as copy_payload, l as assign_payload, u as unsubscribe_stores, p as pop, b as push, c as attr, f as stringify, e as escape_html, d as bind_props, m as spread_props } from "../../../../chunks/index.js";
 import { f as fallback } from "../../../../chunks/utils2.js";
-import { a as attr } from "../../../../chunks/attributes.js";
-import { e as escape_html } from "../../../../chunks/escaping.js";
 import { S as SubscriptionCard } from "../../../../chunks/SubscriptionCard.js";
 import { I as IMAGES } from "../../../../chunks/images.constants.js";
 import { w as writable, g as get } from "../../../../chunks/index3.js";
 import { u as userStore } from "../../../../chunks/user.store.js";
 import { g as getText, t } from "../../../../chunks/language.store.js";
-import { s as signUpUserUsingFormData, l as loginUser, b as userSignUpFormPopup, c as userLoginFormPopup, I as IsSinglePlayerMatch, __tla as __tla_0 } from "../../../../chunks/user.auth.da.js";
+import { I as IsSinglePlayerMatch, __tla as __tla_0 } from "../../../../chunks/challenge.da.js";
+import { p as paymentStore } from "../../../../chunks/payment.store.js";
+import { i as isGCLC, s as systemSettingsStore, a as isShupavu } from "../../../../chunks/system..da.js";
 import { B as Button } from "../../../../chunks/Button.js";
 import "../../../../chunks/avatar2.js";
 import { g as goto } from "../../../../chunks/client.js";
-import "../../../../chunks/gamedata.store.js";
+import "../../../../chunks/useractivity.store.js";
 import { c as competitionStore } from "../../../../chunks/appbar.store.js";
 import { A as Avatar } from "../../../../chunks/Avatar.js";
-import { h as handleGoogleLogin, g as gclcSignUpFields, f as signUpFields, d as loginFields, a as authModalStore, u as userSelectionCardsPopup, __tla as __tla_1 } from "../../../../chunks/common.auth.data.js";
+import { h as handleGoogleLogin, g as gclcSignUpFields, e as signUpFields, c as loginFields, a as authModalStore, u as userSelectionCardsPopup, __tla as __tla_1 } from "../../../../chunks/common.auth.data.js";
 import { o as onDestroy } from "../../../../chunks/index-server.js";
 import "clsx";
 import "lz-string";
 import "../../../../chunks/client2.js";
-import { i as isGCLC, s as systemSettingsStore } from "../../../../chunks/system..da.js";
 import "../../../../chunks/index2.js";
 import { __tla as __tla_2 } from "../../../../chunks/api.definitions.js";
+import { d as signUpUserUsingFormData, l as loginUser, u as userSignUpFormPopup, e as userLoginFormPopup, __tla as __tla_3 } from "../../../../chunks/user.auth.da.js";
 import "../../../../chunks/country.constant.js";
-import { A as AuthenticationView } from "../../../../chunks/AuthenticationView.js";
+import { A as AuthenticationView, __tla as __tla_4 } from "../../../../chunks/AuthenticationView.js";
 import { g as getInstanceText } from "../../../../chunks/utils.js";
 import { p as page } from "../../../../chunks/stores.js";
 let _page;
@@ -43,6 +43,18 @@ let __tla = Promise.all([
   (() => {
     try {
       return __tla_2;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_3;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_4;
     } catch {
     }
   })()
@@ -242,12 +254,14 @@ let __tla = Promise.all([
     });
   }
   function formatGameData(player = {}, opponent = {}) {
+    let isSubscribed = get(paymentStore)?.payment_status?.is_subscribed === 1;
+    let isFreeShupavu = isShupavu && !isSubscribed && !get(userStore)?.is_guest_mode;
     const defaultOpponentAvatar = IMAGES.DEFAULT_AVATAR;
     const user = get(userStore);
     console.log(player, opponent, user, "player and opponent");
     return {
       playerName: player.playerName || "Player",
-      score: user?.is_guest_mode ? player.total_correct * 100 || "-" : player.score || "-",
+      score: user?.is_guest_mode || isFreeShupavu ? player.total_correct * 100 || "-" : player.score || "-",
       accuracy: player.accuracy ? `${player.accuracy * 100}%` : "-",
       timeTaken: player.timeTaken ? `${player.timeTaken}s` : "-",
       playerAvatar: user?.profile_picture,
@@ -352,7 +366,7 @@ let __tla = Promise.all([
   _page = function($$payload, $$props) {
     push();
     var $$store_subs;
-    let isMultiplayer, playerScore, gameData, hasPassed;
+    let isMultiplayer, isSubscribed, isFreeShupavu, playerScore, gameData, hasPassed;
     let resultTitleText = "";
     const { playerWon, opponentWon, isDraw } = determineWinner(store_get($$store_subs ??= {}, "$resultStore", resultStore));
     let hideAnimation = false;
@@ -373,6 +387,8 @@ let __tla = Promise.all([
         coinAnimation = true;
       }
     }
+    isSubscribed = store_get($$store_subs ??= {}, "$paymentStore", paymentStore)?.payment_status?.is_subscribed === 1;
+    isFreeShupavu = isShupavu && !isSubscribed && !store_get($$store_subs ??= {}, "$userStore", userStore)?.is_guest_mode;
     playerScore = store_get($$store_subs ??= {}, "$resultStore", resultStore)?.player?.points ?? 0;
     gameData = formatGameData(store_get($$store_subs ??= {}, "$resultStore", resultStore).player, store_get($$store_subs ??= {}, "$resultStore", resultStore).opponent);
     if (store_get($$store_subs ??= {}, "$resultStore", resultStore).player || store_get($$store_subs ??= {}, "$resultStore", resultStore).opponent) {
@@ -407,21 +423,27 @@ let __tla = Promise.all([
         $$payload2.out += `<!--]--> `;
         if (!isMultiplayer) {
           $$payload2.out += "<!--[-->";
-          $$payload2.out += `<div class="bonzoui__winner__ribbon" style="position: relative !important;"><img alt="ribbon"${attr("src", hasPassed ? IMAGES.RIBBON_WINNER_CONGRATS : IMAGES.RIBBON_WINNER_LOSE)} class="w-[210px] md:w-[240px]"> <div class="bonzoui__single__result__ribbon__sp pb-title-shadow text-sm md:text-base mt-[-20%] md:mt-[-21%] svelte-uy7unn">${escape_html(hasPassed ? store_get($$store_subs ??= {}, "$t", t)("congratulation") : store_get($$store_subs ??= {}, "$t", t)("try_again"))}</div></div> `;
-          if (!hasPassed && !store_get($$store_subs ??= {}, "$userStore", userStore)?.is_guest_mode) {
+          $$payload2.out += `<div${attr("class", `bonzoui__winner__ribbon ${stringify(isFreeShupavu ? "mb-[3rem]" : "")}`)} style="position: relative !important;"><img alt="ribbon"${attr("src", hasPassed ? IMAGES.RIBBON_WINNER_CONGRATS : IMAGES.RIBBON_WINNER_LOSE)} class="w-[210px] md:w-[240px]"> <div class="bonzoui__single__result__ribbon__sp pb-title-shadow text-sm md:text-base mt-[-20%] md:mt-[-21%] svelte-uy7unn">${escape_html(hasPassed ? store_get($$store_subs ??= {}, "$t", t)("congratulation") : store_get($$store_subs ??= {}, "$t", t)("try_again"))}</div></div> `;
+          if (!isFreeShupavu) {
             $$payload2.out += "<!--[-->";
-            $$payload2.out += `<div class="bg-[#000000CC] w-full relative rounded-[19px] mb-[44px] p-[12px] text-white flex mt-[49px] max-w-[290px] md:max-w-[320px] flex-col items-center justify-center"><div class="font-semibold pt-1 pl-[2rem] pb-1 pr-4 p-[2px] flex items-center justify-center text-[15px] md:text-[17px] text-[#ffc200] absolute top-0 bg-black left-0 rounded-[19px]"><div class="bonzoui__hint__bulb"></div> ${escape_html(store_get($$store_subs ??= {}, "$t", t)("note"))}</div> <div class="flex flex-col items-center justify-center text-sm md:text-base">${escape_html(store_get($$store_subs ??= {}, "$t", t)("achieve"))}  <div class="font-bold text-[16px] md:text-[18px] text-[#ffe500]"><span class="text-[28px] md:text-[32px]">50%</span>  <span style="font-family: 'Poppins', sans-serif; font-weight: 400;">${escape_html(store_get($$store_subs ??= {}, "$t", t)("or_more_result_box"))}</span></div>  
-                ${escape_html(store_get($$store_subs ??= {}, "$t", t)("to_unlock_result_box"))}</div></div>`;
-          } else {
-            $$payload2.out += "<!--[!-->";
-            if (!store_get($$store_subs ??= {}, "$userStore", userStore)?.is_guest_mode) {
+            if (!hasPassed && !store_get($$store_subs ??= {}, "$userStore", userStore)?.is_guest_mode) {
               $$payload2.out += "<!--[-->";
-              $$payload2.out += `<div class="w-full mt-10 flex items-center justify-center"><img class="w-[120px] md:w-[160px] h-auto object-contain"${attr("src", IMAGES.MORE_COINS)} alt="Winner"> <span class="text-white text-[36px] md:text-[54px] font-bold title-shadow">+ ${escape_html(gameData?.playerPoints)}</span></div>`;
+              $$payload2.out += `<div class="bg-[#000000CC] w-full relative rounded-[19px] mb-[44px] p-[12px] text-white flex mt-[49px] max-w-[290px] md:max-w-[320px] flex-col items-center justify-center"><div class="font-semibold pt-1 pl-[2rem] pb-1 pr-4 p-[2px] flex items-center justify-center text-[15px] md:text-[17px] text-[#ffc200] absolute top-0 bg-black left-0 rounded-[19px]"><div class="bonzoui__hint__bulb"></div> ${escape_html(store_get($$store_subs ??= {}, "$t", t)("note"))}</div> <div class="flex flex-col items-center justify-center text-sm md:text-base">${escape_html(store_get($$store_subs ??= {}, "$t", t)("achieve"))}  <div class="font-bold text-[16px] md:text-[18px] text-[#ffe500]"><span class="text-[28px] md:text-[32px]">50%</span>  <span style="font-family: 'Poppins', sans-serif; font-weight: 400;">${escape_html(store_get($$store_subs ??= {}, "$t", t)("or_more_result_box"))}</span></div>  
+                ${escape_html(store_get($$store_subs ??= {}, "$t", t)("to_unlock_result_box"))}</div></div>`;
             } else {
               $$payload2.out += "<!--[!-->";
-              $$payload2.out += `<div class="bg-[#000000CC] w-full relative rounded-[19px] mb-[44px] p-[12px] text-white flex mt-[49px] max-w-[290px] md:max-w-[320px] flex-col items-center justify-center"><div class="font-bold text-[20px] md:text-[24px] text-[#ffc200]">${escape_html(store_get($$store_subs ??= {}, "$t", t)("sign_up_now"))}</div> <div class="text-[16px] md:text-[18px] text-center font-semibold font-poppins">${escape_html(store_get($$store_subs ??= {}, "$t", t)("save_progress_unlock_rewards"))}</div></div>`;
+              if (!store_get($$store_subs ??= {}, "$userStore", userStore)?.is_guest_mode) {
+                $$payload2.out += "<!--[-->";
+                $$payload2.out += `<div class="w-full mt-10 flex items-center justify-center"><img class="w-[120px] md:w-[160px] h-auto object-contain"${attr("src", IMAGES.MORE_COINS)} alt="Winner"> <span class="text-white text-[36px] md:text-[54px] font-bold title-shadow">+ ${escape_html(gameData?.playerPoints)}</span></div>`;
+              } else {
+                $$payload2.out += "<!--[!-->";
+                $$payload2.out += `<div class="bg-[#000000CC] w-full relative rounded-[19px] mb-[44px] p-[12px] text-white flex mt-[49px] max-w-[290px] md:max-w-[320px] flex-col items-center justify-center"><div class="font-bold text-[20px] md:text-[24px] text-[#ffc200]">${escape_html(store_get($$store_subs ??= {}, "$t", t)("sign_up_now"))}</div> <div class="text-[16px] md:text-[18px] text-center font-semibold font-poppins">${escape_html(store_get($$store_subs ??= {}, "$t", t)("save_progress_unlock_rewards"))}</div></div>`;
+              }
+              $$payload2.out += `<!--]-->`;
             }
             $$payload2.out += `<!--]-->`;
+          } else {
+            $$payload2.out += "<!--[!-->";
           }
           $$payload2.out += `<!--]-->`;
         } else {
@@ -493,31 +515,51 @@ let __tla = Promise.all([
           } : {}
         ]));
         $$payload2.out += `<!----></div></div></div></div> <div class="flex justify-center w-full mt-4">`;
-        if (!store_get($$store_subs ??= {}, "$userStore", userStore)?.is_guest_mode) {
+        if (isFreeShupavu) {
           $$payload2.out += "<!--[-->";
           Button($$payload2, {
-            label: store_get($$store_subs ??= {}, "$t", t)("continue"),
+            label: store_get($$store_subs ??= {}, "$t", t)("subscribe_for_more_games"),
             size: "large",
             type: "3d-secondary",
-            customClass: "w-[160px] text-lg md:text-[22px]",
+            customClass: "w-[300px] text-lg md:text-[22px]",
             onClick: () => {
-              goto(`/competitions/${store_get($$store_subs ??= {}, "$competitionStore", competitionStore)?.url}/home`);
+              paymentStore.set({
+                competition_id: store_get($$store_subs ??= {}, "$competitionStore", competitionStore)?.competition_id,
+                current_grade: store_get($$store_subs ??= {}, "$competitionStore", competitionStore)?.current_grade,
+                url: store_get($$store_subs ??= {}, "$competitionStore", competitionStore)?.url
+              });
+              goto();
             }
           });
         } else {
           $$payload2.out += "<!--[!-->";
-          Button($$payload2, {
-            label: store_get($$store_subs ??= {}, "$t", t)("signup"),
-            size: "large",
-            type: "3d-secondary",
-            customClass: "w-[160px] text-lg md:text-[22px]",
-            onClick: () => {
-              authModalStore.set({
-                visible: true,
-                page: "user-selection"
-              });
-            }
-          });
+          if (!store_get($$store_subs ??= {}, "$userStore", userStore)?.is_guest_mode) {
+            $$payload2.out += "<!--[-->";
+            Button($$payload2, {
+              label: store_get($$store_subs ??= {}, "$t", t)("continue"),
+              size: "large",
+              type: "3d-secondary",
+              customClass: "w-[160px] text-lg md:text-[22px]",
+              onClick: () => {
+                goto(`/competitions/${store_get($$store_subs ??= {}, "$competitionStore", competitionStore)?.url}/home`);
+              }
+            });
+          } else {
+            $$payload2.out += "<!--[!-->";
+            Button($$payload2, {
+              label: store_get($$store_subs ??= {}, "$t", t)("signup"),
+              size: "large",
+              type: "3d-secondary",
+              customClass: "w-[160px] text-lg md:text-[22px]",
+              onClick: () => {
+                authModalStore.set({
+                  visible: true,
+                  page: "user-selection"
+                });
+              }
+            });
+          }
+          $$payload2.out += `<!--]-->`;
         }
         $$payload2.out += `<!--]--></div>`;
       },

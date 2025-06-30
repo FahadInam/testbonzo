@@ -11,6 +11,7 @@ import "notyf";
 import "../../../../chunks/system..da.js";
 import "../../../../chunks/client2.js";
 import "js-sha256";
+import { __tla as __tla_1 } from "../../../../chunks/user.auth.da.js";
 import "../../../../chunks/avatar2.js";
 import { E as EditProfileSkeleton } from "../../../../chunks/EditProfileSkeleton.js";
 let _page;
@@ -18,6 +19,12 @@ let __tla = Promise.all([
   (() => {
     try {
       return __tla_0;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_1;
     } catch {
     }
   })()

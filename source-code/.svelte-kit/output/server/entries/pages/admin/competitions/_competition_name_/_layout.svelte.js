@@ -4,7 +4,7 @@ function _layout($$payload, $$props) {
   push();
   sidebarStore.set({ visible: true });
   $$payload.out += `<!---->`;
-  slot($$payload, $$props, "default", {});
+  slot($$payload, $$props, "default", {}, null);
   $$payload.out += `<!---->`;
   pop();
 }

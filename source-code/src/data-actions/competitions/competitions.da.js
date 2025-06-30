@@ -25,6 +25,7 @@ import { systemSettingsStore } from "../../stores/systemsettings.store";
 
 // @ts-ignore
 export async function getNavBarItems() {
+  // console.log("isShupavu --> he he he", isShupavu);
   const showFriends = get(userStore).is_guest_mode ? false : true;
   const showLessons = get(competitionStore).is_lesson_page_hide == 0;
   const showMyGames = get(competitionStore).is_games_page == 1;
@@ -50,11 +51,16 @@ export async function getNavBarItems() {
       label: await getText("lessons"),
       link: "{competitionHome}/lessons",
     },
-    {
-      icon: IMAGES.SIDE_NAV_FRIENDS,
-      label: await getText("friends"),
-      link: "{competitionHome}/friends",
-    },
+    // Only show the "Friends" tab if isShupavu is false
+    ...(isShupavu
+      ? []
+      : [
+          {
+            icon: IMAGES.SIDE_NAV_FRIENDS,
+            label: await getText("friends"),
+            link: "{competitionHome}/friends",
+          },
+        ]),
     {
       icon: IMAGES.SIDE_NAV_LEADERBOARD,
       label: await getText("leaderboard"),
@@ -190,6 +196,10 @@ export function mapSubjects(grades) {
 export async function setCompetitionGrade(grade) {
   const isGuestUser = get(userStore).is_guest_mode;
   const currentCompetition = get(competitionStore);
+  const user = get(userStore);
+  const isLearner = user?.active_role === "learner";
+  const hasCurrentGrade = currentCompetition && get(competitionStore).current_grade;
+  const isUserNameNumber = !isNaN(user?.name);
 
   if (isGuestUser) {
     updateStoreVariable(competitionStore, "current_grade", grade);
@@ -207,8 +217,17 @@ export async function setCompetitionGrade(grade) {
     updateStoreVariable(metaStore, "current_grade", grade);
   }
 
-  console.log(get(competitionStore));
-  goto("/competitions/" + currentCompetition.url + "/home");
+  const isShupavuNewUser = isShupavu && isLearner && !hasCurrentGrade && isUserNameNumber;
+  const baseUrl = `/competitions/${currentCompetition?.url}`;
+
+  if (isShupavuNewUser) {
+    const target = `${baseUrl}/profile/edit`;
+    const state = { fromChangeGrade: true };
+    goto(target, { state });
+  } else {
+    const target = `${baseUrl}/home`;
+    goto(target);
+  }
 }
 
 export async function getCompetitionRecommendation() {

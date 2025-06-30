@@ -17,7 +17,7 @@
   import { gotoURL } from "$lib/navigation.service";
   import { metaStore } from "../../../../stores/meta.store";
   import HomeScreenSkeleton from "../../../../components/Skeleton/HomeScreenSkeleton.svelte";
-  import { invitationAccepted, PlayChallenge } from "../../../../data-actions/challenge/challenge.da";
+  import { GamePlay, invitationAccepted, PlayChallenge, StartChallenge, updateGameData } from "../../../../data-actions/challenge/challenge.da";
   import { goto } from "$app/navigation";
   import { resetResultStore, updateOpponentData, updatePlayerData } from "../../../../stores/result.store";
   import { userStore } from "../../../../stores/user.store";
@@ -25,6 +25,8 @@
   import { guestStore } from "../../../../stores/guest.store";
   import moment from "moment";
   import { showError, showWarning } from "../../../../stores/toast.store";
+  import { getLearnerPaymentStatus } from "../../../../data-actions/learner/learner.payments.da";
+    import { get } from "svelte/store";
 
   /** @type {Array<{ topic: string, subject: string, game_name_alias: string, sort_order: number, total_lessons: number, skill: string, lessons_completed: number }>} */
   let recommendations = [],
@@ -47,6 +49,7 @@
   const currentDate = utcDate.format("YYYY-MM-DD HH:mm:ss");
   onMount(async () => {
     isLoading = true;
+    await getLearnerPaymentStatus();
     const data = await getCompetitionRecommendation();
     const activities = await getCompetitionActivities();
     recommendations = data?.data || [];
@@ -142,10 +145,31 @@
   /**
    * @param {any} data
    */
-  function GamePlay(data) {
-    gameDataStore.set({ ...data });
-    gotoURL("/challenge");
-  }
+  //  async function GamePlay(data) {
+  //       gameDataStore.set({ ...data });
+  //     if(!$competitionStore.is_multiplayer_allowed) {
+  //       const response = await StartChallenge($gameDataStore, null, 0);
+  //       if (response.error_code === 0) {
+  //     updateGameData({
+  //       opponent: $userStore,
+  //       playMode: 0,
+  //       matchData: response.data,
+  //       subjectData: {
+  //         summary_id: response?.data?.summary_id,
+  //         match_id: response?.data?.match_id,
+  //         content_id: $gameDataStore?.content_id,
+  //         base_points: response?.data?.base_points,
+  //       },
+  //       matchingItem: $gameDataStore,
+  //       link: $gameDataStore?.link,
+  //     });
+  //     goto("/challenge/vsscreen");
+  //   }
+  //       return
+  //     }
+  //    console.log($competitionStore, "comp here")
+  //   gotoURL("/challenge");
+  // }
 </script>
 
 <svelte:head>
@@ -157,7 +181,7 @@
   <div class="w-full max-w-screen-lg space-y-6">
     <!--heading section-->
     <div class="w-full mb-0 text-center">
-      <h2 class="text-white font-medium text-3xl mb-2">
+      <h2 class="text-white font-medium text-2xl md:text-3xl mb-2">
         {$competitionStore.name}
       </h2>
       <p class="text-white font-normal text-lg">{title}</p>

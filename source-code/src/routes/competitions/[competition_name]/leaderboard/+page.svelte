@@ -10,6 +10,8 @@
   import { IMAGES } from "$lib/assets/images/images.constants";
   import PageHeading from "../../../../components/PageHeading/PageHeading.svelte";
   import LeaderboardSkeleton from "../../../../components/Skeleton/LeaderboardSkeleton.svelte";
+  import { isShupavu } from "../../../../data-actions/system/system..da";
+  import { IsGuestMode } from "$lib/utils";
 
   /**
    * @type { any[]}
@@ -30,6 +32,7 @@
   let time_type = 0;
   let is_school_based = 0;
   let isLoading = true;
+  let isMobile = false;
   /**
    * @type {number | undefined}
    */
@@ -72,6 +75,24 @@
     isLoading = false;
   }
 
+  // If isShupavu is true, firstRowClass will be undefined
+  let firstRowClass = IsGuestMode() ? "" : "first:bg-[var(--primary-color)]";
+
+  // Function to handle window resize and update screen size status
+  const updateScreenSize = () => {
+    isMobile = window.innerWidth < 600;
+  };
+
+  // Set initial screen size when the component is mounted
+  onMount(() => {
+    updateScreenSize();
+    window.addEventListener("resize", updateScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", updateScreenSize);
+    };
+  });
+
   onMount(() => {
     fetchLeaderboard(); // Initial fetch
 
@@ -86,22 +107,14 @@
 </svelte:head>
 
 <!-- Responsive Container -->
-<div class="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-10">
+<div class="flex justify-center w-full px-1 sm:px-6 md:px-8 lg:px-10">
   <div class="w-full max-w-screen-lg space-y-6">
     <!--heading section (with dropdown)-->
     <div class="w-full relative">
-      <div
-        class="flex flex-col sm:flex-row sm:justify-between items-center w-full gap-4"
-      >
+      <div class="flex flex-col sm:flex-row sm:justify-between items-center w-full gap-4">
         <!-- Centered Title & Image Wrapper -->
-        <div
-          class="flex items-center gap-3 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2"
-        >
-          <PageHeading
-            icon={IMAGES.LEADERBOARD_ICON}
-            title={"leaderboard"}
-            imageClass="w-9 h-11 sm:w-13 sm:h-11"
-          />
+        <div class="flex items-center gap-3 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
+          <PageHeading icon={IMAGES.LEADERBOARD_ICON} title={"leaderboard"} imageClass="w-9 h-11 sm:w-13 sm:h-11" />
         </div>
 
         <!-- Dropdown Positioned Responsively -->
@@ -152,7 +165,7 @@
                 width: "70%",
               },
               {
-                label: $t("coins_earned"),
+                label: isMobile ? $t("coins") : $t("coins_earned"),
                 key: "total_points",
                 type: "icon",
                 width: "20%",
@@ -161,6 +174,7 @@
             data={mergedUsers}
             {isLoading}
             {rankImages}
+            {firstRowClass}
           />
         </div>
       {/if}

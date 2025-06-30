@@ -1,6 +1,5 @@
-import { e as escape_html } from "../../../chunks/escaping.js";
+import { e as escape_html, p as pop, b as push } from "../../../chunks/index.js";
 import "clsx";
-import { p as pop, b as push } from "../../../chunks/index.js";
 import { g as goto } from "../../../chunks/client.js";
 function _page($$payload, $$props) {
   push();

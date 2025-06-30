@@ -1,19 +1,20 @@
-import { b as push, c as bind_props, p as pop, s as store_get, u as unsubscribe_stores } from "../../../../chunks/index.js";
-import { f as forgotPasswordForm, __tla as __tla_0 } from "../../../../chunks/user.auth.da.js";
-import { A as AuthenticationView } from "../../../../chunks/AuthenticationView.js";
+import { b as push, e as escape_html, d as bind_props, p as pop, s as store_get, u as unsubscribe_stores } from "../../../../chunks/index.js";
+import { f as forgotPasswordForm, b as showSuccess, o as otpStore, __tla as __tla_0 } from "../../../../chunks/user.auth.da.js";
+import { A as AuthenticationView, __tla as __tla_1 } from "../../../../chunks/AuthenticationView.js";
 import { r as request } from "../../../../chunks/api.service.js";
-import { A as API_DEFINITIONS, __tla as __tla_1 } from "../../../../chunks/api.definitions.js";
+import { A as API_DEFINITIONS, __tla as __tla_2 } from "../../../../chunks/api.definitions.js";
 import { g as getText, t } from "../../../../chunks/language.store.js";
-import { a as showSuccess } from "../../../../chunks/toast.store.js";
-import { d as getFormViewLogo } from "../../../../chunks/system..da.js";
+import { d as getFormViewLogo, a as isShupavu } from "../../../../chunks/system..da.js";
 import { B as Button } from "../../../../chunks/Button.js";
 import { I as Image } from "../../../../chunks/Image.js";
 import { f as fallback } from "../../../../chunks/utils2.js";
-import { e as escape_html } from "../../../../chunks/escaping.js";
 import { o as onDestroy } from "../../../../chunks/index-server.js";
-import "../../../../chunks/client.js";
+import { g as goto } from "../../../../chunks/client.js";
 import { s as sideBarAndAppBarSettings } from "../../../../chunks/utils.js";
 import { B as BackgroundImage } from "../../../../chunks/BackgroundImage.js";
+import { s as shupavuForgotPasswordFields, __tla as __tla_3 } from "../../../../chunks/common.auth.data.js";
+import { i as instanceStore } from "../../../../chunks/instance.store.js";
+import { g as get } from "../../../../chunks/index3.js";
 let _page;
 let __tla = Promise.all([
   (() => {
@@ -25,6 +26,18 @@ let __tla = Promise.all([
   (() => {
     try {
       return __tla_1;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_2;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_3;
     } catch {
     }
   })()
@@ -79,30 +92,66 @@ let __tla = Promise.all([
         }
       }
     };
+    const modifiedShupavuForgotPasswordForm = {
+      ...shupavuForgotPasswordFields,
+      handleSubmit: async (formData) => {
+        const instance_id = get(instanceStore).instance_id;
+        const { error_code } = await request(API_DEFINITIONS.OTP_SIGNUP, {
+          otp_type: 2,
+          phone_number: formData.phone_number,
+          t_token: formData.turnstileToken
+        }, {
+          headers: {
+            instance_id
+          }
+        });
+        if (error_code === 0) {
+          showSuccess(await getText("otp_send_text"));
+          otpStore.update((store) => ({
+            ...store,
+            phone_number: formData.phone_number,
+            otp_forgot_password: true
+          }));
+          goto();
+        }
+      }
+    };
     onDestroy(() => {
       sideBarAndAppBarSettings(true, "back", "/");
     });
-    {
+    console.log("isShupavu", isShupavu);
+    if (isShupavu) {
+      $$payload.out += "<!--[-->";
+      $$payload.out += `<div class="w-full">`;
+      AuthenticationView($$payload, {
+        form: modifiedShupavuForgotPasswordForm
+      });
+      $$payload.out += `<!----></div>`;
+    } else {
       $$payload.out += "<!--[!-->";
       {
         $$payload.out += "<!--[!-->";
-        if (isEmailSent) {
-          $$payload.out += "<!--[-->";
-          $$payload.out += `<div class="w-full">`;
-          BackgroundImage($$payload, {});
-          $$payload.out += `<!----> `;
-          SuccessMessage($$payload, {
-            title: store_get($$store_subs ??= {}, "$t", t)("reset_link_sent"),
-            message: store_get($$store_subs ??= {}, "$t", t)("reset_link_sent_message"),
-            buttonLink: "/account/user/login",
-            userEmail
-          });
-          $$payload.out += `<!----></div>`;
-        } else {
+        {
           $$payload.out += "<!--[!-->";
-          AuthenticationView($$payload, {
-            form: modifiedForgotPasswordForm
-          });
+          if (isEmailSent) {
+            $$payload.out += "<!--[-->";
+            $$payload.out += `<div class="w-full">`;
+            BackgroundImage($$payload, {});
+            $$payload.out += `<!----> `;
+            SuccessMessage($$payload, {
+              title: store_get($$store_subs ??= {}, "$t", t)("reset_link_sent"),
+              message: store_get($$store_subs ??= {}, "$t", t)("reset_link_sent_message"),
+              buttonLink: "/account/user/login",
+              userEmail
+            });
+            $$payload.out += `<!----></div>`;
+          } else {
+            $$payload.out += "<!--[!-->";
+            AuthenticationView($$payload, {
+              form: modifiedForgotPasswordForm
+            });
+          }
+          $$payload.out += `<!--]-->`;
         }
         $$payload.out += `<!--]-->`;
       }

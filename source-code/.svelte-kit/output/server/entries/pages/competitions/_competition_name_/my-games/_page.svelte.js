@@ -1,8 +1,7 @@
-import { h as head, p as pop, b as push, s as store_get, u as unsubscribe_stores } from "../../../../../chunks/index.js";
+import { h as head, p as pop, b as push, e as escape_html, s as store_get, u as unsubscribe_stores } from "../../../../../chunks/index.js";
 import { I as IMAGES } from "../../../../../chunks/images.constants.js";
 import { P as PageHeading } from "../../../../../chunks/PageHeading.js";
 import { t } from "../../../../../chunks/language.store.js";
-import { e as escape_html } from "../../../../../chunks/escaping.js";
 import "clsx";
 import "../../../../../chunks/user.store.js";
 import "lz-string";
@@ -13,7 +12,7 @@ import "../../../../../chunks/index2.js";
 import { __tla as __tla_0 } from "../../../../../chunks/api.definitions.js";
 import "notyf";
 import { __tla as __tla_1 } from "../../../../../chunks/user.auth.da.js";
-import "../../../../../chunks/gamedata.store.js";
+import "../../../../../chunks/useractivity.store.js";
 import "../../../../../chunks/GameCard.svelte_svelte_type_style_lang.js";
 import { G as GameCardSkeleton } from "../../../../../chunks/GameCardSkeleton.js";
 let _page;

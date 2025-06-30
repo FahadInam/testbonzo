@@ -1,8 +1,7 @@
-import { a as slot, s as store_get, u as unsubscribe_stores, p as pop, b as push } from "../../../chunks/index.js";
+import { a as slot, s as store_get, u as unsubscribe_stores, p as pop, b as push, e as escape_html } from "../../../chunks/index.js";
 import { A as AppBar, __tla as __tla_0 } from "../../../chunks/AppBar.js";
 import { B as Button } from "../../../chunks/Button.js";
 import { S as SideBar } from "../../../chunks/SideBar.js";
-import { e as escape_html } from "../../../chunks/escaping.js";
 import "clsx";
 import { u as userStore } from "../../../chunks/user.store.js";
 import { a as appbarStore, c as competitionStore } from "../../../chunks/appbar.store.js";
@@ -19,7 +18,7 @@ import { __tla as __tla_2 } from "../../../chunks/user.auth.da.js";
 import { a as authModalStore, __tla as __tla_3 } from "../../../chunks/common.auth.data.js";
 import "../../../chunks/country.constant.js";
 import "js-sha256";
-import { __tla as __tla_4 } from "../../../chunks/appbar.da.js";
+import { l as loggedInUserCompAppBarData, __tla as __tla_4 } from "../../../chunks/appbar.da.js";
 import { u as userActivityStore } from "../../../chunks/useractivity.store.js";
 import { p as paymentStore } from "../../../chunks/payment.store.js";
 let _layout;
@@ -57,7 +56,7 @@ let __tla = Promise.all([
 ]).then(async () => {
   function StickyBanner($$payload, $$props) {
     $$payload.out += `<div class="bg-black text-center text-white py-3 z-5 space-x-2"><!---->`;
-    slot($$payload, $$props, "default", {});
+    slot($$payload, $$props, "default", {}, null);
     $$payload.out += `<!----></div>`;
   }
   _layout = function($$payload, $$props) {
@@ -65,6 +64,9 @@ let __tla = Promise.all([
     var $$store_subs;
     let sideBarNavItems;
     let dropdownItems = [];
+    paymentStore.subscribe(async () => {
+      dropdownItems = await loggedInUserCompAppBarData();
+    });
     $$payload.out += `<div class="flex flex-col h-screen">`;
     if (store_get($$store_subs ??= {}, "$userStore", userStore).is_guest_mode) {
       $$payload.out += "<!--[-->";
@@ -157,7 +159,7 @@ let __tla = Promise.all([
       dropdownItems
     });
     $$payload.out += `<!----> <div class="flex-1 overflow-y-auto save-scroll"><!---->`;
-    slot($$payload, $$props, "default", {});
+    slot($$payload, $$props, "default", {}, null);
     $$payload.out += `<!----></div></div></div> `;
     {
       $$payload.out += "<!--[!-->";

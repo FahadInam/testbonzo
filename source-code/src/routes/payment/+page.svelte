@@ -55,7 +55,7 @@
 </script>
 
 <Stepper {steps} {activeStep} />
-<div class="text-left">
+<div class="text-left w-full mx-auto">
   {#if !isShupavu}
     <h1 class="sm:text-3xl text-2xl font-bold mb-3 sm:mb-6 mt-6 sm:mt-12">{$t("payment")}</h1>
   {/if}

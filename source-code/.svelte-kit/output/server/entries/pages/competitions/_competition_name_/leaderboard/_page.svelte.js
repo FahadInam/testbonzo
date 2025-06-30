@@ -1,4 +1,4 @@
-import { f as ensure_array_like, c as bind_props, s as store_get, h as head, u as unsubscribe_stores, p as pop, b as push, k as spread_props } from "../../../../../chunks/index.js";
+import { j as ensure_array_like, d as bind_props, s as store_get, h as head, u as unsubscribe_stores, p as pop, b as push, e as escape_html, c as attr, m as spread_props } from "../../../../../chunks/index.js";
 import { o as onDestroy } from "../../../../../chunks/index-server.js";
 import { t } from "../../../../../chunks/language.store.js";
 import { g as getCompetitionLeaderBoard, __tla as __tla_0 } from "../../../../../chunks/competitions.da.js";
@@ -7,8 +7,8 @@ import { S as SelectBox } from "../../../../../chunks/SelectBox.js";
 import { I as IMAGES } from "../../../../../chunks/images.constants.js";
 import { P as PageHeading } from "../../../../../chunks/PageHeading.js";
 import { f as fallback } from "../../../../../chunks/utils2.js";
-import { e as escape_html } from "../../../../../chunks/escaping.js";
-import { a as attr } from "../../../../../chunks/attributes.js";
+import "../../../../../chunks/system..da.js";
+import { I as IsGuestMode } from "../../../../../chunks/utils.js";
 let _page;
 let __tla = Promise.all([
   (() => {
@@ -95,11 +95,12 @@ let __tla = Promise.all([
       interval = setInterval(fetchLeaderboard, 6e4);
       isLoading = false;
     }
+    let firstRowClass = IsGuestMode() ? "" : "first:bg-[var(--primary-color)]";
     onDestroy(() => clearInterval(interval));
     head($$payload, ($$payload2) => {
       $$payload2.title = `<title>${escape_html(store_get($$store_subs ??= {}, "$t", t)("leaderboard"))}</title>`;
     });
-    $$payload.out += `<div class="flex justify-center w-full px-4 sm:px-6 md:px-8 lg:px-10"><div class="w-full max-w-screen-lg space-y-6"><div class="w-full relative"><div class="flex flex-col sm:flex-row sm:justify-between items-center w-full gap-4"><div class="flex items-center gap-3 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">`;
+    $$payload.out += `<div class="flex justify-center w-full px-1 sm:px-6 md:px-8 lg:px-10"><div class="w-full max-w-screen-lg space-y-6"><div class="w-full relative"><div class="flex flex-col sm:flex-row sm:justify-between items-center w-full gap-4"><div class="flex items-center gap-3 sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">`;
     PageHeading($$payload, {
       icon: IMAGES.LEADERBOARD_ICON,
       title: "leaderboard",
@@ -171,7 +172,8 @@ let __tla = Promise.all([
           ],
           data: mergedUsers,
           isLoading,
-          rankImages
+          rankImages,
+          firstRowClass
         });
         $$payload.out += `<!----></div>`;
       } else {

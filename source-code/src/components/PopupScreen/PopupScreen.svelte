@@ -9,7 +9,7 @@
 </script>
 
 <div
-  class="min-h-screen flex items-center justify-center relative px-4 bg-blue-500"
+  class="min-h-screen flex items-center justify-center relative px-3 md:px-4 bg-blue-500"
   style="background: var(--background-gradient);"
 >
   <BackgroundImage />
@@ -33,10 +33,10 @@
         label={backButtonLabel}
         arrowType="back"
         link={backButtonLink}
-        customClass="flex md:hidden text-gray-600 hover:text-gray-800 absolute top-10 left-2"
+        customClass="flex md:hidden text-gray-600 hover:text-gray-800 absolute top-9 sm:top-14 left-3 sm:left-8 z-10"
       />
     {/if}
-    <div class="p-10">
+    <div class="p-5 sm:p-10">
       <div in:fly={{ x: -200, duration: 500 }}>
         <slot name="body" />
       </div>

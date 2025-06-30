@@ -5,12 +5,17 @@ import { TimeZoneList } from "$lib/constants/timezone.constants";
 import { get } from "svelte/store";
 import { API_DEFINITIONS } from "../../apis/api.definitions";
 import { getText } from "../../stores/language.store";
-import { showSuccess } from "../../stores/toast.store";
+import { showError, showSuccess } from "../../stores/toast.store";
 import { isGCLC, isPocketGames, isShupavu } from "../system/system..da";
 import { systemSettingsStore } from "../../stores/systemsettings.store";
 import { userStore } from "../../stores/user.store";
+import { updateStoreVariable } from "$lib/utils";
+import { competitionStore } from "../../stores/competition.store";
 
-export async function getUserProfileFields() {
+/**
+ * @param {boolean | undefined} [cameFromChangeGrade]
+ */
+export async function getUserProfileFields(cameFromChangeGrade) {
   /**
    * @type {never[]}
    */
@@ -35,7 +40,7 @@ export async function getUserProfileFields() {
       {
         name: "name",
         type: "text",
-        label: await getText("name"),
+        label: await getText(isShupavu ? "name_label_sh" : "name"),
         placeholder: await getText("enter_your_name"),
         required: true,
         layout: "half",
@@ -43,7 +48,7 @@ export async function getUserProfileFields() {
       },
       {
         name: "contact_number",
-        type: "number",
+        type: "text",
         label: await getText("contact_number"),
         placeholder: await getText("enter_contact_number"),
         required: true,
@@ -88,7 +93,7 @@ export async function getUserProfileFields() {
               type: "select",
               label: await getText("city"),
               placeholder: await getText("enter_your_city"),
-              required: true,
+              required: false,
               layout: "half",
               options: [{ value: "", label: "Select City" }, ...cityList],
               value: "",
@@ -141,7 +146,7 @@ export async function getUserProfileFields() {
     ],
     enableTurnstile: false,
     handleSubmit: (/** @type {any} */ formData) => {
-      saveProfileData(formData);
+      saveProfileData(formData, cameFromChangeGrade);
     },
   };
 }
@@ -152,7 +157,11 @@ export async function getProfileData() {
 }
 
 // save profile data
-export async function saveProfileData(profileData) {
+/**
+ * @param {{ city: any; date_of_birth: any; dob: any; name: any; school_name: any; gender: any; country: any; contact_number: any; phone_number: any; profile_picture: any; timezone: any; }} profileData
+ * @param {boolean | undefined} cameFromChangeGrade
+ */
+export async function saveProfileData(profileData, cameFromChangeGrade) {
   // Ensure all required parameters are included
   const DTO = {
     competition_id: 0, // You might need to get this from somewhere
@@ -168,6 +177,10 @@ export async function saveProfileData(profileData) {
     school_id: 0, // You might need to derive this from school_name
   };
 
+  if (!(await validName(DTO.name))) {
+    return; // Exit if name validation fails
+  }
+
   const data = await request(API_DEFINITIONS.SAVE_PROFILE, DTO);
   if (data.error_code == 0) {
     showSuccess("Profile updated successfully!");
@@ -177,6 +190,36 @@ export async function saveProfileData(profileData) {
       ...u,
       profile_picture: DTO.profile_picture,
     }));
-    history.back();
+    updateStoreVariable(userStore, "name", DTO.name);
+    if (cameFromChangeGrade) {
+      goto("/competitions/" + get(competitionStore).url + "/home");
+    } else {
+      history.back();
+    }
   }
 }
+
+const validName = async (/** @type {string | number} */ name) => {
+  const texts = {
+    NAME_REQUIRED: await getText("name_required"),
+    INVALID_NAME: await getText("invalid_name"),
+    NAME_REQUIRED_SH: await getText("name_required_sh"),
+  };
+
+  if (!name || !String(name).trim()) {
+    showError(texts.NAME_REQUIRED);
+    return false;
+  }
+
+  if (!isNaN(Number(name))) {
+    showError(isShupavu ? texts.NAME_REQUIRED_SH : texts.INVALID_NAME);
+    return false;
+  }
+
+  if (!/^[a-zA-Z0-9@.\s]+$/.test(String(name).trim())) {
+    showError(texts.INVALID_NAME);
+    return false;
+  }
+
+  return true;
+};

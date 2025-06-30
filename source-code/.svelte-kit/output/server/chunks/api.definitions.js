@@ -127,18 +127,6 @@ let __tla = (async () => {
         "-1": await getText("username_not_found")
       }
     },
-    PAYMENT_STATUS: {
-      method: "POST",
-      endpoint: "user/payment/status",
-      requiredParams: [
-        "competition_id",
-        "grade",
-        "inquiry_type"
-      ],
-      cache: false,
-      secure: true,
-      loader: false
-    },
     CHALLENGE_START: {
       method: "POST",
       endpoint: "challenge/start",
@@ -305,13 +293,12 @@ let __tla = (async () => {
         "-10": await getText("number_already_exists")
       }
     },
+    OTP_RECOVER_MOBILE: {
+      errorCodes: {
+        "-10": await getText("number_already_exists")
+      }
+    },
     OTP_VERIFY: {
-      method: "POST",
-      endpoint: "user/otp/verify",
-      requiredParams: [],
-      cache: false,
-      secure: false,
-      loader: true,
       errorCodes: {
         "-2": await getText("invalid_otp")
       }

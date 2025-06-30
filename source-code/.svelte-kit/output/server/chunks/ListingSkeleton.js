@@ -1,4 +1,4 @@
-import { f as ensure_array_like, c as bind_props } from "./index.js";
+import { j as ensure_array_like, d as bind_props } from "./index.js";
 import { f as fallback } from "./utils2.js";
 function ListingSkeleton($$payload, $$props) {
   let itemsCount = fallback($$props["itemsCount"], 5);

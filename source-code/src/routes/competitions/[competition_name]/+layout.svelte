@@ -9,6 +9,7 @@
   import InfoModal from "../../../components/CustomModals/InfoModal.svelte";
   import { competitionStore } from "../../../stores/competition.store";
   import { paymentStore } from "../../../stores/payment.store";
+    import { beforeNavigate } from "$app/navigation";
 
   let data = null;
 
@@ -42,9 +43,15 @@
       isShowRules: false,
     }));
   };
-  onMount(async () => {
-    // data = await getLearnerPaymentStatus();
-  });
+  // beforeNavigate(async () => {
+  //   data = await getLearnerPaymentStatus();
+  // });
+  $: if ($appbarStore?.isNotificationVisible === false || $appbarStore?.isNotificationVisible === undefined) {
+  appbarStore.update(state => ({
+    ...state,
+    isNotificationVisible: true
+  }));
+}
 </script>
 
 <BackgroundImage></BackgroundImage>

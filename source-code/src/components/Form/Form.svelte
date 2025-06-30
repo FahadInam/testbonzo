@@ -8,6 +8,10 @@
   import { turnstile } from "@svelte-put/cloudflare-turnstile";
   import { t, getText } from "../../stores/language.store";
   import { isShupavu } from "../../data-actions/system/system..da";
+  import ResendOtp from "../ResendOTP/ResendOTP.svelte";
+  import { IMAGES } from "$lib/assets/images/images.constants";
+  import Select from "svelte-select";
+  import PasswordStrengthPopover from "./PasswordStrengthPopover.svelte";
 
   // Props
   export let fields = []; // Array of field objects
@@ -31,6 +35,10 @@
   let submitted = false; // Track if the form has been submitted
   let showPassword = false; //for password reveal
   let showPasswords = {}; // Store visibility state for each password field
+  let passwordPopoverVisible = false;
+  let passwordPopoverField = null;
+  // Add a map to store input refs for each password field
+  let passwordInputRefs = {};
 
   // Initialize form data with values from fields or provided formData
   onMount(() => {
@@ -221,6 +229,36 @@
       [fieldName]: !showPasswords[fieldName],
     };
   }
+
+  function handlePasswordFocus(field) {
+    if (field.showPasswordStrength) {
+      passwordPopoverVisible = true;
+      passwordPopoverField = field.name;
+    }
+  }
+  function handlePasswordBlur(field) {
+    if (field.showPasswordStrength) {
+      // Delay hiding to allow click on popover if needed
+      setTimeout(() => {
+        passwordPopoverVisible = false;
+        passwordPopoverField = null;
+      }, 150);
+    }
+  }
+
+  // In the script section, add:
+  $: Object.keys(passwordInputRefs).forEach((name) => {
+    if (!fields.find((f) => f.name === name && f.showPasswordStrength)) {
+      delete passwordInputRefs[name];
+    }
+  });
+
+  function getPasswordInputRef(field) {
+    if (field.showPasswordStrength) {
+      return (el) => (passwordInputRefs[field.name] = el);
+    }
+    return undefined;
+  }
 </script>
 
 <form on:submit|preventDefault={() => handleButtonClick({ type: "submit" })} class="space-y-4">
@@ -236,20 +274,23 @@
             </label>
 
             {#if field.type === "select"}
-              <select
+              <Select
+                items={field.options}
                 id={field.name}
                 name={field.name}
-                bind:value={formData[field.name]}
-                on:change={(e) => handleInput(e, field)}
-                class="mt-1 dropdown focus:ring block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+                value={formData[field.name]}
+                on:change={(e) => (formData[field.name] = e.detail.value)}
+                class="!mt-1 dropdown focus:ring block w-full !pl-3 !p-1 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
                 required={field.required}
-              >
-                {#each field.options as option}
-                  <option value={option.value} selected={option.value === formData[field.name]}>
-                    {option.label}
-                  </option>
-                {/each}
-              </select>
+                itemId="value"
+                label="label"
+                clearable={false}
+                searchable={false}
+                showChevron={true}
+                --chevron-icon-size="20px"
+                --chevron-icon-colour="#6B7280"
+              />
+
               <!-- {#if submitted && errors[field.name]}
                 <p class="error text-start">{errors[field.name]}</p>
               {/if} -->
@@ -260,10 +301,11 @@
                 name={field.name}
                 bind:value={formData[field.name]}
                 on:input={(e) => handleInput(e, field)}
-                class="mt-1 block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 font-poppins placeholder:text-[#AEAEAE] bg-white"
+                class="mt-1 block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 font-poppins placeholder:text-[#AEAEAE] bg-white read-only:bg-gray-100/50"
                 placeholder={field.placeholder}
                 required={field.required}
                 readonly={field.readonly}
+                disabled={field.readonly}
               />
             {/if}
 
@@ -279,20 +321,23 @@
                 {fields[index + 1].label}
               </label>
               {#if fields[index + 1].type === "select"}
-                <select
+                <Select
+                  items={fields[index + 1].options}
                   id={fields[index + 1].name}
+                  clearable={false}
                   name={fields[index + 1].name}
-                  bind:value={formData[fields[index + 1].name]}
-                  on:change={(e) => handleInput(e, fields[index + 1])}
-                  class="mt-1 dropdown focus:ring block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+                  value={fields[index + 1].options.find((opt) => opt.value === formData[fields[index + 1].name])}
+                  on:change={(e) => (formData[fields[index + 1].name] = e.detail.value)}
+                  class="!mt-1 dropdown focus:ring block !w-full !p-1 !pl-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
                   required={fields[index + 1].required}
-                >
-                  {#each fields[index + 1].options as option}
-                    <option value={option.value} selected={option.value === formData[field.name]}>
-                      {option.label}
-                    </option>
-                  {/each}
-                </select>
+                  itemId="value"
+                  label="label"
+                  searchable={false}
+                  placement="auto"
+                  showChevron={true}
+                  --chevron-icon-size="20px"
+                  --chevron-icon-colour="#6B7280"
+                />
                 {#if submitted && errors[fields[index + 1].name]}
                   <p class="error text-start">{errors[fields[index + 1].name]}</p>
                 {/if}
@@ -303,10 +348,11 @@
                   name={fields[index + 1].name}
                   bind:value={formData[fields[index + 1].name]}
                   on:input={(e) => handleInput(e, fields[index + 1])}
-                  class="mt-1 block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md focus:outline-none focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] font-poppins placeholder:text-[#AEAEAE] bg-white"
+                  class="mt-1 block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md focus:outline-none focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] font-poppins placeholder:text-[#AEAEAE] bg-white read-only:bg-gray-100/50"
                   placeholder={fields[index + 1].placeholder}
                   required={fields[index + 1].required}
                   readonly={fields[index + 1].readonly}
+                  disabled={fields[index + 1].readonly}
                 />
               {/if}
               <!-- <input
@@ -334,20 +380,23 @@
         </label>
         <div class="relative">
           {#if field.type === "select"}
-            <select
+            <Select
+              items={field.options}
               id={field.name}
               name={field.name}
-              bind:value={formData[field.name]}
-              on:change={(e) => handleInput(e, field)}
+              value={formData[field.name]}
+              on:change={(e) => (formData[field.name] = e.detail.value)}
               class="mt-1 block dropdown focus:ring w-full p-3 border-[1px] border-[#DEDEDE] rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white"
               required={field.required}
-            >
-              {#each field.options as option}
-                <option value={option.value} selected={option.value === formData[field.name]}>
-                  {option.label}
-                </option>
-              {/each}
-            </select>
+              itemId="value"
+              label="label"
+              clearable={false}
+              searchable={false}
+              showChevron={true}
+              --chevron-icon-size="20px"
+              --chevron-icon-colour="#6B7280"
+            />
+
             {#if submitted && errors[field.name]}
               <p class="error text-start">{errors[field.name]}</p>
             {/if}
@@ -379,11 +428,15 @@
               name={field.name}
               bind:value={formData[field.name]}
               on:input={(e) => handleInput(e, field)}
-              class="mt-1 block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md focus:outline-none focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] pr-10 font-poppins placeholder:text-[#AEAEAE] bg-white"
+              class="mt-1 block w-full p-3 border-[1px] border-[#DEDEDE] rounded-md focus:outline-none focus:ring-[var(--primary-color)] focus:border-[var(--primary-color)] pr-10 font-poppins placeholder:text-[#AEAEAE] bg-white read-only:bg-gray-100/50"
               placeholder={field.placeholder}
               required={field.required}
               readonly={field.readonly}
+              disabled={field.readonly}
               use:onEnter={(e) => handleButtonClick({ type: "submit" })}
+              on:focus={() => handlePasswordFocus(field)}
+              on:blur={() => handlePasswordBlur(field)}
+              bind:this={passwordInputRefs[field.name]}
             />
 
             <div class="w-full">
@@ -404,6 +457,18 @@
                 </div>
               {/if}
             </div>
+            {#if field.name == "otp"}
+              <div class="mt-2 text-end">
+                <ResendOtp token={turnstileToken} {resetTurnstile} />
+              </div>
+            {/if}
+            {#if field.showPasswordStrength}
+              <PasswordStrengthPopover
+                password={formData[field.name] || ""}
+                visible={passwordPopoverVisible && passwordPopoverField === field.name}
+                inputEl={passwordInputRefs[field.name]}
+              />
+            {/if}
           {/if}
           {#if field.type === "password"}
             <button
@@ -451,6 +516,11 @@
                 </svg>
               {/if}
             </button>
+          {/if}
+          {#if field.name === "otp" && field.readonly}
+            <div class="absolute right-0 pr-3 flex items-center text-sm leading-5 top-[10px]">
+              <img src={IMAGES.CHECK_ICON} alt="check icon" class="" />
+            </div>
           {/if}
         </div>
         <!-- {#if submitted && errors[field.name]}

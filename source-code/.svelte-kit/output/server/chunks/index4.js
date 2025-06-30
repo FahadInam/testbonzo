@@ -1,5 +1,5 @@
 import "./client2.js";
-import { g as getContext } from "./index.js";
+import { i as getContext } from "./index.js";
 function context() {
   return getContext("__request__");
 }

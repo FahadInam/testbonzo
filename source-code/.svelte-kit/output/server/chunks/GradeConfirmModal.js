@@ -1,9 +1,7 @@
-import { b as push, s as store_get, f as ensure_array_like, u as unsubscribe_stores, c as bind_props, p as pop, d as stringify, i as copy_payload, j as assign_payload } from "./index.js";
+import { b as push, s as store_get, j as ensure_array_like, c as attr, e as escape_html, u as unsubscribe_stores, d as bind_props, p as pop, f as stringify, k as copy_payload, l as assign_payload } from "./index.js";
 import { c as competitionStore } from "./appbar.store.js";
 import { I as IMAGES } from "./images.constants.js";
 import { f as fallback } from "./utils2.js";
-import { a as attr } from "./attributes.js";
-import { e as escape_html } from "./escaping.js";
 import { g as get } from "./index3.js";
 import { B as Button } from "./Button.js";
 import { I as Image } from "./Image.js";
